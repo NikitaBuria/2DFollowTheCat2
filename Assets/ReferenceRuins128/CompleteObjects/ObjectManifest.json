@@ -1,0 +1,594 @@
+{
+  "objects": [
+    {
+      "name": "Oak_01",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_01.png",
+      "width": 483,
+      "height": 440,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.042272727272727274
+    },
+    {
+      "name": "Oak_02",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_02.png",
+      "width": 520,
+      "height": 560,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.038571428571428576
+    },
+    {
+      "name": "Oak_03",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_03.png",
+      "width": 520,
+      "height": 600,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.03766666666666667
+    },
+    {
+      "name": "Oak_04",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_04.png",
+      "width": 490,
+      "height": 611,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.03743862520458265
+    },
+    {
+      "name": "Oak_05",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_05.png",
+      "width": 502,
+      "height": 571,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.03830998248686515
+    },
+    {
+      "name": "Oak_06",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_06.png",
+      "width": 493,
+      "height": 428,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.04275700934579439
+    },
+    {
+      "name": "Oak_07",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_07.png",
+      "width": 486,
+      "height": 541,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.03904805914972274
+    },
+    {
+      "name": "Oak_08",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_08.png",
+      "width": 476,
+      "height": 632,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.0370253164556962
+    },
+    {
+      "name": "Oak_09",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_09.png",
+      "width": 466,
+      "height": 586,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.037969283276450515
+    },
+    {
+      "name": "Oak_10",
+      "group": "Trees",
+      "file": "Textures/Trees/Oak_10.png",
+      "width": 494,
+      "height": 572,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.038286713286713285
+    },
+    {
+      "name": "Sapling_01",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_01.png",
+      "width": 216,
+      "height": 322,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.04860248447204969
+    },
+    {
+      "name": "Sapling_02",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_02.png",
+      "width": 210,
+      "height": 314,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.04920382165605095
+    },
+    {
+      "name": "Sapling_03",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_03.png",
+      "width": 177,
+      "height": 315,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.04912698412698413
+    },
+    {
+      "name": "Sapling_04",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_04.png",
+      "width": 197,
+      "height": 303,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.05008250825082509
+    },
+    {
+      "name": "Sapling_05",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_05.png",
+      "width": 187,
+      "height": 311,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.049437299035369774
+    },
+    {
+      "name": "Sapling_06",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_06.png",
+      "width": 288,
+      "height": 386,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.044689119170984455
+    },
+    {
+      "name": "Sapling_07",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_07.png",
+      "width": 276,
+      "height": 369,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.04559620596205963
+    },
+    {
+      "name": "Sapling_08",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_08.png",
+      "width": 257,
+      "height": 354,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.046468926553672324
+    },
+    {
+      "name": "Sapling_09",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_09.png",
+      "width": 196,
+      "height": 380,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.045000000000000005
+    },
+    {
+      "name": "Sapling_10",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_10.png",
+      "width": 148,
+      "height": 386,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.044689119170984455
+    },
+    {
+      "name": "Sapling_11",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_11.png",
+      "width": 250,
+      "height": 434,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.042511520737327196
+    },
+    {
+      "name": "Sapling_12",
+      "group": "Trees",
+      "file": "Textures/Trees/Sapling_12.png",
+      "width": 144,
+      "height": 395,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.04424050632911393
+    },
+    {
+      "name": "StumpLog_01",
+      "group": "StumpsAndLogs",
+      "file": "Textures/StumpsAndLogs/StumpLog_01.png",
+      "width": 277,
+      "height": 235,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.0573404255319149
+    },
+    {
+      "name": "StumpLog_02",
+      "group": "StumpsAndLogs",
+      "file": "Textures/StumpsAndLogs/StumpLog_02.png",
+      "width": 231,
+      "height": 230,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.05804347826086957
+    },
+    {
+      "name": "StumpLog_03",
+      "group": "StumpsAndLogs",
+      "file": "Textures/StumpsAndLogs/StumpLog_03.png",
+      "width": 245,
+      "height": 236,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.057203389830508475
+    },
+    {
+      "name": "StumpLog_04",
+      "group": "StumpsAndLogs",
+      "file": "Textures/StumpsAndLogs/StumpLog_04.png",
+      "width": 266,
+      "height": 281,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.05204626334519573
+    },
+    {
+      "name": "StumpLog_05",
+      "group": "StumpsAndLogs",
+      "file": "Textures/StumpsAndLogs/StumpLog_05.png",
+      "width": 286,
+      "height": 232,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.05775862068965518
+    },
+    {
+      "name": "StumpLog_06",
+      "group": "StumpsAndLogs",
+      "file": "Textures/StumpsAndLogs/StumpLog_06.png",
+      "width": 385,
+      "height": 151,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07533112582781457
+    },
+    {
+      "name": "StumpLog_07",
+      "group": "StumpsAndLogs",
+      "file": "Textures/StumpsAndLogs/StumpLog_07.png",
+      "width": 345,
+      "height": 241,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.05653526970954357
+    },
+    {
+      "name": "StumpLog_08",
+      "group": "StumpsAndLogs",
+      "file": "Textures/StumpsAndLogs/StumpLog_08.png",
+      "width": 310,
+      "height": 248,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.055645161290322584
+    },
+    {
+      "name": "StumpLog_09",
+      "group": "StumpsAndLogs",
+      "file": "Textures/StumpsAndLogs/StumpLog_09.png",
+      "width": 367,
+      "height": 238,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.0569327731092437
+    },
+    {
+      "name": "Bush_01",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_01.png",
+      "width": 161,
+      "height": 153,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07467320261437908
+    },
+    {
+      "name": "Bush_02",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_02.png",
+      "width": 154,
+      "height": 153,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07467320261437908
+    },
+    {
+      "name": "Bush_03",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_03.png",
+      "width": 148,
+      "height": 154,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07435064935064935
+    },
+    {
+      "name": "Bush_04",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_04.png",
+      "width": 163,
+      "height": 153,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07467320261437908
+    },
+    {
+      "name": "Bush_05",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_05.png",
+      "width": 151,
+      "height": 150,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07566666666666666
+    },
+    {
+      "name": "Bush_06",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_06.png",
+      "width": 150,
+      "height": 143,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07814685314685316
+    },
+    {
+      "name": "Bush_07",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_07.png",
+      "width": 143,
+      "height": 145,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07741379310344827
+    },
+    {
+      "name": "Bush_08",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_08.png",
+      "width": 161,
+      "height": 144,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07777777777777778
+    },
+    {
+      "name": "Bush_09",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_09.png",
+      "width": 163,
+      "height": 145,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.07741379310344827
+    },
+    {
+      "name": "Bush_10",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_10.png",
+      "width": 157,
+      "height": 152,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.075
+    },
+    {
+      "name": "Bush_11",
+      "group": "Bushes",
+      "file": "Textures/Bushes/Bush_11.png",
+      "width": 156,
+      "height": 152,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.075
+    },
+    {
+      "name": "RuinedChapel",
+      "group": "Buildings",
+      "file": "Textures/Buildings/RuinedChapel.png",
+      "width": 990,
+      "height": 980,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.03275510204081633
+    },
+    {
+      "name": "RoundTower",
+      "group": "Buildings",
+      "file": "Textures/Buildings/RoundTower.png",
+      "width": 611,
+      "height": 928,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.0331896551724138
+    },
+    {
+      "name": "GothicPortal",
+      "group": "Buildings",
+      "file": "Textures/Buildings/GothicPortal.png",
+      "width": 765,
+      "height": 828,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.034178743961352655
+    },
+    {
+      "name": "StoneArch",
+      "group": "Buildings",
+      "file": "Textures/Buildings/StoneArch.png",
+      "width": 615,
+      "height": 616,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.037337662337662336
+    },
+    {
+      "name": "StoneBridge",
+      "group": "Buildings",
+      "file": "Textures/Buildings/StoneBridge.png",
+      "width": 982,
+      "height": 486,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.04063786008230453
+    },
+    {
+      "name": "RitualDais",
+      "group": "Buildings",
+      "file": "Textures/Buildings/RitualDais.png",
+      "width": 874,
+      "height": 587,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.037947189097103914
+    },
+    {
+      "name": "Rock_01",
+      "group": "Rocks",
+      "file": "Textures/Rocks/Rock_01.png",
+      "width": 122,
+      "height": 96,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.10416666666666667
+    },
+    {
+      "name": "Rock_02",
+      "group": "Rocks",
+      "file": "Textures/Rocks/Rock_02.png",
+      "width": 153,
+      "height": 134,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.08171641791044776
+    },
+    {
+      "name": "Rock_03",
+      "group": "Rocks",
+      "file": "Textures/Rocks/Rock_03.png",
+      "width": 102,
+      "height": 104,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.09807692307692308
+    },
+    {
+      "name": "Rock_04",
+      "group": "Rocks",
+      "file": "Textures/Rocks/Rock_04.png",
+      "width": 107,
+      "height": 93,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.1067204301075269
+    },
+    {
+      "name": "Rock_05",
+      "group": "Rocks",
+      "file": "Textures/Rocks/Rock_05.png",
+      "width": 74,
+      "height": 64,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.14375
+    },
+    {
+      "name": "Rock_06",
+      "group": "Rocks",
+      "file": "Textures/Rocks/Rock_06.png",
+      "width": 53,
+      "height": 47,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.18670212765957447
+    },
+    {
+      "name": "Rock_07",
+      "group": "Rocks",
+      "file": "Textures/Rocks/Rock_07.png",
+      "width": 171,
+      "height": 107,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.09602803738317757
+    },
+    {
+      "name": "Rock_08",
+      "group": "Rocks",
+      "file": "Textures/Rocks/Rock_08.png",
+      "width": 71,
+      "height": 66,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.14015151515151514
+    },
+    {
+      "name": "Rowboat",
+      "group": "Props",
+      "file": "Textures/Props/Rowboat.png",
+      "width": 361,
+      "height": 242,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.056404958677685954
+    },
+    {
+      "name": "DockLong",
+      "group": "Props",
+      "file": "Textures/Props/DockLong.png",
+      "width": 380,
+      "height": 238,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.0569327731092437
+    },
+    {
+      "name": "DockSquare",
+      "group": "Props",
+      "file": "Textures/Props/DockSquare.png",
+      "width": 281,
+      "height": 239,
+      "ppu": 128,
+      "pivotX": 0.5,
+      "pivotY": 0.05679916317991632
+    }
+  ]
+}
