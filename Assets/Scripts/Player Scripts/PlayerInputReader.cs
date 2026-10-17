@@ -13,11 +13,15 @@ public class PlayerInputReader : MonoBehaviour
    [SerializeField] private InputActionReference sprintInput;
 
 
+
+
+
+
    public event Action OnDashPerformed;
 
 
-   public Vector2 MoveInput => playerMoveInput.action.ReadValue<Vector2>();
-   public  bool OnSprintPerformed => sprintInput.action.IsPressed();
+   public Vector2 MoveInput => playerMoveInput.action.ReadValue<Vector2>(); 
+   public bool IsSprintHeld => sprintInput.action.IsPressed();
 
 
 
@@ -25,7 +29,7 @@ public class PlayerInputReader : MonoBehaviour
    {
 
       EnableActions();
-      dashInput.action.performed += OnJumpPerformedCallback;
+      dashInput.action.performed += OnDashPerformedCallBack;
 
    }
 
@@ -39,7 +43,7 @@ public class PlayerInputReader : MonoBehaviour
     private void OnDisable()
     {  
         DisableActions();
-        dashInput.action.performed -= OnJumpPerformedCallback; 
+        dashInput.action.performed -= OnDashPerformedCallBack; 
     }
 
     private void DisableActions()
@@ -50,7 +54,7 @@ public class PlayerInputReader : MonoBehaviour
         
     }
 
-    private void OnJumpPerformedCallback(InputAction.CallbackContext context)
+    private void OnDashPerformedCallBack(InputAction.CallbackContext context)
     {
         OnDashPerformed?.Invoke();
     }

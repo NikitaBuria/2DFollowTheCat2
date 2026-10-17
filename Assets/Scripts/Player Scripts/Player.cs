@@ -1,14 +1,18 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
+[RequireComponent(typeof(PlayerInputReader), typeof(PlayerMotor))]
 public class Player : MonoBehaviour
 {
-    [Header("Player Refrences")]
-    [SerializeField, FormerlySerializedAs("movement")] private PlayerMotor playerMotor;
-    private PlayerStateMachine playerStateMachine;
+    [Header("Player References")]
+    [field: SerializeField] public PlayerInputReader playerInputReader { get; private set; }
+    [field: SerializeField] public PlayerMotor playerMotor { get; private set; }
+    [field: SerializeField] public Animator animator { get; private set; }
 
+    [Header("Movement")]
+    [field: SerializeField] public float WalkSpeed { get; private set; } = 5f;
+    [field: SerializeField] public float RunSpeed { get; private set; } = 9f;
 
+    public PlayerStateMachine playerStateMachine { get; private set; }
 
     // PlayerStates
     public PlayerIdleState IdleState { get; private set; }
@@ -19,23 +23,28 @@ public class Player : MonoBehaviour
     public PlayerHurtState HurtState { get; private set; }
     public PlayerDeadState DeadState { get; private set; }
 
-
     private void Awake()
     {
         GetReferences();
         CreateStates();
-
     }
 
-
-
-    
-
-    private void OnEnable()
+    // Start (not OnEnable) so every component's Awake has run before the first Enter,
+    // and so re-enabling the player doesn't call Initialize twice.
+    private void Start()
     {
-        playerStateMachine.Initialize(IdleState);   
+        playerStateMachine.Initialize(IdleState);
     }
 
+    private void Update()
+    {
+        playerStateMachine.CurrentState?.Update();
+    }
+
+    private void FixedUpdate()
+    {
+        playerStateMachine.CurrentState?.FixedUpdate();
+    }
 
     private void CreateStates()
     {
@@ -48,13 +57,11 @@ public class Player : MonoBehaviour
         DeadState = new PlayerDeadState(this);
     }
 
-
-    public void GetReferences()
+    private void GetReferences()
     {
+        playerStateMachine ??= new PlayerStateMachine();
+
+        if (playerInputReader == null) playerInputReader = GetComponent<PlayerInputReader>();
         if (playerMotor == null) playerMotor = GetComponent<PlayerMotor>();
-
-        if (playerStateMachine == null) playerStateMachine = new PlayerStateMachine();
     }
-
-
 }

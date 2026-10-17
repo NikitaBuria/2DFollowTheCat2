@@ -8,12 +8,13 @@ public class PlayerIdleState : PlayerState
 
     public override void Enter()
     {
-        // stop movement, play idle animation
+        player.playerMotor.Stop();
     }
 
     public override void Update()
     {
-        // check input and switch state
+        if (player.playerInputReader.MoveInput != Vector2.zero)
+            player.playerStateMachine.ChangeState(player.WalkState);
     }
 
     public override void Exit()
