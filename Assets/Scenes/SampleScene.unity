@@ -409,10 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf196d190006a24458b35527af8fa73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  groundCheck: {fileID: 0}
-  moveSpeed: 5
-  sprintSpeed: 9
-  dashForce: 5
 --- !u!70 &615388291
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -594,7 +590,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   <playerInputReader>k__BackingField: {fileID: 615388289}
-  playerMotor: {fileID: 615388290}
+  <playerMotor>k__BackingField: {fileID: 615388290}
+  <animator>k__BackingField: {fileID: 615388297}
+  <WalkSpeed>k__BackingField: 5
+  <RunSpeed>k__BackingField: 9
 --- !u!95 &615388297
 Animator:
   serializedVersion: 7
