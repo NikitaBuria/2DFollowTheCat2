@@ -7,18 +7,18 @@
             "id": "dc549cda-5a99-4a41-9ac6-be0bd3d25f9f",
             "actions": [
                 {
-                    "name": "Player W,A,S,D",
-                    "type": "Button",
-                    "id": "1b3fc4e7-c02f-4307-9073-7b47a92a3233",
-                    "expectedControlType": "",
+                    "name": "Move Action",
+                    "type": "Value",
+                    "id": "6044d2a0-372c-449a-83e2-ee79cb275198",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "Player Jump",
+                    "name": "Dash",
                     "type": "Button",
-                    "id": "c647ac86-94b6-43ee-b05d-8e8d95940bca",
+                    "id": "5af557ac-9401-463d-befe-cab3b6d8b9a1",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -32,64 +32,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Player Sprint",
+                    "type": "Button",
+                    "id": "5a5cc9e0-85a5-48b8-ba67-68696eca67ad",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "39aa8fbe-4c98-4bae-a942-72f423a017de",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Player W,A,S,D",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c6487f47-ccaa-4698-a0da-ff7a387a8795",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Player W,A,S,D",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e8630592-207d-4379-aa8e-fd9dbef6385f",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Player W,A,S,D",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "599a28b7-117c-4151-a3ec-ff8925fc8167",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Player W,A,S,D",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8ba8cca3-3678-4a56-a1cb-fcdf0043d079",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Player Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "ba5f08dd-9f78-467d-8865-3be3d59b5d5f",
@@ -98,6 +52,83 @@
                     "processors": "",
                     "groups": "",
                     "action": "Player Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64d04184-08cd-4ddb-8fea-5ce874be36fa",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "72e2d266-36cb-4ee7-9790-ebb6217e1dc7",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Action",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "79aa4682-c220-4832-815d-ff5ddd702e6b",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "2a65a2e0-c535-4c24-b07e-b0a985914760",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "e8690ac5-88e2-4b81-8a31-f46cf1fc6f22",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "831c56db-342b-4bcf-8db6-2b1f1233a834",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "95b26604-61bb-436f-9080-c3ce707d0feb",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Player Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

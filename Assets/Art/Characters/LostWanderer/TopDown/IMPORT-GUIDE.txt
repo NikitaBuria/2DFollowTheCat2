@@ -1,0 +1,30 @@
+Lost Wanderer - top-down state sheets
+
+Six PNG files: Idle, Walk, Dash, Attack, Hurt, Death.
+Every sheet: 1536 x 768 pixels, RGBA with transparency.
+Grid: 6 columns x 3 rows. Each cell is exactly 256 x 256 pixels.
+Rows TOP TO BOTTOM: Down (front), Up (back), Right (side).
+Frames progress LEFT TO RIGHT, six frames per direction.
+For Left, use the Right row with SpriteRenderer.flipX = true.
+
+UNITY SPRITE EDITOR
+1. Select all six PNGs in the Project window.
+2. Texture Type: Sprite (2D and UI).
+3. Sprite Mode: Multiple.
+4. Pixels Per Unit: 128 as a starting point to match existing environment assets.
+5. Mesh Type: Full Rect. Filter Mode: Point. Compression: None.
+6. Disable mipmaps. Enable Alpha Is Transparency. Max Size: 2048 or higher.
+7. Apply, then open each PNG in Sprite Editor.
+8. Slice > Grid By Cell Size > Pixel Size X=256, Y=256.
+9. Offset X=0,Y=0; Padding X=0,Y=0.
+10. Pivot: Custom, X=0.5, Y=0.125. Slice, then Apply.
+
+Create one AnimationClip for each state/direction (18 clips total).
+Suggested initial playback: Idle 6 fps, Walk 10 fps, Dash 18 fps,
+Attack 12 fps, Hurt 10 fps, Death 8 fps.
+Loop Idle and Walk. Disable Loop Time for Dash, Attack, Hurt and Death.
+Hold the final Death frame after the animation ends.
+
+Verification: all sheets have 18 nonempty cells, real alpha transparency,
+and clear cell-edge gutters. Artwork is generated and may require pose/timing
+polish when played. Runtime animations and Animator connections are not installed.

@@ -1,0 +1,14 @@
+Lost Wanderer animation sprite sheet
+Rows, top to bottom; frames progress left to right:
+1. Idle
+2. Run
+3. Jump and landing
+4. Fall
+5. Dash
+6. Lantern attack
+7. Hurt
+8. Death
+
+Generated artwork reference: lost-wanderer-concept.png.
+This is an animation artwork draft. Frame spacing and some dash/attack effects require cleanup and alignment before reliable Unity slicing. Animation clips and gameplay connections have not been created.
+Suggested starting playback: idle 6 fps, run 12 fps, jump 10 fps, fall 8 fps, dash 16 fps, attack 12 fps, hurt 10 fps, death 8 fps.

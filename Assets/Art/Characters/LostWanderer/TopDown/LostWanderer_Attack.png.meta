@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: ebd491d9cbc6e334b9b8521048110bd5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6517026474479317209
+    second: LostWanderer_Attack_0
+  - first:
+      213: 8686363506650801080
+    second: LostWanderer_Attack_1
+  - first:
+      213: -5982809418801435486
+    second: LostWanderer_Attack_2
+  - first:
+      213: 5578412006184371959
+    second: LostWanderer_Attack_3
+  - first:
+      213: 347302003330542706
+    second: LostWanderer_Attack_4
+  - first:
+      213: 6878126304398146994
+    second: LostWanderer_Attack_5
+  - first:
+      213: 479089009140458848
+    second: LostWanderer_Attack_6
+  - first:
+      213: -1717690012018433476
+    second: LostWanderer_Attack_7
+  - first:
+      213: -3710000790376066694
+    second: LostWanderer_Attack_8
+  - first:
+      213: 6657675073720144010
+    second: LostWanderer_Attack_9
+  - first:
+      213: -9016300697655374927
+    second: LostWanderer_Attack_10
+  - first:
+      213: 5039830309769315590
+    second: LostWanderer_Attack_11
+  - first:
+      213: 4918877693284785246
+    second: LostWanderer_Attack_12
+  - first:
+      213: 2004431708075862270
+    second: LostWanderer_Attack_13
+  - first:
+      213: 839912645107310396
+    second: LostWanderer_Attack_14
+  - first:
+      213: -5080082105814508715
+    second: LostWanderer_Attack_15
+  - first:
+      213: -3645597101117801860
+    second: LostWanderer_Attack_16
+  - first:
+      213: 9006185032225522164
+    second: LostWanderer_Attack_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LostWanderer_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 543
+        width: 149
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0f723cc01217a50800000000000000
+      internalID: 6517026474479317209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 543
+        width: 158
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b366d346992c8870800000000000000
+      internalID: 8686363506650801080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 543
+        width: 163
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2acaa79288ac8fca0800000000000000
+      internalID: -5982809418801435486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 543
+        width: 152
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6c467f9208a6d40800000000000000
+      internalID: 5578412006184371959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 543
+        width: 144
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c6c4af45dd1d400800000000000000
+      internalID: 347302003330542706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 543
+        width: 150
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bdfbe59e63047f50800000000000000
+      internalID: 6878126304398146994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 287
+        width: 159
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0656c9d5ae016a600800000000000000
+      internalID: 479089009140458848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 287
+        width: 166
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32a767e80a8928e0800000000000000
+      internalID: -1717690012018433476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 287
+        width: 171
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71573500fd638cc0800000000000000
+      internalID: -3710000790376066694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 287
+        width: 175
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a80df07a430d46c50800000000000000
+      internalID: 6657675073720144010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 287
+        width: 147
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb0520394aafd280800000000000000
+      internalID: -9016300697655374927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 287
+        width: 154
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6050c0ee6f211f540800000000000000
+      internalID: 5039830309769315590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_12
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 31
+        width: 146
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c15d1633d534440800000000000000
+      internalID: 4918877693284785246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_13
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 31
+        width: 175
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef82460c40c21db10800000000000000
+      internalID: 2004431708075862270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_14
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 31
+        width: 178
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3fdaf5c918f7ab00800000000000000
+      internalID: 839912645107310396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 31
+        width: 200
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b9b1d7d3cef79b0800000000000000
+      internalID: -5080082105814508715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_16
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 31
+        width: 156
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7afda170cc386dc0800000000000000
+      internalID: -3645597101117801860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Attack_17
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 31
+        width: 152
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f10e3be1956cfc70800000000000000
+      internalID: 9006185032225522164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LostWanderer_Attack_0: 6517026474479317209
+      LostWanderer_Attack_1: 8686363506650801080
+      LostWanderer_Attack_10: -9016300697655374927
+      LostWanderer_Attack_11: 5039830309769315590
+      LostWanderer_Attack_12: 4918877693284785246
+      LostWanderer_Attack_13: 2004431708075862270
+      LostWanderer_Attack_14: 839912645107310396
+      LostWanderer_Attack_15: -5080082105814508715
+      LostWanderer_Attack_16: -3645597101117801860
+      LostWanderer_Attack_17: 9006185032225522164
+      LostWanderer_Attack_2: -5982809418801435486
+      LostWanderer_Attack_3: 5578412006184371959
+      LostWanderer_Attack_4: 347302003330542706
+      LostWanderer_Attack_5: 6878126304398146994
+      LostWanderer_Attack_6: 479089009140458848
+      LostWanderer_Attack_7: -1717690012018433476
+      LostWanderer_Attack_8: -3710000790376066694
+      LostWanderer_Attack_9: 6657675073720144010
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

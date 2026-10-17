@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 77f59f8c5d38cc244929ab1c6db39380
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6216995166053336832
+    second: LostWanderer_Idle_0
+  - first:
+      213: -667462424340778341
+    second: LostWanderer_Idle_1
+  - first:
+      213: -4863392420924207170
+    second: LostWanderer_Idle_2
+  - first:
+      213: 4245585820321737892
+    second: LostWanderer_Idle_3
+  - first:
+      213: -6759467278380930153
+    second: LostWanderer_Idle_4
+  - first:
+      213: 6300480479989018422
+    second: LostWanderer_Idle_5
+  - first:
+      213: -990992181384340656
+    second: LostWanderer_Idle_6
+  - first:
+      213: 1234691157862122940
+    second: LostWanderer_Idle_7
+  - first:
+      213: 3999386311233758904
+    second: LostWanderer_Idle_8
+  - first:
+      213: -7738998216048318964
+    second: LostWanderer_Idle_9
+  - first:
+      213: 7115628206965067647
+    second: LostWanderer_Idle_10
+  - first:
+      213: -6540355342692578678
+    second: LostWanderer_Idle_11
+  - first:
+      213: -2781120299134632528
+    second: LostWanderer_Idle_12
+  - first:
+      213: -3851064352704555282
+    second: LostWanderer_Idle_13
+  - first:
+      213: -5627756334497725731
+    second: LostWanderer_Idle_14
+  - first:
+      213: -4945044614867393906
+    second: LostWanderer_Idle_15
+  - first:
+      213: -8031714950090793897
+    second: LostWanderer_Idle_16
+  - first:
+      213: 3687319169175121456
+    second: LostWanderer_Idle_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LostWanderer_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 541
+        width: 129
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 009f115e5dbc8b9a0800000000000000
+      internalID: -6216995166053336832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 541
+        width: 128
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b923f302672bcb6f0800000000000000
+      internalID: -667462424340778341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 541
+        width: 128
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf4c7b4c52c18cb0800000000000000
+      internalID: -4863392420924207170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 541
+        width: 128
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac66bb3fc95bea30800000000000000
+      internalID: 4245585820321737892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 541
+        width: 128
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79b6a31d25c8132a0800000000000000
+      internalID: -6759467278380930153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 541
+        width: 128
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f270c7d9dcf6750800000000000000
+      internalID: 6300480479989018422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 285
+        width: 131
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b956d8cd94f32f0800000000000000
+      internalID: -990992181384340656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 285
+        width: 131
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb500bff011822110800000000000000
+      internalID: 1234691157862122940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 285
+        width: 130
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b6e5a019aca08730800000000000000
+      internalID: 3999386311233758904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 285
+        width: 132
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06ee0f102e899490800000000000000
+      internalID: -7738998216048318964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 285
+        width: 130
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7f07ed672acfb260800000000000000
+      internalID: 7115628206965067647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 285
+        width: 131
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a0bf5d77dfb35a0800000000000000
+      internalID: -6540355342692578678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 30
+        width: 123
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bdb37ca2d97769d0800000000000000
+      internalID: -2781120299134632528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 29
+        width: 123
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee610e100654e8ac0800000000000000
+      internalID: -3851064352704555282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 29
+        width: 123
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd20fcf4e6136e1b0800000000000000
+      internalID: -5627756334497725731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 30
+        width: 123
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e82ee5c6f1caf5bb0800000000000000
+      internalID: -4945044614867393906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 30
+        width: 123
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75cd4a68ecd998090800000000000000
+      internalID: -8031714950090793897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 30
+        width: 124
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03eeb248f3dfb2330800000000000000
+      internalID: 3687319169175121456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LostWanderer_Idle_0: -6216995166053336832
+      LostWanderer_Idle_1: -667462424340778341
+      LostWanderer_Idle_10: 7115628206965067647
+      LostWanderer_Idle_11: -6540355342692578678
+      LostWanderer_Idle_12: -2781120299134632528
+      LostWanderer_Idle_13: -3851064352704555282
+      LostWanderer_Idle_14: -5627756334497725731
+      LostWanderer_Idle_15: -4945044614867393906
+      LostWanderer_Idle_16: -8031714950090793897
+      LostWanderer_Idle_17: 3687319169175121456
+      LostWanderer_Idle_2: -4863392420924207170
+      LostWanderer_Idle_3: 4245585820321737892
+      LostWanderer_Idle_4: -6759467278380930153
+      LostWanderer_Idle_5: 6300480479989018422
+      LostWanderer_Idle_6: -990992181384340656
+      LostWanderer_Idle_7: 1234691157862122940
+      LostWanderer_Idle_8: 3999386311233758904
+      LostWanderer_Idle_9: -7738998216048318964
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

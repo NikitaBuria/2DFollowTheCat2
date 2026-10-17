@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 189cd946985b73d428a1a740482a6a7f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2552743130451646014
+    second: LostWanderer_Hurt_0
+  - first:
+      213: -6251394323850499642
+    second: LostWanderer_Hurt_1
+  - first:
+      213: 5551019392557786417
+    second: LostWanderer_Hurt_2
+  - first:
+      213: 1008783877440805163
+    second: LostWanderer_Hurt_3
+  - first:
+      213: -775554635765832687
+    second: LostWanderer_Hurt_4
+  - first:
+      213: 3172596176913598512
+    second: LostWanderer_Hurt_5
+  - first:
+      213: -615220087647879041
+    second: LostWanderer_Hurt_6
+  - first:
+      213: -1872504528307505575
+    second: LostWanderer_Hurt_7
+  - first:
+      213: -4718581667017658459
+    second: LostWanderer_Hurt_8
+  - first:
+      213: -7364155924842263089
+    second: LostWanderer_Hurt_9
+  - first:
+      213: 8366093078978810941
+    second: LostWanderer_Hurt_10
+  - first:
+      213: 7404831493636167829
+    second: LostWanderer_Hurt_11
+  - first:
+      213: 6116953812625288987
+    second: LostWanderer_Hurt_12
+  - first:
+      213: 8922715867988902088
+    second: LostWanderer_Hurt_13
+  - first:
+      213: 6834822331529040574
+    second: LostWanderer_Hurt_14
+  - first:
+      213: 8475286298586562798
+    second: LostWanderer_Hurt_15
+  - first:
+      213: -1947607244476774197
+    second: LostWanderer_Hurt_16
+  - first:
+      213: 4404404982545111667
+    second: LostWanderer_Hurt_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 543
+        width: 146
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c96c9ad5a5d29cd0800000000000000
+      internalID: -2552743130451646014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_1
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 543
+        width: 153
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c96ff7dbf59e39a0800000000000000
+      internalID: -6251394323850499642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_2
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 543
+        width: 150
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13526ba1abe290d40800000000000000
+      internalID: 5551019392557786417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_3
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 543
+        width: 152
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b29100e779beffd00800000000000000
+      internalID: 1008783877440805163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_4
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 543
+        width: 150
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1142547fa2dac35f0800000000000000
+      internalID: -775554635765832687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_5
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 543
+        width: 142
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03882bce963570c20800000000000000
+      internalID: 3172596176913598512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_6
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 287
+        width: 136
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f704011079c4677f0800000000000000
+      internalID: -615220087647879041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_7
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 287
+        width: 147
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 956bbed6d078306e0800000000000000
+      internalID: -1872504528307505575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_8
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 287
+        width: 152
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5afedb559fa348eb0800000000000000
+      internalID: -4718581667017658459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_9
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 287
+        width: 151
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd403d04334dc990800000000000000
+      internalID: -7364155924842263089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_10
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 287
+        width: 145
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34d26274555a1470800000000000000
+      internalID: 8366093078978810941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_11
+      rect:
+        serializedVersion: 2
+        x: 1341
+        y: 287
+        width: 134
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5981fcfc20f33c660800000000000000
+      internalID: 7404831493636167829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_12
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 31
+        width: 141
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f60056519c3e450800000000000000
+      internalID: 6116953812625288987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_13
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 31
+        width: 149
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0483faecad3db70800000000000000
+      internalID: 8922715867988902088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_14
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 31
+        width: 141
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb212b5b2ba2ade50800000000000000
+      internalID: 6834822331529040574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_15
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 31
+        width: 131
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee0ccfc0cf34e9570800000000000000
+      internalID: 8475286298586562798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_16
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 31
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc80cfea785b8f4e0800000000000000
+      internalID: -1947607244476774197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Hurt_17
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 31
+        width: 141
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37adf8ffef69f1d30800000000000000
+      internalID: 4404404982545111667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LostWanderer_Hurt_0: -2552743130451646014
+      LostWanderer_Hurt_1: -6251394323850499642
+      LostWanderer_Hurt_10: 8366093078978810941
+      LostWanderer_Hurt_11: 7404831493636167829
+      LostWanderer_Hurt_12: 6116953812625288987
+      LostWanderer_Hurt_13: 8922715867988902088
+      LostWanderer_Hurt_14: 6834822331529040574
+      LostWanderer_Hurt_15: 8475286298586562798
+      LostWanderer_Hurt_16: -1947607244476774197
+      LostWanderer_Hurt_17: 4404404982545111667
+      LostWanderer_Hurt_2: 5551019392557786417
+      LostWanderer_Hurt_3: 1008783877440805163
+      LostWanderer_Hurt_4: -775554635765832687
+      LostWanderer_Hurt_5: 3172596176913598512
+      LostWanderer_Hurt_6: -615220087647879041
+      LostWanderer_Hurt_7: -1872504528307505575
+      LostWanderer_Hurt_8: -4718581667017658459
+      LostWanderer_Hurt_9: -7364155924842263089
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

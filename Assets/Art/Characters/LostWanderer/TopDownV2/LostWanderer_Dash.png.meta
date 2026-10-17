@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: ae03f2afa0c8229439c47818350d5105
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1071104842723345848
+    second: LostWanderer_Dash_0
+  - first:
+      213: -5370372359490355980
+    second: LostWanderer_Dash_1
+  - first:
+      213: -3380554827611818767
+    second: LostWanderer_Dash_2
+  - first:
+      213: 1406316653616444705
+    second: LostWanderer_Dash_3
+  - first:
+      213: 5266419920169741255
+    second: LostWanderer_Dash_4
+  - first:
+      213: -959541529582289960
+    second: LostWanderer_Dash_5
+  - first:
+      213: 4742526912592839822
+    second: LostWanderer_Dash_6
+  - first:
+      213: -741394211400145908
+    second: LostWanderer_Dash_7
+  - first:
+      213: 579219211504359429
+    second: LostWanderer_Dash_8
+  - first:
+      213: -7640599449838092555
+    second: LostWanderer_Dash_9
+  - first:
+      213: -6405126403551410655
+    second: LostWanderer_Dash_10
+  - first:
+      213: -1183736346034308488
+    second: LostWanderer_Dash_11
+  - first:
+      213: -8191416284315947236
+    second: LostWanderer_Dash_12
+  - first:
+      213: -5442906207539893427
+    second: LostWanderer_Dash_13
+  - first:
+      213: -5192597861901856719
+    second: LostWanderer_Dash_14
+  - first:
+      213: 9004658316689795330
+    second: LostWanderer_Dash_15
+  - first:
+      213: -9195060310649388292
+    second: LostWanderer_Dash_16
+  - first:
+      213: -1840222025409262800
+    second: LostWanderer_Dash_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LostWanderer_Dash_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 548
+        width: 146
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b5c9b3fd245dde00800000000000000
+      internalID: 1071104842723345848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_1
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 547
+        width: 149
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc3001eaca9875b0800000000000000
+      internalID: -5370372359490355980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_2
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 547
+        width: 149
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f437749b4bd511d0800000000000000
+      internalID: -3380554827611818767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_3
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 541
+        width: 158
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1253684ab8d348310800000000000000
+      internalID: 1406316653616444705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_4
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 546
+        width: 149
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb22c3c305161940800000000000000
+      internalID: 5266419920169741255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_5
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 547
+        width: 132
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db330e00160fa2f0800000000000000
+      internalID: -959541529582289960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_6
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 294
+        width: 153
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8483da9917d0d140800000000000000
+      internalID: 4742526912592839822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_7
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 290
+        width: 152
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c04a6fe84e906b5f0800000000000000
+      internalID: -741394211400145908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_8
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 286
+        width: 154
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5089cc4ddccc90800800000000000000
+      internalID: 579219211504359429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_9
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 286
+        width: 155
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fefa51384327f590800000000000000
+      internalID: -7640599449838092555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_10
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 292
+        width: 154
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126c7d6c87b6c17a0800000000000000
+      internalID: -6405126403551410655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_11
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 294
+        width: 149
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87af7e2a016829fe0800000000000000
+      internalID: -1183736346034308488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_12
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 33
+        width: 151
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f6ff51a4e325e80800000000000000
+      internalID: -8191416284315947236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_13
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 34
+        width: 158
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4be0d954a9e674b0800000000000000
+      internalID: -5442906207539893427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_14
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 35
+        width: 167
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13013e391cf20f7b0800000000000000
+      internalID: -5192597861901856719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_15
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 35
+        width: 165
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209ef02c709f6fc70800000000000000
+      internalID: 9004658316689795330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_16
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 33
+        width: 162
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf2437f6d55946080800000000000000
+      internalID: -9195060310649388292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LostWanderer_Dash_17
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 29
+        width: 131
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b81ab51d73676e0800000000000000
+      internalID: -1840222025409262800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LostWanderer_Dash_0: 1071104842723345848
+      LostWanderer_Dash_1: -5370372359490355980
+      LostWanderer_Dash_10: -6405126403551410655
+      LostWanderer_Dash_11: -1183736346034308488
+      LostWanderer_Dash_12: -8191416284315947236
+      LostWanderer_Dash_13: -5442906207539893427
+      LostWanderer_Dash_14: -5192597861901856719
+      LostWanderer_Dash_15: 9004658316689795330
+      LostWanderer_Dash_16: -9195060310649388292
+      LostWanderer_Dash_17: -1840222025409262800
+      LostWanderer_Dash_2: -3380554827611818767
+      LostWanderer_Dash_3: 1406316653616444705
+      LostWanderer_Dash_4: 5266419920169741255
+      LostWanderer_Dash_5: -959541529582289960
+      LostWanderer_Dash_6: 4742526912592839822
+      LostWanderer_Dash_7: -741394211400145908
+      LostWanderer_Dash_8: 579219211504359429
+      LostWanderer_Dash_9: -7640599449838092555
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
