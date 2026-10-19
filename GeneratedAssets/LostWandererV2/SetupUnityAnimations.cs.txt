@@ -1,0 +1,212 @@
+// Unity Pipeline eval statement block. No using directives or type declarations.
+// Run only after all seven final PNGs are present. Does not touch scenes or existing player scripts.
+var artRoot = "Assets/Art/Characters/LostWanderer/TopDownV2";
+var animationRoot = artRoot + "/Animations";
+var controllerPath = artRoot + "/LostWanderer.controller";
+var prefabPath = artRoot + "/LostWandererVisual.prefab";
+var stateNames = new string[] { "Idle", "Walk", "Dash", "Attack", "Hurt", "Death", "Run" };
+var directions = new string[] { "Down", "Up", "Right", "Left" };
+var rates = new float[] { 6f, 8f, 24f, 12f, 12f, 10f, 12f };
+if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+    throw new System.Exception("Exit Play mode before creating animation assets.");
+
+// Fail before modifying any importer when an input is missing or has the wrong grid.
+UnityEditor.AssetDatabase.Refresh(UnityEditor.ImportAssetOptions.ForceSynchronousImport);
+for (int stateIndex = 0; stateIndex < stateNames.Length; stateIndex++)
+{
+    var path = artRoot + "/LostWanderer_" + stateNames[stateIndex] + ".png";
+    var importer = UnityEditor.AssetImporter.GetAtPath(path) as UnityEditor.TextureImporter;
+    if (importer == null) throw new System.Exception("Missing texture: " + path);
+    int width; int height;
+    importer.GetSourceTextureWidthAndHeight(out width, out height);
+    if (width != 1536 || height != 768)
+        throw new System.Exception(path + " must be exactly 1536 x 768, got " + width + " x " + height);
+}
+
+var factory = new UnityEditor.U2D.Sprites.SpriteDataProviderFactories();
+factory.Init();
+var importers = new UnityEditor.TextureImporter[stateNames.Length];
+var providers = new UnityEditor.U2D.Sprites.ISpriteEditorDataProvider[stateNames.Length];
+for (int stateIndex = 0; stateIndex < stateNames.Length; stateIndex++)
+{
+    var path = artRoot + "/LostWanderer_" + stateNames[stateIndex] + ".png";
+    var importer = UnityEditor.AssetImporter.GetAtPath(path) as UnityEditor.TextureImporter;
+    importer.textureType = UnityEditor.TextureImporterType.Sprite;
+    importer.spriteImportMode = UnityEditor.SpriteImportMode.Multiple;
+    importer.spritePixelsPerUnit = 128f;
+    importer.alphaSource = UnityEditor.TextureImporterAlphaSource.FromInput;
+    importer.alphaIsTransparency = true;
+    importer.mipmapEnabled = false;
+    importer.isReadable = false;
+    importer.npotScale = UnityEditor.TextureImporterNPOTScale.None;
+    importer.maxTextureSize = 2048;
+    importer.textureCompression = UnityEditor.TextureImporterCompression.Uncompressed;
+    importer.filterMode = UnityEngine.FilterMode.Point;
+    importer.wrapMode = UnityEngine.TextureWrapMode.Clamp;
+    var textureSettings = new UnityEditor.TextureImporterSettings();
+    importer.ReadTextureSettings(textureSettings);
+    textureSettings.spriteMeshType = UnityEngine.SpriteMeshType.FullRect;
+    importer.SetTextureSettings(textureSettings);
+    importer.SaveAndReimport();
+    var provider = factory.GetSpriteEditorDataProviderFromObject(importer);
+    if (provider == null) throw new System.Exception("No sprite data provider for " + path);
+    provider.InitSpriteEditorDataProvider();
+    var editCapability = provider.GetDataProvider<UnityEditor.U2D.Sprites.ISpriteFrameEditCapability>();
+    if (editCapability == null) throw new System.Exception("Missing edit capabilities: " + path);
+    var capability = editCapability.GetEditCapability();
+    var required = new UnityEditor.U2D.Sprites.EEditCapability[] {
+        UnityEditor.U2D.Sprites.EEditCapability.CreateAndDeleteSprite,
+        UnityEditor.U2D.Sprites.EEditCapability.EditSpriteName,
+        UnityEditor.U2D.Sprites.EEditCapability.EditSpriteRect,
+        UnityEditor.U2D.Sprites.EEditCapability.EditPivot,
+        UnityEditor.U2D.Sprites.EEditCapability.EditBorder
+    };
+    foreach (var value in required)
+        if (!capability.HasCapability(value))
+            throw new System.Exception("Importer lacks " + value + ": " + path + ". Aborted.");
+    if (provider.GetDataProvider<UnityEditor.U2D.Sprites.ISpriteNameFileIdDataProvider>() == null)
+        throw new System.Exception("Missing name/file ID provider: " + path);
+    importers[stateIndex] = importer;
+    providers[stateIndex] = provider;
+}
+
+// All providers passed capability checks; assign stable IDs by preserving matching sprite names.
+for (int stateIndex = 0; stateIndex < stateNames.Length; stateIndex++)
+{
+    var provider = providers[stateIndex];
+    var oldIds = new System.Collections.Generic.Dictionary<string, UnityEditor.GUID>();
+    foreach (var old in provider.GetSpriteRects()) oldIds[old.name] = old.spriteID;
+    var rects = new UnityEditor.SpriteRect[18];
+    var pairs = new System.Collections.Generic.List<UnityEditor.SpriteNameFileIdPair>();
+    for (int row = 0; row < 3; row++)
+    {
+        for (int column = 0; column < 6; column++)
+        {
+            var name = "LostWanderer_" + stateNames[stateIndex] + "_" + directions[row] + "_" + column.ToString("00");
+            UnityEditor.GUID id;
+            if (!oldIds.TryGetValue(name, out id)) id = UnityEditor.GUID.Generate();
+            var rect = new UnityEditor.SpriteRect();
+            rect.name = name;
+            rect.spriteID = id;
+            rect.rect = new UnityEngine.Rect(column * 256, (2 - row) * 256, 256, 256);
+            rect.pivot = new UnityEngine.Vector2(0.5f, 0.125f);
+            rect.alignment = UnityEngine.SpriteAlignment.Custom;
+            rect.border = UnityEngine.Vector4.zero;
+            rects[row * 6 + column] = rect;
+            pairs.Add(new UnityEditor.SpriteNameFileIdPair(name, id));
+        }
+    }
+    provider.SetSpriteRects(rects);
+    provider.GetDataProvider<UnityEditor.U2D.Sprites.ISpriteNameFileIdDataProvider>().SetNameFileIdPairs(pairs);
+    provider.Apply();
+    importers[stateIndex].SaveAndReimport();
+}
+
+if (!UnityEditor.AssetDatabase.IsValidFolder(animationRoot))
+    UnityEditor.AssetDatabase.CreateFolder(artRoot, "Animations");
+var clips = new System.Collections.Generic.Dictionary<string, UnityEngine.AnimationClip>();
+for (int stateIndex = 0; stateIndex < stateNames.Length; stateIndex++)
+{
+    var sourceState = stateNames[stateIndex];
+    var sheetPath = artRoot + "/LostWanderer_" + sourceState + ".png";
+    var sprites = new System.Collections.Generic.Dictionary<string, UnityEngine.Sprite>();
+    foreach (var asset in UnityEditor.AssetDatabase.LoadAllAssetsAtPath(sheetPath))
+        if (asset is UnityEngine.Sprite) sprites[asset.name] = (UnityEngine.Sprite)asset;
+    if (sprites.Count != 18) throw new System.Exception("Expected 18 sprites: " + sheetPath);
+    for (int direction = 0; direction < 4; direction++)
+    {
+        var clipName = stateNames[stateIndex] + "_" + directions[direction];
+        var sourceDirection = directions[direction == 3 ? 2 : direction];
+        var clipPath = animationRoot + "/" + clipName + ".anim";
+        var clip = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.AnimationClip>(clipPath);
+        if (clip == null)
+        {
+            clip = new UnityEngine.AnimationClip();
+            clip.name = clipName;
+            UnityEditor.AssetDatabase.CreateAsset(clip, clipPath);
+        }
+        clip.ClearCurves();
+        clip.frameRate = rates[stateIndex];
+        // Unity holds the last object-reference key for one frame interval.
+        // Six keys at 0..5/fps therefore give the intended six-frame duration.
+        var keys = new UnityEditor.ObjectReferenceKeyframe[6];
+        var loop = stateIndex == 0 || stateIndex == 1 || stateIndex == 6;
+        for (int frame = 0; frame < 6; frame++)
+        {
+            var spriteName = "LostWanderer_" + sourceState + "_" + sourceDirection + "_" + frame.ToString("00");
+            keys[frame] = new UnityEditor.ObjectReferenceKeyframe {
+                time = frame / rates[stateIndex], value = sprites[spriteName]
+            };
+        }
+        var binding = UnityEditor.EditorCurveBinding.PPtrCurve("", typeof(UnityEngine.SpriteRenderer), "m_Sprite");
+        UnityEditor.AnimationUtility.SetObjectReferenceCurve(clip, binding, keys);
+        var flipBinding = UnityEditor.EditorCurveBinding.FloatCurve("", typeof(UnityEngine.SpriteRenderer), "m_FlipX");
+        UnityEditor.AnimationUtility.SetEditorCurve(clip, flipBinding,
+            UnityEngine.AnimationCurve.Constant(0f, 5f / rates[stateIndex], direction == 3 ? 1f : 0f));
+        var settings = UnityEditor.AnimationUtility.GetAnimationClipSettings(clip);
+        settings.loopTime = loop;
+        settings.loopBlend = false;
+        UnityEditor.AnimationUtility.SetAnimationClipSettings(clip, settings);
+        UnityEditor.EditorUtility.SetDirty(clip);
+        clips.Add(clipName, clip);
+    }
+}
+
+var controller = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEditor.Animations.AnimatorController>(controllerPath);
+if (controller == null) controller = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath(controllerPath);
+controller.parameters = new UnityEngine.AnimatorControllerParameter[] {
+    new UnityEngine.AnimatorControllerParameter { name = "MoveX", type = UnityEngine.AnimatorControllerParameterType.Float, defaultFloat = 0f },
+    new UnityEngine.AnimatorControllerParameter { name = "MoveY", type = UnityEngine.AnimatorControllerParameterType.Float, defaultFloat = -1f }
+};
+var stateMachine = controller.layers[0].stateMachine;
+foreach (var oldTransition in stateMachine.anyStateTransitions) stateMachine.RemoveAnyStateTransition(oldTransition);
+foreach (var oldState in stateMachine.states) stateMachine.RemoveState(oldState.state);
+foreach (var subAsset in UnityEditor.AssetDatabase.LoadAllAssetsAtPath(controllerPath))
+    if (subAsset is UnityEditor.Animations.BlendTree) UnityEngine.Object.DestroyImmediate(subAsset, true);
+var facingPositions = new UnityEngine.Vector2[] { UnityEngine.Vector2.down, UnityEngine.Vector2.up, UnityEngine.Vector2.right, UnityEngine.Vector2.left };
+for (int stateIndex = 0; stateIndex < stateNames.Length; stateIndex++)
+{
+    var stateName = stateIndex == 5 ? "Dead" : stateNames[stateIndex];
+    var state = stateMachine.AddState(stateName, new UnityEngine.Vector3(300f, stateIndex * 80f, 0f));
+    var tree = new UnityEditor.Animations.BlendTree();
+    tree.name = stateName + "_Facing";
+    tree.hideFlags = UnityEngine.HideFlags.HideInHierarchy;
+    tree.blendType = UnityEditor.Animations.BlendTreeType.SimpleDirectional2D;
+    tree.blendParameter = "MoveX";
+    tree.blendParameterY = "MoveY";
+    tree.useAutomaticThresholds = false;
+    UnityEditor.AssetDatabase.AddObjectToAsset(tree, controller);
+    for (int direction = 0; direction < 4; direction++)
+    {
+        var name = stateNames[stateIndex] + "_" + directions[direction];
+        tree.AddChild(clips[name], facingPositions[direction]);
+    }
+    state.motion = tree;
+    state.writeDefaultValues = false;
+    if (stateIndex == 0) stateMachine.defaultState = state;
+}
+UnityEditor.EditorUtility.SetDirty(controller);
+
+var previewScene = UnityEditor.SceneManagement.EditorSceneManager.NewPreviewScene();
+var visual = new UnityEngine.GameObject("LostWandererVisual");
+UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(visual, previewScene);
+try
+{
+    var renderer = visual.AddComponent<UnityEngine.SpriteRenderer>();
+    var firstCurve = UnityEditor.AnimationUtility.GetObjectReferenceCurve(clips["Idle_Down"],
+        UnityEditor.EditorCurveBinding.PPtrCurve("", typeof(UnityEngine.SpriteRenderer), "m_Sprite"));
+    renderer.sprite = (UnityEngine.Sprite)firstCurve[0].value;
+    renderer.spriteSortPoint = UnityEngine.SpriteSortPoint.Pivot;
+    var animator = visual.AddComponent<UnityEngine.Animator>();
+    animator.runtimeAnimatorController = controller;
+    animator.applyRootMotion = false;
+    animator.cullingMode = UnityEngine.AnimatorCullingMode.AlwaysAnimate;
+    UnityEditor.PrefabUtility.SaveAsPrefabAsset(visual, prefabPath);
+}
+finally
+{
+    UnityEngine.Object.DestroyImmediate(visual);
+    UnityEditor.SceneManagement.EditorSceneManager.ClosePreviewScene(previewScene);
+}
+UnityEditor.AssetDatabase.SaveAssets();
+return "Created 126 sliced sprites, 28 directional clips, 7 hash-driven blend-tree states with zero transitions, and isolated visual prefab at " + artRoot;

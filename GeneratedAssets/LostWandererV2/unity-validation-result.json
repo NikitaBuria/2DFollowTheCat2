@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "command": "command run_script",
+  "data": {
+    "command": "run_script",
+    "parameters": {
+      "file": "GeneratedAssets/LostWandererV2/LostWandererUnitySetup.cs",
+      "entry": "LostWandererUnitySetup.Validate"
+    },
+    "result": {
+      "diagnostics": [],
+      "compileMs": 119,
+      "executeMs": 22,
+      "assemblyName": "PipelineRunScript_LostWandererUnitySetup_e1741a619022408cb9d811092106a925",
+      "success": true,
+      "result": "PASS: 126 imported sprites with exact 256x256 rectangles, common pivot (128,32), PPU128, original texture dimensions, Point filtering, Uncompressed texture, Clamp wrapping, and FullRect meshes.\r\nPASS: 28 clips; 168 actual frame samples; all left/right mirroring and loop settings checked.\r\nPASS: 7 hash-driven states, zero transitions, and 28 state/facing combinations evaluated on the generated prefab.\r\nPASS: 168 actual Animator frame evaluations and 28 loop/last-frame hold evaluations.\r\nPASS: 168 time-driven Animator frame evaluations and 28 time-driven loop/last-frame hold evaluations.\r\n"
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "D:\\Unity\\Unity Projects\\2DFollowTheCat2"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}
