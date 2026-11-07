@@ -10,18 +10,22 @@ public class PlayerRunState : PlayerState
 
     public override void Enter()
     {
-        // play run animation
+        player.playerAnimator.SetAnimationState(PlayerAnimationState.Run);
     }
 
     public override void Update()
     {
         moveInput = player.playerInputReader.MoveInput;
 
+       
+
         if (moveInput == Vector2.zero)
         {
             player.playerStateMachine.ChangeState(player.IdleState);
             return;
-        }
+        } 
+        
+          player.SetFacingDirection(moveInput);
 
         if (!player.playerInputReader.IsSprintHeld)
             player.playerStateMachine.ChangeState(player.WalkState);

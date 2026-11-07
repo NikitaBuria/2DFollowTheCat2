@@ -151,397 +151,397 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LostWanderer_Death_Down_00
+      name: LostWanderer_Death_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
-        width: 256
-        height: 256
+        x: 52
+        y: 542
+        width: 128
+        height: 166
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.59375, y: 0.012048192}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7978082f91f1a2e468126c2098da1d9c
-      internalID: 687559957
+      spriteID: c658946251f06cc4bb002820c9fc98c9
+      internalID: -2056147958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Down_01
+      name: LostWanderer_Death_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
-        width: 256
-        height: 256
+        x: 305
+        y: 542
+        width: 126
+        height: 144
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.6269841, y: 0.013888889}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bf468aa1a7e0a146bb506c52685e8a0
-      internalID: 741781688
+      spriteID: ca356d8fa7bf0b34f9cb59486da5b0a7
+      internalID: -2116649205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Down_02
+      name: LostWanderer_Death_2
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 256
-        height: 256
+        x: 561
+        y: 537
+        width: 129
+        height: 132
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.6124031, y: 0.053030305}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05419f49bef4bbc4faa1add57e2e9fb1
-      internalID: 1073720247
+      spriteID: 4a6a58c98e87d884d9de99007dfa9b92
+      internalID: 533066634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Down_03
+      name: LostWanderer_Death_3
       rect:
         serializedVersion: 2
-        x: 768
-        y: 512
-        width: 256
-        height: 256
+        x: 807
+        y: 536
+        width: 149
+        height: 105
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.59731543, y: 0.07619048}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69eed62f28fd31642a796569c78b0d84
-      internalID: 1524169226
+      spriteID: c5af9db40d7ad484f97211a841e42676
+      internalID: 172440867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Down_04
+      name: LostWanderer_Death_4
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 512
-        width: 256
-        height: 256
+        x: 1066
+        y: 535
+        width: 166
+        height: 88
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.5180723, y: 0.10227273}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14f5c32ada153274abbb573fdc49b21a
-      internalID: 1209869407
+      spriteID: 884f4b53089531043945390634e43d8e
+      internalID: -1959989796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Down_05
+      name: LostWanderer_Death_5
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 512
-        width: 256
-        height: 256
+        x: 1323
+        y: 535
+        width: 168
+        height: 76
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.50595236, y: 0.118421055}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 544012bddc5bd7047823b577217be884
-      internalID: 1453422733
+      spriteID: d4a126f4ba057d148a3e64f3cb6ec83b
+      internalID: 1487207542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Up_00
+      name: LostWanderer_Death_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
-        width: 256
-        height: 256
+        x: 54
+        y: 286
+        width: 128
+        height: 159
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.578125, y: 0.012578616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0870611ffda8f14d8e0a9e0845ffe84
-      internalID: -456182582
+      spriteID: 58f7b39e929b9374fbead4176b57c502
+      internalID: 1966563261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Up_01
+      name: LostWanderer_Death_7
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
-        width: 256
-        height: 256
+        x: 309
+        y: 286
+        width: 127
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.5905512, y: 0.013245033}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed1982873312ed1449a17f81881cb5bf
-      internalID: -1543902295
+      spriteID: 917bc187b43c25f4988e8abec5fd7614
+      internalID: 558858607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Up_02
+      name: LostWanderer_Death_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
-        width: 256
-        height: 256
+        x: 560
+        y: 280
+        width: 133
+        height: 135
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.60150373, y: 0.05925926}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: befffe0721cf2a84c86f839af37ac2ba
-      internalID: 1756286702
+      spriteID: d480841de5ce11d499d9d7c9aedbdf8b
+      internalID: 756924224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Up_03
+      name: LostWanderer_Death_9
       rect:
         serializedVersion: 2
-        x: 768
-        y: 256
-        width: 256
-        height: 256
+        x: 799
+        y: 278
+        width: 148
+        height: 113
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.6554054, y: 0.088495575}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fe0a688505fc1b4785e8f34aed95137
-      internalID: -1911344495
+      spriteID: 7a6e532f83c88df459b3186eb4134ee5
+      internalID: -1783614207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Up_04
+      name: LostWanderer_Death_10
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 256
-        width: 256
-        height: 256
+        x: 1060
+        y: 278
+        width: 172
+        height: 89
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.53488374, y: 0.11235955}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 869f5b7bd972461468963d8e28118439
-      internalID: 2949865
+      spriteID: 8eb706a1c9331944ca007182060df4e0
+      internalID: -2091118936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Up_05
+      name: LostWanderer_Death_11
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 256
-        width: 256
-        height: 256
+        x: 1324
+        y: 278
+        width: 167
+        height: 81
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.502994, y: 0.12345679}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b6a6816a9b678742bb75a11bb363190
-      internalID: -1878349547
+      spriteID: 2c2db71b5bbf4d94c8981038b5192545
+      internalID: -1663874504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Right_00
+      name: LostWanderer_Death_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 44
+        y: 30
+        width: 130
+        height: 160
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.64615387, y: 0.0125}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6f19f36f30ca347aa96075a6e53639
-      internalID: 1185461132
+      spriteID: a231989cfef005d458bbc7372146527d
+      internalID: -713008530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Right_01
+      name: LostWanderer_Death_13
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
+        x: 298
+        y: 29
+        width: 133
+        height: 156
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.6466165, y: 0.01923077}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04154eeeb0bd5ef458f344100fc25048
-      internalID: -400467534
+      spriteID: 1a711e7c32055f047a152ecf5dfba885
+      internalID: -768703992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Right_02
+      name: LostWanderer_Death_14
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
+        x: 551
+        y: 34
+        width: 137
+        height: 140
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.649635, y: -0.014285714}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30bbe032259b73943b1328279896f5d7
-      internalID: 1404894163
+      spriteID: 77c5310ad3760e544a71ba6116e6070f
+      internalID: -1477139789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Right_03
+      name: LostWanderer_Death_15
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
+        x: 799
+        y: 34
+        width: 154
+        height: 112
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.6298701, y: -0.017857144}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b154a85683e8cb748a526ab86b4d757e
-      internalID: -1606507967
+      spriteID: 274bad51d442b6d43a7688af32f0149b
+      internalID: -2047106629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Right_04
+      name: LostWanderer_Death_16
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 256
-        height: 256
+        x: 1060
+        y: 33
+        width: 168
+        height: 94
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.54761904, y: -0.010638298}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 674834f5d18e98d499bbb07f7f238adf
-      internalID: 1040576753
+      spriteID: 09d06507d14074f4297f9177a46397af
+      internalID: -96456843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Death_Right_05
+      name: LostWanderer_Death_17
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 256
-        height: 256
+        x: 1323
+        y: 34
+        width: 169
+        height: 85
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.5029586, y: -0.023529412}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f2272207caabc24daa911d87206042f
-      internalID: 1633753932
+      spriteID: 9f2ececc94c2d9f448bbaeb668e16b61
+      internalID: 1601143326
       vertices: []
       indices: 
       edges: []
@@ -562,24 +562,24 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      LostWanderer_Death_Down_00: 687559957
-      LostWanderer_Death_Down_01: 741781688
-      LostWanderer_Death_Down_02: 1073720247
-      LostWanderer_Death_Down_03: 1524169226
-      LostWanderer_Death_Down_04: 1209869407
-      LostWanderer_Death_Down_05: 1453422733
-      LostWanderer_Death_Right_00: 1185461132
-      LostWanderer_Death_Right_01: -400467534
-      LostWanderer_Death_Right_02: 1404894163
-      LostWanderer_Death_Right_03: -1606507967
-      LostWanderer_Death_Right_04: 1040576753
-      LostWanderer_Death_Right_05: 1633753932
-      LostWanderer_Death_Up_00: -456182582
-      LostWanderer_Death_Up_01: -1543902295
-      LostWanderer_Death_Up_02: 1756286702
-      LostWanderer_Death_Up_03: -1911344495
-      LostWanderer_Death_Up_04: 2949865
-      LostWanderer_Death_Up_05: -1878349547
+      LostWanderer_Death_0: -2056147958
+      LostWanderer_Death_1: -2116649205
+      LostWanderer_Death_10: -2091118936
+      LostWanderer_Death_11: -1663874504
+      LostWanderer_Death_12: -713008530
+      LostWanderer_Death_13: -768703992
+      LostWanderer_Death_14: -1477139789
+      LostWanderer_Death_15: -2047106629
+      LostWanderer_Death_16: -96456843
+      LostWanderer_Death_17: 1601143326
+      LostWanderer_Death_2: 533066634
+      LostWanderer_Death_3: 172440867
+      LostWanderer_Death_4: -1959989796
+      LostWanderer_Death_5: 1487207542
+      LostWanderer_Death_6: 1966563261
+      LostWanderer_Death_7: 558858607
+      LostWanderer_Death_8: 756924224
+      LostWanderer_Death_9: -1783614207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

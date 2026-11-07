@@ -10,18 +10,22 @@ public class PlayerWalkState : PlayerState
 
     public override void Enter()
     {
-        // play walk animation
+        player.playerAnimator.SetAnimationState(PlayerAnimationState.Walk);
     }
 
     public override void Update()
     {
         moveInput = player.playerInputReader.MoveInput;
+    
+
 
         if (moveInput == Vector2.zero)
         {
             player.playerStateMachine.ChangeState(player.IdleState);
             return;
         }
+
+        player.SetFacingDirection(moveInput);
 
         if (player.playerInputReader.IsSprintHeld)
             player.playerStateMachine.ChangeState(player.RunState);
@@ -34,5 +38,6 @@ public class PlayerWalkState : PlayerState
 
     public override void Exit()
     {
+        
     }
 }

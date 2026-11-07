@@ -8,7 +8,9 @@ public class PlayerIdleState : PlayerState
 
     public override void Enter()
     {
+
         player.playerMotor.Stop();
+        player.playerAnimator.SetAnimationState(PlayerAnimationState.Idle);
     }
 
     public override void Update()

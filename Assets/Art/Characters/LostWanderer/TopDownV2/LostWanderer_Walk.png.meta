@@ -151,397 +151,397 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LostWanderer_Walk_Down_00
+      name: LostWanderer_Walk_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
-        width: 256
-        height: 256
+        x: 51
+        y: 543
+        width: 131
+        height: 167
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.58778626, y: 0.005988024}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81bc405052d1f1d41aca14d536e9db29
-      internalID: -1338192101
+      spriteID: 62a813e919b44ed4c9c3c8d3cfc6d49b
+      internalID: -1361678369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Down_01
+      name: LostWanderer_Walk_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
-        width: 256
-        height: 256
+        x: 308
+        y: 545
+        width: 130
+        height: 166
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.5846154, y: -0.006024096}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68a1627e29dd6c0498adb9a3552c0910
-      internalID: -957777100
+      spriteID: f7fea079c6ebebe46a4e73060e8700b1
+      internalID: -1574855215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Down_02
+      name: LostWanderer_Walk_2
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 256
-        height: 256
+        x: 564
+        y: 544
+        width: 130
+        height: 167
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.5846154, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91ed7e710234f0d409ced9d3e19f5327
-      internalID: 1342328163
+      spriteID: 535a744c79fd094498bbbaf632492194
+      internalID: -656842728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Down_03
+      name: LostWanderer_Walk_3
       rect:
         serializedVersion: 2
-        x: 768
-        y: 512
-        width: 256
-        height: 256
+        x: 820
+        y: 542
+        width: 130
+        height: 169
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.5846154, y: 0.01183432}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 075cc265803caf448abe712aeb418d4f
-      internalID: 1940375950
+      spriteID: 60f4abe4938ee9d44850a58718ab8025
+      internalID: -1193118014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Down_04
+      name: LostWanderer_Walk_4
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 512
-        width: 256
-        height: 256
+        x: 1074
+        y: 542
+        width: 132
+        height: 169
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.59090906, y: 0.01183432}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18cf0c5cbcd80c14d970bb3eb00ea0c5
-      internalID: 1660663548
+      spriteID: ae8f4d2ca07e6a24a93ab1ecf01f651f
+      internalID: 1061216037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Down_05
+      name: LostWanderer_Walk_5
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 512
-        width: 256
-        height: 256
+        x: 1331
+        y: 542
+        width: 131
+        height: 169
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.58778626, y: 0.01183432}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4565204796d228341b7121b7579725bd
-      internalID: -2048366995
+      spriteID: 1cd9fccb27373b643b5627a5974e0d56
+      internalID: -1202851463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Up_00
+      name: LostWanderer_Walk_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
-        width: 256
-        height: 256
+        x: 52
+        y: 288
+        width: 133
+        height: 166
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.5714286, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e47c407bfb16654d85a50849ad95479
-      internalID: 1950606719
+      spriteID: c55ec8506f4b8044484e6b1778c61879
+      internalID: 537015449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Up_01
+      name: LostWanderer_Walk_7
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
-        width: 256
-        height: 256
+        x: 305
+        y: 286
+        width: 135
+        height: 167
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.58518517, y: 0.011976048}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 866977f96e275d443ae7bf4953d31979
-      internalID: 1103241284
+      spriteID: 5b74e2c98dc062647a35c471a8b82fcf
+      internalID: -1147636416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Up_02
+      name: LostWanderer_Walk_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
-        width: 256
-        height: 256
+        x: 562
+        y: 287
+        width: 134
+        height: 166
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.58208954, y: 0.006024096}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f083948bec7c15d40b33d37acd265954
-      internalID: 316154137
+      spriteID: 11f25663417730546ae689fc798bcb6f
+      internalID: 1483826272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Up_03
+      name: LostWanderer_Walk_9
       rect:
         serializedVersion: 2
-        x: 768
-        y: 256
-        width: 256
-        height: 256
+        x: 818
+        y: 287
+        width: 133
+        height: 166
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.5864662, y: 0.006024096}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 378d16c090bb8284798772fe4515c091
-      internalID: 2009221833
+      spriteID: 66e38e3584e41dc428e999269711b604
+      internalID: -147840571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Up_04
+      name: LostWanderer_Walk_10
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 256
-        width: 256
-        height: 256
+        x: 1071
+        y: 286
+        width: 136
+        height: 167
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.5955882, y: 0.011976048}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 653d6e49c2979364f9e57f26ba43bc3f
-      internalID: 1704628858
+      spriteID: d89d4384a3029ab46bd6bb7db1119e28
+      internalID: -1299352874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Up_05
+      name: LostWanderer_Walk_11
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 256
-        width: 256
-        height: 256
+        x: 1330
+        y: 287
+        width: 134
+        height: 167
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.58208954, y: 0.005988024}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34a4d163f1904b44a8247ede1fff3a25
-      internalID: -581440997
+      spriteID: 7cac4ee9af519eb44950e7b0c355879a
+      internalID: -1066537191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Right_00
+      name: LostWanderer_Walk_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 49
+        y: 31
+        width: 127
+        height: 161
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.62204725, y: 0.0062111802}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37fc493277965804bbe5f03fb569001e
-      internalID: 366364292
+      spriteID: c55ea4740c7f78948b455f32bf07f5fd
+      internalID: -1452536305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Right_01
+      name: LostWanderer_Walk_13
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
+        x: 303
+        y: 31
+        width: 130
+        height: 161
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.6230769, y: 0.0062111802}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfc4f2ae28c245b46b4ed777e4faeb7a
-      internalID: 1039269339
+      spriteID: e943e5a292917d84aa181bb51d192029
+      internalID: 213792740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Right_02
+      name: LostWanderer_Walk_14
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
+        x: 563
+        y: 30
+        width: 126
+        height: 161
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.6111111, y: 0.012422361}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee5745339ebfd9244a9dbb00bfcc7029
-      internalID: 1028263568
+      spriteID: 8be4c5a7e22c4a744b54279976071f23
+      internalID: -1437310811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Right_03
+      name: LostWanderer_Walk_15
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
+        x: 815
+        y: 30
+        width: 129
+        height: 161
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.627907, y: 0.012422361}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63e2d3439852aab42a4077a8ebf3f81c
-      internalID: -381819413
+      spriteID: 3b90f35d42ff99444a8a3055f93ee8aa
+      internalID: 1445971592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Right_04
+      name: LostWanderer_Walk_16
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 256
-        height: 256
+        x: 1074
+        y: 31
+        width: 127
+        height: 161
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.61417323, y: 0.0062111802}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47d67e2bc48c53144bdb31ef16ee61a5
-      internalID: 977846381
+      spriteID: d6971f02846789140bc045e87baa68ad
+      internalID: -40002706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LostWanderer_Walk_Right_05
+      name: LostWanderer_Walk_17
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 256
-        height: 256
+        x: 1331
+        y: 30
+        width: 126
+        height: 161
       alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      pivot: {x: 0.6111111, y: 0.012422361}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95c55f0af7269a9478b0c25647b8caa8
-      internalID: 1041764805
+      spriteID: 00083204b5b65d747a2ed612528e15b2
+      internalID: -797619331
       vertices: []
       indices: 
       edges: []
@@ -562,24 +562,24 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      LostWanderer_Walk_Down_00: -1338192101
-      LostWanderer_Walk_Down_01: -957777100
-      LostWanderer_Walk_Down_02: 1342328163
-      LostWanderer_Walk_Down_03: 1940375950
-      LostWanderer_Walk_Down_04: 1660663548
-      LostWanderer_Walk_Down_05: -2048366995
-      LostWanderer_Walk_Right_00: 366364292
-      LostWanderer_Walk_Right_01: 1039269339
-      LostWanderer_Walk_Right_02: 1028263568
-      LostWanderer_Walk_Right_03: -381819413
-      LostWanderer_Walk_Right_04: 977846381
-      LostWanderer_Walk_Right_05: 1041764805
-      LostWanderer_Walk_Up_00: 1950606719
-      LostWanderer_Walk_Up_01: 1103241284
-      LostWanderer_Walk_Up_02: 316154137
-      LostWanderer_Walk_Up_03: 2009221833
-      LostWanderer_Walk_Up_04: 1704628858
-      LostWanderer_Walk_Up_05: -581440997
+      LostWanderer_Walk_0: -1361678369
+      LostWanderer_Walk_1: -1574855215
+      LostWanderer_Walk_10: -1299352874
+      LostWanderer_Walk_11: -1066537191
+      LostWanderer_Walk_12: -1452536305
+      LostWanderer_Walk_13: 213792740
+      LostWanderer_Walk_14: -1437310811
+      LostWanderer_Walk_15: 1445971592
+      LostWanderer_Walk_16: -40002706
+      LostWanderer_Walk_17: -797619331
+      LostWanderer_Walk_2: -656842728
+      LostWanderer_Walk_3: -1193118014
+      LostWanderer_Walk_4: 1061216037
+      LostWanderer_Walk_5: -1202851463
+      LostWanderer_Walk_6: 537015449
+      LostWanderer_Walk_7: -1147636416
+      LostWanderer_Walk_8: 1483826272
+      LostWanderer_Walk_9: -147840571
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

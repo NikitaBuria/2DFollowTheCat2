@@ -188,6 +188,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802b509ab2c1f594d869be164469f3b1, type: 3}
+--- !u!1001 &479786341
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1764345341578198291, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_Name
+      value: StumpLog_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992769655354400827, guid: 50673028b7f6974429f73981eb59d251, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50673028b7f6974429f73981eb59d251, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +352,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6.5411353
+  orthographic size: 5.88
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -375,6 +432,7 @@ GameObject:
   - component: {fileID: 615388295}
   - component: {fileID: 615388297}
   - component: {fileID: 615388296}
+  - component: {fileID: 615388298}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -397,6 +455,15 @@ MonoBehaviour:
   playerMoveInput: {fileID: 7085621306334058997, guid: 96ac84be326e49f4cabfd6358c1e9a7f, type: 3}
   dashInput: {fileID: -5533052566597031852, guid: 96ac84be326e49f4cabfd6358c1e9a7f, type: 3}
   sprintInput: {fileID: -2393636880048081089, guid: 96ac84be326e49f4cabfd6358c1e9a7f, type: 3}
+  attackInput:
+    m_Name: Attack Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ae0468c7-d1ad-4336-a105-9a4b43ae0a42
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!114 &615388290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,8 +510,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.08172777, y: -0.03457707}
+  m_Size: {x: 0.88683885, y: 1.365039}
   m_Direction: 0
 --- !u!50 &615388292
 Rigidbody2D:
@@ -458,7 +525,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.7853982
+  m_Mass: 1.0417888
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -520,14 +587,14 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -6216995166053336832, guid: 77f59f8c5d38cc244929ab1c6db39380, type: 3}
+  m_Sprite: {fileID: -952296413, guid: e3d7d6e716baabc4aa0b31aa73a68b92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.0546875, y: 1.3046875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -591,9 +658,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   <playerInputReader>k__BackingField: {fileID: 615388289}
   <playerMotor>k__BackingField: {fileID: 615388290}
-  <animator>k__BackingField: {fileID: 615388297}
-  <WalkSpeed>k__BackingField: 5
-  <RunSpeed>k__BackingField: 9
+  <playerAnimator>k__BackingField: {fileID: 615388298}
+  <playerHealth>k__BackingField: {fileID: 0}
+  <WalkSpeed>k__BackingField: 4
+  <RunSpeed>k__BackingField: 6
+  <DashSpeed>k__BackingField: 10
 --- !u!95 &615388297
 Animator:
   serializedVersion: 7
@@ -604,7 +673,7 @@ Animator:
   m_GameObject: {fileID: 615388288}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a03eb5ab32445ac4eb7ab77ff2fbc95d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -616,6 +685,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &615388298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615388288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47b6cf3e14e97c4ab4c464c998a1e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +824,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 34
-    OrthographicSize: 6.5411353
+    OrthographicSize: 5.88
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2891,3 +2972,4 @@ SceneRoots:
   - {fileID: 1561960586}
   - {fileID: 70452163}
   - {fileID: 1276199605}
+  - {fileID: 479786341}

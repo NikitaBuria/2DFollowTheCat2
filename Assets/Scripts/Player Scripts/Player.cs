@@ -1,16 +1,21 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerInputReader), typeof(PlayerMotor))]
+[RequireComponent(typeof(PlayerInputReader), typeof(PlayerMotor), typeof(PlayerAnimator))]
 public class Player : MonoBehaviour
 {
     [Header("Player References")]
     [field: SerializeField] public PlayerInputReader playerInputReader { get; private set; }
     [field: SerializeField] public PlayerMotor playerMotor { get; private set; }
-    [field: SerializeField] public Animator animator { get; private set; }
+    [field: SerializeField] public PlayerAnimator playerAnimator { get; private set; }
+    [field: SerializeField] public PlayerHealth playerHealth {get; private set;}
 
     [Header("Movement")]
     [field: SerializeField] public float WalkSpeed { get; private set; } = 5f;
     [field: SerializeField] public float RunSpeed { get; private set; } = 9f;
+    [field: SerializeField] public float DashSpeed {get; private set;} = 10f;
+
+    
+    public  Vector2 FacingDirection {get; private set;} = Vector2.down;
 
     public PlayerStateMachine playerStateMachine { get; private set; }
 
@@ -29,14 +34,25 @@ public class Player : MonoBehaviour
         CreateStates();
     }
 
-    // Start (not OnEnable) so every component's Awake has run before the first Enter,
-    // and so re-enabling the player doesn't call Initialize twice.
+
     private void Start()
     {
         playerStateMachine.Initialize(IdleState);
     }
 
-    private void Update()
+    public void OnEnable()
+    {
+        // playerHealth.playerDied += handelPlayerDeath;
+        
+    }
+
+
+    public void OnDisable()
+    {
+        // playerHealth.playerDied -= handelPlayerDeath;
+    }
+    
+        private void Update()
     {
         playerStateMachine.CurrentState?.Update();
     }
@@ -57,11 +73,29 @@ public class Player : MonoBehaviour
         DeadState = new PlayerDeadState(this);
     }
 
+
+    public void handelPlayerDeath()
+    {
+        //Show lose screen or a menu to rest to checkpoint or main menu;
+    }
+
     private void GetReferences()
     {
         playerStateMachine ??= new PlayerStateMachine();
 
         if (playerInputReader == null) playerInputReader = GetComponent<PlayerInputReader>();
         if (playerMotor == null) playerMotor = GetComponent<PlayerMotor>();
+        if (playerHealth==null) playerHealth = GetComponent<PlayerHealth>();
+        if (playerAnimator == null) playerAnimator = GetComponent<PlayerAnimator>();    
+
+
+
+    }
+
+    public void SetFacingDirection(Vector2 direction)
+    {
+        if (direction == Vector2.zero) return;
+        FacingDirection = direction;
+        playerAnimator.SetMoveDirection(direction);
     }
 }

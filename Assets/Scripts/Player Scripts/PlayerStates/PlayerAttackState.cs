@@ -8,7 +8,8 @@ public class PlayerAttackState : PlayerState
 
     public override void Enter()
     {
-        // stop movement, play attack animation, enable hitbox
+        player.playerMotor.Stop();
+        player.playerAnimator.SetAnimationState(PlayerAnimationState.Attack);
     }
 
     public override void Update()
