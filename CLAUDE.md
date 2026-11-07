@@ -7,38 +7,67 @@ Top-down 2D game in Unity 6 (6000.3), URP, new Input System. The Editor can be d
 I'm learning Unity and C# by building this game, and I write all the gameplay code myself.
 - Explain concepts, syntax and architecture; review my code when I ask ("check my code").
 - Point out bugs with the reason and the fix, but don't edit my gameplay scripts unless I explicitly ask.
-- Tooling is fine when asked: git, importing/slicing sprites, project settings.
+- Tooling is fine when asked: git, importing/slicing sprites, animations, project settings.
 
 ## Player architecture
 
 One job per script:
-- **Player**: wires everything, creates the states, forwards `Update`/`FixedUpdate` to the current state. No game logic.
-- **PlayerInputReader**: the only script that reads input. Continuous input is polled (`ReadValue`, `IsPressed`); one-off presses are C# events.
-- **PlayerStateMachine**: plain class with `Initialize` and `ChangeState` (old `Exit` → swap → new `Enter`). Only it switches states.
+- **Player**: wires everything, creates the states, forwards `Update`/`FixedUpdate` to the current state, owns `facingDirection` (changed only through `SetFacingDirection`). No game logic.
+- **PlayerInputReader**: the only script that reads input. All input is polled by the current state in `Update` (`ReadValue`, `IsPressed`, `WasPressedThisFrame`); no input events. Each state checks only the inputs it accepts.
+- **PlayerStateMachine**: plain class with `Initialize`, `ChangeState` (old `Exit` → swap → new `Enter`) and `Shutdown`; fires `OnStateChanged`. Only it switches states.
 - **PlayerState**: abstract base. `Enter`/`Update`/`Exit` abstract, `FixedUpdate` virtual and empty.
-- **States** (`Scripts/Player Scripts/PlayerStates/`, one file each): Idle, Walk, Run, Dash, Attack, Hurt, Dead; later Interact and Ability.
-- **PlayerMotor** (converted from `Movement.cs`): Rigidbody only. No `Update`/`FixedUpdate`, no input, speeds passed in as parameters.
-- **PlayerAnimator**: `PlayerAnim` enum + switch expression to cached `Animator.StringToHash`, throws on unknown values; `SetFacing` drives MoveX/MoveY blend trees.
-- Later: PlayerCombat, PlayerAbilities, PlayerInteractor, Health, Inventory, Equipment, Wallet.
+- **States** (`Scripts/Player Scripts/PlayerStates/`, one file each): Idle, Walk, Run, Dash, Attack, Hurt, Dead; later Interact and Ability. Dash, Hurt and Dead are still empty.
+- **PlayerMotor**: Rigidbody only. No `Update`/`FixedUpdate`, no input, speeds passed in as parameters.
+- **PlayerAnimator**: `PlayerAnimationState` enum (own file) + switch expression to cached `Animator.StringToHash`, throws on unknown values; `SetMoveDirection` drives the MoveX/MoveY blend trees.
+- **PlayerCombat**: one public method, `HandleAttack(direction)`: `OverlapCircleAll` at `attackPoint` with the weapon's range, keeps targets inside the weapon's arc, a `HashSet` so each target is hit once per swing. Stats come from the equipped `WeaponData`; `PlayerAttackState` decides when.
+- **PlayerHealth**: a draft, to be replaced by the shared `Health` in the Health/Hurt/Dead step.
+- Later: PlayerAbilities, PlayerInteractor, Inventory, Equipment, Wallet.
+
+## Enemy architecture
+
+Same pattern as the player (`Scripts/Enemy/`):
+- **Enemy**: the hub. Creates the states, forwards `Update`/`FixedUpdate`, calls `enemyDetection.Refresh()`, turns `Health.OnDamaged` → Hurt and `Health.OnDied` → Dead. Holds `facingDirection`, `lastDamage` and the patrol route (positions captured in `Awake`).
+- **EnemyStateMachine** / **EnemyState** (`Scripts/Enemy/EnemyStates/`): copies of the player versions.
+- **States**: Idle ⇄ Patrol → Chase → Windup → Attack (hit, then `recoverTime`) → Chase; any → Hurt (knockback, not restarted by new hits, so no stun-lock); killing hit → Dead (colliders off, `Destroy` after `destroyDelay`; loot drops here later). Windup locks facing so the player can dodge.
+- **Components**: `EnemyMotor` (`MoveTowards` without overshooting, `Move`, `Stop`), `EnemyDetection` (throttled `OverlapCircle` search, immediate loss beyond `loseTargetRange`, `Linecast` line of sight only for spotting), `EnemyCombat` (body attack: range check to the target collider's `ClosestPoint`, re-checked at the moment of the hit), `EnemyAnimator` (same as `PlayerAnimator`, warns once about missing Animator states).
+- Enemies attack with their body, never with `WeaponData`; their attack stats live in `EnemyData`.
+- **Editor/EnemyInspector**: shows the live state, target and health in Play mode.
+
+## Shared
+
+- **Health** (`Scripts/Combat/`): implements `IDamageable`; `Initialize(maxHealth)` from the owner's data; events `OnDamaged(DamageData)` (before `OnDied`) and `OnDied`.
+- **DamageData**: readonly struct (amount, normalized direction, knockback, knockbackDuration).
+- **Data (ScriptableObjects)**: `CharacterData` (maxHealth, walk/run/dash speed) → `EnemyData` (detection, patrol, body attack, windup/recover/hurt timing). `WeaponData` (damage, knockback, range, arc, attackDuration); later it inherits from `ItemData`.
+
+## Animation rules
+
+- Each Animator Controller has no transitions; every state is a 4-direction blend tree on MoveX/MoveY, and the code picks the state with `Play` in the state's `Enter`.
+- Animator state names must equal the enum value names (`Idle`, `Walk`, `Run`, `Windup`, `Attack`, `Hurt`, `Dead`, ...).
+- One-shot clips (Attack, Windup, Hurt, Death) don't loop; looping clips are Idle, Walk, Run, Move.
+- Clip lengths match their data timing (e.g. Windup = `windupTime`, player Attack = `attackDuration`, `destroyDelay` ≥ Death).
 
 Rules:
 - States decide **what/when**; components do **how**.
 - Input checks, timers and transitions in `Update`; motor calls in `FixedUpdate`.
-- Observer events for changes (`OnMoneyChanged`, `OnWeaponChanged`, `OnDied`, inventory `OnChanged`); UI only listens.
-- Interfaces: `IInteractable`, `IDamageable`.
-- ScriptableObjects for data: `ItemData` → `WeaponData`/`ArmorData` (slot enums), abstract `Ability` with cooldown, `PlayerStats`.
-- States referencing the concrete `Player` is accepted coupling.
+- Input → polled by states; game-state changes → events.
+- Observer events for changes (`OnDamaged`, `OnDied`, later `OnMoneyChanged`, `OnWeaponChanged`, inventory `OnChanged`); UI only listens.
+- Interfaces: `IDamageable`; later `IInteractable`, `IPickable`.
+- ScriptableObjects for data: `CharacterData` → `EnemyData`; `ItemData` → `WeaponData`/`ArmorData` (slot enums); abstract `Ability` with cooldown.
+- States referencing the concrete `Player`/`Enemy` is accepted coupling.
 
 ## Code review checklist
 
 - Every `+=` has a matching `-=` (in `OnEnable`/`OnDisable`).
-- No magic numbers in states; tunable values in `PlayerStats` or the Inspector.
+- No magic numbers in states; tunable values in the data ScriptableObjects or the Inspector.
 - Private fields with `[SerializeField]`; read-only access via `{ get; private set; }`.
 - `[RequireComponent]` where a component is needed.
-- Consistent naming, correct spelling, class name matches file name.
-- Delete dead code (e.g. old `Movement.cs` logic once states replace it).
+- Consistent naming, correct spelling (scripts and asset names), class name matches file name.
+- Naming (developer's choice, like Unity's own API): fields and properties camelCase, public ones too (`player.playerMotor`, `currentWeapon`, `isAlive`); types, methods, events (`OnDied`) and enum values PascalCase; `I` prefix only for interfaces.
+- Same-GameObject components: `GetComponent` in `Awake` + `[RequireComponent]`, not serialized; serialize only references to other objects/assets.
+- Delete dead code.
 - Finish and test one system before starting the next; commit after each working step.
+- When a system is finished, update this file in the same step.
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) → 2. Dash → 3. Health/Hurt/Dead → 4. Items, Inventory, Wallet → 5. Equipment → 6. Combat → 7. Interactor (doors, merchant) → 8. Abilities → 9. UI
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead (player uses the shared `Health`) → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (port from MetrooDvania) → 6. Save system → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish

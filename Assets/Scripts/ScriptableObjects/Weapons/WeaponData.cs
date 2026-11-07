@@ -7,22 +7,22 @@ using UnityEngine;
 public class WeaponData : ScriptableObject
 {
     [Header("Info")]
-    [field: SerializeField] public string WeaponName { get; private set; }
-    [field: SerializeField] public Sprite Icon { get; private set; }
-    [field: SerializeField] public WeaponType WeaponType { get; private set; }
+    [field: SerializeField] public string weaponName { get; private set; }
+    [field: SerializeField] public Sprite icon { get; private set; }
+    [field: SerializeField] public WeaponType weaponType { get; private set; }
 
     [Header("Damage")]
-    [field: SerializeField, Min(0)] public int Damage { get; private set; } = 10;
-    [field: SerializeField, Min(0f)] public float Knockback { get; private set; } = 5f;
-    [field: SerializeField, Min(0f)] public float KnockbackDuration { get; private set; } = 0.2f;
+    [field: SerializeField, Min(0)] public int damage { get; private set; } = 10;
+    [field: SerializeField, Min(0f)] public float knockback { get; private set; } = 5f;
+    [field: SerializeField, Min(0f)] public float knockbackDuration { get; private set; } = 0.2f;
 
     [Header("Hit area")]
-    // Radius of the hit circle; the circle's center sits this far in front of the player.
-    [field: SerializeField, Min(0.1f)] public float AttackRange { get; private set; } = 1f;
+    // Radius of the hit circle around the player's attack point (the weapon's reach).
+    [field: SerializeField, Min(0.1f)] public float attackRange { get; private set; } = 1f;
     // Total cone width in degrees, centered on the facing direction.
-    [field: SerializeField, Range(0f, 360f)] public float AttackArc { get; private set; } = 90f;
+    [field: SerializeField, Range(0f, 360f)] public float attackArc { get; private set; } = 90f;
 
     [Header("Timing")]
     // How long the player stays in the attack state.
-    [field: SerializeField, Min(0.05f)] public float AttackDuration { get; private set; } = 0.4f;
+    [field: SerializeField, Min(0.05f)] public float attackDuration { get; private set; } = 0.4f;
 }

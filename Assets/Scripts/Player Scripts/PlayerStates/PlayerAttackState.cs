@@ -1,24 +1,22 @@
+using UnityEngine;
+
 // Attacking; movement is locked until the attack finishes.
 // -> Idle or Walk when the attack ends, -> Hurt when hit
-
-using UnityEngine;
 public class PlayerAttackState : PlayerState
 {
-    public PlayerAttackState(Player player) : base(player) { }
-
     private float attackTimer;
 
+    public PlayerAttackState(Player player) : base(player) { }
 
     public override void Enter()
     {
         player.playerMotor.Stop();
-        attackTimer = player.playerCombat.CurrentWeapon != null
-            ? player.playerCombat.CurrentWeapon.AttackDuration
-            : 0f;
+        attackTimer = player.playerCombat.currentWeapon != null ? player.playerCombat.currentWeapon.attackDuration : 0f;
+
         player.playerAnimator.SetAnimationState(PlayerAnimationState.Attack);
 
         // Hit once per attack. Calling this in Update would hit every frame.
-        player.playerCombat.HandleAttack(player.FacingDirection);
+        player.playerCombat.HandleAttack(player.facingDirection);
     }
 
     public override void Update()
@@ -26,10 +24,10 @@ public class PlayerAttackState : PlayerState
         attackTimer -= Time.deltaTime;
         if (attackTimer > 0f) return;
 
-        if (player.playerInputReader.MoveInput != Vector2.zero)
-            player.playerStateMachine.ChangeState(player.WalkState);
+        if (player.playerInputReader.moveInput != Vector2.zero)
+            player.playerStateMachine.ChangeState(player.walkState);
         else
-            player.playerStateMachine.ChangeState(player.IdleState);
+            player.playerStateMachine.ChangeState(player.idleState);
     }
 
     public override void Exit()

@@ -8,21 +8,20 @@ public class PlayerIdleState : PlayerState
 
     public override void Enter()
     {
-
         player.playerMotor.Stop();
         player.playerAnimator.SetAnimationState(PlayerAnimationState.Idle);
     }
 
     public override void Update()
     {
-        if (player.playerInputReader.AttackPressedThisFrame)
+        if (player.playerInputReader.attackPressedThisFrame)
         {
-            player.playerStateMachine.ChangeState(player.AttackState);
+            player.playerStateMachine.ChangeState(player.attackState);
             return;
         }
 
-        if (player.playerInputReader.MoveInput != Vector2.zero)
-            player.playerStateMachine.ChangeState(player.WalkState);
+        if (player.playerInputReader.moveInput != Vector2.zero)
+            player.playerStateMachine.ChangeState(player.walkState);
     }
 
     public override void Exit()

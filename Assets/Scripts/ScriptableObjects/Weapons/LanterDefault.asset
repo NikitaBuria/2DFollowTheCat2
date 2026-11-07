@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a682bec72c3b84f48ba3408d98c7beb1, type: 3}
+  m_Name: LanterDefault
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  <weaponName>k__BackingField: Lantern
+  <icon>k__BackingField: {fileID: 0}
+  <weaponType>k__BackingField: 0
+  <damage>k__BackingField: 2
+  <knockback>k__BackingField: 1
+  <knockbackDuration>k__BackingField: 1
+  <attackRange>k__BackingField: 1
+  <attackArc>k__BackingField: 91
+  <attackDuration>k__BackingField: 0.5

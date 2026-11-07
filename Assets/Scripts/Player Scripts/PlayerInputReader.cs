@@ -1,31 +1,26 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// The only script that reads input. States poll these properties in Update.
 public class PlayerInputReader : MonoBehaviour
 {
-   [Header("Input references")]
+    [Header("Input references")]
+    [SerializeField] private InputActionReference playerMoveInput;
+    [SerializeField] private InputActionReference dashInput;
+    [SerializeField] private InputActionReference sprintInput;
+    [SerializeField] private InputActionReference attackInput;
 
-   [SerializeField] private  InputActionReference playerMoveInput;
+    // All input is polled by the current state in Update (never in FixedUpdate,
+    // or one-frame presses can be missed).
+    public Vector2 moveInput => playerMoveInput.action.ReadValue<Vector2>();
+    public bool isSprintHeld => sprintInput.action.IsPressed();
+    public bool dashPressedThisFrame => dashInput.action.WasPressedThisFrame();
+    public bool attackPressedThisFrame => attackInput.action.WasPressedThisFrame();
 
-   [SerializeField] private InputActionReference dashInput;
-
-   [SerializeField] private InputActionReference sprintInput;
-
-   [SerializeField] private InputActionReference  attackInput;
-
-
-   // All input is polled by the current state in Update (never in FixedUpdate,
-   // or one-frame presses can be missed).
-   public Vector2 MoveInput => playerMoveInput.action.ReadValue<Vector2>();
-   public bool IsSprintHeld => sprintInput.action.IsPressed();
-   public bool DashPressedThisFrame => dashInput.action.WasPressedThisFrame();
-   public bool AttackPressedThisFrame => attackInput.action.WasPressedThisFrame();
-
-
-   private void OnEnable()
-   {
-      EnableActions();
-   }
+    private void OnEnable()
+    {
+        EnableActions();
+    }
 
     private void OnDisable()
     {

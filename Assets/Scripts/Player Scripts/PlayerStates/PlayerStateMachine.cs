@@ -2,38 +2,38 @@ using System;
 
 public sealed class PlayerStateMachine
 {
-    public PlayerState CurrentState { get; private set; }
+    public PlayerState currentState { get; private set; }
 
     // old state, new state
-    public event Action<PlayerState, PlayerState> StateChanged;
+    public event Action<PlayerState, PlayerState> OnStateChanged;
 
     public void Initialize(PlayerState initialState)
     {
-        if (CurrentState != null) throw new InvalidOperationException("Already initialized");
+        if (currentState != null) throw new InvalidOperationException("Already initialized");
         ChangeState(initialState);
     }
 
     public void ChangeState(PlayerState nextState)
     {
         if (nextState == null) throw new ArgumentNullException(nameof(nextState));
-        if (nextState == CurrentState) return;
+        if (nextState == currentState) return;
 
-        PlayerState previous = CurrentState;
+        PlayerState previous = currentState;
         previous?.Exit();
-        CurrentState = nextState;
-        CurrentState.Enter();
+        currentState = nextState;
+        currentState.Enter();
 
-        StateChanged?.Invoke(previous, nextState);
+        OnStateChanged?.Invoke(previous, nextState);
     }
 
-    public void ShutDown()
+    public void Shutdown()
     {
-        if (CurrentState == null) return;
+        if (currentState == null) return;
 
-        PlayerState previous = CurrentState;
+        PlayerState previous = currentState;
         previous.Exit();
-        CurrentState = null;
+        currentState = null;
 
-        StateChanged?.Invoke(previous, null);
+        OnStateChanged?.Invoke(previous, null);
     }
 }

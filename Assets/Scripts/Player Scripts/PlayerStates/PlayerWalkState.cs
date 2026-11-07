@@ -15,35 +15,32 @@ public class PlayerWalkState : PlayerState
 
     public override void Update()
     {
-        if (player.playerInputReader.AttackPressedThisFrame)
+        if (player.playerInputReader.attackPressedThisFrame)
         {
-            player.playerStateMachine.ChangeState(player.AttackState);
+            player.playerStateMachine.ChangeState(player.attackState);
             return;
-        } 
+        }
 
-        moveInput = player.playerInputReader.MoveInput;
-    
-
+        moveInput = player.playerInputReader.moveInput;
 
         if (moveInput == Vector2.zero)
         {
-            player.playerStateMachine.ChangeState(player.IdleState);
+            player.playerStateMachine.ChangeState(player.idleState);
             return;
         }
 
         player.SetFacingDirection(moveInput);
 
-        if (player.playerInputReader.IsSprintHeld)
-            player.playerStateMachine.ChangeState(player.RunState);
+        if (player.playerInputReader.isSprintHeld)
+            player.playerStateMachine.ChangeState(player.runState);
     }
 
     public override void FixedUpdate()
     {
-        player.playerMotor.Move(moveInput, player.WalkSpeed);
+        player.playerMotor.Move(moveInput, player.characterData.walkSpeed);
     }
 
     public override void Exit()
     {
-
     }
 }

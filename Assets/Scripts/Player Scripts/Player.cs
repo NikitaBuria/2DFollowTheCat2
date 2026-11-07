@@ -1,103 +1,105 @@
 using UnityEngine;
 
+// Wires the player together: creates the states and forwards Update/FixedUpdate to the current one.
+// No game logic here; states decide what happens, components do the work.
 [RequireComponent(typeof(PlayerInputReader), typeof(PlayerMotor), typeof(PlayerAnimator))]
+[RequireComponent(typeof(PlayerCombat))]
 public class Player : MonoBehaviour
 {
-    [Header("Player References")]
-    [field: SerializeField] public PlayerInputReader playerInputReader { get; private set; }
-    [field: SerializeField] public PlayerMotor playerMotor { get; private set; }
-    [field: SerializeField] public PlayerAnimator playerAnimator { get; private set; }
-    [field: SerializeField] public PlayerHealth playerHealth {get; private set;}
-    [field: SerializeField] public PlayerCombat playerCombat {get; private set;}
+    // Components on this GameObject. Found with GetComponent in Awake, so nothing to assign in the Inspector.
+    public PlayerInputReader playerInputReader { get; private set; }
+    public PlayerMotor playerMotor { get; private set; }
+    public PlayerAnimator playerAnimator { get; private set; }
+    public PlayerHealth playerHealth { get; private set; }
+    public PlayerCombat playerCombat { get; private set; }
 
-    [Header("Movement")]
-    [field: SerializeField] public float WalkSpeed { get; private set; } = 5f;
-    [field: SerializeField] public float RunSpeed { get; private set; } = 9f;
-    [field: SerializeField] public float DashSpeed {get; private set;} = 10f;
+    [Header("Data")]
+    // Base stats (speeds, max health). States read them through player.characterData.
+    [field: SerializeField] public CharacterData characterData { get; private set; }
 
-
-
-    //face direction is used to determine which way the player is facing for animations and attacks
-    public  Vector2 FacingDirection {get; private set;} = Vector2.down;
+    // Which way the player faces; used for animations and attacks.
+    public Vector2 facingDirection { get; private set; } = Vector2.down;
 
     public PlayerStateMachine playerStateMachine { get; private set; }
 
-    // PlayerStates
-    public PlayerIdleState IdleState { get; private set; }
-    public PlayerWalkState WalkState { get; private set; }
-    public PlayerRunState RunState { get; private set; }
-    public PlayerDashState DashState { get; private set; }
-    public PlayerAttackState AttackState { get; private set; }
-    public PlayerHurtState HurtState { get; private set; }
-    public PlayerDeadState DeadState { get; private set; }
+    // States
+    public PlayerIdleState idleState { get; private set; }
+    public PlayerWalkState walkState { get; private set; }
+    public PlayerRunState runState { get; private set; }
+    public PlayerDashState dashState { get; private set; }
+    public PlayerAttackState attackState { get; private set; }
+    public PlayerHurtState hurtState { get; private set; }
+    public PlayerDeadState deadState { get; private set; }
 
     private void Awake()
     {
+        if (characterData == null)
+            Debug.LogError($"{name}: Player has no CharacterData assigned.", this);
+
         GetReferences();
         CreateStates();
     }
 
-
     private void Start()
     {
-        playerStateMachine.Initialize(IdleState);
+        playerStateMachine.Initialize(idleState);
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
-        // playerHealth.playerDied += handelPlayerDeath;
-        
+        // playerHealth.OnDied += HandlePlayerDeath;
     }
 
-
-    public void OnDisable()
+    private void OnDisable()
     {
-        // playerHealth.playerDied -= handelPlayerDeath;
+        // playerHealth.OnDied -= HandlePlayerDeath;
     }
-    
-        private void Update()
+
+    private void Update()
     {
-        playerStateMachine.CurrentState?.Update();
+        playerStateMachine.currentState?.Update();
     }
 
     private void FixedUpdate()
     {
-        playerStateMachine.CurrentState?.FixedUpdate();
-    }
-
-    private void CreateStates()
-    {
-        IdleState = new PlayerIdleState(this);
-        WalkState = new PlayerWalkState(this);
-        RunState = new PlayerRunState(this);
-        DashState = new PlayerDashState(this);
-        AttackState = new PlayerAttackState(this);
-        HurtState = new PlayerHurtState(this);
-        DeadState = new PlayerDeadState(this);
-    }
-
-
-    public void handelPlayerDeath()
-    {
-        //Show lose screen or a menu to rest to checkpoint or main menu;
-    }
-
-    private void GetReferences()
-    {
-        playerStateMachine ??= new PlayerStateMachine();
-
-        if (playerInputReader == null) playerInputReader = GetComponent<PlayerInputReader>();
-        if (playerMotor == null) playerMotor = GetComponent<PlayerMotor>();
-        if (playerHealth==null) playerHealth = GetComponent<PlayerHealth>();
-        if (playerAnimator == null) playerAnimator = GetComponent<PlayerAnimator>();    
-        if (playerCombat == null) playerCombat = GetComponent<PlayerCombat>();
-
+        playerStateMachine.currentState?.FixedUpdate();
     }
 
     public void SetFacingDirection(Vector2 direction)
     {
         if (direction == Vector2.zero) return;
-        FacingDirection = direction;
+
+        facingDirection = direction;
         playerAnimator.SetMoveDirection(direction);
+    }
+
+    private void HandlePlayerDeath()
+    {
+        // Show a lose screen or a menu to reset to the checkpoint or main menu.
+    }
+
+    private void GetReferences()
+    {
+        playerStateMachine = new PlayerStateMachine();
+
+        // RequireComponent guarantees these exist.
+        playerInputReader = GetComponent<PlayerInputReader>();
+        playerMotor = GetComponent<PlayerMotor>();
+        playerAnimator = GetComponent<PlayerAnimator>();
+        playerCombat = GetComponent<PlayerCombat>();
+
+        // Not required yet: PlayerHealth is a draft until the Health step.
+        playerHealth = GetComponent<PlayerHealth>();
+    }
+
+    private void CreateStates()
+    {
+        idleState = new PlayerIdleState(this);
+        walkState = new PlayerWalkState(this);
+        runState = new PlayerRunState(this);
+        dashState = new PlayerDashState(this);
+        attackState = new PlayerAttackState(this);
+        hurtState = new PlayerHurtState(this);
+        deadState = new PlayerDeadState(this);
     }
 }
