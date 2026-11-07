@@ -15,9 +15,13 @@ public class PlayerRunState : PlayerState
 
     public override void Update()
     {
-        moveInput = player.playerInputReader.MoveInput;
+        if (player.playerInputReader.AttackPressedThisFrame)
+        {
+            player.playerStateMachine.ChangeState(player.AttackState);
+            return;
+        }
 
-       
+        moveInput = player.playerInputReader.MoveInput;
 
         if (moveInput == Vector2.zero)
         {

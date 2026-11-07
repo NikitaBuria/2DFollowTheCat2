@@ -8,13 +8,16 @@ public class Player : MonoBehaviour
     [field: SerializeField] public PlayerMotor playerMotor { get; private set; }
     [field: SerializeField] public PlayerAnimator playerAnimator { get; private set; }
     [field: SerializeField] public PlayerHealth playerHealth {get; private set;}
+    [field: SerializeField] public PlayerCombat playerCombat {get; private set;}
 
     [Header("Movement")]
     [field: SerializeField] public float WalkSpeed { get; private set; } = 5f;
     [field: SerializeField] public float RunSpeed { get; private set; } = 9f;
     [field: SerializeField] public float DashSpeed {get; private set;} = 10f;
 
-    
+
+
+    //face direction is used to determine which way the player is facing for animations and attacks
     public  Vector2 FacingDirection {get; private set;} = Vector2.down;
 
     public PlayerStateMachine playerStateMachine { get; private set; }
@@ -87,8 +90,7 @@ public class Player : MonoBehaviour
         if (playerMotor == null) playerMotor = GetComponent<PlayerMotor>();
         if (playerHealth==null) playerHealth = GetComponent<PlayerHealth>();
         if (playerAnimator == null) playerAnimator = GetComponent<PlayerAnimator>();    
-
-
+        if (playerCombat == null) playerCombat = GetComponent<PlayerCombat>();
 
     }
 

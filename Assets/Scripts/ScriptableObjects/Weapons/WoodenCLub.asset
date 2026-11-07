@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a682bec72c3b84f48ba3408d98c7beb1, type: 3}
+  m_Name: WoodenCLub
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  <WeaponName>k__BackingField: Wooden Club
+  <Icon>k__BackingField: {fileID: 21300000, guid: a27a5a029c99fa94393bbab1795c80a2, type: 3}
+  <WeaponType>k__BackingField: 3
+  <Damage>k__BackingField: 2
+  <Knockback>k__BackingField: 5
+  <KnockbackDuration>k__BackingField: 0.2
+  <AttackRange>k__BackingField: 1
+  <AttackArc>k__BackingField: 90
+  <AttackDuration>k__BackingField: 0.4

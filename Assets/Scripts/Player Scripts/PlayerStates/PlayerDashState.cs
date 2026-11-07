@@ -1,5 +1,3 @@
-using UnityEngine;
-
 // Short burst of speed in the move direction, lasts a fixed time.
 // -> Idle or Walk when the dash time is over
 public class PlayerDashState : PlayerState

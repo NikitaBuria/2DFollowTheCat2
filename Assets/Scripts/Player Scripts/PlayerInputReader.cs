@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
 
 public class PlayerInputReader : MonoBehaviour
 {
    [Header("Input references")]
-  
+
    [SerializeField] private  InputActionReference playerMoveInput;
 
    [SerializeField] private InputActionReference dashInput;
@@ -15,31 +14,22 @@ public class PlayerInputReader : MonoBehaviour
    [SerializeField] private InputActionReference  attackInput;
 
 
-
-
-
-
-   public event Action OnDashPerformed;
-   public event Action OnAttackPerformed;
-
-
-   public Vector2 MoveInput => playerMoveInput.action.ReadValue<Vector2>(); 
+   // All input is polled by the current state in Update (never in FixedUpdate,
+   // or one-frame presses can be missed).
+   public Vector2 MoveInput => playerMoveInput.action.ReadValue<Vector2>();
    public bool IsSprintHeld => sprintInput.action.IsPressed();
-
+   public bool DashPressedThisFrame => dashInput.action.WasPressedThisFrame();
+   public bool AttackPressedThisFrame => attackInput.action.WasPressedThisFrame();
 
 
    private void OnEnable()
    {
-
       EnableActions();
-      dashInput.action.performed += OnDashPerformedCallBack;
-      attackInput.action.performed += OnAttackPerformedCallBack;
-
    }
 
-    private void OnAttackPerformedCallBack(InputAction.CallbackContext context)
+    private void OnDisable()
     {
-        OnAttackPerformed?.Invoke();
+        DisableActions();
     }
 
     private void EnableActions()
@@ -50,28 +40,11 @@ public class PlayerInputReader : MonoBehaviour
         attackInput.action.Enable();
     }
 
-    private void OnDisable()
-    {  
-        DisableActions();
-        dashInput.action.performed -= OnDashPerformedCallBack; 
-        attackInput.action.performed -= OnAttackPerformedCallBack;
-    
-    }
-
     private void DisableActions()
     {
         playerMoveInput.action.Disable();
         dashInput.action.Disable();
         sprintInput.action.Disable();
         attackInput.action.Disable();
-        
     }
-
-    private void OnDashPerformedCallBack(InputAction.CallbackContext context)
-    {
-        OnDashPerformed?.Invoke();
-    }
-
-  
-    
 }

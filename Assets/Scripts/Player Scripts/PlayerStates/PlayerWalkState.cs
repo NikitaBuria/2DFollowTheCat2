@@ -15,6 +15,12 @@ public class PlayerWalkState : PlayerState
 
     public override void Update()
     {
+        if (player.playerInputReader.AttackPressedThisFrame)
+        {
+            player.playerStateMachine.ChangeState(player.AttackState);
+            return;
+        } 
+
         moveInput = player.playerInputReader.MoveInput;
     
 
@@ -38,6 +44,6 @@ public class PlayerWalkState : PlayerState
 
     public override void Exit()
     {
-        
+
     }
 }

@@ -15,6 +15,12 @@ public class PlayerIdleState : PlayerState
 
     public override void Update()
     {
+        if (player.playerInputReader.AttackPressedThisFrame)
+        {
+            player.playerStateMachine.ChangeState(player.AttackState);
+            return;
+        }
+
         if (player.playerInputReader.MoveInput != Vector2.zero)
             player.playerStateMachine.ChangeState(player.WalkState);
     }
