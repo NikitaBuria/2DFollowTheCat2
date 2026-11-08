@@ -12,5 +12,9 @@ public class PlayerMotor : MonoBehaviour
 
     public void Move(Vector2 direction, float speed) => rb.linearVelocity = direction * speed;
 
-    public void Stop() => rb.linearVelocity = Vector2.zero;
+    public void Stop()
+    {
+       rb.linearVelocity = Vector2.zero; 
+
+    } 
 }

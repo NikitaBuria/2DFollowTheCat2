@@ -23,6 +23,12 @@ public class PlayerIdleState : PlayerState
         if (player.playerInputReader.moveInput != Vector2.zero)
             player.playerStateMachine.ChangeState(player.walkState);
     }
+    public override void FixedUpdate()
+    {
+        player.playerMotor.Stop(); 
+        
+    }
+
 
     public override void Exit()
     {

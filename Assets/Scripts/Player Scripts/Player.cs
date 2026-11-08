@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public PlayerMotor playerMotor { get; private set; }
     public PlayerAnimator playerAnimator { get; private set; }
     public PlayerCombat playerCombat { get; private set; }
+    public PlayerStateMachine playerStateMachine { get; private set; }
+
 
     [Header("Data")]
     // Base stats (speeds, max health). States read them through player.playerData.
@@ -25,7 +27,7 @@ public class Player : MonoBehaviour
     // Which way the player faces; used for animations and attacks.
     public Vector2 facingDirection { get; private set; } = Vector2.down;
 
-    public PlayerStateMachine playerStateMachine { get; private set; }
+    
 
     // States
     public PlayerIdleState idleState { get; private set; }
@@ -81,7 +83,12 @@ public class Player : MonoBehaviour
         playerAnimator.SetMoveDirection(direction);
     }
 
-    private void HandlePlayerDeath() => playerStateMachine.ChangeState(deadState);
+    private void HandlePlayerDeath()
+    {
+         playerStateMachine.ChangeState(deadState);
+         
+    }
+   
 
     // OnDamaged also fires on the killing hit (before OnDied), so only go to Hurt while alive.
     private void HandlePlayerHurt(DamageData damage)
