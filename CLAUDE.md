@@ -47,7 +47,7 @@ Ported from MetrooDvania, adapted to top-down:
 - **Pickup**: abstract base with a `CircleCollider2D` trigger (no gravity). `OnTriggerEnter2D` passes the collider's Rigidbody object as collector and destroys itself when `TryPickUp` returns true. `CoinPickup` → collector's `Wallet`; `ItemPickup` → collector's `Inventory` (stays if it doesn't fit; `Configure(item, amount)` sets item and sprite). Enemies have neither, so they can't collect.
 - **Wallet** (`Scripts/Inventory/`): `coins`, `Add`, `TrySpend`, event `OnMoneyChanged(int)`. Coins are not inventory items. Later: lose 25% on death.
 - **Inventory**: `slotCount` × `InventorySlot` (item + amount, stacks up to `maxStack`); `AddItemAndReturnAccepted`, `HasItem`, `ConsumeItem`, event `OnChanged`. Moving/splitting stacks comes with the inventory UI.
-- Assets: `Prefabs/Loot/CoinPickup`, `Prefabs/Loot/ItemPickup`, `ScriptableObjects/Items/WispEssence`, `ScriptableObjects/Loot/WispGrinLoot` (2–4 coins, 50% Wisp Essence).
+- Assets: `Prefabs/Loot/GoldCoinPickup` (animated spin) and `WispEssencePickup`, art in `Art/Items/Loot/GeneratedPickups/`; `ScriptableObjects/Items/WispEssence`, `ScriptableObjects/Loot/WispGrinLoot` (2–4 coins, 50% Wisp Essence).
 
 ## Animation rules
 
