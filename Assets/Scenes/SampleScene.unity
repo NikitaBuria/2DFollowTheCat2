@@ -409,6 +409,8 @@ GameObject:
   - component: {fileID: 615388298}
   - component: {fileID: 615388299}
   - component: {fileID: 615388300}
+  - component: {fileID: 615388302}
+  - component: {fileID: 615388301}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -689,6 +691,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d538ae22f66969744a8842ded15e1913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+--- !u!114 &615388301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615388288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d971f49fab4f764488254f7c5dfd9a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  slotCount: 20
+  slots: []
+--- !u!114 &615388302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615388288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8091da8599350af4dba9f43c26335c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Wallet
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

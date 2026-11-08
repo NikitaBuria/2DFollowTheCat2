@@ -39,6 +39,10 @@ public class EnemyData : CharacterData
     // Seconds before the dead enemy is removed (time for the death animation).
     [field: SerializeField, Min(0f)] public float destroyDelay { get; private set; } = 1f;
 
+    [Header("Loot")]
+    // Dropped once on death. Empty = drops nothing.
+    [field: SerializeField] public LootTable lootTable { get; private set; }
+
     // Runs in the Editor when a value changes: keeps the lose range at least as big as the detection range.
     private void OnValidate()
     {

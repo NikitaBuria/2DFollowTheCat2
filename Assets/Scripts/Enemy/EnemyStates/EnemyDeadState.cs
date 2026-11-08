@@ -1,7 +1,6 @@
 using UnityEngine;
 
-// Health reached 0. No way out: stops, turns off its colliders and removes itself after destroyDelay.
-// Later (Loot step): drop loot here.
+// Health reached 0. No way out: stops, turns off its colliders, drops its loot and removes itself after destroyDelay.
 public class EnemyDeadState : EnemyState
 {
     public EnemyDeadState(Enemy enemy) : base(enemy) { }
@@ -15,6 +14,10 @@ public class EnemyDeadState : EnemyState
         // A corpse shouldn't block the player or be hit again.
         foreach (Collider2D enemyCollider in enemy.GetComponentsInChildren<Collider2D>())
             enemyCollider.enabled = false;
+
+        // Enter runs once, so the loot drops once per death.
+        if (enemy.enemyData.lootTable != null)
+            enemy.enemyData.lootTable.DropLoot(enemy.transform.position);
 
         Object.Destroy(enemy.gameObject, enemy.enemyData.destroyDelay);
     }

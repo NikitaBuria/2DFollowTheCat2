@@ -37,3 +37,4 @@ MonoBehaviour:
   <recoverTime>k__BackingField: 0.6
   <hurtDuration>k__BackingField: 0.3
   <destroyDelay>k__BackingField: 1.2
+  <lootTable>k__BackingField: {fileID: 11400000, guid: a076f6967467ec04799132d399c83156, type: 2}

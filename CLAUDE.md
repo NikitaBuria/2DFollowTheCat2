@@ -21,14 +21,15 @@ One job per script:
 - **PlayerAnimator**: `PlayerAnimationState` enum (own file) + switch expression to cached `Animator.StringToHash`, throws on unknown values; `SetMoveDirection` drives the MoveX/MoveY blend trees.
 - **PlayerCombat**: one public method, `HandleAttack(direction)`: `OverlapCircleAll` at `attackPoint` with the weapon's range, keeps targets inside the weapon's arc, a `HashSet` so each target is hit once per swing. Stats come from the equipped `WeaponData`; `PlayerAttackState` decides when.
 - **Health**: the shared component (see Shared), as `player.playerHealth`. The Rigidbody has Linear Damping 8 so collision shoves fade out.
-- Later: PlayerAbilities, PlayerInteractor, Inventory, Equipment, Wallet.
+- **Wallet** and **Inventory**: components on the Player GameObject (see Loot and items).
+- Later: PlayerAbilities, PlayerInteractor, Equipment.
 
 ## Enemy architecture
 
 Same pattern as the player (`Scripts/Enemy/`):
 - **Enemy**: the hub. Creates the states, forwards `Update`/`FixedUpdate`, calls `enemyDetection.Refresh()`, turns `Health.OnDamaged` → Hurt and `Health.OnDied` → Dead. Holds `facingDirection`, `lastDamage` and the patrol route (positions captured in `Awake`).
 - **EnemyStateMachine** / **EnemyState** (`Scripts/Enemy/EnemyStates/`): copies of the player versions.
-- **States**: Idle ⇄ Patrol → Chase → Windup → Attack (hit, then `recoverTime`) → Chase; any → Hurt (knockback, not restarted by new hits, so no stun-lock); killing hit → Dead (colliders off, `Destroy` after `destroyDelay`; loot drops here later). Windup locks facing so the player can dodge.
+- **States**: Idle ⇄ Patrol → Chase → Windup → Attack (hit, then `recoverTime`) → Chase; any → Hurt (knockback, not restarted by new hits, so no stun-lock); killing hit → Dead (colliders off, `enemyData.lootTable.DropLoot` once, `Destroy` after `destroyDelay`). Windup locks facing so the player can dodge.
 - **Components**: `EnemyMotor` (`MoveTowards` without overshooting, `Move`, `Stop`), `EnemyDetection` (throttled `OverlapCircle` search, immediate loss beyond `loseTargetRange`, `Linecast` line of sight only for spotting), `EnemyCombat` (body attack: range check to the target collider's `ClosestPoint`, re-checked at the moment of the hit), `EnemyAnimator` (same as `PlayerAnimator`, warns once about missing Animator states).
 - Enemies attack with their body, never with `WeaponData`; their attack stats live in `EnemyData`.
 - **Editor/EnemyInspector**: shows the live state, target and health in Play mode.
@@ -37,7 +38,16 @@ Same pattern as the player (`Scripts/Enemy/`):
 
 - **Health** (`Scripts/Combat/`): implements `IDamageable`; `Initialize(maxHealth)` from the owner's data; events `OnDamaged(DamageData)` (before `OnDied`, also on the killing hit) and `OnDied`. I-frames: `StartInvincibility(duration)` stores a `Time.time` timestamp; `TakeDamage` ignores hits while `isInvincible`. States decide when (player Hurt now, Dash later).
 - **DamageData**: readonly struct (amount, normalized direction, knockback, knockbackDuration).
-- **Data (ScriptableObjects)**: `CharacterData` (maxHealth, walk/run/dash speed, `invincibleTimer`; enemies leave it at 0 for now) → `EnemyData` (detection, patrol, body attack, windup/recover/hurt timing). `WeaponData` (damage, knockback, range, arc, attackDuration); later it inherits from `ItemData`.
+- **Data (ScriptableObjects)**: `CharacterData` (maxHealth, walk/run/dash speed, `invincibleTimer`; enemies leave it at 0 for now) → `EnemyData` (detection, patrol, body attack, windup/recover/hurt timing, `lootTable`). `ItemData` (itemName, icon, maxStack, sellPrice). `LootTable` (list of `LootDrop`: prefab, optional item, chance, min/max; spawns in a circle). `WeaponData` (damage, knockback, range, arc, attackDuration); later it inherits from `ItemData`.
+
+## Loot and items
+
+Ported from MetrooDvania, adapted to top-down:
+- **IPickable** (`Scripts/Items/`): `bool TryPickUp(GameObject collector)`; true = everything taken.
+- **Pickup**: abstract base with a `CircleCollider2D` trigger (no gravity). `OnTriggerEnter2D` passes the collider's Rigidbody object as collector and destroys itself when `TryPickUp` returns true. `CoinPickup` → collector's `Wallet`; `ItemPickup` → collector's `Inventory` (stays if it doesn't fit; `Configure(item, amount)` sets item and sprite). Enemies have neither, so they can't collect.
+- **Wallet** (`Scripts/Inventory/`): `coins`, `Add`, `TrySpend`, event `OnMoneyChanged(int)`. Coins are not inventory items. Later: lose 25% on death.
+- **Inventory**: `slotCount` × `InventorySlot` (item + amount, stacks up to `maxStack`); `AddItemAndReturnAccepted`, `HasItem`, `ConsumeItem`, event `OnChanged`. Moving/splitting stacks comes with the inventory UI.
+- Assets: `Prefabs/Loot/CoinPickup`, `Prefabs/Loot/ItemPickup`, `ScriptableObjects/Items/WispEssence`, `ScriptableObjects/Loot/WispGrinLoot` (2–4 coins, 50% Wisp Essence).
 
 ## Animation rules
 
@@ -51,7 +61,7 @@ Rules:
 - Input checks, timers and transitions in `Update`; motor calls in `FixedUpdate`.
 - Input → polled by states; game-state changes → events.
 - Observer events for changes (`OnDamaged`, `OnDied`, later `OnMoneyChanged`, `OnWeaponChanged`, inventory `OnChanged`); UI only listens.
-- Interfaces: `IDamageable`; later `IInteractable`, `IPickable`.
+- Interfaces: `IDamageable`, `IPickable`; later `IInteractable`.
 - ScriptableObjects for data: `CharacterData` → `EnemyData`; `ItemData` → `WeaponData`/`ArmorData` (slot enums); abstract `Ability` with cooldown.
 - States referencing the concrete `Player`/`Enemy` is accepted coupling.
 
@@ -70,4 +80,4 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (port from MetrooDvania) → 6. Save system → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; next: coin counter + inventory UI with TMP, opened through `PlayerInputReader`) → 6. Save system → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
