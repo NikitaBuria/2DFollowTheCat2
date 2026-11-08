@@ -37,7 +37,7 @@ public class PlayerRunState : PlayerState
 
     public override void FixedUpdate()
     {
-        player.playerMotor.Move(moveInput, player.characterData.runSpeed);
+        player.playerMotor.Move(moveInput, player.playerData.runSpeed);
     }
 
     public override void Exit()

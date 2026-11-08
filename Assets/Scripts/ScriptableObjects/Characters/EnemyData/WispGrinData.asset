@@ -17,6 +17,7 @@ MonoBehaviour:
   <walkSpeed>k__BackingField: 4
   <runSpeed>k__BackingField: 6
   <dashSpeed>k__BackingField: 10
+  <invincibleTimer>k__BackingField: 0
   <targetLayers>k__BackingField:
     serializedVersion: 2
     m_Bits: 64

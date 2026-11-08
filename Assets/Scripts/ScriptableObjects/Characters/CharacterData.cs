@@ -16,4 +16,8 @@ public class CharacterData : ScriptableObject
     [field: SerializeField, Min(0f)] public float walkSpeed { get; private set; } = 4f;
     [field: SerializeField, Min(0f)] public float runSpeed { get; private set; } = 6f;
     [field: SerializeField, Min(0f)] public float dashSpeed { get; private set; } = 10f;
+
+    [Header("Hit Reaction")]
+    // Seconds after a hit during which damage is ignored. Keep it longer than the knockback.
+    [field: SerializeField, Min(0f)] public float invincibleTimer { get; private set; } = 1f;
 }

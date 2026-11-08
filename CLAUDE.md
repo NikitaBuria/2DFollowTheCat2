@@ -12,15 +12,15 @@ I'm learning Unity and C# by building this game, and I write all the gameplay co
 ## Player architecture
 
 One job per script:
-- **Player**: wires everything, creates the states, forwards `Update`/`FixedUpdate` to the current state, owns `facingDirection` (changed only through `SetFacingDirection`). No game logic.
+- **Player**: wires everything, creates the states, forwards `Update`/`FixedUpdate` to the current state, owns `facingDirection` (changed only through `SetFacingDirection`). Turns `Health.OnDamaged` → Hurt (only while alive, stores `lastDamage`) and `Health.OnDied` → Dead. No game logic. Its data field is `playerData` (a `CharacterData` asset).
 - **PlayerInputReader**: the only script that reads input. All input is polled by the current state in `Update` (`ReadValue`, `IsPressed`, `WasPressedThisFrame`); no input events. Each state checks only the inputs it accepts.
 - **PlayerStateMachine**: plain class with `Initialize`, `ChangeState` (old `Exit` → swap → new `Enter`) and `Shutdown`; fires `OnStateChanged`. Only it switches states.
 - **PlayerState**: abstract base. `Enter`/`Update`/`Exit` abstract, `FixedUpdate` virtual and empty.
-- **States** (`Scripts/Player Scripts/PlayerStates/`, one file each): Idle, Walk, Run, Dash, Attack, Hurt, Dead; later Interact and Ability. Dash, Hurt and Dead are still empty.
+- **States** (`Scripts/Player Scripts/PlayerStates/`, one file each): Idle, Walk, Run, Dash, Attack, Hurt, Dead; later Interact and Ability. Dash is still empty. Hurt: starts i-frames (`invincibleTimer`) in `Enter`, pushes along `lastDamage.direction` for its `knockbackDuration`, then Idle; `Stop()` in `Exit`. Dead: stops and plays Dead, no transitions out (respawn later).
 - **PlayerMotor**: Rigidbody only. No `Update`/`FixedUpdate`, no input, speeds passed in as parameters.
 - **PlayerAnimator**: `PlayerAnimationState` enum (own file) + switch expression to cached `Animator.StringToHash`, throws on unknown values; `SetMoveDirection` drives the MoveX/MoveY blend trees.
 - **PlayerCombat**: one public method, `HandleAttack(direction)`: `OverlapCircleAll` at `attackPoint` with the weapon's range, keeps targets inside the weapon's arc, a `HashSet` so each target is hit once per swing. Stats come from the equipped `WeaponData`; `PlayerAttackState` decides when.
-- **PlayerHealth**: a draft, to be replaced by the shared `Health` in the Health/Hurt/Dead step.
+- **Health**: the shared component (see Shared), as `player.playerHealth`. The Rigidbody has Linear Damping 8 so collision shoves fade out.
 - Later: PlayerAbilities, PlayerInteractor, Inventory, Equipment, Wallet.
 
 ## Enemy architecture
@@ -35,9 +35,9 @@ Same pattern as the player (`Scripts/Enemy/`):
 
 ## Shared
 
-- **Health** (`Scripts/Combat/`): implements `IDamageable`; `Initialize(maxHealth)` from the owner's data; events `OnDamaged(DamageData)` (before `OnDied`) and `OnDied`.
+- **Health** (`Scripts/Combat/`): implements `IDamageable`; `Initialize(maxHealth)` from the owner's data; events `OnDamaged(DamageData)` (before `OnDied`, also on the killing hit) and `OnDied`. I-frames: `StartInvincibility(duration)` stores a `Time.time` timestamp; `TakeDamage` ignores hits while `isInvincible`. States decide when (player Hurt now, Dash later).
 - **DamageData**: readonly struct (amount, normalized direction, knockback, knockbackDuration).
-- **Data (ScriptableObjects)**: `CharacterData` (maxHealth, walk/run/dash speed) → `EnemyData` (detection, patrol, body attack, windup/recover/hurt timing). `WeaponData` (damage, knockback, range, arc, attackDuration); later it inherits from `ItemData`.
+- **Data (ScriptableObjects)**: `CharacterData` (maxHealth, walk/run/dash speed, `invincibleTimer`; enemies leave it at 0 for now) → `EnemyData` (detection, patrol, body attack, windup/recover/hurt timing). `WeaponData` (damage, knockback, range, arc, attackDuration); later it inherits from `ItemData`.
 
 ## Animation rules
 
@@ -70,4 +70,4 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead (player uses the shared `Health`) → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (port from MetrooDvania) → 6. Save system → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ (open: Idle/Dead `Stop()` in `FixedUpdate`, collider off on death) → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (port from MetrooDvania) → 6. Save system → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish

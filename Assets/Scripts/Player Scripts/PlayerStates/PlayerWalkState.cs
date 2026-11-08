@@ -37,7 +37,7 @@ public class PlayerWalkState : PlayerState
 
     public override void FixedUpdate()
     {
-        player.playerMotor.Move(moveInput, player.characterData.walkSpeed);
+        player.playerMotor.Move(moveInput, player.playerData.walkSpeed);
     }
 
     public override void Exit()

@@ -1,21 +1,23 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 // Wires the player together: creates the states and forwards Update/FixedUpdate to the current one.
 // No game logic here; states decide what happens, components do the work.
 [RequireComponent(typeof(PlayerInputReader), typeof(PlayerMotor), typeof(PlayerAnimator))]
-[RequireComponent(typeof(PlayerCombat), typeof(PlayerHealth))]
+[RequireComponent(typeof(PlayerCombat), typeof(Health))]
 public class Player : MonoBehaviour
 {
     // Components on this GameObject. Found with GetComponent in Awake, so nothing to assign in the Inspector.
-    public PlayerHealth playerHealth { get; private set; }
+    public Health playerHealth { get; private set; }
     public PlayerInputReader playerInputReader { get; private set; }
     public PlayerMotor playerMotor { get; private set; }
     public PlayerAnimator playerAnimator { get; private set; }
     public PlayerCombat playerCombat { get; private set; }
 
     [Header("Data")]
-    // Base stats (speeds, max health). States read them through player.characterData.
-    [field: SerializeField] public CharacterData characterData { get; private set; }
+    // Base stats (speeds, max health). States read them through player.playerData.
+    [field: SerializeField, FormerlySerializedAs("<characterData>k__BackingField")]
+    public CharacterData playerData { get; private set; }
 
     // The last hit that landed; the Hurt state reads its direction and knockback.
     public DamageData lastDamage { get; private set; }
@@ -36,12 +38,12 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        if (characterData == null)
-            Debug.LogError($"{name}: Player has no CharacterData assigned.", this);
+        if (playerData == null)
+            Debug.LogError($"{name}: Player has no PlayerData assigned.", this);
 
         GetReferences();
         CreateStates();
-        playerHealth.Initialize(characterData.maxHealth);
+        playerHealth.Initialize(playerData.maxHealth);
     }
 
     private void Start()
@@ -52,13 +54,13 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         playerHealth.OnDied += HandlePlayerDeath;
-        playerHealth.OnHurt += HandlePlayerHurt;
+        playerHealth.OnDamaged += HandlePlayerHurt;
     }
 
     private void OnDisable()
     {
         playerHealth.OnDied -= HandlePlayerDeath;
-        playerHealth.OnHurt -= HandlePlayerHurt;
+        playerHealth.OnDamaged -= HandlePlayerHurt;
     }
 
     private void Update()
@@ -81,10 +83,12 @@ public class Player : MonoBehaviour
 
     private void HandlePlayerDeath() => playerStateMachine.ChangeState(deadState);
 
+    // OnDamaged also fires on the killing hit (before OnDied), so only go to Hurt while alive.
     private void HandlePlayerHurt(DamageData damage)
     {
         lastDamage = damage;
-        playerStateMachine.ChangeState(hurtState);
+        if (playerHealth.isAlive)
+            playerStateMachine.ChangeState(hurtState);
     }
 
     private void GetReferences()
@@ -92,7 +96,7 @@ public class Player : MonoBehaviour
         playerStateMachine = new PlayerStateMachine();
 
         // RequireComponent guarantees these exist.
-        playerHealth = GetComponent<PlayerHealth>();
+        playerHealth = GetComponent<Health>();
         playerInputReader = GetComponent<PlayerInputReader>();
         playerMotor = GetComponent<PlayerMotor>();
         playerAnimator = GetComponent<PlayerAnimator>();

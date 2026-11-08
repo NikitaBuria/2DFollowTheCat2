@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Got hit: short knockback, no control.
+// Got hit: short knockback, no control, and invincible for a moment so enemies can't stun-lock the player.
 // -> Idle when knockback ends, -> Dead when health reaches 0
 public class PlayerHurtState : PlayerState
 {
@@ -11,6 +11,7 @@ public class PlayerHurtState : PlayerState
     public override void Enter()
     {
         knockBackTimer = player.lastDamage.knockbackDuration;
+        player.playerHealth.StartInvincibility(player.playerData.invincibleTimer);
         player.playerAnimator.SetAnimationState(PlayerAnimationState.Hurt);
     }
 
