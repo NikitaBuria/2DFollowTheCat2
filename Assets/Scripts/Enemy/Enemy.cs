@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// TODO: Enemy does too much; split the logic where possible.
+
 // Wires the enemy together, like Player does: creates the states, forwards Update/FixedUpdate
 // to the current one and turns health events into state changes. States decide what happens.
 [RequireComponent(typeof(EnemyMotor), typeof(EnemyDetection), typeof(EnemyCombat))]

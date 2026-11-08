@@ -1,23 +1,38 @@
 using System;
 using UnityEngine;
 
-// Draft: will be replaced by a shared Health component in the Health/Hurt/Dead step.
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    private readonly int health = 100;
+    private int health;
+
+    public bool isAlive => health > 0;
+    public Transform damageTransform => transform;
 
     public event Action OnDied;
+    public event Action<DamageData> OnHurt;
 
-    public bool isDead { get; private set; }
-
-    public bool IsAlive()
+    // Called by Player with the max health from its CharacterData.
+    public void Initialize(int maxHealth)
     {
+        health = maxHealth;
+    }
+
+    public void TakeDamage(DamageData damage)
+    {
+        if (!isAlive) return;
+
+        health -= damage.amount;
+        Debug.Log($"Player took {damage.amount} damage. Health is now {health}.");
+
         if (health <= 0)
         {
-            isDead = true;
+            health = 0;
+            Debug.Log("Player has died.");
             OnDied?.Invoke();
+            return;
         }
 
-        return isDead;
+        Debug.Log("Player is hurt.");
+        OnHurt?.Invoke(damage);
     }
 }

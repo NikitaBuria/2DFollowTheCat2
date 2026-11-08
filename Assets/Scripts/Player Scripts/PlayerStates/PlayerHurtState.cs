@@ -4,19 +4,34 @@ using UnityEngine;
 // -> Idle when knockback ends, -> Dead when health reaches 0
 public class PlayerHurtState : PlayerState
 {
+    private float knockBackTimer;
+
     public PlayerHurtState(Player player) : base(player) { }
 
     public override void Enter()
     {
-        // apply knockback, play hurt animation, start invincibility
+        knockBackTimer = player.lastDamage.knockbackDuration;
+        player.playerAnimator.SetAnimationState(PlayerAnimationState.Hurt);
     }
 
     public override void Update()
     {
-        // count down the knockback time, leave the state when it ends
+        knockBackTimer -= Time.deltaTime;
+
+        if (knockBackTimer <= 0f)
+            player.playerStateMachine.ChangeState(player.idleState);
+    }
+
+    public override void FixedUpdate()
+    {
+        if (knockBackTimer > 0f)
+            player.playerMotor.Move(player.lastDamage.direction, player.lastDamage.knockback);
+        else
+            player.playerMotor.Stop();
     }
 
     public override void Exit()
     {
+        player.playerMotor.Stop();
     }
 }

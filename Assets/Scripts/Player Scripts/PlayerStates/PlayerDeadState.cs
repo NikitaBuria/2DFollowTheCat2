@@ -7,11 +7,13 @@ public class PlayerDeadState : PlayerState
 
     public override void Enter()
     {
-        // stop movement, disable input, play death animation
+        player.playerAnimator.SetAnimationState(PlayerAnimationState.Dead);
+        player.playerMotor.Stop();
     }
 
     public override void Update()
     {
+        // Later: respawn at a checkpoint (back to Idle). For now the player stays dead until the scene is reloaded.
     }
 
     public override void Exit()
