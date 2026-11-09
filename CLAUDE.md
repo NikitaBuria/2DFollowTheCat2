@@ -56,7 +56,9 @@ Ported from MetrooDvania, adapted to top-down:
 - **PlayerInputReader** maps: Player Actions (on only in Gameplay) and UI Actions (always on: Toggle Inventory, Toggle Pause). Maps are switched with `action.actionMap.Enable()/Disable()`.
 - **UIManager** (`Scripts/UI/`, on the always-active HUD Canvas): listens to `OnGameStateChanged` and only shows/hides panels with `SetActive`. Content scripts never know the game state.
 - **CoinCounterUI** (inside InventoryPanel): listens to `Wallet.OnMoneyChanged`, refreshes in `OnEnable`.
-- **InventoryUI**: empty shell; next it draws the grid from `Inventory.OnChanged`.
+- **InventoryUI** (on InventoryPanel): builds `inventory.count` `InventorySlotUI` prefabs into `InventoryArea` (Grid Layout Group) in `Start` (after every `Awake`), redraws all slots on `Inventory.OnChanged` and in `OnEnable`; `Refresh` loops over the built views.
+- **InventorySlotUI** (on the `InventorySlot` prefab): `Show(InventorySlot)` sets every field each time (icon hidden when empty, amount text only above 1). Reused later by the hotbar.
+- **Equipment slots**: Helmet, Armor, Weapon, Boots boxes in `EquipmentArea` (variants of `Prefabs/UI/Equipment/EquipmentSlot`); visuals only until Equipment (step 9).
 - Layout: Diablo 2-style panel (paper doll on top, 1-item-per-cell grid, coins bottom-right) + always-visible 1–5 hotbar = Inventory slots 0–4.
 
 ## Pause menu visual prefab
@@ -94,4 +96,4 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅; next: inventory grid, then hotbar) → 6. Save system → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅; next: hotbar) → 6. Save system → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish

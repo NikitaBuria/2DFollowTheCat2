@@ -28,7 +28,6 @@ public class UIManager : MonoBehaviour
     {
         inventoryPanel.SetActive(gameState == GameState.Inventory);
 
-        // Optional until the pause menu exists.
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(gameState == GameState.Paused);
     }
 }
