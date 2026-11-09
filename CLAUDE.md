@@ -59,6 +59,10 @@ Ported from MetrooDvania, adapted to top-down:
 - **InventoryUI**: empty shell; next it draws the grid from `Inventory.OnChanged`.
 - Layout: Diablo 2-style panel (paper doll on top, 1-item-per-cell grid, coins bottom-right) + always-visible 1–5 hotbar = Inventory slots 0–4.
 
+## Pause menu visual prefab
+
+- `Assets/Prefabs/UI/PauseMenu.prefab`: charcoal/brass/teal panel with editable TMP Resume, Settings and Exit buttons, dimmer and explicit vertical navigation. Art-only: callbacks and initial EventSystem selection are not wired. Assign its scene instance to the existing `UIManager.pauseMenuPanel`. Setup notes: `Assets/Prefabs/UI/PauseMenu.md`.
+
 ## Animation rules
 
 - Each Animator Controller has no transitions; every state is a 4-direction blend tree on MoveX/MoveY, and the code picks the state with `Play` in the state's `Enter`.
