@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// The only script that reads input. States poll these properties in Update.
+// The only script that reads input. States and GameStateManager poll these properties in Update.
 public class PlayerInputReader : MonoBehaviour
 {
     [Header("Input references")]
@@ -9,37 +9,33 @@ public class PlayerInputReader : MonoBehaviour
     [SerializeField] private InputActionReference dashInput;
     [SerializeField] private InputActionReference sprintInput;
     [SerializeField] private InputActionReference attackInput;
+    [SerializeField] private InputActionReference toggleMenuInput;
+    [SerializeField] private InputActionReference toggleInventoryInput;
 
-    // All input is polled by the current state in Update (never in FixedUpdate,
-    // or one-frame presses can be missed).
+    // All input is polled in Update (never in FixedUpdate, or one-frame presses can be missed).
     public Vector2 moveInput => playerMoveInput.action.ReadValue<Vector2>();
     public bool isSprintHeld => sprintInput.action.IsPressed();
     public bool dashPressedThisFrame => dashInput.action.WasPressedThisFrame();
     public bool attackPressedThisFrame => attackInput.action.WasPressedThisFrame();
+    public bool menuPressedThisFrame => toggleMenuInput.action.WasPressedThisFrame();
+    public bool inventoryPressedThisFrame => toggleInventoryInput.action.WasPressedThisFrame();
 
     private void OnEnable()
     {
-        EnableActions();
+        EnableUIActions();
+        EnablePlayerActions();
     }
 
     private void OnDisable()
     {
-        DisableActions();
+        DisablePlayerActions();
+        DisableUIActions();
     }
 
-    private void EnableActions()
-    {
-        playerMoveInput.action.Enable();
-        dashInput.action.Enable();
-        sprintInput.action.Enable();
-        attackInput.action.Enable();
-    }
+    // The Player map is switched by GameStateManager; the UI map stays on so menus can always be toggled.
+    public void EnablePlayerActions() => playerMoveInput.action.actionMap.Enable();
+    public void DisablePlayerActions() => playerMoveInput.action.actionMap.Disable();
 
-    private void DisableActions()
-    {
-        playerMoveInput.action.Disable();
-        dashInput.action.Disable();
-        sprintInput.action.Disable();
-        attackInput.action.Disable();
-    }
+    private void EnableUIActions() => toggleInventoryInput.action.actionMap.Enable();
+    private void DisableUIActions() => toggleInventoryInput.action.actionMap.Disable();
 }

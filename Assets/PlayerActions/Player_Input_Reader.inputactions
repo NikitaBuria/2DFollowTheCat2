@@ -133,6 +133,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI Actions",
+            "id": "128b83f1-fba3-4a83-a0c6-b2e6c6ed2086",
+            "actions": [
+                {
+                    "name": "Toggle Inventory",
+                    "type": "Button",
+                    "id": "56da4487-c53a-4119-a60c-74475428694c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Toggle Pause",
+                    "type": "Button",
+                    "id": "c9d46a1c-06ba-4660-aae9-cae0db92a5fb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c2ab89ec-e422-45da-b6f3-076d3c3b6938",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc839fa3-5f15-4100-9f22-0d1f7d0ac876",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
