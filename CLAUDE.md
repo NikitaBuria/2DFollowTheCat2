@@ -22,7 +22,7 @@ One job per script:
 - **PlayerCombat**: one public method, `HandleAttack(direction)`: `OverlapCircleAll` at `attackPoint` with the weapon's range, keeps targets inside the weapon's arc, a `HashSet` so each target is hit once per swing. Stats come from the equipped `WeaponData`; `PlayerAttackState` decides when.
 - **Health**: the shared component (see Shared), as `player.playerHealth`. The Rigidbody has Linear Damping 8 so collision shoves fade out.
 - **Wallet** and **Inventory**: components on the Player GameObject (see Loot and items).
-- Later: PlayerAbilities, PlayerInteractor, Equipment.
+- **PlayerInteractor**: see Interaction. Later: PlayerAbilities, Equipment.
 
 ## Enemy architecture
 
@@ -51,10 +51,10 @@ Ported from MetrooDvania, adapted to top-down:
 
 ## Game state and UI
 
-- **GameState** (`Scripts/Core/`): enum `Gameplay`, `Inventory`, `Paused` (Gameplay first = default).
-- **GameStateManager**: single source of truth for the mode. Polls `inventoryPressedThisFrame` / `menuPressedThisFrame` in `Update` with a `switch (currentState)` (Tab toggles Inventory; Escape toggles Paused and closes Inventory). `ChangeState` sets `Time.timeScale` (1 in Gameplay, 0 otherwise), turns the Player action map on only in Gameplay, then fires `OnGameStateChanged`.
+- **GameState** (`Scripts/Core/`): enum `Gameplay`, `Inventory`, `Paused`, `Shop` (Gameplay first = default).
+- **GameStateManager**: single source of truth for the mode. Polls `inventoryPressedThisFrame` / `menuPressedThisFrame` in `Update` with a `switch (currentState)` (Tab toggles Inventory; Escape toggles Paused and closes Inventory; Tab or Escape closes Shop, which only `Merchant.Interact` opens). `ChangeState` sets `Time.timeScale` (1 in Gameplay, 0 otherwise), turns the Player action map on only in Gameplay, then fires `OnGameStateChanged`.
 - **PlayerInputReader** maps: Player Actions (on only in Gameplay) and UI Actions (always on: Toggle Inventory, Toggle Pause). Maps are switched with `action.actionMap.Enable()/Disable()`.
-- **UIManager** (`Scripts/UI/`, on the always-active HUD Canvas): listens to `OnGameStateChanged` and only shows/hides panels with `SetActive`. Content scripts never know the game state.
+- **UIManager** (`Scripts/UI/`, on the always-active HUD Canvas): listens to `OnGameStateChanged` and only shows/hides panels with `SetActive` (InventoryPanel in Inventory and Shop, MerchantPanel in Shop, pause menu in Paused). Content scripts never know the game state.
 - **CoinCounterUI** (inside InventoryPanel): listens to `Wallet.OnMoneyChanged`, refreshes in `OnEnable`.
 - **InventoryUI** (on InventoryPanel): builds `inventory.count` `InventorySlotUI` prefabs into `InventoryArea` (Grid Layout Group) in `Start` (after every `Awake`), redraws all slots on `Inventory.OnChanged` and in `OnEnable`; `Refresh` loops over the built views. Owns drag and drop: `BeginDrag`/`UpdateDrag`/`EndDrag` move the `DragPreview` (last child of InventoryPanel, Raycast Target off) and call `Inventory.MoveOrMerge`; closing the panel cancels a drag.
 - **InventorySlotUI** (on the `InventorySlot` prefab): `Show(InventorySlot)` sets every field each time (icon hidden when empty, amount text only above 1). `Setup(owner, index)` makes a grid view draggable via the EventSystem drag interfaces (UI pointer events are the accepted exception to "no input events"); it only reports to its owner. Views without an owner ignore drags.
@@ -72,6 +72,17 @@ Ported from MetrooDvania's Lesson 52 checkpoint save, split into one job per scr
 - **RespawnManager** (on `SaveSystem`): on `Health.OnDied` waits `respawnDelay` (scaled time, pauses with the game), `Wallet.LoseShare(coinLossOnDeath)` (0.25), `Player.Respawn(spawnPoint)` (`PlayerMotor.Teleport`, full health, i-frames, Idle), then saves so the penalty sticks.
 - Position isn't saved: loading keeps the player where they are; respawn uses `PlayerSpawnPoint`.
 
+## Interaction
+
+Adapted from MetrooDvania's `Scripts/Interaction` (`Scripts/Interaction/`):
+- **IInteractable**: `CanInteract(player)` (false = refused, prompt still shows why), `GetPrompt(player)`, `Interact(player)`. Gets the `Player` so each one takes what it needs (Wallet, Inventory...).
+- **PlayerInteractor** (on the Player, `player.playerInteractor`): `Refresh()` is called by `Player.Update` (like `EnemyDetection`); `OverlapCircle` at `facingDirection * searchOffset` on the `Interactable` layer (layer 8), nearest wins, none while dead. Exposes `currentTarget`, `promptText`, `canInteract`, `targetPosition`. `TryInteract()` is called by `PlayerState.HandleInteractInput()` from Idle, Walk and Run (E, `Interact` in the Player map).
+- **InteractionPromptView** (scene object `InteractionPrompt`, world-space TMP): reads `PlayerInteractor` in `LateUpdate` and draws `[E] Talk`; refused prompts are red without the key. Never called by gameplay code.
+- **NpcDialogue** (IInteractable): `speakerName`, `lines`, `lineDuration`; each interact shows the next line, after the last one (or the timer) it ends. Events `OnLineShown(speaker, line)`, `OnDialogueEnded`.
+- **SpeechBubbleView** (on `CatSpeechBubble`/`MerchantSpeechBubble`): listens to its `NpcDialogue`, hides with the `CanvasGroup` (not `SetActive`, so it keeps listening).
+- Scene: `GuideCat` (Interactable layer, trigger `CircleCollider2D`, `NpcDialogue`, `CatSpeechBubble` child). The cat's Talk animation isn't played yet.
+- **Merchant** (`Scripts/Merchant/`, IInteractable): `Interact` only calls `gameStateManager.ChangeState(GameState.Shop)`; never touches UI. Scene: `Merchant` (placeholder gold square, Interactable layer, trigger collider) next to GuideCat; `MerchantPanel` is a HUD child (sibling of InventoryPanel). Next: selling (drag an inventory item onto MerchantPanel → `sellPrice` coins), greeting via `NpcDialogue` + `MerchantSpeechBubble`, real art.
+
 ## Pause menu visual prefab
 
 - `Assets/Prefabs/UI/PauseMenu.prefab`: charcoal/brass/teal panel with editable TMP Resume, Settings and Exit buttons, dimmer and explicit vertical navigation. Art-only: callbacks and initial EventSystem selection are not wired. Assign its scene instance to the existing `UIManager.pauseMenuPanel`. Setup notes: `Assets/Prefabs/UI/PauseMenu.md`.
@@ -88,7 +99,7 @@ Rules:
 - Input checks, timers and transitions in `Update`; motor calls in `FixedUpdate`.
 - Input → polled by states; game-state changes → events.
 - Observer events for changes (`OnDamaged`, `OnDied`, later `OnMoneyChanged`, `OnWeaponChanged`, inventory `OnChanged`); UI only listens.
-- Interfaces: `IDamageable`, `IPickable`, `IUsable`, `ISaveable`; later `IInteractable`.
+- Interfaces: `IDamageable`, `IPickable`, `IUsable`, `ISaveable`, `IInteractable`.
 - ScriptableObjects for data: `CharacterData` → `EnemyData`; `ItemData` → `WeaponData`/`ArmorData` (slot enums); abstract `Ability` with cooldown.
 - States referencing the concrete `Player`/`Enemy` is accepted coupling.
 
@@ -107,4 +118,4 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (base + NPC dialogue ✅, merchant opens the Shop state ✅; next: selling, door/stairs, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish

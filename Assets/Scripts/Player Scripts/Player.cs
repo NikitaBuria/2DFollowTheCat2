@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 // No game logic here; states decide what happens, components do the work.
 [RequireComponent(typeof(PlayerInputReader), typeof(PlayerMotor), typeof(PlayerAnimator))]
 [RequireComponent(typeof(PlayerCombat), typeof(Health), typeof(Inventory))]
+[RequireComponent(typeof(PlayerInteractor))]
 public class Player : MonoBehaviour
 {
     // Components on this GameObject. Found with GetComponent in Awake, so nothing to assign in the Inspector.
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     public PlayerAnimator playerAnimator { get; private set; }
     public PlayerCombat playerCombat { get; private set; }
     public Inventory playerInventory { get; private set; }
+    public PlayerInteractor playerInteractor { get; private set; }
     public PlayerStateMachine playerStateMachine { get; private set; }
 
 
@@ -68,6 +70,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        playerInteractor.Refresh();
         playerStateMachine.currentState?.Update();
     }
 
@@ -118,6 +121,7 @@ public class Player : MonoBehaviour
         playerAnimator = GetComponent<PlayerAnimator>();
         playerCombat = GetComponent<PlayerCombat>();
         playerInventory = GetComponent<Inventory>();
+        playerInteractor = GetComponent<PlayerInteractor>();
     }
 
     private void CreateStates()

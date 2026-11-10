@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private GameObject pauseMenuPanel;
+    [SerializeField] private GameObject merchantPanel;
 
     private void OnEnable()
     {
@@ -26,7 +27,9 @@ public class UIManager : MonoBehaviour
 
     private void HandleGameStateChanged(GameState gameState)
     {
-        inventoryPanel.SetActive(gameState == GameState.Inventory);
+        // The shop shows the inventory too, so items can be dragged onto the merchant panel to sell.
+        inventoryPanel.SetActive(gameState == GameState.Inventory || gameState == GameState.Shop);
+        merchantPanel.SetActive(gameState == GameState.Shop);
 
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(gameState == GameState.Paused);
     }

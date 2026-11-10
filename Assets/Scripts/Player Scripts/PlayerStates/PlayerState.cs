@@ -23,4 +23,12 @@ public abstract class PlayerState
         player.playerInventory.SelectSlot(slot);
         player.playerInventory.UseItem(slot, player.gameObject);
     }
+
+    // Interact key uses whatever PlayerInteractor found in front of the player.
+    // Called only by the states that allow it (Idle, Walk, Run).
+    protected void HandleInteractInput()
+    {
+        if (player.playerInputReader.interactPressedThisFrame)
+            player.playerInteractor.TryInteract();
+    }
 }

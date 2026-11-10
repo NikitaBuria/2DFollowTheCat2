@@ -16,6 +16,7 @@ public class PlayerRunState : PlayerState
     public override void Update()
     {
         HandleHotbarInput();
+        HandleInteractInput();
 
         if (player.playerInputReader.attackPressedThisFrame)
         {

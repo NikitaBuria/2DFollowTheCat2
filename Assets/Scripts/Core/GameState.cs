@@ -3,5 +3,6 @@ public enum GameState
 {
     Gameplay,
     Inventory,
-    Paused
+    Paused,
+    Shop
 }

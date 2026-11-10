@@ -12,6 +12,7 @@ public class PlayerInputReader : MonoBehaviour
     [SerializeField] private InputActionReference toggleMenuInput;
     [SerializeField] private InputActionReference toggleInventoryInput;
     [SerializeField] private InputActionReference hotbarInput;
+    [SerializeField] private InputActionReference interactInput;
     [SerializeField] private InputActionReference saveInput;
     [SerializeField] private InputActionReference loadInput;
 
@@ -20,6 +21,7 @@ public class PlayerInputReader : MonoBehaviour
     public bool isSprintHeld => sprintInput.action.IsPressed();
     public bool dashPressedThisFrame => dashInput.action.WasPressedThisFrame();
     public bool attackPressedThisFrame => attackInput.action.WasPressedThisFrame();
+    public bool interactPressedThisFrame => interactInput.action.WasPressedThisFrame();
     public bool menuPressedThisFrame => toggleMenuInput.action.WasPressedThisFrame();
     public bool inventoryPressedThisFrame => toggleInventoryInput.action.WasPressedThisFrame();
     public bool savePressedThisFrame => saveInput.action.WasPressedThisFrame();

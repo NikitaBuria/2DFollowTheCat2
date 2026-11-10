@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-// Single source of truth for the game's mode (Gameplay, Inventory, Paused).
+// Single source of truth for the game's mode (Gameplay, Inventory, Paused, Shop).
 // Polls the menu keys, sets Time.timeScale and the Player action map, and announces the change.
 public class GameStateManager : MonoBehaviour
 {
@@ -31,6 +31,11 @@ public class GameStateManager : MonoBehaviour
             case GameState.Paused:
                 if (menuPressed) ChangeState(GameState.Gameplay);
                 break;
+
+            case GameState.Shop:
+                // Opened by Merchant.Interact; the menu and inventory keys both close it.
+                if (inventoryPressed || menuPressed) ChangeState(GameState.Gameplay);
+                break;
         }
     }
 
@@ -43,6 +48,7 @@ public class GameStateManager : MonoBehaviour
             GameState.Gameplay => 1f,
             GameState.Inventory => 0f,
             GameState.Paused => 0f,
+            GameState.Shop => 0f,
             _ => throw new ArgumentOutOfRangeException(nameof(newState), newState, null)
         };
 
