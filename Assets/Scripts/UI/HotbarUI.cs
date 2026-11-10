@@ -1,6 +1,7 @@
 using UnityEngine;
 
-// Draws the always-visible hotbar: the first HotbarSize inventory slots (keys 1-7).
+// Draws the always-visible hotbar: the first HotbarSize inventory slots (keys 1-7)
+// and a highlight on the selected one.
 public class HotbarUI : MonoBehaviour
 {
     private const int HotbarSize = 7;
@@ -14,12 +15,15 @@ public class HotbarUI : MonoBehaviour
     private void OnEnable()
     {
         inventory.OnChanged += Refresh;
+        inventory.OnSelectedSlotChanged += ShowSelection;
         Refresh();
+        ShowSelection(inventory.selectedSlot);
     }
 
     private void OnDisable()
     {
         inventory.OnChanged -= Refresh;
+        inventory.OnSelectedSlotChanged -= ShowSelection;
     }
 
     // Start, not Awake: every Awake (including Inventory's, which creates its slots) has run by now.
@@ -27,6 +31,7 @@ public class HotbarUI : MonoBehaviour
     {
         BuildSlots();
         Refresh();
+        ShowSelection(inventory.selectedSlot);
     }
 
     private void BuildSlots()
@@ -44,6 +49,15 @@ public class HotbarUI : MonoBehaviour
         {
             if (hotbarSlots[i] != null)
                 hotbarSlots[i].Show(inventory.GetSlot(i));
+        }
+    }
+
+    private void ShowSelection(int selectedSlot)
+    {
+        for (int i = 0; i < hotbarSlots.Length; i++)
+        {
+            if (hotbarSlots[i] != null)
+                hotbarSlots[i].SetHighlighted(i == selectedSlot);
         }
     }
 }

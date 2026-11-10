@@ -1,0 +1,1 @@
+PASS: cave scene and environment prefab saved; lantern, cat and dialogue placed; no gameplay or colliders. Existing scene was not changed. Visual review still required.

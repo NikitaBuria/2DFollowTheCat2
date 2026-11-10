@@ -2,15 +2,20 @@ using System;
 using UnityEngine;
 
 // A fixed number of slots holding stacks of items. Fires OnChanged after every change so the UI
-// (later) can redraw. Moving and splitting stacks come with the inventory UI.
-public class Inventory : MonoBehaviour
+// can redraw. Saved slot by slot; itemDatabase turns saved IDs back into items.
+public class Inventory : MonoBehaviour, ISaveable
 {
     [SerializeField, Min(1)] private int slotCount = 20;
     [SerializeField] private InventorySlot[] slots;
+    [SerializeField] private ItemDatabase itemDatabase;
 
     public event Action OnChanged;
+    public event Action<int> OnSelectedSlotChanged;
 
     public int count => slots.Length;
+
+    // The hotbar slot picked with keys 1-7. Player states decide when it may change.
+    public int selectedSlot { get; private set; }
 
     private void Awake()
     {
@@ -18,6 +23,14 @@ public class Inventory : MonoBehaviour
     }
 
     public InventorySlot GetSlot(int index) => index >= 0 && index < slots.Length ? slots[index] : null;
+
+    public void SelectSlot(int index)
+    {
+        if (index < 0 || index >= slots.Length || index == selectedSlot) return;
+
+        selectedSlot = index;
+        OnSelectedSlotChanged?.Invoke(selectedSlot);
+    }
 
     // Returns how many were actually added (0 when the inventory is full).
     public int AddItemAndReturnAccepted(ItemData item, int amount)
@@ -80,6 +93,18 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
+    // Hotbar keys: uses the item in this slot and removes one when it was used.
+    public bool UseItem(int index, GameObject user)
+    {
+        InventorySlot slot = GetSlot(index);
+        if (slot == null || slot.item is not IUsable usable) return false;
+        if (!usable.Use(user)) return false;
+
+        slot.Set(slot.item, slot.amount - 1);
+        OnChanged?.Invoke();
+        return true;
+    }
+
     // Drag and drop between slots: moves into an empty slot, merges the same item up to maxStack
     // (the rest stays behind), swaps different items.
     public bool MoveOrMerge(int fromIndex, int toIndex)
@@ -130,6 +155,49 @@ public class Inventory : MonoBehaviour
         from.Set(from.item, from.amount - amount);
         OnChanged?.Invoke();
         return true;
+    }
+
+    public void Save(SaveData data)
+    {
+        data.inventory = new SlotSaveData[slots.Length];
+        for (int i = 0; i < slots.Length; i++)
+        {
+            data.inventory[i] = new SlotSaveData
+            {
+                itemId = slots[i].isEmpty ? null : ItemDatabase.GetId(slots[i].item),
+                amount = slots[i].isEmpty ? 0 : slots[i].amount
+            };
+        }
+    }
+
+    public string Validate(SaveData data)
+    {
+        if (itemDatabase == null) return "Inventory has no ItemDatabase assigned";
+        if (data.inventory == null || data.inventory.Length != slots.Length)
+            return $"expected {slots.Length} inventory slots";
+
+        foreach (SlotSaveData saved in data.inventory)
+        {
+            if (saved == null || saved.amount < 0) return "invalid inventory slot";
+            if (saved.amount == 0) continue;
+
+            ItemData item = itemDatabase.Find(saved.itemId);
+            if (item == null) return $"unknown item '{saved.itemId}' (missing from the ItemDatabase?)";
+            if (saved.amount > item.maxStack) return $"{saved.amount}x {saved.itemId} is more than a stack";
+        }
+
+        return null;
+    }
+
+    public void Load(SaveData data)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            SlotSaveData saved = data.inventory[i];
+            slots[i].Set(itemDatabase.Find(saved.itemId), saved.amount);
+        }
+
+        OnChanged?.Invoke();
     }
 
     private bool IsValidPair(int fromIndex, int toIndex) =>

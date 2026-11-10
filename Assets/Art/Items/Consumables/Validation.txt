@@ -1,0 +1,1 @@
+PASS: pickup, full-health preservation, healing, consumption, maximum-health cap, dead-user rejection. Editor-only checks; hotbar input wiring is left to the developer.

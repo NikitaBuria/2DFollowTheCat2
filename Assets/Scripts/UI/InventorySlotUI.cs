@@ -9,6 +9,7 @@ public class InventorySlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 {
     [SerializeField] private Image icon;
     [SerializeField] private TextMeshProUGUI amountText;
+    [SerializeField] private Image highlight;
     [SerializeField, Range(0f, 1f)] private float draggingAlpha = 0.25f;
 
     private InventoryUI owner;
@@ -44,6 +45,12 @@ public class InventorySlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                 amountText.SetText("");
             }
         }
+    }
+
+    // Lights up the selected hotbar slot. Off in the prefab, so grid views never show it.
+    public void SetHighlighted(bool highlighted)
+    {
+        highlight.enabled = highlighted;
     }
 
     // Fades the icon left behind while its item is being dragged.

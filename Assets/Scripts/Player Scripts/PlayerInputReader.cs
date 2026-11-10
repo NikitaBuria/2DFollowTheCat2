@@ -11,6 +11,9 @@ public class PlayerInputReader : MonoBehaviour
     [SerializeField] private InputActionReference attackInput;
     [SerializeField] private InputActionReference toggleMenuInput;
     [SerializeField] private InputActionReference toggleInventoryInput;
+    [SerializeField] private InputActionReference hotbarInput;
+    [SerializeField] private InputActionReference saveInput;
+    [SerializeField] private InputActionReference loadInput;
 
     // All input is polled in Update (never in FixedUpdate, or one-frame presses can be missed).
     public Vector2 moveInput => playerMoveInput.action.ReadValue<Vector2>();
@@ -19,6 +22,21 @@ public class PlayerInputReader : MonoBehaviour
     public bool attackPressedThisFrame => attackInput.action.WasPressedThisFrame();
     public bool menuPressedThisFrame => toggleMenuInput.action.WasPressedThisFrame();
     public bool inventoryPressedThisFrame => toggleInventoryInput.action.WasPressedThisFrame();
+    public bool savePressedThisFrame => saveInput.action.WasPressedThisFrame();
+    public bool loadPressedThisFrame => loadInput.action.WasPressedThisFrame();
+
+    // The hotbar slot (0-6) whose key was pressed this frame, or -1.
+    // Binding order = slot order: the action's bindings must be keys 1-7, nothing else.
+    public int hotbarSlotPressedThisFrame
+    {
+        get
+        {
+            InputAction action = hotbarInput.action;
+            if (!action.WasPressedThisFrame()) return -1;
+
+            return action.GetBindingIndexForControl(action.activeControl);
+        }
+    }
 
     private void OnEnable()
     {

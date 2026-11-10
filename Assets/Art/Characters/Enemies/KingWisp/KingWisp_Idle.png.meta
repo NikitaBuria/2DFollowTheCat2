@@ -1,0 +1,469 @@
+fileFormatVersion: 2
+guid: 7ff71944d7d52834a8b70671a36dc903
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6698568029479298090
+    second: KingWisp_Idle_0
+  - first:
+      213: -7067727496876224936
+    second: KingWisp_Idle_1
+  - first:
+      213: -5220560561601313659
+    second: KingWisp_Idle_2
+  - first:
+      213: -435047557964496811
+    second: KingWisp_Idle_3
+  - first:
+      213: -1169017926269932705
+    second: KingWisp_Idle_4
+  - first:
+      213: -5989402405376165055
+    second: KingWisp_Idle_5
+  - first:
+      213: -1128500374573428994
+    second: KingWisp_Idle_6
+  - first:
+      213: 1132148624173651512
+    second: KingWisp_Idle_7
+  - first:
+      213: 6874864639185209945
+    second: KingWisp_Idle_8
+  - first:
+      213: 6509720775033490593
+    second: KingWisp_Idle_9
+  - first:
+      213: -2285054459567269652
+    second: KingWisp_Idle_10
+  - first:
+      213: -7573390789441511546
+    second: KingWisp_Idle_11
+  - first:
+      213: -9023852383779590324
+    second: KingWisp_Idle_12
+  - first:
+      213: 2913443951875170402
+    second: KingWisp_Idle_13
+  - first:
+      213: 8428185099714620598
+    second: KingWisp_Idle_14
+  - first:
+      213: -6455569945214339302
+    second: KingWisp_Idle_15
+  - first:
+      213: -1121128298059382967
+    second: KingWisp_Idle_16
+  - first:
+      213: 2146821210686645906
+    second: KingWisp_Idle_17
+  - first:
+      213: 7113930224473824187
+    second: KingWisp_Idle_18
+  - first:
+      213: -4202551850564242479
+    second: KingWisp_Idle_19
+  - first:
+      213: -3937844030808767815
+    second: KingWisp_Idle_20
+  - first:
+      213: 8520082771679399438
+    second: KingWisp_Idle_21
+  - first:
+      213: 7244247330954201562
+    second: KingWisp_Idle_22
+  - first:
+      213: -5616435722127013188
+    second: KingWisp_Idle_23
+  - first:
+      213: -186812666071661340
+    second: KingWisp_Idle_24
+  - first:
+      213: 340253476930803943
+    second: KingWisp_Idle_25
+  - first:
+      213: -4114705322561510258
+    second: KingWisp_Idle_26
+  - first:
+      213: 2183579732620015169
+    second: KingWisp_Idle_27
+  - first:
+      213: 2000132132436281461
+    second: KingWisp_Idle_28
+  - first:
+      213: -8435367779073161200
+    second: KingWisp_Idle_29
+  - first:
+      213: -6089309699795566537
+    second: KingWisp_Idle_30
+  - first:
+      213: -5348660252753362861
+    second: KingWisp_Idle_31
+  - first:
+      213: 7559618867506290443
+    second: KingWisp_Idle_32
+  - first:
+      213: -6111123399318506275
+    second: KingWisp_Idle_33
+  - first:
+      213: 5090473196276058667
+    second: KingWisp_Idle_34
+  - first:
+      213: -8429295413402723311
+    second: KingWisp_Idle_35
+  - first:
+      213: -967952893297149132
+    second: KingWisp_Idle_36
+  - first:
+      213: 3449111860621815826
+    second: KingWisp_Idle_37
+  - first:
+      213: 3258282273024769885
+    second: KingWisp_Idle_38
+  - first:
+      213: 2458207612233004605
+    second: KingWisp_Idle_39
+  - first:
+      213: -491577425465337944
+    second: KingWisp_Idle_40
+  - first:
+      213: 3669072805576594498
+    second: KingWisp_Idle_41
+  - first:
+      213: -6682517878521936768
+    second: KingWisp_Idle_42
+  - first:
+      213: -4195540256226152131
+    second: KingWisp_Idle_43
+  - first:
+      213: 244853713126785255
+    second: KingWisp_Idle_44
+  - first:
+      213: 9155440844249202117
+    second: KingWisp_Idle_45
+  - first:
+      213: -4797812947628268163
+    second: KingWisp_Idle_46
+  - first:
+      213: -5929722804894591826
+    second: KingWisp_Idle_47
+  - first:
+      213: 3186311248571934319
+    second: KingWisp_Idle_48
+  - first:
+      213: -2347500942883872359
+    second: KingWisp_Idle_49
+  - first:
+      213: -6167018465746372315
+    second: KingWisp_Idle_50
+  - first:
+      213: -1130649518023645331
+    second: KingWisp_Idle_51
+  - first:
+      213: -7399998652300051742
+    second: KingWisp_Idle_52
+  - first:
+      213: -7294211931481402668
+    second: KingWisp_Idle_53
+  - first:
+      213: 7570280367560700658
+    second: KingWisp_Idle_54
+  - first:
+      213: -6684078452752949391
+    second: KingWisp_Idle_55
+  - first:
+      213: 7956956417584938516
+    second: KingWisp_Idle_56
+  - first:
+      213: -8763686163505634325
+    second: KingWisp_Idle_57
+  - first:
+      213: 5474287988413201101
+    second: KingWisp_Idle_58
+  - first:
+      213: 4882633110747885193
+    second: KingWisp_Idle_59
+  - first:
+      213: -8765130715822469690
+    second: KingWisp_Idle_60
+  - first:
+      213: 4627581270477656133
+    second: KingWisp_Idle_61
+  - first:
+      213: -8446196846950892154
+    second: KingWisp_Idle_62
+  - first:
+      213: 7762032308780677728
+    second: KingWisp_Idle_63
+  - first:
+      213: 8708843349980774311
+    second: KingWisp_Idle_64
+  - first:
+      213: 427990342967454374
+    second: KingWisp_Idle_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 195.9375
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KingWisp_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 627
+        width: 627
+        height: 627
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24e6ecd12816fc50800000000000000
+      internalID: 6698568029479298090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KingWisp_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 627
+        width: 627
+        height: 627
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e8e6bb9436aed90800000000000000
+      internalID: -7067727496876224936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KingWisp_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 627
+        height: 627
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 584075534d7dc87b0800000000000000
+      internalID: -5220560561601313659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KingWisp_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 0
+        width: 627
+        height: 627
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550002f0d8666f9f0800000000000000
+      internalID: -435047557964496811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      KingWisp_Idle_0: 6698568029479298090
+      KingWisp_Idle_1: -7067727496876224936
+      KingWisp_Idle_10: -2285054459567269652
+      KingWisp_Idle_11: -7573390789441511546
+      KingWisp_Idle_12: -9023852383779590324
+      KingWisp_Idle_13: 2913443951875170402
+      KingWisp_Idle_14: 8428185099714620598
+      KingWisp_Idle_15: -6455569945214339302
+      KingWisp_Idle_16: -1121128298059382967
+      KingWisp_Idle_17: 2146821210686645906
+      KingWisp_Idle_18: 7113930224473824187
+      KingWisp_Idle_19: -4202551850564242479
+      KingWisp_Idle_2: -5220560561601313659
+      KingWisp_Idle_20: -3937844030808767815
+      KingWisp_Idle_21: 8520082771679399438
+      KingWisp_Idle_22: 7244247330954201562
+      KingWisp_Idle_23: -5616435722127013188
+      KingWisp_Idle_24: -186812666071661340
+      KingWisp_Idle_25: 340253476930803943
+      KingWisp_Idle_26: -4114705322561510258
+      KingWisp_Idle_27: 2183579732620015169
+      KingWisp_Idle_28: 2000132132436281461
+      KingWisp_Idle_29: -8435367779073161200
+      KingWisp_Idle_3: -435047557964496811
+      KingWisp_Idle_30: -6089309699795566537
+      KingWisp_Idle_31: -5348660252753362861
+      KingWisp_Idle_32: 7559618867506290443
+      KingWisp_Idle_33: -6111123399318506275
+      KingWisp_Idle_34: 5090473196276058667
+      KingWisp_Idle_35: -8429295413402723311
+      KingWisp_Idle_36: -967952893297149132
+      KingWisp_Idle_37: 3449111860621815826
+      KingWisp_Idle_38: 3258282273024769885
+      KingWisp_Idle_39: 2458207612233004605
+      KingWisp_Idle_4: -1169017926269932705
+      KingWisp_Idle_40: -491577425465337944
+      KingWisp_Idle_41: 3669072805576594498
+      KingWisp_Idle_42: -6682517878521936768
+      KingWisp_Idle_43: -4195540256226152131
+      KingWisp_Idle_44: 244853713126785255
+      KingWisp_Idle_45: 9155440844249202117
+      KingWisp_Idle_46: -4797812947628268163
+      KingWisp_Idle_47: -5929722804894591826
+      KingWisp_Idle_48: 3186311248571934319
+      KingWisp_Idle_49: -2347500942883872359
+      KingWisp_Idle_5: -5989402405376165055
+      KingWisp_Idle_50: -6167018465746372315
+      KingWisp_Idle_51: -1130649518023645331
+      KingWisp_Idle_52: -7399998652300051742
+      KingWisp_Idle_53: -7294211931481402668
+      KingWisp_Idle_54: 7570280367560700658
+      KingWisp_Idle_55: -6684078452752949391
+      KingWisp_Idle_56: 7956956417584938516
+      KingWisp_Idle_57: -8763686163505634325
+      KingWisp_Idle_58: 5474287988413201101
+      KingWisp_Idle_59: 4882633110747885193
+      KingWisp_Idle_6: -1128500374573428994
+      KingWisp_Idle_60: -8765130715822469690
+      KingWisp_Idle_61: 4627581270477656133
+      KingWisp_Idle_62: -8446196846950892154
+      KingWisp_Idle_63: 7762032308780677728
+      KingWisp_Idle_64: 8708843349980774311
+      KingWisp_Idle_65: 427990342967454374
+      KingWisp_Idle_7: 1132148624173651512
+      KingWisp_Idle_8: 6874864639185209945
+      KingWisp_Idle_9: 6509720775033490593
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

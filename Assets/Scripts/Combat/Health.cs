@@ -3,7 +3,8 @@ using UnityEngine;
 
 // Shared health for anything that can be hit (player and enemies).
 // The owner sets max health from its data; listeners react through the events.
-public class Health : MonoBehaviour, IDamageable
+// Saved only on the player (SaveManager collects the player's ISaveables); enemies ignore it.
+public class Health : MonoBehaviour, IDamageable, ISaveable
 {
     public int maxHealth { get; private set; }
     public int currentHealth { get; private set; }
@@ -30,6 +31,23 @@ public class Health : MonoBehaviour, IDamageable
     {
         invincibleUntil = Time.time + duration;
     }
+
+    // Returns true when health went up (false when dead or already full).
+    public bool Heal(int amount)
+    {
+        if (!isAlive || currentHealth >= maxHealth || amount <= 0) return false;
+
+        currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        return true;
+    }
+
+    public void Save(SaveData data) => data.health = currentHealth;
+
+    // Saves are only made while alive, so 0 is invalid too.
+    public string Validate(SaveData data) =>
+        data.health < 1 || data.health > maxHealth ? $"health {data.health} is outside 1-{maxHealth}" : null;
+
+    public void Load(SaveData data) => currentHealth = data.health;
 
     public void TakeDamage(DamageData damage)
     {

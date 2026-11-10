@@ -15,6 +15,8 @@ public class PlayerWalkState : PlayerState
 
     public override void Update()
     {
+        HandleHotbarInput();
+
         if (player.playerInputReader.attackPressedThisFrame)
         {
             player.playerStateMachine.ChangeState(player.attackState);

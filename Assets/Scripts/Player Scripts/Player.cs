@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 // Wires the player together: creates the states and forwards Update/FixedUpdate to the current one.
 // No game logic here; states decide what happens, components do the work.
 [RequireComponent(typeof(PlayerInputReader), typeof(PlayerMotor), typeof(PlayerAnimator))]
-[RequireComponent(typeof(PlayerCombat), typeof(Health))]
+[RequireComponent(typeof(PlayerCombat), typeof(Health), typeof(Inventory))]
 public class Player : MonoBehaviour
 {
     // Components on this GameObject. Found with GetComponent in Awake, so nothing to assign in the Inspector.
@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public PlayerMotor playerMotor { get; private set; }
     public PlayerAnimator playerAnimator { get; private set; }
     public PlayerCombat playerCombat { get; private set; }
+    public Inventory playerInventory { get; private set; }
     public PlayerStateMachine playerStateMachine { get; private set; }
 
 
@@ -83,12 +84,20 @@ public class Player : MonoBehaviour
         playerAnimator.SetMoveDirection(direction);
     }
 
+    // Called by RespawnManager: back at the spawn point with full health and spawn protection.
+    public void Respawn(Vector2 position)
+    {
+        playerMotor.Teleport(position);
+        playerHealth.Initialize(playerData.maxHealth);
+        playerHealth.StartInvincibility(playerData.invincibleTimer);
+        playerStateMachine.ChangeState(idleState);
+    }
+
     private void HandlePlayerDeath()
     {
-         playerStateMachine.ChangeState(deadState);
-         
+        playerStateMachine.ChangeState(deadState);
     }
-   
+
 
     // OnDamaged also fires on the killing hit (before OnDied), so only go to Hurt while alive.
     private void HandlePlayerHurt(DamageData damage)
@@ -108,6 +117,7 @@ public class Player : MonoBehaviour
         playerMotor = GetComponent<PlayerMotor>();
         playerAnimator = GetComponent<PlayerAnimator>();
         playerCombat = GetComponent<PlayerCombat>();
+        playerInventory = GetComponent<Inventory>();
     }
 
     private void CreateStates()

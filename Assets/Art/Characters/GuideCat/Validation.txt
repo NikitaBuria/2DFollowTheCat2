@@ -1,0 +1,1 @@
+PASS: 54 sprites, 16 clips, four directional blend trees. Every sprite key sampled successfully. Visual animation review in game still required.

@@ -41,6 +41,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Player HotbarKeys",
+                    "type": "Button",
+                    "id": "816bbf0f-8554-43dc-965d-e6cb39322796",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -131,6 +140,83 @@
                     "action": "Player Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db12e1ea-dfb9-4561-8cb2-d93b98528174",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Player HotbarKeys",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "408704fc-2be2-4270-8c0a-6747c82a892a",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Player HotbarKeys",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "35d0461a-a0a3-4b5e-af34-dc04637500d1",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Player HotbarKeys",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c7d3310-8cf6-499b-8d0d-85d4a556a7e6",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Player HotbarKeys",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b45d3231-b6c0-42e8-b938-75c07666601b",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Player HotbarKeys",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69cda056-f49e-4f72-b040-0e56dda49ac4",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Player HotbarKeys",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "05f4d670-0957-40c6-a073-7aed485bddb5",
+                    "path": "<Keyboard>/7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Player HotbarKeys",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -151,6 +237,24 @@
                     "name": "Toggle Pause",
                     "type": "Button",
                     "id": "c9d46a1c-06ba-4660-aae9-cae0db92a5fb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Save Game",
+                    "type": "Button",
+                    "id": "49a0496d-2d17-43c2-ba8a-0201927165dd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Load Game",
+                    "type": "Button",
+                    "id": "a978fc83-b15f-4089-b2ae-973e92f72ab4",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -177,6 +281,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Toggle Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "330ff920-21bc-472d-b812-8ad397ac5821",
+                    "path": "<Keyboard>/f5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Save Game",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a2ae51ff-e3c6-4359-83d4-a3a30594e2b4",
+                    "path": "<Keyboard>/f9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Load Game",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

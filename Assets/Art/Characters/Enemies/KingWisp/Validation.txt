@@ -1,0 +1,1 @@
+PASS: four sprites imported and sampled in the looping idle clip; visual prefab and controller saved. Combat and in-game visual review are not included.

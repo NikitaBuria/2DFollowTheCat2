@@ -16,7 +16,7 @@ One job per script:
 - **PlayerInputReader**: the only script that reads input. All input is polled by the current state in `Update` (`ReadValue`, `IsPressed`, `WasPressedThisFrame`); no input events. Each state checks only the inputs it accepts.
 - **PlayerStateMachine**: plain class with `Initialize`, `ChangeState` (old `Exit` → swap → new `Enter`) and `Shutdown`; fires `OnStateChanged`. Only it switches states.
 - **PlayerState**: abstract base. `Enter`/`Update`/`Exit` abstract, `FixedUpdate` virtual and empty.
-- **States** (`Scripts/Player Scripts/PlayerStates/`, one file each): Idle, Walk, Run, Dash, Attack, Hurt, Dead; later Interact and Ability. Dash is still empty. Hurt: starts i-frames (`invincibleTimer`) in `Enter`, pushes along `lastDamage.direction` for its `knockbackDuration`, then Idle; `Stop()` in `Exit`. Idle and Dead call `Stop()` every `FixedUpdate`. Dead: plays Dead, turns off the collider (turn it back on when respawn is added), no transitions out.
+- **States** (`Scripts/Player Scripts/PlayerStates/`, one file each): Idle, Walk, Run, Dash, Attack, Hurt, Dead; later Interact and Ability. Dash is still empty. Hurt: starts i-frames (`invincibleTimer`) in `Enter`, pushes along `lastDamage.direction` for its `knockbackDuration`, then Idle; `Stop()` in `Exit`. Idle and Dead call `Stop()` every `FixedUpdate`. Dead: plays Dead, turns off the collider in `Enter` and back on in `Exit`; no transitions of its own (RespawnManager calls `Player.Respawn`, which goes to Idle).
 - **PlayerMotor**: Rigidbody only. No `Update`/`FixedUpdate`, no input, speeds passed in as parameters.
 - **PlayerAnimator**: `PlayerAnimationState` enum (own file) + switch expression to cached `Animator.StringToHash`, throws on unknown values; `SetMoveDirection` drives the MoveX/MoveY blend trees.
 - **PlayerCombat**: one public method, `HandleAttack(direction)`: `OverlapCircleAll` at `attackPoint` with the weapon's range, keeps targets inside the weapon's arc, a `HashSet` so each target is hit once per swing. Stats come from the equipped `WeaponData`; `PlayerAttackState` decides when.
@@ -45,7 +45,7 @@ Same pattern as the player (`Scripts/Enemy/`):
 Ported from MetrooDvania, adapted to top-down:
 - **IPickable** (`Scripts/Items/`): `bool TryPickUp(GameObject collector)`; true = everything taken.
 - **Pickup**: abstract base with a `CircleCollider2D` trigger (no gravity). `OnTriggerEnter2D` passes the collider's Rigidbody object as collector and destroys itself when `TryPickUp` returns true. `CoinPickup` → collector's `Wallet`; `ItemPickup` → collector's `Inventory` (stays if it doesn't fit; `Configure(item, amount)` sets item and sprite). Enemies have neither, so they can't collect.
-- **Wallet** (`Scripts/Inventory/`): `coins`, `Add`, `TrySpend`, event `OnMoneyChanged(int)`. Coins are not inventory items. Later: lose 25% on death.
+- **Wallet** (`Scripts/Inventory/`): `coins`, `Add`, `TrySpend`, `LoseShare(share)` (death penalty), event `OnMoneyChanged(int)`. Coins are not inventory items.
 - **Inventory**: `slotCount` × `InventorySlot` (item + amount, stacks up to `maxStack`); `AddItemAndReturnAccepted`, `HasItem`, `ConsumeItem`, `MoveOrMerge(from, to)` (move to empty, merge same item up to `maxStack`, swap different items), event `OnChanged`. `Split(from, to, amount)` (right-drag: half the stack, rounded up, into an empty slot or onto the same item; refused if it does not fit, never swaps).
 - Assets: `Prefabs/Loot/GoldCoinPickup` (animated spin) and `WispEssencePickup`, art in `Art/Items/Loot/GeneratedPickups/`; `ScriptableObjects/Items/WispEssence`, `ScriptableObjects/Loot/WispGrinLoot` (2–4 coins, 50% Wisp Essence).
 
@@ -58,9 +58,19 @@ Ported from MetrooDvania, adapted to top-down:
 - **CoinCounterUI** (inside InventoryPanel): listens to `Wallet.OnMoneyChanged`, refreshes in `OnEnable`.
 - **InventoryUI** (on InventoryPanel): builds `inventory.count` `InventorySlotUI` prefabs into `InventoryArea` (Grid Layout Group) in `Start` (after every `Awake`), redraws all slots on `Inventory.OnChanged` and in `OnEnable`; `Refresh` loops over the built views. Owns drag and drop: `BeginDrag`/`UpdateDrag`/`EndDrag` move the `DragPreview` (last child of InventoryPanel, Raycast Target off) and call `Inventory.MoveOrMerge`; closing the panel cancels a drag.
 - **InventorySlotUI** (on the `InventorySlot` prefab): `Show(InventorySlot)` sets every field each time (icon hidden when empty, amount text only above 1). `Setup(owner, index)` makes a grid view draggable via the EventSystem drag interfaces (UI pointer events are the accepted exception to "no input events"); it only reports to its owner. Views without an owner ignore drags.
-- **HotbarUI** (always visible): `HotbarSize` (const 7) views of Inventory slots 0–6, built in `Start`, redrawn on `OnChanged`. A view only (no drag target): items get there by being in grid slots 0–6. Next: 1–7 keys use the item + selected-slot highlight.
+- **HotbarUI** (always visible): `HotbarSize` (const 7) views of Inventory slots 0–6, built in `Start`, redrawn on `OnChanged`. A view only (no drag target): items get there by being in grid slots 0–6. Keys 1–7 (one `Player HotbarKeys` action, 7 bindings in order; `PlayerInputReader.hotbarSlotPressedThisFrame` returns the binding index via `GetBindingIndexForControl`, -1 if none) are polled by `PlayerState.HandleHotbarInput()` in Idle/Walk/Run → `Inventory.SelectSlot` + `Inventory.UseItem(slot, player)` (the number key acts right away: `IUsable` items like `HealthPotionData` are used and one is removed; a potion at full health is kept) → `OnSelectedSlotChanged(int)` → `HotbarUI` toggles the `Highlight` glow on the `InventorySlot` prefab (warm translucent copy of the slot sprite above the background, off by default). Later: weapons in the hotbar equip from the same call.
 - **Equipment slots**: Helmet, Armor, Weapon, Boots boxes in `EquipmentArea` (variants of `Prefabs/UI/Equipment/EquipmentSlot`); visuals only until Equipment (step 9).
 - Layout: Diablo 2-style panel (paper doll on top, 1-item-per-cell grid, coins bottom-right) + always-visible 1–7 hotbar = Inventory slots 0–6.
+
+## Save and respawn
+
+Ported from MetrooDvania's Lesson 52 checkpoint save, split into one job per script (`Scripts/Save/`, `Scripts/Core/RespawnManager`):
+- **SaveData** / **SlotSaveData**: plain `[Serializable]` data (`version`, `health`, `coins`, `inventory`). Bump `SaveData.CurrentVersion` when the layout changes.
+- **SaveFile** (static): the only code that touches the file. JSON in `Application.persistentDataPath/save.json`; writes `.tmp` then `File.Replace` keeping a `.bak`; refuses files over 64 KB.
+- **ISaveable**: `Save(data)`, `Validate(data)` (null = OK, else the reason), `Load(data)`. Implemented by `Health` (1..maxHealth), `Wallet` and `Inventory` (items saved by ID = asset name, turned back into assets by the `ItemDatabase` asset; every saveable `ItemData` must be in `ScriptableObjects/Items/ItemDatabase`).
+- **SaveManager** (on `SaveSystem`): collects the player's `ISaveable`s in `Awake`, loads in `Start` (`loadOnStart`), F5/F9 debug keys via `PlayerInputReader` (UI map: `Save Game`/`Load Game`). Validates every saveable before loading any, tries `.bak` if the main file is bad; never saves or loads a dead player. Context menu: Delete Save File.
+- **RespawnManager** (on `SaveSystem`): on `Health.OnDied` waits `respawnDelay` (scaled time, pauses with the game), `Wallet.LoseShare(coinLossOnDeath)` (0.25), `Player.Respawn(spawnPoint)` (`PlayerMotor.Teleport`, full health, i-frames, Idle), then saves so the penalty sticks.
+- Position isn't saved: loading keeps the player where they are; respawn uses `PlayerSpawnPoint`.
 
 ## Pause menu visual prefab
 
@@ -78,7 +88,7 @@ Rules:
 - Input checks, timers and transitions in `Update`; motor calls in `FixedUpdate`.
 - Input → polled by states; game-state changes → events.
 - Observer events for changes (`OnDamaged`, `OnDied`, later `OnMoneyChanged`, `OnWeaponChanged`, inventory `OnChanged`); UI only listens.
-- Interfaces: `IDamageable`, `IPickable`; later `IInteractable`.
+- Interfaces: `IDamageable`, `IPickable`, `IUsable`, `ISaveable`; later `IInteractable`.
 - ScriptableObjects for data: `CharacterData` → `EnemyData`; `ItemData` → `WeaponData`/`ArmorData` (slot enums); abstract `Ability` with cooldown.
 - States referencing the concrete `Player`/`Enemy` is accepted coupling.
 
@@ -97,4 +107,4 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅; next: hotbar) → 6. Save system → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (doors, merchant, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
