@@ -15,12 +15,12 @@ MonoBehaviour:
   drops:
   - <prefab>k__BackingField: {fileID: 4816603843381514370, guid: 3f6a9f37304517841b29ff6283ebef63, type: 3}
     <item>k__BackingField: {fileID: 11400000, guid: 69ea7f4d7fb3f654680b1b51f99a1cb9, type: 2}
-    dropChance: 1
+    dropChance: 0.5
     minAmount: 2
     maxAmount: 4
   - <prefab>k__BackingField: {fileID: 645463405980600417, guid: 416bbd2e1ea73cc42812c02ca0c926a1, type: 3}
     <item>k__BackingField: {fileID: 11400000, guid: 5f2bde7470ba2c04eafa34707ca6e64a, type: 2}
-    dropChance: 0.3
+    dropChance: 0.5
     minAmount: 1
     maxAmount: 1
   dropRadius: 0.5

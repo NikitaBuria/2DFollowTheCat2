@@ -46,7 +46,7 @@ Ported from MetrooDvania, adapted to top-down:
 - **IPickable** (`Scripts/Items/`): `bool TryPickUp(GameObject collector)`; true = everything taken.
 - **Pickup**: abstract base with a `CircleCollider2D` trigger (no gravity). `OnTriggerEnter2D` passes the collider's Rigidbody object as collector and destroys itself when `TryPickUp` returns true. `CoinPickup` → collector's `Wallet`; `ItemPickup` → collector's `Inventory` (stays if it doesn't fit; `Configure(item, amount)` sets item and sprite). Enemies have neither, so they can't collect.
 - **Wallet** (`Scripts/Inventory/`): `coins`, `Add`, `TrySpend`, event `OnMoneyChanged(int)`. Coins are not inventory items. Later: lose 25% on death.
-- **Inventory**: `slotCount` × `InventorySlot` (item + amount, stacks up to `maxStack`); `AddItemAndReturnAccepted`, `HasItem`, `ConsumeItem`, event `OnChanged`. Moving/splitting stacks comes with the inventory UI.
+- **Inventory**: `slotCount` × `InventorySlot` (item + amount, stacks up to `maxStack`); `AddItemAndReturnAccepted`, `HasItem`, `ConsumeItem`, `MoveOrMerge(from, to)` (move to empty, merge same item up to `maxStack`, swap different items), event `OnChanged`. `Split(from, to, amount)` (right-drag: half the stack, rounded up, into an empty slot or onto the same item; refused if it does not fit, never swaps).
 - Assets: `Prefabs/Loot/GoldCoinPickup` (animated spin) and `WispEssencePickup`, art in `Art/Items/Loot/GeneratedPickups/`; `ScriptableObjects/Items/WispEssence`, `ScriptableObjects/Loot/WispGrinLoot` (2–4 coins, 50% Wisp Essence).
 
 ## Game state and UI
@@ -56,10 +56,11 @@ Ported from MetrooDvania, adapted to top-down:
 - **PlayerInputReader** maps: Player Actions (on only in Gameplay) and UI Actions (always on: Toggle Inventory, Toggle Pause). Maps are switched with `action.actionMap.Enable()/Disable()`.
 - **UIManager** (`Scripts/UI/`, on the always-active HUD Canvas): listens to `OnGameStateChanged` and only shows/hides panels with `SetActive`. Content scripts never know the game state.
 - **CoinCounterUI** (inside InventoryPanel): listens to `Wallet.OnMoneyChanged`, refreshes in `OnEnable`.
-- **InventoryUI** (on InventoryPanel): builds `inventory.count` `InventorySlotUI` prefabs into `InventoryArea` (Grid Layout Group) in `Start` (after every `Awake`), redraws all slots on `Inventory.OnChanged` and in `OnEnable`; `Refresh` loops over the built views.
-- **InventorySlotUI** (on the `InventorySlot` prefab): `Show(InventorySlot)` sets every field each time (icon hidden when empty, amount text only above 1). Reused later by the hotbar.
+- **InventoryUI** (on InventoryPanel): builds `inventory.count` `InventorySlotUI` prefabs into `InventoryArea` (Grid Layout Group) in `Start` (after every `Awake`), redraws all slots on `Inventory.OnChanged` and in `OnEnable`; `Refresh` loops over the built views. Owns drag and drop: `BeginDrag`/`UpdateDrag`/`EndDrag` move the `DragPreview` (last child of InventoryPanel, Raycast Target off) and call `Inventory.MoveOrMerge`; closing the panel cancels a drag.
+- **InventorySlotUI** (on the `InventorySlot` prefab): `Show(InventorySlot)` sets every field each time (icon hidden when empty, amount text only above 1). `Setup(owner, index)` makes a grid view draggable via the EventSystem drag interfaces (UI pointer events are the accepted exception to "no input events"); it only reports to its owner. Views without an owner ignore drags.
+- **HotbarUI** (always visible): `HotbarSize` (const 7) views of Inventory slots 0–6, built in `Start`, redrawn on `OnChanged`. A view only (no drag target): items get there by being in grid slots 0–6. Next: 1–7 keys use the item + selected-slot highlight.
 - **Equipment slots**: Helmet, Armor, Weapon, Boots boxes in `EquipmentArea` (variants of `Prefabs/UI/Equipment/EquipmentSlot`); visuals only until Equipment (step 9).
-- Layout: Diablo 2-style panel (paper doll on top, 1-item-per-cell grid, coins bottom-right) + always-visible 1–5 hotbar = Inventory slots 0–4.
+- Layout: Diablo 2-style panel (paper doll on top, 1-item-per-cell grid, coins bottom-right) + always-visible 1–7 hotbar = Inventory slots 0–6.
 
 ## Pause menu visual prefab
 
@@ -88,7 +89,7 @@ Rules:
 - Private fields with `[SerializeField]`; read-only access via `{ get; private set; }`.
 - `[RequireComponent]` where a component is needed.
 - Consistent naming, correct spelling (scripts and asset names), class name matches file name.
-- Naming (developer's choice, like Unity's own API): fields and properties camelCase, public ones too (`player.playerMotor`, `currentWeapon`, `isAlive`); types, methods, events (`OnDied`) and enum values PascalCase; `I` prefix only for interfaces.
+- Naming (developer's choice, like Unity's own API): fields and properties camelCase, public ones too (`player.playerMotor`, `currentWeapon`, `isAlive`); types, methods, events (`OnDied`), enum values and constants (`const`, e.g. `HotbarSize`; never SCREAMING_CASE) PascalCase; `I` prefix only for interfaces.
 - Same-GameObject components: `GetComponent` in `Awake` + `[RequireComponent]`, not serialized; serialize only references to other objects/assets.
 - Delete dead code.
 - Finish and test one system before starting the next; commit after each working step.

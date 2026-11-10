@@ -17,8 +17,7 @@ public class Inventory : MonoBehaviour
         EnsureSlots();
     }
 
-    public InventorySlot GetSlot(int index) =>
-        index >= 0 && index < slots.Length ? slots[index] : null;
+    public InventorySlot GetSlot(int index) => index >= 0 && index < slots.Length ? slots[index] : null;
 
     // Returns how many were actually added (0 when the inventory is full).
     public int AddItemAndReturnAccepted(ItemData item, int amount)
@@ -80,6 +79,63 @@ public class Inventory : MonoBehaviour
         OnChanged?.Invoke();
         return true;
     }
+
+    // Drag and drop between slots: moves into an empty slot, merges the same item up to maxStack
+    // (the rest stays behind), swaps different items.
+    public bool MoveOrMerge(int fromIndex, int toIndex)
+    {
+        if (!IsValidPair(fromIndex, toIndex)) return false;
+
+        InventorySlot from = slots[fromIndex];
+        InventorySlot to = slots[toIndex];
+
+        if (to.isEmpty)
+        {
+            to.Set(from.item, from.amount);
+            from.Clear();
+        }
+        else if (to.item == from.item)
+        {
+            int moved = Mathf.Min(to.item.maxStack - to.amount, from.amount);
+            if (moved <= 0) return false;
+
+            to.Set(to.item, to.amount + moved);
+            from.Set(from.item, from.amount - moved);
+        }
+        else
+        {
+            ItemData item = from.item;
+            int amount = from.amount;
+            from.Set(to.item, to.amount);
+            to.Set(item, amount);
+        }
+
+        OnChanged?.Invoke();
+        return true;
+    }
+
+    // Right-drag: moves part of a stack into an empty slot or onto the same item. Never swaps;
+    // refuses when it doesn't fit, so nothing moves.
+    public bool Split(int fromIndex, int toIndex, int amount)
+    {
+        if (!IsValidPair(fromIndex, toIndex)) return false;
+
+        InventorySlot from = slots[fromIndex];
+        InventorySlot to = slots[toIndex];
+        if (amount <= 0 || amount >= from.amount) return false;
+        if (!to.isEmpty && to.item != from.item) return false;
+        if (to.amount + amount > from.item.maxStack) return false;
+
+        to.Set(from.item, to.amount + amount);
+        from.Set(from.item, from.amount - amount);
+        OnChanged?.Invoke();
+        return true;
+    }
+
+    private bool IsValidPair(int fromIndex, int toIndex) =>
+        fromIndex >= 0 && fromIndex < slots.Length &&
+        toIndex >= 0 && toIndex < slots.Length &&
+        fromIndex != toIndex && !slots[fromIndex].isEmpty;
 
     private void EnsureSlots()
     {
