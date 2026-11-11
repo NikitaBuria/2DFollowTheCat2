@@ -65,10 +65,10 @@ Ported from MetrooDvania, adapted to top-down:
 ## Save and respawn
 
 Ported from MetrooDvania's Lesson 52 checkpoint save, split into one job per script (`Scripts/Save/`, `Scripts/Core/RespawnManager`):
-- **SaveData** / **SlotSaveData**: plain `[Serializable]` data (`version`, `health`, `coins`, `inventory`). Bump `SaveData.CurrentVersion` when the layout changes.
+- **SaveData** / **SlotSaveData**: plain `[Serializable]` data (`version` 2, `health`, `coins`, `inventory`, `restoredBuildings`). Bump `SaveData.CurrentVersion` when the layout changes; `SaveManager` accepts versions 1..current when every ISaveable can read them (v1 = no town progress).
 - **SaveFile** (static): the only code that touches the file. JSON in `Application.persistentDataPath/save.json`; writes `.tmp` then `File.Replace` keeping a `.bak`; refuses files over 64 KB.
-- **ISaveable**: `Save(data)`, `Validate(data)` (null = OK, else the reason), `Load(data)`. Implemented by `Health` (1..maxHealth), `Wallet` and `Inventory` (items saved by ID = asset name, turned back into assets by the `ItemDatabase` asset; every saveable `ItemData` must be in `ScriptableObjects/Items/ItemDatabase`).
-- **SaveManager** (on `SaveSystem`): collects the player's `ISaveable`s in `Awake`, loads in `Start` (`loadOnStart`), F5/F9 debug keys via `PlayerInputReader` (UI map: `Save Game`/`Load Game`). Validates every saveable before loading any, tries `.bak` if the main file is bad; never saves or loads a dead player. Context menu: Delete Save File.
+- **ISaveable**: `Save(data)`, `Validate(data)` (null = OK, else the reason), `Load(data)`. Implemented by `Health` (1..maxHealth), `Wallet`, `TownProgress` and `Inventory` (items saved by ID = asset name, turned back into assets by the `ItemDatabase` asset; every saveable `ItemData` must be in `ScriptableObjects/Items/ItemDatabase`).
+- **SaveManager** (on `SaveSystem`): collects the player's `ISaveable`s and its own object's (`TownProgress`) in `Awake`, loads in `Start` (`loadOnStart`), F5/F9 debug keys via `PlayerInputReader` (UI map: `Save Game`/`Load Game`). Validates every saveable before loading any, tries `.bak` if the main file is bad; never saves or loads a dead player. Context menu: Delete Save File.
 - **RespawnManager** (on `SaveSystem`): on `Health.OnDied` waits `respawnDelay` (scaled time, pauses with the game), `Wallet.LoseShare(coinLossOnDeath)` (0.25), `Player.Respawn(spawnPoint)` (`PlayerMotor.Teleport`, full health, i-frames, Idle), then saves so the penalty sticks.
 - Position isn't saved: loading keeps the player where they are; respawn uses `PlayerSpawnPoint`.
 
@@ -82,9 +82,17 @@ Adapted from MetrooDvania's `Scripts/Interaction` (`Scripts/Interaction/`):
 - **SpeechBubbleView** (on `CatSpeechBubble`/`MerchantSpeechBubble`): listens to its `NpcDialogue`, hides with the `CanvasGroup` (not `SetActive`, so it keeps listening).
 - Scene: `GuideCat` (Interactable layer, trigger `CircleCollider2D`, `NpcDialogue`, `CatSpeechBubble` child). The cat's Talk animation isn't played yet.
 - **Merchant** (`Scripts/Merchant/`, the object's only IInteractable): `Interact` stores the `customer` (Player), says the next `greeting` line (`NpcDialogue` on the `Greeting` child, no collider, so `GetComponentInParent<IInteractable>` can't pick it) and calls `ChangeState(GameState.Shop)`; never touches UI. Unlimited coins and stock. `TrySell(slotIndex)` sells the whole stack (`sellPrice` × amount, 0 = unsellable) via `Inventory.DeleteSlot` + `Wallet.Add`. `TryBuy(item)` buys one: item must be in `shopStock`, coins checked first, then `AddItemAndReturnAccepted` (0 = full, nothing changes), then `TrySpend`.
-- **ShopStock** (SO, `ScriptableObjects/Merchant/MerchantStock`): list of `ItemData`, `HasItem`. Dummies until their systems exist: `StrengthElixir` (buff), `LeatherArmor`; the Health Potion works.
+- **ShopStock** (SO, `ScriptableObjects/Merchant/MerchantStock_Tier1..3`): list of `ItemData`, `HasItem`. `Merchant.stockByTier` picks one by `TownProgress.townTier` (tier 1 potion, 2 + elixir, 3 + armor). Dummies until their systems exist: `StrengthElixir` (buff), `LeatherArmor`; the Health Potion works.
 - **Shop UI**: `MerchantStorePanel` (Astra's prefab, HUD child, `UIManager.merchantPanel`) has `MerchantStoreUI` (builds one `ShopEntry` prefab per stock item in `Start`, `HorizontalLayoutGroup`) and `MerchantSellArea` (`IDropHandler`: a left-drag of an `InventorySlotUI` dropped anywhere on the panel → `TrySell`; right-drag ignored). `ShopEntryUI`: icon + `buyPrice`, `Button` click → owner → `TryBuy`. Later: feedback when a buy fails.
-- **MerchantAppearance** (on the Merchant prefab, art by Astra): one child Animator per town tier, `SetTownTier(1..3)` for town restoration; `Play`s Talk/Idle on the greeting's events (controllers have no transitions).
+- **MerchantAppearance** (on the Merchant prefab, art by Astra): one child Animator per town tier, follows `TownProgress.OnProgressChanged`; `Play`s Talk/Idle on the greeting's events (controllers have no transitions).
+
+## Town restoration
+
+`Scripts/Town/`:
+- **BuildingData** (SO, `ScriptableObjects/Town/`): `buildingName`, `cost`, optional `requiredItem` (used up; the Town Hall gets the boss drop in step 8). ID = asset name. Smithy 100, Apothecary 250, TownHall 500.
+- **TownProgress** (ISaveable, on `SaveSystem` in the Core prefab): restored building IDs, `townTier` = 1 + restored (max `maxTier` 3), `GetRestoreBlock` (a `RestoreBlock` enum: None, AlreadyRestored, MissingItem, NotEnoughCoins; RestorableBuilding turns it into the prompt text), `TryRestore` (checks everything, then `TrySpend` + `ConsumeItem`), event `OnProgressChanged` (also fired by `Load`). `Validate` rejects IDs missing from its `buildings` list.
+- **RestorableBuilding** (IInteractable, in Town, Interactable layer, trigger collider): prompt `Restore Smithy (100 coins)`, red when you can't; after `TryRestore` it saves. Toggles its `Ruined` / `Restored` children on `OnProgressChanged`. Astra's building art goes inside those children (placeholders for now); the wrapper object with the script is ours.
+- Listeners: `RestorableBuilding`, `MerchantAppearance` (tier look), `Merchant.stock`; `MerchantStoreUI` rebuilds its entries in `OnEnable` (destroying only the ones it built) so new stock shows up.
 
 ## Pause menu visual prefab
 
@@ -134,7 +142,7 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅, scenes MainMenu/Town/Outdoor/Dungeon + doors ✅; next: town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅, autosave on every door ✅; later: checkpoints) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅, scenes MainMenu/Town/Outdoor/Dungeon + doors ✅, town restoration ✅ (placeholder art until Astra's buildings)) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
 
 ## Team
 

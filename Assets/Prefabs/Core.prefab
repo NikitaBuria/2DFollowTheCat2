@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 7275104763835802387}
   - component: {fileID: 4528313405404302211}
   - component: {fileID: 1011887262559256371}
+  - component: {fileID: 5639747230910420438}
   m_Layer: 0
   m_Name: SaveSystem
   m_TagString: Untagged
@@ -523,6 +524,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneArrival
   player: {fileID: 3152894160413259921}
+--- !u!114 &5639747230910420438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234914376859398126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dcd106876a0964caea2d574f6e33dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TownProgress
+  buildings:
+  - {fileID: 11400000, guid: a4d63cc9144b2a948bed2f7d243de05c, type: 2}
+  - {fileID: 11400000, guid: a6262d337a4179f4f9d22b8d2df67546, type: 2}
+  - {fileID: 11400000, guid: 98a1316fb5ce8fe46b48c844118350fa, type: 2}
+  maxTier: 3
 --- !u!1 &8147177153272886990
 GameObject:
   m_ObjectHideFlags: 0

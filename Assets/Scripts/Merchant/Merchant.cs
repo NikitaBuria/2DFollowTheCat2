@@ -3,15 +3,18 @@ using UnityEngine;
 // The merchant NPC. Interacting only asks GameStateManager for the Shop state; it never touches
 // the UI. UIManager shows the merchant and inventory panels, and the menu or inventory key closes the shop.
 // Buying and selling happen here; the merchant has unlimited coins and unlimited stock.
+// What he sells grows with the town tier (one ShopStock per tier).
 public class Merchant : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private string tradePrompt = "Trade";
-    [SerializeField] private ShopStock shopStock;
+    [Tooltip("Stock for town tier 1, 2, 3... The last one is used for higher tiers.")]
+    [SerializeField] private ShopStock[] stockByTier;
+    [SerializeField] private TownProgress townProgress;
     [Tooltip("Greeting said when the shop opens. Sits on a child without a collider, so the Merchant stays this object's only IInteractable.")]
     [SerializeField] private NpcDialogue greeting;
 
-    public ShopStock stock => shopStock;
+    public ShopStock stock => stockByTier[Mathf.Clamp(townProgress.townTier - 1, 0, stockByTier.Length - 1)];
 
     // The player who opened the shop; the shop UI trades with them.
     public Player customer { get; private set; }
@@ -50,7 +53,7 @@ public class Merchant : MonoBehaviour, IInteractable
     public bool TryBuy(ItemData item)
     {
         // Don't trust the UI: only items this merchant actually sells.
-        if (customer == null || item == null || !shopStock.HasItem(item)) return false;
+        if (customer == null || item == null || !stock.HasItem(item)) return false;
 
         // Check the coins first (read-only), so nothing has changed if the player can't pay.
         if (customer.playerWallet.coins < item.buyPrice) return false;

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 309a121bc65060b409e83477d2e305d8, type: 3}
-  m_Name: MerchantStock
+  m_Name: MerchantStock_Tier3
   m_EditorClassIdentifier: Assembly-CSharp::ShopStock
   items:
   - {fileID: 11400000, guid: b910ac03a460f09458a70c4b982b0ee3, type: 2}

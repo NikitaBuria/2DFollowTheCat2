@@ -2,7 +2,7 @@ using UnityEngine;
 
 // Shows the merchant's look for the current town tier (one child Animator per tier) and plays
 // Talk while his NpcDialogue shows a line. Like the player and enemies, the Animators have no
-// transitions; this script picks the state with Play. Later town restoration calls SetTownTier.
+// transitions; this script picks the state with Play. Follows TownProgress.townTier when one is assigned.
 public class MerchantAppearance : MonoBehaviour
 {
     private static readonly int IdleHash = Animator.StringToHash("Idle");
@@ -11,6 +11,8 @@ public class MerchantAppearance : MonoBehaviour
     [SerializeField, Range(1, 3)] private int townTier = 1;
     [SerializeField] private Animator[] tiers;
     [SerializeField] private NpcDialogue dialogue;
+    [Tooltip("Optional: when set, the look follows the town tier instead of the field above.")]
+    [SerializeField] private TownProgress townProgress;
 
     private Animator currentAnimator => tiers.Length > 0 ? tiers[townTier - 1] : null;
 
@@ -18,13 +20,16 @@ public class MerchantAppearance : MonoBehaviour
     {
         dialogue.OnLineShown += HandleLineShown;
         dialogue.OnDialogueEnded += HandleDialogueEnded;
-        SetTownTier(townTier);
+        if (townProgress != null) townProgress.OnProgressChanged += HandleProgressChanged;
+
+        SetTownTier(townProgress != null ? townProgress.townTier : townTier);
     }
 
     private void OnDisable()
     {
         dialogue.OnLineShown -= HandleLineShown;
         dialogue.OnDialogueEnded -= HandleDialogueEnded;
+        if (townProgress != null) townProgress.OnProgressChanged -= HandleProgressChanged;
     }
 
     public void SetTownTier(int tier)
@@ -35,6 +40,8 @@ public class MerchantAppearance : MonoBehaviour
 
         PlayCurrent();
     }
+
+    private void HandleProgressChanged() => SetTownTier(townProgress.townTier);
 
     private void HandleLineShown(string speaker, string line) => PlayCurrent();
 
