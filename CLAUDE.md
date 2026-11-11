@@ -90,6 +90,15 @@ Adapted from MetrooDvania's `Scripts/Interaction` (`Scripts/Interaction/`):
 
 - `Assets/Prefabs/UI/PauseMenu.prefab`: charcoal/brass/teal panel with editable TMP Resume, Settings and Exit buttons, dimmer and explicit vertical navigation. Art-only: callbacks and initial EventSystem selection are not wired. Assign its scene instance to the existing `UIManager.pauseMenuPanel`. Setup notes: `Assets/Prefabs/UI/PauseMenu.md`.
 
+## Scenes and doors
+
+No `DontDestroyOnLoad`: every scene has its own copy of the `Core` prefab (Player, GameStateManager, HUD, EventSystem, SaveSystem, InteractionPrompt, cameras) and moves data through the save file. Scenes in the build list: `SampleScene` (cave), `Town` (placeholder ground, copy of the cave's Core wiring).
+- **SceneDoor** (`Scripts/Interaction/`, IInteractable): `SaveManager.Save()` (refuses to leave if it fails), then `SceneLoader.Load(targetScene, targetSpawnId)`. Blocked prompt if the scene isn't in the build list. Every door use is an autosave.
+- **SceneLoader** (`Scripts/Core/`, static): keeps the spawn ID across the load (statics survive, scene objects don't).
+- **SpawnPoint**: `spawnId` marker (`FromTown`, `FromCave`), `SpawnPoint.Find(id)`.
+- **SceneArrival** (on SaveSystem): in `Start` takes the pending spawn ID and `Teleport`s the player there; the new scene's `SaveManager` loads health, coins and inventory in its own `Start`.
+- Scene-only references (`Merchant` ↔ `GameStateManager`/shop UI, `RespawnManager.spawnPoint`) are overrides on each scene's Core instance.
+
 ## Animation rules
 
 - Each Animator Controller has no transitions; every state is a 4-direction blend tree on MoveX/MoveY, and the code picks the state with `Play` in the state's `Enter`.
@@ -121,7 +130,7 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅; next: door/stairs, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅, scene doors cave ⇄ town ✅; next: town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
 
 ## Team
 
