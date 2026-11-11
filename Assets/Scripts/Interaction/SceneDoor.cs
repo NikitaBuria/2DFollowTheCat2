@@ -3,6 +3,8 @@ using UnityEngine;
 // A door, stairs or cave exit that leads to another scene. Saves first (health, coins, inventory),
 // then loads the target scene, whose SaveManager loads the save again and whose SceneArrival
 // puts the player at targetSpawnId. Every door use is therefore also an autosave.
+// PlayerInteractor finds interactables through their collider.
+[RequireComponent(typeof(Collider2D))]
 public class SceneDoor : MonoBehaviour, IInteractable
 {
     [SerializeField] private SaveManager saveManager;

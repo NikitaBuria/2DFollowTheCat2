@@ -4,6 +4,8 @@ using UnityEngine;
 // the UI. UIManager shows the merchant and inventory panels, and the menu or inventory key closes the shop.
 // Buying and selling happen here; the merchant has unlimited coins and unlimited stock.
 // What he sells grows with the town tier (one ShopStock per tier).
+// PlayerInteractor finds interactables through their collider.
+[RequireComponent(typeof(Collider2D))]
 public class Merchant : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameStateManager gameStateManager;

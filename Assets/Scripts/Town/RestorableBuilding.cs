@@ -2,6 +2,8 @@ using UnityEngine;
 
 // A ruined building in town. Press E to pay and restore it; then it saves so the purchase sticks.
 // Only shows the Ruined or Restored child (Astra's art goes there); TownProgress owns the data.
+// PlayerInteractor finds interactables through their collider.
+[RequireComponent(typeof(Collider2D))]
 public class RestorableBuilding : MonoBehaviour, IInteractable
 {
     [SerializeField] private BuildingData building;
