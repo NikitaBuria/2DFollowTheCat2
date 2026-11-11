@@ -92,7 +92,11 @@ Adapted from MetrooDvania's `Scripts/Interaction` (`Scripts/Interaction/`):
 
 ## Scenes and doors
 
-No `DontDestroyOnLoad`: every scene has its own copy of the `Core` prefab (Player, GameStateManager, HUD, EventSystem, SaveSystem, InteractionPrompt, cameras) and moves data through the save file. Scenes in the build list: `SampleScene` (cave), `Town` (placeholder ground, copy of the cave's Core wiring).
+No `DontDestroyOnLoad`: every game scene has its own copy of the `Core` prefab (Player, GameStateManager, HUD, EventSystem, SaveSystem, InteractionPrompt, cameras) and moves data through the save file.
+Build list: `MainMenu` → `Town` ⇄ `Outdoor` ⇄ `Dungeon`.
+- **MainMenu** (no Core): Astra's `MainMenu` prefab on a Screen Space Overlay canvas; `MainMenuController` (Play → `SceneLoader.Load("Town")`, the save loads there, so Play is both New Game and Continue; Settings disabled until step 10; Exit quits).
+- **Town**: Merchant (shop), later restorable buildings and a rest spot. **Outdoor**: path between Town and Dungeon (TownDoor, DungeonDoor). **Dungeon** (was SampleScene): cave, enemies, GuideCat; dying respawns at its `PlayerSpawnPoint`.
+- Spawn IDs are named after where you came from: `FromOutdoor`, `FromTown`, `FromDungeon`. Town and Outdoor have placeholder ground and door squares until Astra's art.
 - **SceneDoor** (`Scripts/Interaction/`, IInteractable): `SaveManager.Save()` (refuses to leave if it fails), then `SceneLoader.Load(targetScene, targetSpawnId)`. Blocked prompt if the scene isn't in the build list. Every door use is an autosave.
 - **SceneLoader** (`Scripts/Core/`, static): keeps the spawn ID across the load (statics survive, scene objects don't).
 - **SpawnPoint**: `spawnId` marker (`FromTown`, `FromCave`), `SpawnPoint.Find(id)`.
@@ -130,7 +134,7 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅, scene doors cave ⇄ town ✅; next: town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅, scenes MainMenu/Town/Outdoor/Dungeon + doors ✅; next: town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
 
 ## Team
 

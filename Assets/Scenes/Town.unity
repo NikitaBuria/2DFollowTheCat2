@@ -119,6 +119,82 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &543088561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.13211
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6674
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178009498992515407, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700027166465928377, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: m_Name
+      value: Merchant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208302217136296560, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: shopStock
+      value: 
+      objectReference: {fileID: 11400000, guid: d7484df3f79bb9942877b316acef8949, type: 2}
+    - target: {fileID: 7208302217136296560, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+      propertyPath: gameStateManager
+      value: 
+      objectReference: {fileID: 2942709338005979265}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+--- !u!114 &543088562 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7208302217136296560, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
+  m_PrefabInstance: {fileID: 543088561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0fb2c81177ac24c9133298c505e9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Merchant
 --- !u!1 &590180271
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +206,7 @@ GameObject:
   - component: {fileID: 590180273}
   - component: {fileID: 590180272}
   m_Layer: 0
-  m_Name: SpawnPoint_FromCave
+  m_Name: SpawnPoint_FromOutdoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b38fc8ae4778544a034c6838afcc88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPoint
-  spawnId: FromCave
+  spawnId: FromOutdoor
 --- !u!4 &590180273
 Transform:
   m_ObjectHideFlags: 0
@@ -261,7 +337,7 @@ GameObject:
   - component: {fileID: 1128873571}
   - component: {fileID: 1128873570}
   m_Layer: 8
-  m_Name: CaveDoor
+  m_Name: OutdoorDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneDoor
   saveManager: {fileID: 1146930504}
-  targetScene: SampleScene
+  targetScene: Outdoor
   targetSpawnId: FromTown
   enterPrompt: Enter
   blockedPrompt: Blocked
@@ -586,11 +662,11 @@ PrefabInstance:
     - target: {fileID: 5817566596138527364, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: merchant
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 543088562}
     - target: {fileID: 8489160536688720957, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: merchant
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 543088562}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -599,6 +675,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+--- !u!114 &2942709338005979265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5747185677082376981, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+  m_PrefabInstance: {fileID: 2942709338005979264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f5cb7a464766f468e384adc3adad60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameStateManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -609,3 +696,4 @@ SceneRoots:
   - {fileID: 1128873573}
   - {fileID: 590180273}
   - {fileID: 1455761706}
+  - {fileID: 543088561}

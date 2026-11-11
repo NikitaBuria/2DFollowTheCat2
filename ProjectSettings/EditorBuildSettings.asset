@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainMenu.unity
+    guid: b7aac7ca02c25da4cba574305c15fec4
   - enabled: 1
     path: Assets/Scenes/Town.unity
     guid: 70dc20cac7da6794abb5c95ec99c96fe
+  - enabled: 1
+    path: Assets/Scenes/Outdoor.unity
+    guid: 950d2648dc5931a47a8b13b4babe2e8c
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 96ac84be326e49f4cabfd6358c1e9a7f, type: 3}
