@@ -1,0 +1,571 @@
+fileFormatVersion: 2
+guid: 4a76545ddc5a8d346848628125a13ad5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2902874184274832986
+    second: Merchant_Tier3_0
+  - first:
+      213: 1840983421777575077
+    second: Merchant_Tier3_1
+  - first:
+      213: -759904885206624030
+    second: Merchant_Tier3_2
+  - first:
+      213: 2165268436314185071
+    second: Merchant_Tier3_3
+  - first:
+      213: 3111533374819726713
+    second: Merchant_Tier3_4
+  - first:
+      213: 389030782378033283
+    second: Merchant_Tier3_5
+  - first:
+      213: 2563521106955923151
+    second: Merchant_Tier3_6
+  - first:
+      213: -664184375980878322
+    second: Merchant_Tier3_7
+  - first:
+      213: -8082938413415283087
+    second: Merchant_Tier3_8
+  - first:
+      213: 344503634524963378
+    second: Merchant_Tier3_9
+  - first:
+      213: 8451754450654774248
+    second: Merchant_Tier3_10
+  - first:
+      213: 3251299091678615375
+    second: Merchant_Tier3_11
+  - first:
+      213: 970195306378475002
+    second: Merchant_Tier3_12
+  - first:
+      213: 375451527400979376
+    second: Merchant_Tier3_13
+  - first:
+      213: -4666673594850818284
+    second: Merchant_Tier3_14
+  - first:
+      213: -554422984084528293
+    second: Merchant_Tier3_15
+  - first:
+      213: 5164757694725037754
+    second: Merchant_Tier3_16
+  - first:
+      213: 7255910249888232353
+    second: Merchant_Tier3_17
+  - first:
+      213: -5958687930086426994
+    second: Merchant_Tier3_18
+  - first:
+      213: 3871940731241039527
+    second: Merchant_Tier3_19
+  - first:
+      213: 5244257112336084516
+    second: Merchant_Tier3_20
+  - first:
+      213: -3811287918519859435
+    second: Merchant_Tier3_21
+  - first:
+      213: 5044588949147942971
+    second: Merchant_Tier3_22
+  - first:
+      213: 8774673894096853842
+    second: Merchant_Tier3_23
+  - first:
+      213: 2637411849658784656
+    second: Merchant_Tier3_24
+  - first:
+      213: 2966961567774993511
+    second: Merchant_Tier3_25
+  - first:
+      213: -4336062489313453035
+    second: Merchant_Tier3_26
+  - first:
+      213: -1637483810374999674
+    second: Merchant_Tier3_27
+  - first:
+      213: 3486773418904408184
+    second: Merchant_Tier3_28
+  - first:
+      213: 1853370065134705947
+    second: Merchant_Tier3_29
+  - first:
+      213: -6090592882645825291
+    second: Merchant_Tier3_30
+  - first:
+      213: 3711110726585911689
+    second: Merchant_Tier3_31
+  - first:
+      213: -9140285398642230764
+    second: Merchant_Tier3_32
+  - first:
+      213: 2420849347648603711
+    second: Merchant_Tier3_33
+  - first:
+      213: -8499206633952405322
+    second: Merchant_Tier3_34
+  - first:
+      213: -2141561876146082310
+    second: Merchant_Tier3_35
+  - first:
+      213: 276947790702622899
+    second: Merchant_Tier3_36
+  - first:
+      213: -3697702808858856622
+    second: Merchant_Tier3_37
+  - first:
+      213: 7006435727013925836
+    second: Merchant_Tier3_38
+  - first:
+      213: 5030904900093350190
+    second: Merchant_Tier3_39
+  - first:
+      213: 8344255485761036839
+    second: Merchant_Tier3_40
+  - first:
+      213: -4492733409405064053
+    second: Merchant_Tier3_41
+  - first:
+      213: 1856916660168131367
+    second: Merchant_Tier3_42
+  - first:
+      213: -4647091013282622493
+    second: Merchant_Tier3_43
+  - first:
+      213: -7323142101652671968
+    second: Merchant_Tier3_44
+  - first:
+      213: 3838491951805831957
+    second: Merchant_Tier3_45
+  - first:
+      213: -3561139755676085970
+    second: Merchant_Tier3_46
+  - first:
+      213: 7503369136041453730
+    second: Merchant_Tier3_47
+  - first:
+      213: -2613269620551094614
+    second: Merchant_Tier3_48
+  - first:
+      213: 4268338644549525742
+    second: Merchant_Tier3_49
+  - first:
+      213: -3843209966570499383
+    second: Merchant_Tier3_50
+  - first:
+      213: 6363375998919731276
+    second: Merchant_Tier3_51
+  - first:
+      213: 3528256778987250356
+    second: Merchant_Tier3_52
+  - first:
+      213: 6069605512753934121
+    second: Merchant_Tier3_53
+  - first:
+      213: -7957286608795011754
+    second: Merchant_Tier3_54
+  - first:
+      213: -4860110596993460580
+    second: Merchant_Tier3_55
+  - first:
+      213: 5134734855026144359
+    second: Merchant_Tier3_56
+  - first:
+      213: -7253679449064129046
+    second: Merchant_Tier3_57
+  - first:
+      213: -8730378399613128162
+    second: Merchant_Tier3_58
+  - first:
+      213: 7754732416195417136
+    second: Merchant_Tier3_59
+  - first:
+      213: -1658102900729874161
+    second: Merchant_Tier3_60
+  - first:
+      213: 7173555996193104553
+    second: Merchant_Tier3_61
+  - first:
+      213: -5364677383162789293
+    second: Merchant_Tier3_62
+  - first:
+      213: -1601624720679632743
+    second: Merchant_Tier3_63
+  - first:
+      213: -6351238770224212138
+    second: Merchant_Tier3_64
+  - first:
+      213: -5471408463997444607
+    second: Merchant_Tier3_65
+  - first:
+      213: 1045736210474617808
+    second: Merchant_Tier3_66
+  - first:
+      213: 2760367758534115470
+    second: Merchant_Tier3_67
+  - first:
+      213: -777627089911883963
+    second: Merchant_Tier3_68
+  - first:
+      213: -4227486152427613533
+    second: Merchant_Tier3_69
+  - first:
+      213: -1880397936444077700
+    second: Merchant_Tier3_70
+  - first:
+      213: -7184173579615354685
+    second: Merchant_Tier3_71
+  - first:
+      213: -5702846688034508146
+    second: Merchant_Tier3_72
+  - first:
+      213: -203990778290403039
+    second: Merchant_Tier3_73
+  - first:
+      213: -7593416199441816697
+    second: Merchant_Tier3_74
+  - first:
+      213: 2607172139707597391
+    second: Merchant_Tier3_75
+  - first:
+      213: 6010584162591939096
+    second: Merchant_Tier3_76
+  - first:
+      213: -8926802560888792403
+    second: Merchant_Tier3_77
+  - first:
+      213: 7870515360099976294
+    second: Merchant_Tier3_78
+  - first:
+      213: -2094795222064744360
+    second: Merchant_Tier3_79
+  - first:
+      213: -8676384002742963972
+    second: Merchant_Tier3_80
+  - first:
+      213: 5517063834722304827
+    second: Merchant_Tier3_81
+  - first:
+      213: 5962786904511442168
+    second: Merchant_Tier3_82
+  - first:
+      213: -3543705740596997617
+    second: Merchant_Tier3_83
+  - first:
+      213: -2197899868645162098
+    second: Merchant_Tier3_84
+  - first:
+      213: -7321243767440488767
+    second: Merchant_Tier3_85
+  - first:
+      213: -2398104710253621623
+    second: Merchant_Tier3_86
+  - first:
+      213: 1054921392529874563
+    second: Merchant_Tier3_87
+  - first:
+      213: 7082504502607380714
+    second: Merchant_Tier3_88
+  - first:
+      213: 1905753570181125062
+    second: Merchant_Tier3_89
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 218
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 384
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338f2cf020c7306418ed97edde5e0d10
+      internalID: -389734339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 384
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39b12f2c1361ca488da84613214be0f
+      internalID: 1456332694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 384
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d9133367e5a2147bf7e229980bf2e3
+      internalID: 2085974718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 512
+        width: 384
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a418950df6a1a3840912c3aca686b246
+      internalID: 158663919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Talk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 384
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c33ce895bdd3a247981795e482b52b3
+      internalID: 442652620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Talk_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 384
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04550ac2021734342b56686f1b83a5f5
+      internalID: 1364105115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Talk_2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 384
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed152b6c57b420945b0e762125718c92
+      internalID: 392993640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Talk_3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 384
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87b3496920fd7b4798a736c9b3097c8
+      internalID: 290545677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 09fc7565aab5f6a45b4924ecee592265
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Idle_0: -389734339
+      Idle_1: 1456332694
+      Idle_2: 2085974718
+      Idle_3: 158663919
+      Talk_0: 442652620
+      Talk_1: 1364105115
+      Talk_2: 392993640
+      Talk_3: 290545677
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,6 +12,9 @@ public class ItemData : ScriptableObject
     // Coins the merchant pays for one of these.
     [field: SerializeField, Min(0)] public int sellPrice { get; private set; } = 1;
 
+    // Coins the merchant asks for one of these (only matters for items in a ShopStock).
+    [field: SerializeField, Min(0)] public int buyPrice { get; private set; } = 5;
+
     // Falls back to the asset name so an empty field still shows something useful.
     public string displayName => string.IsNullOrWhiteSpace(itemName) ? name : itemName;
 }

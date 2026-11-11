@@ -16,4 +16,5 @@ MonoBehaviour:
   <icon>k__BackingField: {fileID: 21300000, guid: 6ab25abe7d01bb14ebcfacb1ea7482e0, type: 3}
   <maxStack>k__BackingField: 10
   <sellPrice>k__BackingField: 5
+  <buyPrice>k__BackingField: 15
   <healAmount>k__BackingField: 10

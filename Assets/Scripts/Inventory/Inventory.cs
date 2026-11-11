@@ -24,6 +24,17 @@ public class Inventory : MonoBehaviour, ISaveable
 
     public InventorySlot GetSlot(int index) => index >= 0 && index < slots.Length ? slots[index] : null;
 
+    // Removes the whole stack in this slot (selling). Returns whether anything was removed.
+    public bool DeleteSlot(int index)
+    {
+        InventorySlot slot = GetSlot(index);
+        if (slot == null || slot.isEmpty) return false;
+
+        slot.Clear();
+        OnChanged?.Invoke();
+        return true;
+    }
+
     public void SelectSlot(int index)
     {
         if (index < 0 || index >= slots.Length || index == selectedSlot) return;
@@ -54,10 +65,12 @@ public class Inventory : MonoBehaviour, ISaveable
         }
 
         int accepted = amount - remaining;
+
         if (accepted == 0) return 0;
 
-        Debug.Log($"{name} picked up {accepted}x {item.displayName}.", this);
+        Debug.Log($"{name} added {accepted}x {item.displayName}.", this);
         OnChanged?.Invoke();
+
         return accepted;
     }
 
@@ -97,6 +110,7 @@ public class Inventory : MonoBehaviour, ISaveable
     public bool UseItem(int index, GameObject user)
     {
         InventorySlot slot = GetSlot(index);
+
         if (slot == null || slot.item is not IUsable usable) return false;
         if (!usable.Use(user)) return false;
 
@@ -147,6 +161,7 @@ public class Inventory : MonoBehaviour, ISaveable
 
         InventorySlot from = slots[fromIndex];
         InventorySlot to = slots[toIndex];
+
         if (amount <= 0 || amount >= from.amount) return false;
         if (!to.isEmpty && to.item != from.item) return false;
         if (to.amount + amount > from.item.maxStack) return false;

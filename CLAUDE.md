@@ -38,7 +38,7 @@ Same pattern as the player (`Scripts/Enemy/`):
 
 - **Health** (`Scripts/Combat/`): implements `IDamageable`; `Initialize(maxHealth)` from the owner's data; events `OnDamaged(DamageData)` (before `OnDied`, also on the killing hit) and `OnDied`. I-frames: `StartInvincibility(duration)` stores a `Time.time` timestamp; `TakeDamage` ignores hits while `isInvincible`. States decide when (player Hurt now, Dash later).
 - **DamageData**: readonly struct (amount, normalized direction, knockback, knockbackDuration).
-- **Data (ScriptableObjects)**: `CharacterData` (maxHealth, walk/run/dash speed, `invincibleTimer`; enemies leave it at 0 for now) → `EnemyData` (detection, patrol, body attack, windup/recover/hurt timing, `lootTable`). `ItemData` (itemName, icon, maxStack, sellPrice). `LootTable` (list of `LootDrop`: prefab, optional item, chance, min/max; spawns in a circle). `WeaponData` (damage, knockback, range, arc, attackDuration); later it inherits from `ItemData`.
+- **Data (ScriptableObjects)**: `CharacterData` (maxHealth, walk/run/dash speed, `invincibleTimer`; enemies leave it at 0 for now) → `EnemyData` (detection, patrol, body attack, windup/recover/hurt timing, `lootTable`). `ItemData` (itemName, icon, maxStack, sellPrice, buyPrice). `ShopStock` (merchant's items). `LootTable` (list of `LootDrop`: prefab, optional item, chance, min/max; spawns in a circle). `WeaponData` (damage, knockback, range, arc, attackDuration); later it inherits from `ItemData`.
 
 ## Loot and items
 
@@ -52,7 +52,7 @@ Ported from MetrooDvania, adapted to top-down:
 ## Game state and UI
 
 - **GameState** (`Scripts/Core/`): enum `Gameplay`, `Inventory`, `Paused`, `Shop` (Gameplay first = default).
-- **GameStateManager**: single source of truth for the mode. Polls `inventoryPressedThisFrame` / `menuPressedThisFrame` in `Update` with a `switch (currentState)` (Tab toggles Inventory; Escape toggles Paused and closes Inventory; Tab or Escape closes Shop, which only `Merchant.Interact` opens). `ChangeState` sets `Time.timeScale` (1 in Gameplay, 0 otherwise), turns the Player action map on only in Gameplay, then fires `OnGameStateChanged`.
+- **GameStateManager**: single source of truth for the mode. Polls `inventoryPressedThisFrame` / `menuPressedThisFrame` in `Update` with a `switch (currentState)` (Tab toggles Inventory; Escape toggles Paused and closes Inventory; Tab or Escape closes Shop, which only `Merchant.Interact` opens). `Awake` resets `Time.timeScale` to 1; `ChangeState` sets it (1 in Gameplay, 0 otherwise), turns the Player action map on only in Gameplay, then fires `OnGameStateChanged`.
 - **PlayerInputReader** maps: Player Actions (on only in Gameplay) and UI Actions (always on: Toggle Inventory, Toggle Pause). Maps are switched with `action.actionMap.Enable()/Disable()`.
 - **UIManager** (`Scripts/UI/`, on the always-active HUD Canvas): listens to `OnGameStateChanged` and only shows/hides panels with `SetActive` (InventoryPanel in Inventory and Shop, MerchantPanel in Shop, pause menu in Paused). Content scripts never know the game state.
 - **CoinCounterUI** (inside InventoryPanel): listens to `Wallet.OnMoneyChanged`, refreshes in `OnEnable`.
@@ -81,7 +81,10 @@ Adapted from MetrooDvania's `Scripts/Interaction` (`Scripts/Interaction/`):
 - **NpcDialogue** (IInteractable): `speakerName`, `lines`, `lineDuration`; each interact shows the next line, after the last one (or the timer) it ends. Events `OnLineShown(speaker, line)`, `OnDialogueEnded`.
 - **SpeechBubbleView** (on `CatSpeechBubble`/`MerchantSpeechBubble`): listens to its `NpcDialogue`, hides with the `CanvasGroup` (not `SetActive`, so it keeps listening).
 - Scene: `GuideCat` (Interactable layer, trigger `CircleCollider2D`, `NpcDialogue`, `CatSpeechBubble` child). The cat's Talk animation isn't played yet.
-- **Merchant** (`Scripts/Merchant/`, IInteractable): `Interact` only calls `gameStateManager.ChangeState(GameState.Shop)`; never touches UI. Scene: `Merchant` (placeholder gold square, Interactable layer, trigger collider) next to GuideCat; `MerchantPanel` is a HUD child (sibling of InventoryPanel). Next: selling (drag an inventory item onto MerchantPanel → `sellPrice` coins), greeting via `NpcDialogue` + `MerchantSpeechBubble`, real art.
+- **Merchant** (`Scripts/Merchant/`, the object's only IInteractable): `Interact` stores the `customer` (Player), says the next `greeting` line (`NpcDialogue` on the `Greeting` child, no collider, so `GetComponentInParent<IInteractable>` can't pick it) and calls `ChangeState(GameState.Shop)`; never touches UI. Unlimited coins and stock. `TrySell(slotIndex)` sells the whole stack (`sellPrice` × amount, 0 = unsellable) via `Inventory.DeleteSlot` + `Wallet.Add`. `TryBuy(item)` buys one: item must be in `shopStock`, coins checked first, then `AddItemAndReturnAccepted` (0 = full, nothing changes), then `TrySpend`.
+- **ShopStock** (SO, `ScriptableObjects/Merchant/MerchantStock`): list of `ItemData`, `HasItem`. Dummies until their systems exist: `StrengthElixir` (buff), `LeatherArmor`; the Health Potion works.
+- **Shop UI**: `MerchantStorePanel` (Astra's prefab, HUD child, `UIManager.merchantPanel`) has `MerchantStoreUI` (builds one `ShopEntry` prefab per stock item in `Start`, `HorizontalLayoutGroup`) and `MerchantSellArea` (`IDropHandler`: a left-drag of an `InventorySlotUI` dropped anywhere on the panel → `TrySell`; right-drag ignored). `ShopEntryUI`: icon + `buyPrice`, `Button` click → owner → `TryBuy`. Later: feedback when a buy fails.
+- **MerchantAppearance** (on the Merchant prefab, art by Astra): one child Animator per town tier, `SetTownTier(1..3)` for town restoration; `Play`s Talk/Idle on the greeting's events (controllers have no transitions).
 
 ## Pause menu visual prefab
 
@@ -118,4 +121,8 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (base + NPC dialogue ✅, merchant opens the Shop state ✅; next: selling, door/stairs, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅; later: autosave in town, checkpoints, restoration progress) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅; next: door/stairs, town restoration) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+
+## Team
+
+Astra makes the art (sprites, animations, prefab visuals). The developer and Claude design and write all code.

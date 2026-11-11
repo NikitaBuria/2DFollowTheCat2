@@ -11,6 +11,13 @@ public class GameStateManager : MonoBehaviour
 
     public event Action<GameState> OnGameStateChanged;
 
+    // currentState starts as Gameplay, so time must run too. A scene reload or a Time Scale of 0
+    // saved in ProjectSettings would otherwise start the game frozen.
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
+
     private void Update()
     {
         bool inventoryPressed = playerInputReader.inventoryPressedThisFrame;
