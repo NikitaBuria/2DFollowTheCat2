@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Bits: 64
   <obstacleLayers>k__BackingField:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   <detectionRange>k__BackingField: 5
   <loseTargetRange>k__BackingField: 7
   <targetRefreshInterval>k__BackingField: 0.2

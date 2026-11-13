@@ -9,8 +9,11 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private LayerMask enemyLayerMask;
     [SerializeField] private Transform attackPoint;
 
-    // Targets already hit during the current swing. Reused every attack so it doesn't create garbage.
+    // Colliders found by the hit search, and targets already hit this swing.
+    // Both are reused every attack so swinging doesn't create garbage.
+    private readonly List<Collider2D> hits = new();
     private readonly HashSet<IDamageable> hitThisSwing = new();
+    private ContactFilter2D enemyFilter;
 
     private void Awake()
     {
@@ -19,6 +22,9 @@ public class PlayerCombat : MonoBehaviour
 
         if (attackPoint == null)
             Debug.LogError($"{name}: PlayerCombat has no attackPoint assigned.", this);
+
+        enemyFilter = new ContactFilter2D { useTriggers = true };
+        enemyFilter.SetLayerMask(enemyLayerMask);
 
         // "Nothing" means the attack can never hit anything, so say so instead of failing silently.
         if (enemyLayerMask == 0)
@@ -34,11 +40,12 @@ public class PlayerCombat : MonoBehaviour
         Vector2 origin = attackPoint.position;
 
         // Circle centered on the attack point: attackRange is the real reach.
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(origin, currentWeapon.attackRange, enemyLayerMask);
+        // Fills the reused list instead of returning a new array.
+        Physics2D.OverlapCircle(origin, currentWeapon.attackRange, enemyFilter, hits);
 
         hitThisSwing.Clear();
 
-        foreach (Collider2D hit in hitColliders)
+        foreach (Collider2D hit in hits)
         {
             // GetComponentInParent also finds the script when the collider sits on a child object.
             IDamageable target = hit.GetComponentInParent<IDamageable>();
@@ -62,7 +69,7 @@ public class PlayerCombat : MonoBehaviour
     }
 
     // Draws the hit area (a "pizza slice") while the Player is selected:
-    // faint circle = full OverlapCircleAll range, red slice = the part that actually hits.
+    // faint circle = full search range, red slice = the part that actually hits.
     // Editor-only debug drawing, so reading Player here doesn't couple the game logic to it.
     private void OnDrawGizmosSelected()
     {

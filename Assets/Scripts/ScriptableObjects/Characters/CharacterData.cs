@@ -15,6 +15,9 @@ public class CharacterData : ScriptableObject
     [field: SerializeField, Min(0f)] public float dashSpeed { get; private set; } = 10f;
 
     [Header("Hit Reaction")]
+    // How long a hit stuns (at least as long as the knockback). Match it to the Hurt clip.
+    [field: SerializeField, Min(0f)] public float hurtDuration { get; private set; } = 0.3f;
+
     // Seconds after a hit during which damage is ignored. Keep it longer than the knockback.
     [field: SerializeField, Min(0f)] public float invincibleTimer { get; private set; } = 1f;
 }

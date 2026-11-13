@@ -16,11 +16,11 @@ One job per script:
 - **PlayerInputReader**: the only script that reads input. All input is polled by the current state in `Update` (`ReadValue`, `IsPressed`, `WasPressedThisFrame`); no input events. Each state checks only the inputs it accepts.
 - **PlayerStateMachine**: plain class with `Initialize` and `ChangeState` (old `Exit` → swap → new `Enter`). Only it switches states.
 - **PlayerState**: abstract base. `Enter`/`Update`/`Exit` abstract, `FixedUpdate` virtual and empty.
-- **States** (`Scripts/Player Scripts/PlayerStates/`, one file each): Idle, Walk, Run, Dash, Attack, Hurt, Dead; later Interact and Ability. Dash is still empty. Hurt: starts i-frames (`invincibleTimer`) in `Enter`, pushes along `lastDamage.direction` for its `knockbackDuration`, then Idle; `Stop()` in `Exit`. Idle and Dead call `Stop()` every `FixedUpdate`. Dead: plays Dead, turns off the collider in `Enter` and back on in `Exit`; no transitions of its own (RespawnManager calls `Player.Respawn`, which goes to Idle).
+- **States** (`Scripts/Player Scripts/PlayerStates/`, one file each): Idle, Walk, Run, Dash, Attack, Hurt, Dead; later Interact and Ability. Dash is still empty. Hurt: starts i-frames (`invincibleTimer`) in `Enter`, pushes along `lastDamage.direction` for its `knockbackDuration`, stays stunned for `hurtDuration` or the knockback (whichever is longer), then Idle; `Stop()` in `Exit`. Idle and Dead call `Stop()` every `FixedUpdate`. Dead: plays Dead, turns off the collider in `Enter` and back on in `Exit`; no transitions of its own (RespawnManager calls `Player.Respawn`, which goes to Idle).
 - **PlayerMotor**: Rigidbody only (`Move`, `Stop`, `Teleport`). No `Update`/`FixedUpdate`, no input, speeds passed in as parameters.
 - The Player requires a `Collider2D` (Dead turns it off).
 - **PlayerAnimator**: `PlayerAnimationState` enum (own file) + switch expression to cached `Animator.StringToHash`, throws on unknown values; `SetMoveDirection` drives the MoveX/MoveY blend trees.
-- **PlayerCombat**: one public method, `HandleAttack(direction)`: `OverlapCircleAll` at `attackPoint` with the weapon's range, keeps targets inside the weapon's arc, a `HashSet` so each target is hit once per swing. Stats come from the equipped `WeaponData`; `PlayerAttackState` decides when.
+- **PlayerCombat**: one public method, `HandleAttack(direction)`: `OverlapCircle` into a reused `List` (a `ContactFilter2D` on the enemy layer) at `attackPoint` with the weapon's range, keeps targets inside the weapon's arc, a `HashSet` so each target is hit once per swing. Stats come from the equipped `WeaponData`; `PlayerAttackState` decides when.
 - **Health**: the shared component (see Shared), as `player.playerHealth`. The Rigidbody has Linear Damping 8 so collision shoves fade out.
 - **Wallet** and **Inventory**: components on the Player GameObject (see Loot and items).
 - **PlayerInteractor**: see Interaction. Later: PlayerAbilities, Equipment.
@@ -31,7 +31,7 @@ Same pattern as the player (`Scripts/Enemy/`):
 - **Enemy**: the hub. Creates the states, forwards `Update`/`FixedUpdate`, calls `enemyDetection.Refresh()`, turns `Health.OnDamaged` → Hurt and `Health.OnDied` → Dead. Holds `facingDirection`, `lastDamage` and the patrol route (positions captured in `Awake`).
 - **EnemyStateMachine** / **EnemyState** (`Scripts/Enemy/EnemyStates/`): copies of the player versions.
 - **States**: Idle ⇄ Patrol → Chase → Windup → Attack (hit, then `recoverTime`) → Chase; any → Hurt (knockback, not restarted by new hits, so no stun-lock); killing hit → Dead (colliders off, `enemyData.lootTable.DropLoot` once, `Destroy` after `destroyDelay`). Windup locks facing so the player can dodge.
-- **Components**: `EnemyMotor` (`MoveTowards` without overshooting, `Move`, `Stop`), `EnemyDetection` (throttled `OverlapCircle` search, immediate loss beyond `loseTargetRange`, `Linecast` line of sight only for spotting), `EnemyCombat` (body attack: range check to the target collider's `ClosestPoint`, re-checked at the moment of the hit), `EnemyAnimator` (same as `PlayerAnimator`, warns once about missing Animator states).
+- **Components**: `EnemyMotor` (`MoveTowards` without overshooting, `Move`, `Stop`), `EnemyDetection` (throttled `OverlapCircle` search, immediate loss beyond `loseTargetRange`, `Linecast` line of sight only for spotting; WispGrin's `obstacleLayers` = Default, where the cave walls are), `EnemyCombat` (body attack: range check to the target collider's `ClosestPoint`, re-checked at the moment of the hit), `EnemyAnimator` (same as `PlayerAnimator`, warns once about missing Animator states).
 - Enemies attack with their body, never with `WeaponData`; their attack stats live in `EnemyData`.
 - **Editor/EnemyInspector**: shows the live state, target and health in Play mode.
 
@@ -39,7 +39,7 @@ Same pattern as the player (`Scripts/Enemy/`):
 
 - **Health** (`Scripts/Combat/`): implements `IDamageable`; `Initialize(maxHealth)` from the owner's data; events `OnDamaged(DamageData)` (before `OnDied`, also on the killing hit) and `OnDied`. I-frames: `StartInvincibility(duration)` stores a `Time.time` timestamp; `TakeDamage` ignores hits while `isInvincible`. States decide when (player Hurt now, Dash later).
 - **DamageData**: readonly struct (amount, normalized direction, knockback, knockbackDuration).
-- **Data (ScriptableObjects)**: `CharacterData` (maxHealth, walk/run/dash speed, `invincibleTimer`; enemies leave it at 0 for now; WispGrin has 6 health = 3 hits with the 2-damage weapon) → `EnemyData` (detection, patrol, body attack, windup/recover/hurt timing, `lootTable`). `ItemData` (itemName, icon, maxStack, sellPrice, buyPrice). `ShopStock` (merchant's items). `LootTable` (list of `LootDrop`: prefab, optional item, chance, min/max; spawns in a circle). `WeaponData` (damage, knockback, range, arc, attackDuration); later it inherits from `ItemData`.
+- **Data (ScriptableObjects)**: `CharacterData` (maxHealth, walk/run/dash speed, `hurtDuration` (stun after a hit; match the Hurt clip: player 0.5, WispGrin 0.3), `invincibleTimer`; enemies leave it at 0 for now; WispGrin has 6 health = 3 hits with the 2-damage weapon) → `EnemyData` (detection, patrol, body attack, windup/recover/hurt timing, `lootTable`). `ItemData` (itemName, icon, maxStack, sellPrice, buyPrice). `ShopStock` (merchant's items). `LootTable` (list of `LootDrop`: prefab, optional item, chance, min/max; spawns in a circle). `WeaponData` (damage, knockback, range, arc, attackDuration); later it inherits from `ItemData`.
 
 ## Loot and items
 
@@ -166,7 +166,7 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅; fix review items) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (built early with the Wisp; needs a Play-mode test) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅, autosave on every door ✅; later: checkpoints) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅, scenes MainMenu/Town/Outdoor/Dungeon + doors ✅, town restoration ✅ (Astra's building art and rebuild clips)) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅, review items fixed ✅) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (Wisp) ✅ (fight play-tested) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅, autosave on every door ✅; later: checkpoints) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅, scenes MainMenu/Town/Outdoor/Dungeon + doors ✅, town restoration ✅ (Astra's building art and rebuild clips)) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
 
 ## Team
 

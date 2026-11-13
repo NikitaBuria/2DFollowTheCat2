@@ -20,4 +20,4 @@ MonoBehaviour:
   <knockbackDuration>k__BackingField: 0.2
   <attackRange>k__BackingField: 1.5
   <attackArc>k__BackingField: 90
-  <attackDuration>k__BackingField: 0.4
+  <attackDuration>k__BackingField: 0.5

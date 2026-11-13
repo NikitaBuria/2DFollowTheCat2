@@ -33,9 +33,7 @@ public class EnemyData : CharacterData
     // How long the enemy stays in the attack after the hit before acting again.
     [field: SerializeField, Min(0f)] public float recoverTime { get; private set; } = 0.6f;
 
-    [Header("Hurt / Dead")]
-    // How long a hit stuns the enemy (at least as long as the knockback).
-    [field: SerializeField, Min(0f)] public float hurtDuration { get; private set; } = 0.3f;
+    [Header("Dead")]
     // Seconds before the dead enemy is removed (time for the death animation).
     [field: SerializeField, Min(0f)] public float destroyDelay { get; private set; } = 1f;
 
