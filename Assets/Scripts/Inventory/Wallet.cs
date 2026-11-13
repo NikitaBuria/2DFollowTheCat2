@@ -15,7 +15,6 @@ public class Wallet : MonoBehaviour, ISaveable
         if (amount <= 0) return;
 
         coins += amount;
-        Debug.Log($"{name} got {amount} coins. Total: {coins}.", this);
         OnMoneyChanged?.Invoke(coins);
     }
 

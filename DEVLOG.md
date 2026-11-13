@@ -1,5 +1,20 @@
 # Devlog
 
+## 2026-11-12 → 2026-11-13 — Maps, building art and a code clean-up
+
+**Done**
+- Repaired the map tile kit in place so tiles sit next to each other cleanly, added random grass and animated water brushes.
+- Painted the Town (forest clearing, plaza, ponds, the three buildings and the gate) and made the Outdoor river, ruins and map edge block the player.
+- Astra's building art and rebuild animations in town; a restore now plays the animation through an event.
+- Code review clean-up: removed unused code and debug logs, added missing comments, guarded a hotbar input edge case, gave the Wisp its real health.
+
+**Learned**
+- Gameplay scripts should announce what happened (an event) and let a view decide how it looks.
+- A tilemap only blocks the player on a layer that has a collider; decoration layers stay walk-through.
+
+**Next**
+- Enemy Play-mode test and the combat review, then the boss and the win screen.
+
 ## 2026-11-07 → 2026-11-11 — From combat to a connected world
 
 **Done**

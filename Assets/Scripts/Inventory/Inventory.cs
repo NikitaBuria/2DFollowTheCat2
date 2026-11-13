@@ -68,7 +68,6 @@ public class Inventory : MonoBehaviour, ISaveable
 
         if (accepted == 0) return 0;
 
-        Debug.Log($"{name} added {accepted}x {item.displayName}.", this);
         OnChanged?.Invoke();
 
         return accepted;

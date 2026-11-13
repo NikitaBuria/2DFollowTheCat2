@@ -1,11 +1,9 @@
 using System;
 
+// Holds the current player state. Only this class switches states: old Exit -> swap -> new Enter.
 public sealed class PlayerStateMachine
 {
     public PlayerState currentState { get; private set; }
-
-    // old state, new state
-    public event Action<PlayerState, PlayerState> OnStateChanged;
 
     public void Initialize(PlayerState initialState)
     {
@@ -18,22 +16,8 @@ public sealed class PlayerStateMachine
         if (nextState == null) throw new ArgumentNullException(nameof(nextState));
         if (nextState == currentState) return;
 
-        PlayerState previous = currentState;
-        previous?.Exit();
+        currentState?.Exit();
         currentState = nextState;
         currentState.Enter();
-
-        OnStateChanged?.Invoke(previous, nextState);
-    }
-
-    public void Shutdown()
-    {
-        if (currentState == null) return;
-
-        PlayerState previous = currentState;
-        previous.Exit();
-        currentState = null;
-
-        OnStateChanged?.Invoke(previous, null);
     }
 }

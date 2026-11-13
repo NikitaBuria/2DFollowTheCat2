@@ -10,7 +10,6 @@ public class Health : MonoBehaviour, IDamageable, ISaveable
     public int currentHealth { get; private set; }
 
     public bool isAlive => currentHealth > 0;
-    public Transform damageTransform => transform;
 
     // Damage is ignored until this time. A timestamp instead of a countdown, so no Update is needed.
     private float invincibleUntil;

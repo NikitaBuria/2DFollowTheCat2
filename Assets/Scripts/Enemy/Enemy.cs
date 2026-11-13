@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// TODO: Enemy does too much; split the logic where possible.
 
 // Wires the enemy together, like Player does: creates the states, forwards Update/FixedUpdate
 // to the current one and turns health events into state changes. States decide what happens.
@@ -119,8 +118,6 @@ public class Enemy : MonoBehaviour
     private void HandleDamaged(DamageData damage)
     {
         lastDamage = damage;
-        Debug.Log($"{name} took {damage.amount} damage. Health is now {health.currentHealth}.", this);
-
         // A killing hit goes to Dead through OnDied instead.
         if (health.isAlive) enemyStateMachine.ChangeState(hurtState);
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WispGrinData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <characterType>k__BackingField: 0
-  <maxHealth>k__BackingField: 1
+  <maxHealth>k__BackingField: 6
   <walkSpeed>k__BackingField: 4
   <runSpeed>k__BackingField: 6
   <dashSpeed>k__BackingField: 10

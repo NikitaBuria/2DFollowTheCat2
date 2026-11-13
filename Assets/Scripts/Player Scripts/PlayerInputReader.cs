@@ -36,6 +36,9 @@ public class PlayerInputReader : MonoBehaviour
             InputAction action = hotbarInput.action;
             if (!action.WasPressedThisFrame()) return -1;
 
+            // A key pressed and released inside one frame leaves no active control.
+            if (action.activeControl == null) return -1;
+
             return action.GetBindingIndexForControl(action.activeControl);
         }
     }

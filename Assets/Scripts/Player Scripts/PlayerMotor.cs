@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Moves the player's Rigidbody. No Update, no input, no decisions: states pass in direction and speed.
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMotor : MonoBehaviour
 {
@@ -12,16 +13,12 @@ public class PlayerMotor : MonoBehaviour
 
     public void Move(Vector2 direction, float speed) => rb.linearVelocity = direction * speed;
 
-    // Moves the body straight to a position (respawn), with no velocity left over.
+    // Moves the body straight to a position (respawn, scene arrival), with no velocity left over.
     public void Teleport(Vector2 position)
     {
         rb.position = position;
         rb.linearVelocity = Vector2.zero;
     }
 
-    public void Stop()
-    {
-       rb.linearVelocity = Vector2.zero; 
-
-    } 
+    public void Stop() => rb.linearVelocity = Vector2.zero;
 }

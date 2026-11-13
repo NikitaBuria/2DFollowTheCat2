@@ -6,9 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewCharacterData", menuName = "Scriptable Objects/Character Data")]
 public class CharacterData : ScriptableObject
 {
-    [Header("Info")]
-    [field: SerializeField] public CharacterType characterType { get; private set; }
-
     [Header("Health")]
     [field: SerializeField, Min(1)] public int maxHealth { get; private set; } = 100;
 

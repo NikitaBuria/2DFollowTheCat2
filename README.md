@@ -30,7 +30,8 @@ Town → Outdoor → Dungeon → fight → loot → back to town → sell to the
 | Interaction: NPC dialogue with speech bubbles | ✅ |
 | Merchant shop: buy from stock, sell by drag and drop | ✅ |
 | Scenes: main menu, town, outdoor, dungeon, connected by doors | ✅ |
-| Town restoration: 3 buildings, town tiers, better merchant stock | ✅ |
+| Town restoration: 3 buildings, town tiers, better merchant stock, rebuild animations | ✅ |
+| Painted maps: town, outdoor river crossing, dungeon cave with collision | ✅ |
 | Boss and win screen | ⏳ |
 | Dash, equipment, abilities | ⏳ |
 | Audio and UI polish | ⏳ |
@@ -85,12 +86,17 @@ The code follows a few rules: each script has one job, states decide *what* happ
 ### Town restoration
 - Each building is a `BuildingData` ScriptableObject (name, cost, optional required item).
 - `TownProgress` keeps which buildings are restored, saves them through `ISaveable` and announces changes with an event. The town tier (1 + restored buildings) changes the merchant's look and what he sells.
-- `RestorableBuilding` only asks `TownProgress` and swaps between its ruined and restored art.
+- `RestorableBuilding` only asks `TownProgress` and swaps between its ruined and restored art. When the player restores it, it fires `OnRestored`; `BuildingRebuildView` listens and plays the rebuild animation, so the gameplay script never touches its visuals.
 
 ### Interaction and the merchant
 - `PlayerInteractor` finds the nearest `IInteractable` in front of the player; a world-space prompt shows `[E] Talk`, `[E] Trade` or `[E] Enter`.
 - The `Merchant` only asks for the Shop game state and does the trading; the shop UI builds its entries from `ShopStock` and reports clicks and drops back.
 - Buying checks coins and inventory space before anything changes, so a failed purchase never loses coins.
+
+### Maps
+- Scenes are painted with Unity's Tilemap and Tile Palette, using one fantasy pixel-art kit (128 px per cell, the same scale as the characters).
+- Each scene has a `Ground` layer (walkable), a `Walls` layer with a merged collider (trees, water, ruins block the player) and a `Decor` layer (bushes and flowers you walk through).
+- Random brushes (Rule Tiles) and animated water tiles keep large areas from looking repeated.
 
 ### Animation
 - Animator Controllers have no transitions. Every state is a 4-direction blend tree.
@@ -110,12 +116,12 @@ Assets/
 │   ├── Save/                SaveFile, SaveManager, SaveData, ISaveable
 │   ├── Interaction/         PlayerInteractor, NpcDialogue, SceneDoor, IInteractable
 │   ├── Merchant/            Merchant, ShopStock, MerchantAppearance
-│   ├── Town/                BuildingData, TownProgress, RestorableBuilding
+│   ├── Town/                BuildingData, TownProgress, RestorableBuilding, BuildingRebuildView
 │   ├── UI/                  UIManager, inventory, hotbar, shop, main menu
 │   └── ScriptableObjects/   Character, enemy, item, weapon and loot data
 ├── Editor/                  Custom inspectors and asset builders
 ├── Prefabs/
-└── Art/
+└── Art/                     Characters, items, UI, map tiles and palettes
 ```
 
 ## Controls

@@ -5,7 +5,8 @@ using UnityEngine.Serialization;
 // No game logic here; states decide what happens, components do the work.
 [RequireComponent(typeof(PlayerInputReader), typeof(PlayerMotor), typeof(PlayerAnimator))]
 [RequireComponent(typeof(PlayerCombat), typeof(Health), typeof(Inventory))]
-[RequireComponent(typeof(Wallet), typeof(PlayerInteractor))]
+// Collider2D: PlayerDeadState switches it off while dead.
+[RequireComponent(typeof(Wallet), typeof(PlayerInteractor), typeof(Collider2D))]
 public class Player : MonoBehaviour
 {
     // Components on this GameObject. Found with GetComponent in Awake, so nothing to assign in the Inspector.
@@ -19,7 +20,6 @@ public class Player : MonoBehaviour
     public PlayerInteractor playerInteractor { get; private set; }
     public PlayerStateMachine playerStateMachine { get; private set; }
 
-
     [Header("Data")]
     // Base stats (speeds, max health). States read them through player.playerData.
     [field: SerializeField, FormerlySerializedAs("<characterData>k__BackingField")]
@@ -30,8 +30,6 @@ public class Player : MonoBehaviour
 
     // Which way the player faces; used for animations and attacks.
     public Vector2 facingDirection { get; private set; } = Vector2.down;
-
-    
 
     // States
     public PlayerIdleState idleState { get; private set; }
@@ -101,7 +99,6 @@ public class Player : MonoBehaviour
     {
         playerStateMachine.ChangeState(deadState);
     }
-
 
     // OnDamaged also fires on the killing hit (before OnDied), so only go to Hurt while alive.
     private void HandlePlayerHurt(DamageData damage)
