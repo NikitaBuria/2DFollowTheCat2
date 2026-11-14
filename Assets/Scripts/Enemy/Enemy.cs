@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -10,6 +11,10 @@ public class Enemy : MonoBehaviour, ICharacter
     [Header("Data")]
     [field: SerializeField] public EnemyData enemyData { get; private set; }
     CharacterData ICharacter.characterData => enemyData;
+
+    // Any enemy's death, without knowing each enemy (TutorialTriggers: "kill your first Wisp").
+    // Static, so listeners must unsubscribe in OnDisable.
+    public static event Action<Enemy> OnAnyEnemyDied;
 
     [Header("Patrol")]
     // Optional. Positions are captured in Awake, so the points can be children of the enemy.
@@ -165,6 +170,7 @@ public class Enemy : MonoBehaviour, ICharacter
     private void HandleDied()
     {
         enemyStateMachine.ChangeState(deadState);
+        OnAnyEnemyDied?.Invoke(this);
     }
 
     // Virtual so a boss can add its own components (KingWisp: EnemySummoner).

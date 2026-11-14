@@ -1,41 +1,100 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-// The main menu scene (Astra's MainMenu prefab). Play opens the first game scene, whose SaveManager
-// loads the save if there is one, so Play works as both "New Game" and "Continue".
-// Settings swaps the three buttons for the settings panel; its Back swaps them back.
+// The main menu scene (Astra's MainMenu prefab).
+// New Game deletes the save (asks once first) and starts the intro in the opening cave.
+// Continue loads the scene of the current tutorial step, or Town once the tutorial is done; that
+// scene's SaveManager then loads everything else. Greyed out without a save.
+// Settings swaps the buttons for the settings panel; its Back swaps them back.
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private Button playButton;
+    [SerializeField, FormerlySerializedAs("playButton")] private Button newGameButton;
+    [SerializeField] private Button continueButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private SettingsPanelUI settingsPanel;
-    [Tooltip("Scene name as listed in Build Profiles > Scene List.")]
-    [SerializeField] private string firstScene = "Town";
+    [SerializeField] private TextMeshProUGUI newGameLabel;
+    [SerializeField] private string confirmNewGameText = "Start over?";
+
+    [Header("Scenes (names as in Build Profiles > Scene List)")]
+    [SerializeField] private string newGameScene = "OpeningCave";
+    [SerializeField, FormerlySerializedAs("firstScene")] private string afterTutorialScene = "Town";
+    [SerializeField] private TutorialSequence tutorial;
+
+    private string newGameText;
+    private bool confirmingNewGame;
+
+    private string savePath => SaveFile.GetPath(SaveFile.DefaultFileName);
+
+    private void Awake()
+    {
+        newGameText = newGameLabel.text;
+    }
 
     private void OnEnable()
     {
-        playButton.onClick.AddListener(Play);
+        newGameButton.onClick.AddListener(NewGame);
+        continueButton.onClick.AddListener(Continue);
         settingsButton.onClick.AddListener(OpenSettings);
         exitButton.onClick.AddListener(Exit);
         settingsPanel.OnBackPressed += CloseSettings;
 
+        continueButton.interactable = ReadSave() != null;
         ShowSettings(false);
     }
 
     private void OnDisable()
     {
-        playButton.onClick.RemoveListener(Play);
+        newGameButton.onClick.RemoveListener(NewGame);
+        continueButton.onClick.RemoveListener(Continue);
         settingsButton.onClick.RemoveListener(OpenSettings);
         exitButton.onClick.RemoveListener(Exit);
         settingsPanel.OnBackPressed -= CloseSettings;
     }
 
-    private void Play()
+    // A save exists: the first click only asks, the second one starts over.
+    private void NewGame()
     {
-        // No spawn ID: the player starts at the scene's own PlayerSpawnPoint.
-        SceneLoader.Load(firstScene, null);
+        if (ReadSave() != null && !confirmingNewGame)
+        {
+            confirmingNewGame = true;
+            newGameLabel.text = confirmNewGameText;
+            return;
+        }
+
+        SaveFile.Delete(savePath);
+        SceneLoader.Load(newGameScene, null);
+    }
+
+    private void Continue()
+    {
+        SaveData data = ReadSave();
+        if (data == null) return;
+
+        GuideStep step = data.version >= TutorialProgress.FirstVersionWithTutorial ? tutorial.GetStep(data.tutorialStep) : null;
+        SceneLoader.Load(step != null ? step.sceneName : afterTutorialScene, null);
+    }
+
+    // The main save, or its backup if the main file is broken; null when there is none.
+    private SaveData ReadSave()
+    {
+        foreach (string path in new[] { savePath, savePath + ".bak" })
+        {
+            try
+            {
+                SaveData data = SaveFile.Read(path);
+                if (data != null) return data;
+            }
+            catch (System.Exception e) when (e is System.IO.IOException || e is System.ArgumentException || e is System.IO.InvalidDataException)
+            {
+                Debug.LogWarning($"Could not read {path}: {e.Message}", this);
+            }
+        }
+
+        return null;
     }
 
     private void OpenSettings()
@@ -51,10 +110,15 @@ public class MainMenuController : MonoBehaviour
 
     private void ShowSettings(bool show)
     {
-        playButton.gameObject.SetActive(!show);
+        newGameButton.gameObject.SetActive(!show);
+        continueButton.gameObject.SetActive(!show);
         settingsButton.gameObject.SetActive(!show);
         exitButton.gameObject.SetActive(!show);
         settingsPanel.gameObject.SetActive(show);
+
+        // Leaving and coming back resets the "Start over?" question.
+        confirmingNewGame = false;
+        newGameLabel.text = newGameText;
     }
 
     private void Exit()

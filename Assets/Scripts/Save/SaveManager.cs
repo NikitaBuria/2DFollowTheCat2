@@ -9,7 +9,7 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private string saveFileName = "save.json";
+    [SerializeField] private string saveFileName = SaveFile.DefaultFileName;
     [Tooltip("Load the save file when the scene starts. Turn off to test from a fresh start.")]
     [SerializeField] private bool loadOnStart = true;
 
@@ -98,7 +98,7 @@ public class SaveManager : MonoBehaviour
     private string Validate(SaveData data)
     {
         // Older versions only lack newer parts: v1 restoredBuildings (TownProgress reads "nothing restored"),
-        // v2 equipment (Equipment keeps its starting gear).
+        // v2 equipment (Equipment keeps its starting gear), v3 the tutorial (TutorialProgress treats it as done).
         if (data.version < 1 || data.version > SaveData.CurrentVersion) return $"save version {data.version} is not supported";
 
         foreach (ISaveable saveable in saveables)

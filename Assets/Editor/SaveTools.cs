@@ -7,7 +7,6 @@ public static class SaveTools
 {
     private const string MenuRoot = "Tools/Follow The Cat/";
     private const string CorePrefabPath = "Assets/Prefabs/Core.prefab";
-    private const string DefaultFileName = "save.json";
 
     [MenuItem(MenuRoot + "Delete Save File")]
     private static void DeleteSaveFile()
@@ -42,9 +41,9 @@ public static class SaveTools
     {
         var core = AssetDatabase.LoadAssetAtPath<GameObject>(CorePrefabPath);
         var saveManager = core != null ? core.GetComponentInChildren<SaveManager>(true) : null;
-        if (saveManager == null) return DefaultFileName;
+        if (saveManager == null) return SaveFile.DefaultFileName;
 
         string fileName = new SerializedObject(saveManager).FindProperty("saveFileName").stringValue;
-        return string.IsNullOrEmpty(fileName) ? DefaultFileName : fileName;
+        return string.IsNullOrEmpty(fileName) ? SaveFile.DefaultFileName : fileName;
     }
 }

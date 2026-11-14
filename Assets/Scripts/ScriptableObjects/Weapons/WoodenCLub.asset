@@ -19,24 +19,24 @@ MonoBehaviour:
   <buyPrice>k__BackingField: 60
   <useSound>k__BackingField: {fileID: 0}
   <layerFrames>k__BackingField:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -11679499, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 14133803, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: -493637344, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: -1563837916, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 1867815387, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: -860625531, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: -1120821136, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 1244038732, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 371675145, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 582680675, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 663884429, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: -1919150234, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 1546972712, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: -36272804, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 1853376372, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 558513690, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: 673483496, guid: af2b99f4520c42399a13067d38647fde, type: 3}
+  - {fileID: -920458977, guid: af2b99f4520c42399a13067d38647fde, type: 3}
   - {fileID: 7710983809568986680, guid: 79f30f0eb06600845873a8faa4dd4f82, type: 3}
   - {fileID: -5387688082563849562, guid: 79f30f0eb06600845873a8faa4dd4f82, type: 3}
   - {fileID: 8560279578532633112, guid: 79f30f0eb06600845873a8faa4dd4f82, type: 3}
@@ -146,24 +146,24 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   <layerFramesBack>k__BackingField:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -11679499, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 14133803, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: -493637344, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: -1563837916, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 1867815387, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: -860625531, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: -1120821136, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 1244038732, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 371675145, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 582680675, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 663884429, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: -1919150234, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 1546972712, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: -36272804, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 1853376372, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 558513690, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: 673483496, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
+  - {fileID: -920458977, guid: 1f6c90ba09d14c0c9a26fb00be6c78fb, type: 3}
   - {fileID: -5458015074797672870, guid: a76c7a25dabc21d449692bc70d7d6238, type: 3}
   - {fileID: 7531735784281654939, guid: a76c7a25dabc21d449692bc70d7d6238, type: 3}
   - {fileID: 7020074585991877640, guid: a76c7a25dabc21d449692bc70d7d6238, type: 3}

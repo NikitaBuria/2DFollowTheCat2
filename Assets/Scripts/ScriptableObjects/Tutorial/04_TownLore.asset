@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f9f749cd222224fa5c2fa0a2afca75, type: 3}
+  m_Name: 04_TownLore
+  m_EditorClassIdentifier: Assembly-CSharp::GuideStep
+  <sceneName>k__BackingField: Town
+  <catPath>k__BackingField:
+  - TownLore
+  <leadsPlayer>k__BackingField: 0
+  <lines>k__BackingField:
+  - This was a town once. Then the Wisps came up from the dungeon and tore it apart.
+  - The people fled. Only the old merchant stayed behind.
+  - If we hunt those monsters, we can rebuild it, stone by stone.
+  <completion>k__BackingField: 0
+  <item>k__BackingField: {fileID: 0}
+  <targetScene>k__BackingField: 

@@ -1937,6 +1937,8 @@ GameObject:
   - component: {fileID: 1011887262559256371}
   - component: {fileID: 5639747230910420438}
   - component: {fileID: 8224604210880687469}
+  - component: {fileID: 9166568388877020787}
+  - component: {fileID: 8797993153019989268}
   m_Layer: 0
   m_Name: SaveSystem
   m_TagString: Untagged
@@ -2035,6 +2037,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WinCondition
   gameStateManager: {fileID: 5747185677082376981}
   delay: 2
+--- !u!114 &9166568388877020787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234914376859398126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d14e40eecf6e0d499ed2d2eb0955b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialProgress
+  sequence: {fileID: 11400000, guid: 28f2b1d28e6105c45a4e74119deb7226, type: 2}
+--- !u!114 &8797993153019989268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234914376859398126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5256a3ea9f93788428e657906ac62ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialTriggers
+  inventory: {fileID: 113100100949620739}
+  equipment: {fileID: 528048662526291744}
+  gameStateManager: {fileID: 5747185677082376981}
 --- !u!1 &7808363688511696591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,7 +2787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60fe207f4667b354193f362ecb70e7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Equipment
-  startingWeapon: {fileID: 11400000, guid: 3706e982214431645be7eca3da1d0a7c, type: 2}
+  startingWeapon: {fileID: 0}
   itemDatabase: {fileID: 11400000, guid: b9153560f61195d4db3725f060074900, type: 2}
 --- !u!114 &5021205853555205004
 MonoBehaviour:

@@ -13,6 +13,8 @@ public class Inventory : MonoBehaviour, ISaveable
     public event Action<int> OnSelectedSlotChanged;
     // After a hotbar use succeeded (ItemUseSound listens).
     public event Action<ItemData> OnItemUsed;
+    // Something new went into the bag (pickups, purchases, dev tools).
+    public event Action<ItemData, int> OnItemAdded;
 
     public int count => slots.Length;
 
@@ -81,6 +83,7 @@ public class Inventory : MonoBehaviour, ISaveable
         if (accepted == 0) return 0;
 
         OnChanged?.Invoke();
+        OnItemAdded?.Invoke(item, accepted);
 
         return accepted;
     }

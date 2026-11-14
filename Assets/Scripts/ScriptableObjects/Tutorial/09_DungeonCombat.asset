@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f9f749cd222224fa5c2fa0a2afca75, type: 3}
+  m_Name: 09_DungeonCombat
+  m_EditorClassIdentifier: Assembly-CSharp::GuideStep
+  <sceneName>k__BackingField: Dungeon
+  <catPath>k__BackingField:
+  - DungeonCat
+  <leadsPlayer>k__BackingField: 0
+  <followsPlayer>k__BackingField: 1
+  <lines>k__BackingField:
+  - Here they are. Wisps.
+  - Left click to swing your weapon. Hold Shift to run.
+  - When a Wisp winds up, press Space to dash through its attack. Now, get one!
+  <completion>k__BackingField: 5
+  <item>k__BackingField: {fileID: 0}
+  <targetScene>k__BackingField: 

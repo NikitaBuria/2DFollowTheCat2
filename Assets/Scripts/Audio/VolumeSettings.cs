@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-// The player's Music and SFX volume (0..1). Loads them from PlayerPrefs, applies them to the
+// The player's Music, SFX and Ambience volume (0..1). Loads them from PlayerPrefs, applies them to the
 // GameMixer and saves them when they change. One per scene (Core and MainMenu), so the volume
 // is right from the start even if the settings screen is never opened. No UI here.
 public class VolumeSettings : MonoBehaviour
@@ -9,10 +9,12 @@ public class VolumeSettings : MonoBehaviour
     // Exposed GameMixer parameters (decibels).
     private const string MusicVolumeParameter = "MusicVolume";
     private const string SfxVolumeParameter = "SFXVolume";
+    private const string AmbienceVolumeParameter = "AmbienceVolume";
 
     // PlayerPrefs keys.
     private const string MusicVolumeKey = "Settings.MusicVolume";
     private const string SfxVolumeKey = "Settings.SfxVolume";
+    private const string AmbienceVolumeKey = "Settings.AmbienceVolume";
 
     private const float DefaultVolume = 1f;
     // Log10(0) is -infinity, so the lowest slider value maps to -80 dB (silent) instead.
@@ -23,11 +25,13 @@ public class VolumeSettings : MonoBehaviour
 
     public float musicVolume { get; private set; } = DefaultVolume;
     public float sfxVolume { get; private set; } = DefaultVolume;
+    public float ambienceVolume { get; private set; } = DefaultVolume;
 
     private void Awake()
     {
         musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, DefaultVolume);
         sfxVolume = PlayerPrefs.GetFloat(SfxVolumeKey, DefaultVolume);
+        ambienceVolume = PlayerPrefs.GetFloat(AmbienceVolumeKey, DefaultVolume);
     }
 
     // Start, not Awake: Unity ignores AudioMixer.SetFloat during Awake.
@@ -35,6 +39,7 @@ public class VolumeSettings : MonoBehaviour
     {
         ApplyToMixer(MusicVolumeParameter, musicVolume);
         ApplyToMixer(SfxVolumeParameter, sfxVolume);
+        ApplyToMixer(AmbienceVolumeParameter, ambienceVolume);
     }
 
     private void OnDisable()
@@ -54,6 +59,13 @@ public class VolumeSettings : MonoBehaviour
         sfxVolume = Mathf.Clamp01(volume);
         PlayerPrefs.SetFloat(SfxVolumeKey, sfxVolume);
         ApplyToMixer(SfxVolumeParameter, sfxVolume);
+    }
+
+    public void SetAmbienceVolume(float volume)
+    {
+        ambienceVolume = Mathf.Clamp01(volume);
+        PlayerPrefs.SetFloat(AmbienceVolumeKey, ambienceVolume);
+        ApplyToMixer(AmbienceVolumeParameter, ambienceVolume);
     }
 
     // Slider value (linear 0..1) to decibels, which is how the mixer measures loudness.

@@ -12,6 +12,8 @@ public class NpcDialogue : MonoBehaviour, IInteractable
     [SerializeField, Min(0.5f)] private float lineDuration = 4f;
     [SerializeField] private string talkPrompt = "Talk";
     [SerializeField] private string nextPrompt = "Next";
+    [Tooltip("On: when a line's time is up the next one follows (the GuideCat). Off: the conversation ends (the merchant).")]
+    [SerializeField] private bool autoAdvance;
 
     private int currentLine = -1;
     private float hideTimer;
@@ -26,14 +28,26 @@ public class NpcDialogue : MonoBehaviour, IInteractable
         if (!isTalking) return;
 
         hideTimer -= Time.deltaTime;
-        if (hideTimer <= 0f) EndDialogue();
+        if (hideTimer > 0f) return;
+
+        if (autoAdvance) ShowNextLine();
+        else EndDialogue();
+    }
+
+    // The GuideCat's lines change per tutorial step. Stops any conversation in progress.
+    public void SetLines(string[] newLines)
+    {
+        if (isTalking) EndDialogue(); // hides the bubble of the old line
+        lines = newLines ?? new string[0];
     }
 
     public bool CanInteract(Player player) => lines.Length > 0;
 
     public string GetPrompt(Player player) => isTalking ? nextPrompt : talkPrompt;
 
-    public void Interact(Player player)
+    public void Interact(Player player) => ShowNextLine();
+
+    private void ShowNextLine()
     {
         currentLine++;
         if (currentLine >= lines.Length)

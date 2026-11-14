@@ -5,6 +5,9 @@ using UnityEngine;
 // The only code that touches the save file. Knows nothing about the player or the scene.
 public static class SaveFile
 {
+    // The game's one save slot (SaveManager, the main menu and the dev tools all use it).
+    public const string DefaultFileName = "save.json";
+
     // A real save is a few KB; anything bigger is broken or tampered with.
     private const int MaxFileSize = 65536;
 

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 [Serializable]
 public class SaveData
 {
-    public const int CurrentVersion = 3;
+    public const int CurrentVersion = 4;
 
     public int version = CurrentVersion;
     public int health;
@@ -15,6 +15,7 @@ public class SaveData
     public SlotSaveData[] inventory;
     public List<string> restoredBuildings; // building IDs (asset names), added in version 2
     public string[] equipment; // item ID per EquipmentSlotType (null = empty), added in version 3
+    public int tutorialStep; // index into the TutorialSequence (count = finished), added in version 4
 }
 
 // One inventory slot. Items are saved by ID (the ItemData asset name), because a JSON file
