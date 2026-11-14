@@ -1,14 +1,13 @@
 using UnityEngine;
 
-// Read-only data for one weapon. Shared by everyone who references the asset,
-// so never change these values at runtime.
-// Later (Items step): inherit from ItemData and move name/icon there.
+// Read-only data for one weapon. Name, icon and prices come from ItemData.
+// Shared by everyone who references the asset, so never change these values at runtime.
 [CreateAssetMenu(fileName = "NewWeapon", menuName = "Scriptable Objects/Weapon")]
-public class WeaponData : ScriptableObject
+public class WeaponData : EquipmentData
 {
-    [Header("Info")]
-    [field: SerializeField] public string weaponName { get; private set; }
-    [field: SerializeField] public Sprite icon { get; private set; }
+    public override EquipmentSlotType slotType => EquipmentSlotType.Weapon;
+
+    [Header("Weapon")]
     [field: SerializeField] public WeaponType weaponType { get; private set; }
 
     [Header("Damage")]

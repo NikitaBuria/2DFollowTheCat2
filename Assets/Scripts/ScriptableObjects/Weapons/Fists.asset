@@ -1,0 +1,280 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a682bec72c3b84f48ba3408d98c7beb1, type: 3}
+  m_Name: Fists
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  <itemName>k__BackingField: Fists
+  <icon>k__BackingField: {fileID: 0}
+  <maxStack>k__BackingField: 1
+  <sellPrice>k__BackingField: 0
+  <buyPrice>k__BackingField: 0
+  <layerFrames>k__BackingField:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: -2914230449948741199, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: -2057361268708621263, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: 2990656222783536112, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: -124562968886336661, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: -8108482170546445412, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: -7314209188802569009, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: -7678273200366635377, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: 6681911695717880169, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: 2263745833983382362, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: -7712887292431636522, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: 2563965122197012557, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: -4878052805626346548, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: 6927276090367806502, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: 1491276477922452141, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: -9179495667533999448, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: 6692151973470453836, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: 6264454889043570503, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: -6949729543130027785, guid: 9d1e4e1d15fac6846b0f8aa09a837028, type: 3}
+  - {fileID: 5579824044435441507, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -1773423160236823745, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -302616511916090783, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: 6942048565975221170, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -7007427750094964772, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -3259986724189949137, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: 6112993160002212467, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: 2728423933913688902, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: 1110741728171938610, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -1333450533507031469, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -3145541522305377306, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -1195434031992603028, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: 3574196673291250316, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -8716616580830528283, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -8913009903173016481, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -7617102648603750320, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -8615437522006752148, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: -1118253046839025324, guid: bc0b12c67aa83394cac4171e8ac9abbf, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  <layerFramesBack>k__BackingField:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 6927276090367806502, guid: e433d06b5c5a47f880dd3f50792bd3e2, type: 3}
+  - {fileID: 1491276477922452141, guid: e433d06b5c5a47f880dd3f50792bd3e2, type: 3}
+  - {fileID: -9179495667533999448, guid: e433d06b5c5a47f880dd3f50792bd3e2, type: 3}
+  - {fileID: 6692151973470453836, guid: e433d06b5c5a47f880dd3f50792bd3e2, type: 3}
+  - {fileID: 6264454889043570503, guid: e433d06b5c5a47f880dd3f50792bd3e2, type: 3}
+  - {fileID: -6949729543130027785, guid: e433d06b5c5a47f880dd3f50792bd3e2, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 6927276090367806502, guid: 5fa47ce8111043c0b5519fe9f7ab3b75, type: 3}
+  - {fileID: 1491276477922452141, guid: 5fa47ce8111043c0b5519fe9f7ab3b75, type: 3}
+  - {fileID: -9179495667533999448, guid: 5fa47ce8111043c0b5519fe9f7ab3b75, type: 3}
+  - {fileID: 6692151973470453836, guid: 5fa47ce8111043c0b5519fe9f7ab3b75, type: 3}
+  - {fileID: 6264454889043570503, guid: 5fa47ce8111043c0b5519fe9f7ab3b75, type: 3}
+  - {fileID: -6949729543130027785, guid: 5fa47ce8111043c0b5519fe9f7ab3b75, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  <weaponType>k__BackingField: 2
+  <damage>k__BackingField: 1
+  <knockback>k__BackingField: 0.5
+  <knockbackDuration>k__BackingField: 0.2
+  <attackRange>k__BackingField: 0.8
+  <attackArc>k__BackingField: 90
+  <attackDuration>k__BackingField: 0.5

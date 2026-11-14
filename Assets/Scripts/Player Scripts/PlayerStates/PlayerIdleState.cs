@@ -16,6 +16,7 @@ public class PlayerIdleState : PlayerState
     {
         HandleHotbarInput();
         HandleInteractInput();
+        if (HandleDashInput()) return;
 
         if (player.playerInputReader.attackPressedThisFrame)
         {

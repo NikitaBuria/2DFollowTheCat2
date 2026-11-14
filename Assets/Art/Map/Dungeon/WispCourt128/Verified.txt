@@ -1,0 +1,5 @@
+ReferenceRuins128 matched: 128px sprites, 128 PPU, centered pivots, full rectangles, Point filtering, no mipmaps, no compression, identity tile transforms, 1x1x1 palette Grid.
+96 four-unit source stamps converted into 1536 one-unit paint cells; assembled art remains 48 x 32 world units. Original source assets unchanged.
+Sprite Editor edit capabilities checked. Paint, adjacent placement, erase, asset references and palette dimensions verified in the Unity Editor.
+Existing half-unit collision grid and gameplay scripts unchanged. Collision/gameplay alignment remains unverified.
+2D Animation 13.0.6 is installed; static map tiles do not need skeletal animation.

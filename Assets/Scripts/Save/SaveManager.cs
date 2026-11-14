@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using UnityEngine;
 
-// Saves and loads the player's ISaveable components (Health, Wallet, Inventory) and the ones on
+// Saves and loads the player's ISaveable components (Health, Wallet, Inventory, Equipment) and the ones on
 // this object (TownProgress) through SaveFile.
 // Loading validates everything first and falls back to the .bak file, so a broken save never half-loads.
 // Ported from MetrooDvania's checkpoint save, without the respawn, loot and debug parts.
@@ -97,7 +97,8 @@ public class SaveManager : MonoBehaviour
     // Everything is checked before anything is loaded.
     private string Validate(SaveData data)
     {
-        // Version 1 only lacks restoredBuildings, which TownProgress reads as "nothing restored".
+        // Older versions only lack newer parts: v1 restoredBuildings (TownProgress reads "nothing restored"),
+        // v2 equipment (Equipment keeps its starting gear).
         if (data.version < 1 || data.version > SaveData.CurrentVersion) return $"save version {data.version} is not supported";
 
         foreach (ISaveable saveable in saveables)

@@ -43,6 +43,8 @@ public class Enemy : MonoBehaviour
     private int patrolIndex;
     // Hits taken since the last flinch (see staggerHits).
     private int hitsSinceStagger;
+    // Set when the enemy comes from an object pool (summoned minions); null = destroyed when it dies.
+    private System.Action<Enemy> returnToPool;
 
     public bool hasPatrolRoute => patrolRoute.Length > 0;
     public Vector2 patrolDestination => patrolRoute[patrolIndex];
@@ -68,7 +70,30 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        enemyStateMachine.Initialize(idleState);
+        // A pooled enemy was already put in Idle by ResetForSpawn before its first Start.
+        if (enemyStateMachine.currentState == null) enemyStateMachine.Initialize(idleState);
+    }
+
+    // Called by the pool that owns this enemy (EnemySummoner).
+    public void AssignToPool(System.Action<Enemy> release)
+    {
+        returnToPool = release;
+    }
+
+    // Makes a reused (pooled) enemy fresh again: full health, no target, Idle.
+    public void ResetForSpawn()
+    {
+        health.Initialize(enemyData.maxHealth);
+        hitsSinceStagger = 0;
+        enemyDetection.Clear();
+        enemyStateMachine.ChangeState(idleState);
+    }
+
+    // Removes the enemy after death: back to its pool, or destroyed.
+    public void Despawn()
+    {
+        if (returnToPool != null) returnToPool(this);
+        else Destroy(gameObject);
     }
 
     private void OnEnable()
@@ -141,7 +166,8 @@ public class Enemy : MonoBehaviour
         enemyStateMachine.ChangeState(deadState);
     }
 
-    private void GetReferences()
+    // Virtual so a boss can add its own components (KingWisp: EnemySummoner).
+    protected virtual void GetReferences()
     {
         enemyStateMachine = new EnemyStateMachine();
 

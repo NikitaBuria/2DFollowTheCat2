@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(PlayerCombat), typeof(Health), typeof(Inventory))]
 // Collider2D: PlayerDeadState switches it off while dead.
 [RequireComponent(typeof(Wallet), typeof(PlayerInteractor), typeof(Collider2D))]
+[RequireComponent(typeof(Equipment))]
 public class Player : MonoBehaviour
 {
     // Components on this GameObject. Found with GetComponent in Awake, so nothing to assign in the Inspector.
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     public Inventory playerInventory { get; private set; }
     public Wallet playerWallet { get; private set; }
     public PlayerInteractor playerInteractor { get; private set; }
+    public Equipment playerEquipment { get; private set; }
     public PlayerStateMachine playerStateMachine { get; private set; }
 
     [Header("Data")]
@@ -53,18 +55,23 @@ public class Player : MonoBehaviour
     private void Start()
     {
         playerStateMachine.Initialize(idleState);
+
+        // Equipment set its starting gear in its Awake, before anyone listened, so pass the weapon once now.
+        HandleEquipmentChanged(EquipmentSlotType.Weapon, playerEquipment.GetEquipped(EquipmentSlotType.Weapon));
     }
 
     private void OnEnable()
     {
         playerHealth.OnDied += HandlePlayerDeath;
         playerHealth.OnDamaged += HandlePlayerHurt;
+        playerEquipment.OnEquipmentChanged += HandleEquipmentChanged;
     }
 
     private void OnDisable()
     {
         playerHealth.OnDied -= HandlePlayerDeath;
         playerHealth.OnDamaged -= HandlePlayerHurt;
+        playerEquipment.OnEquipmentChanged -= HandleEquipmentChanged;
     }
 
     private void Update()
@@ -108,6 +115,13 @@ public class Player : MonoBehaviour
             playerStateMachine.ChangeState(hurtState);
     }
 
+    // Wiring only: a new weapon goes to PlayerCombat (armor is used in a later step).
+    private void HandleEquipmentChanged(EquipmentSlotType slotType, EquipmentData item)
+    {
+        if (slotType == EquipmentSlotType.Weapon)
+            playerCombat.SetWeapon(item as WeaponData);
+    }
+
     private void GetReferences()
     {
         playerStateMachine = new PlayerStateMachine();
@@ -121,6 +135,7 @@ public class Player : MonoBehaviour
         playerInventory = GetComponent<Inventory>();
         playerWallet = GetComponent<Wallet>();
         playerInteractor = GetComponent<PlayerInteractor>();
+        playerEquipment = GetComponent<Equipment>();
     }
 
     private void CreateStates()

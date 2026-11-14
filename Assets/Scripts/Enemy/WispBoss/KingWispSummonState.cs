@@ -28,7 +28,7 @@ public class KingWispSummonState : EnemyState
         if (!hasSummoned && timer >= kingWisp.bossData.summonDelay)
         {
             hasSummoned = true;
-            kingWisp.Summon();
+            kingWisp.enemySummoner.Summon();
         }
 
         if (timer < kingWisp.bossData.summonDuration) return;

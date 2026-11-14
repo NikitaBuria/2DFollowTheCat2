@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: a36acc18aa3ae204a994728b4208d39d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5338915605320940050
+    second: Seamless limestone dungeon tile atlas_0
+  - first:
+      213: 8910160057364394
+    second: Seamless limestone dungeon tile atlas_1
+  - first:
+      213: 7992154325580822441
+    second: Seamless limestone dungeon tile atlas_2
+  - first:
+      213: 3989229428240023783
+    second: Seamless limestone dungeon tile atlas_3
+  - first:
+      213: -2678670518186155503
+    second: Seamless limestone dungeon tile atlas_4
+  - first:
+      213: -2448304815707108767
+    second: Seamless limestone dungeon tile atlas_5
+  - first:
+      213: -4096711819321655920
+    second: Seamless limestone dungeon tile atlas_6
+  - first:
+      213: -3600904816584336064
+    second: Seamless limestone dungeon tile atlas_7
+  - first:
+      213: -1898966004380361179
+    second: Seamless limestone dungeon tile atlas_8
+  - first:
+      213: 8065906898942087943
+    second: Seamless limestone dungeon tile atlas_9
+  - first:
+      213: -2724164919436216955
+    second: Seamless limestone dungeon tile atlas_10
+  - first:
+      213: 1445130079192598394
+    second: Seamless limestone dungeon tile atlas_11
+  - first:
+      213: 2421015507846938299
+    second: Seamless limestone dungeon tile atlas_12
+  - first:
+      213: -5345583151203805564
+    second: Seamless limestone dungeon tile atlas_13
+  - first:
+      213: 3863786522466203761
+    second: Seamless limestone dungeon tile atlas_14
+  - first:
+      213: -6284539815198334027
+    second: Seamless limestone dungeon tile atlas_15
+  - first:
+      213: 6661842802706186818
+    second: Seamless limestone dungeon tile atlas_16
+  - first:
+      213: -4737359551392723169
+    second: Seamless limestone dungeon tile atlas_17
+  - first:
+      213: -964299074335084766
+    second: Seamless limestone dungeon tile atlas_18
+  - first:
+      213: -9161023423207308349
+    second: Seamless limestone dungeon tile atlas_19
+  - first:
+      213: 8402005641495252629
+    second: Seamless limestone dungeon tile atlas_20
+  - first:
+      213: -4290791248098581917
+    second: Seamless limestone dungeon tile atlas_21
+  - first:
+      213: 2627886555378629511
+    second: Seamless limestone dungeon tile atlas_22
+  - first:
+      213: -3013311823050887535
+    second: Seamless limestone dungeon tile atlas_23
+  - first:
+      213: -5703622160953489657
+    second: Seamless limestone dungeon tile atlas_24
+  - first:
+      213: 4950510718156728377
+    second: Seamless limestone dungeon tile atlas_25
+  - first:
+      213: -3853333127386287502
+    second: Seamless limestone dungeon tile atlas_26
+  - first:
+      213: 8619220689326804967
+    second: Seamless limestone dungeon tile atlas_27
+  - first:
+      213: 8484299593718427241
+    second: Seamless limestone dungeon tile atlas_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 427
+        width: 1254
+        height: 827
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ab1fcc473a71a40800000000000000
+      internalID: 5338915605320940050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 162
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf6c1d4eb7af1000800000000000000
+      internalID: 8910160057364394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 459
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7b85ec306d9ee60800000000000000
+      internalID: 7992154325580822441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_3
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 337
+        width: 119
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e008c577079c5730800000000000000
+      internalID: 3989229428240023783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_4
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 461
+        width: 139
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112e33d1b5373dad0800000000000000
+      internalID: -2678670518186155503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 347
+        width: 118
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a46e5edbfd50ed0800000000000000
+      internalID: -2448304815707108767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_6
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 462
+        width: 131
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d303e3e4e8527c0800000000000000
+      internalID: -4096711819321655920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_7
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 319
+        width: 130
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d5f71d524070ec0800000000000000
+      internalID: -3600904816584336064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_8
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 316
+        width: 68
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e9d5cea7485a5e0800000000000000
+      internalID: -1898966004380361179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_9
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 350
+        width: 105
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 703d0dee69bdfef60800000000000000
+      internalID: 8065906898942087943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_10
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 292
+        width: 142
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5857c636072d13ad0800000000000000
+      internalID: -2724164919436216955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_11
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 296
+        width: 139
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77c18086222e0410800000000000000
+      internalID: 1445130079192598394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_12
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 369
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbebdecf6cc299120800000000000000
+      internalID: 2421015507846938299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 309
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4861f23327ca0d5b0800000000000000
+      internalID: -5345583151203805564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_14
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 146
+        width: 126
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1783a87fe5dee9530800000000000000
+      internalID: 3863786522466203761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_15
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 162
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b3ed42c554d8c8a0800000000000000
+      internalID: -6284539815198334027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_16
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 296
+        width: 40
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2428bccabbe937c50800000000000000
+      internalID: 6661842802706186818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_17
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 306
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fceed6694814eb0800000000000000
+      internalID: -4737359551392723169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_18
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 308
+        width: 39
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22fe409d91f1e92f0800000000000000
+      internalID: -964299074335084766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_19
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 174
+        width: 146
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c302b8dbb18dd080800000000000000
+      internalID: -9161023423207308349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_20
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 172
+        width: 138
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e072e7d9be99470800000000000000
+      internalID: 8402005641495252629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_21
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 178
+        width: 148
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 362aabbe71c0474c0800000000000000
+      internalID: -4290791248098581917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_22
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 188
+        width: 149
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78b3e5326e0287420800000000000000
+      internalID: 2627886555378629511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 309
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e2195bcd09e26d0800000000000000
+      internalID: -3013311823050887535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_24
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 13
+        width: 150
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707425b1dd9a8d0b0800000000000000
+      internalID: -5703622160953489657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_25
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 0
+        width: 130
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 938ee7ce44fb3b440800000000000000
+      internalID: 4950510718156728377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_26
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 27
+        width: 152
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27235ecbfe5368ac0800000000000000
+      internalID: -3853333127386287502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_27
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 0
+        width: 104
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef8504ec8f9d9770800000000000000
+      internalID: 8619220689326804967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seamless limestone dungeon tile atlas_28
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 10
+        width: 112
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ee39b57894eb570800000000000000
+      internalID: 8484299593718427241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Seamless limestone dungeon tile atlas_0: 5338915605320940050
+      Seamless limestone dungeon tile atlas_1: 8910160057364394
+      Seamless limestone dungeon tile atlas_10: -2724164919436216955
+      Seamless limestone dungeon tile atlas_11: 1445130079192598394
+      Seamless limestone dungeon tile atlas_12: 2421015507846938299
+      Seamless limestone dungeon tile atlas_13: -5345583151203805564
+      Seamless limestone dungeon tile atlas_14: 3863786522466203761
+      Seamless limestone dungeon tile atlas_15: -6284539815198334027
+      Seamless limestone dungeon tile atlas_16: 6661842802706186818
+      Seamless limestone dungeon tile atlas_17: -4737359551392723169
+      Seamless limestone dungeon tile atlas_18: -964299074335084766
+      Seamless limestone dungeon tile atlas_19: -9161023423207308349
+      Seamless limestone dungeon tile atlas_2: 7992154325580822441
+      Seamless limestone dungeon tile atlas_20: 8402005641495252629
+      Seamless limestone dungeon tile atlas_21: -4290791248098581917
+      Seamless limestone dungeon tile atlas_22: 2627886555378629511
+      Seamless limestone dungeon tile atlas_23: -3013311823050887535
+      Seamless limestone dungeon tile atlas_24: -5703622160953489657
+      Seamless limestone dungeon tile atlas_25: 4950510718156728377
+      Seamless limestone dungeon tile atlas_26: -3853333127386287502
+      Seamless limestone dungeon tile atlas_27: 8619220689326804967
+      Seamless limestone dungeon tile atlas_28: 8484299593718427241
+      Seamless limestone dungeon tile atlas_3: 3989229428240023783
+      Seamless limestone dungeon tile atlas_4: -2678670518186155503
+      Seamless limestone dungeon tile atlas_5: -2448304815707108767
+      Seamless limestone dungeon tile atlas_6: -4096711819321655920
+      Seamless limestone dungeon tile atlas_7: -3600904816584336064
+      Seamless limestone dungeon tile atlas_8: -1898966004380361179
+      Seamless limestone dungeon tile atlas_9: 8065906898942087943
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

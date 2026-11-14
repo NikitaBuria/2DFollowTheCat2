@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adc60d1cdda21dc41b6b99b849963921, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a7fad6a8ece9fc46aa9b72d6db99a1c, type: 3}
   m_Name: LeatherArmor
-  m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  <itemName>k__BackingField: Leather Armor (dummy)
+  m_EditorClassIdentifier: Assembly-CSharp::ArmorData
+  <itemName>k__BackingField: Leather Armor
   <icon>k__BackingField: {fileID: 21300000, guid: b0881acf497ae8b4783bc7fa4741c81b, type: 3}
   <maxStack>k__BackingField: 1
   <sellPrice>k__BackingField: 20
   <buyPrice>k__BackingField: 80
+  armorSlot: 1
+  <defense>k__BackingField: 3

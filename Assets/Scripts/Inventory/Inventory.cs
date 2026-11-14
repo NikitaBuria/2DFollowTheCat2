@@ -35,6 +35,16 @@ public class Inventory : MonoBehaviour, ISaveable
         return true;
     }
 
+    // Puts exactly this stack in the slot (Equipment swaps worn items in and out with it).
+    public void SetSlot(int index, ItemData item, int amount)
+    {
+        InventorySlot slot = GetSlot(index);
+        if (slot == null) return;
+
+        slot.Set(item, amount);
+        OnChanged?.Invoke();
+    }
+
     public void SelectSlot(int index)
     {
         if (index < 0 || index >= slots.Length || index == selectedSlot) return;

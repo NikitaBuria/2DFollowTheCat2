@@ -17,6 +17,7 @@ public class PlayerRunState : PlayerState
     {
         HandleHotbarInput();
         HandleInteractInput();
+        if (HandleDashInput()) return;
 
         if (player.playerInputReader.attackPressedThisFrame)
         {

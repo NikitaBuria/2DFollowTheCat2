@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// How the player hits things. The stats come from the equipped WeaponData;
-// PlayerAttackState decides when to call HandleAttack.
+// How the player hits things. The stats come from the equipped WeaponData (Player passes it in
+// from Equipment); PlayerAttackState decides when to call HandleAttack.
 public class PlayerCombat : MonoBehaviour
 {
-    [field: SerializeField] public WeaponData currentWeapon { get; private set; }
+    public WeaponData currentWeapon { get; private set; }
+    // Used while the Weapon slot is empty (bare hands). Never an inventory item, never saved.
+    [SerializeField] private WeaponData unarmedWeapon;
     [SerializeField] private LayerMask enemyLayerMask;
     [SerializeField] private Transform attackPoint;
 
@@ -17,8 +19,10 @@ public class PlayerCombat : MonoBehaviour
 
     private void Awake()
     {
-        if (currentWeapon == null)
-            Debug.LogError($"{name}: PlayerCombat has no weapon assigned.", this);
+        if (unarmedWeapon == null)
+            Debug.LogError($"{name}: PlayerCombat has no unarmedWeapon assigned.", this);
+
+        currentWeapon = unarmedWeapon;
 
         if (attackPoint == null)
             Debug.LogError($"{name}: PlayerCombat has no attackPoint assigned.", this);
@@ -30,6 +34,9 @@ public class PlayerCombat : MonoBehaviour
         if (enemyLayerMask == 0)
             Debug.LogError($"{name}: PlayerCombat's enemyLayerMask is Nothing. Pick the Enemy layer in the Inspector.", this);
     }
+
+    // null = nothing in hand: punch with the unarmed weapon.
+    public void SetWeapon(WeaponData weapon) => currentWeapon = weapon != null ? weapon : unarmedWeapon;
 
     // Hits every damageable enemy inside the weapon's range and arc, once per swing.
     public void HandleAttack(Vector2 direction)

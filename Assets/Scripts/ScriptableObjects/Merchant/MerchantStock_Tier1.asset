@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopStock
   items:
   - {fileID: 11400000, guid: b910ac03a460f09458a70c4b982b0ee3, type: 2}
+  - {fileID: 11400000, guid: 561eb7aa20e7eaf4caa019b8f250a044, type: 2}

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // Attacking; movement is locked until the attack finishes.
-// -> Idle or Walk when the attack ends, -> Hurt when hit
+// -> Idle when the attack ends, -> Hurt when hit
 public class PlayerAttackState : PlayerState
 {
     private float attackTimer;
@@ -24,10 +24,8 @@ public class PlayerAttackState : PlayerState
         attackTimer -= Time.deltaTime;
         if (attackTimer > 0f) return;
 
-        if (player.playerInputReader.moveInput != Vector2.zero)
-            player.playerStateMachine.ChangeState(player.walkState);
-        else
-            player.playerStateMachine.ChangeState(player.idleState);
+        // Accepts no input; Idle picks Walk or Run on the next frame.
+        player.playerStateMachine.ChangeState(player.idleState);
     }
 
     public override void Exit()

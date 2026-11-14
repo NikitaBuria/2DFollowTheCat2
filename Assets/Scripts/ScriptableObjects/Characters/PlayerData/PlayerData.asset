@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28085b44a6d5514eafbba72bf9199ee, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  <characterType>k__BackingField: 1
   <maxHealth>k__BackingField: 100
   <walkSpeed>k__BackingField: 4
   <runSpeed>k__BackingField: 6

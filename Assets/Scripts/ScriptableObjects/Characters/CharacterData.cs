@@ -13,6 +13,10 @@ public class CharacterData : ScriptableObject
     [field: SerializeField, Min(0f)] public float walkSpeed { get; private set; } = 4f;
     [field: SerializeField, Min(0f)] public float runSpeed { get; private set; } = 6f;
     [field: SerializeField, Min(0f)] public float dashSpeed { get; private set; } = 10f;
+    // How long a dash lasts; the character can't be hurt during it. Match it to the Dash clip.
+    [field: SerializeField, Min(0.01f)] public float dashDuration { get; private set; } = 0.25f;
+    // Seconds after a dash ends before the next one.
+    [field: SerializeField, Min(0f)] public float dashCooldown { get; private set; } = 0.6f;
 
     [Header("Hit Reaction")]
     // How long a hit stuns (at least as long as the knockback). Match it to the Hurt clip.

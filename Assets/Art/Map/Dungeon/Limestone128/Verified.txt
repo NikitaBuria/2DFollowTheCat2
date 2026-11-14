@@ -1,0 +1,3 @@
+Verified in Unity Editor: 64 sprites, 128 x 128 px, 128 PPU; 64 Tile assets; rectangular palette with GridPalette sub-asset. Manual unit grid.
+Rows 1-4: floors. Rows 5-8: structures, stairs and props.
+Art is manually placed tiles, not RuleTiles. Source artwork edge continuity and gameplay have not been verified.

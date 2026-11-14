@@ -21,7 +21,22 @@ public abstract class PlayerState
         if (slot == -1) return;
 
         player.playerInventory.SelectSlot(slot);
-        player.playerInventory.UseItem(slot, player.gameObject);
+
+        // Equipment is worn (swapping with what was worn), everything else is used.
+        if (player.playerInventory.GetSlot(slot)?.item is EquipmentData)
+            player.playerEquipment.TryEquip(slot);
+        else
+            player.playerInventory.UseItem(slot, player.gameObject);
+    }
+
+    // Dash key starts a dash when the cooldown is over. True = the state changed, so the caller returns.
+    // Called only by the states that allow it (Idle, Walk, Run).
+    protected bool HandleDashInput()
+    {
+        if (!player.playerInputReader.dashPressedThisFrame || !player.dashState.canDash) return false;
+
+        player.playerStateMachine.ChangeState(player.dashState);
+        return true;
     }
 
     // Interact key uses whatever PlayerInteractor found in front of the player.

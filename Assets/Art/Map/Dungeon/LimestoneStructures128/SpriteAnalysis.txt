@@ -1,0 +1,68 @@
+Wall_00: X X X / X * X / X X X ; authored NESW mask=00
+Wall_01: X X X / X * X / X X X ; authored NESW mask=01
+Wall_02: X X X / X * X / X X X ; authored NESW mask=02
+Wall_03: X X X / X * X / X X X ; authored NESW mask=03
+Wall_04: X X X / X * X / X X X ; authored NESW mask=04
+Wall_05: X X X / X * X / X X X ; authored NESW mask=05
+Wall_06: X X X / X * X / X X X ; authored NESW mask=06
+Wall_07: X X X / X * X / X X X ; authored NESW mask=07
+Wall_08: X X X / X * X / X X X ; authored NESW mask=08
+Wall_09: X X X / X * X / X X X ; authored NESW mask=09
+Wall_10: X X X / X * X / X X X ; authored NESW mask=10
+Wall_11: X X X / X * X / X X X ; authored NESW mask=11
+Wall_12: X X X / X * X / X X X ; authored NESW mask=12
+Wall_13: X X X / X * X / X X X ; authored NESW mask=13
+Wall_14: X X X / X * X / X X X ; authored NESW mask=14
+Wall_15: X X X / X * X / X X X ; authored NESW mask=15
+StairNorth_0_0_Socket: X X X / X * X / X X X
+StairNorth_1_0_Open: X X X / X * X / X X X
+StairNorth_2_0_Socket: X X X / X * X / X X X
+StairNorth_0_1_Socket: X X X / X * X / X X X
+StairNorth_1_1_Open: X X X / X * X / X X X
+StairNorth_2_1_Socket: X X X / X * X / X X X
+StairEast_0_0_Socket: X X X / X * X / X X X
+StairEast_1_0_Socket: X X X / X * X / X X X
+StairEast_0_1_Open: X X X / X * X / X X X
+StairEast_1_1_Open: X X X / X * X / X X X
+StairEast_0_2_Socket: X X X / X * X / X X X
+StairEast_1_2_Socket: X X X / X * X / X X X
+LandingStraight_0_0_Socket: X X X / X * X / X X X
+LandingStraight_1_0_Open: X X X / X * X / X X X
+LandingStraight_2_0_Socket: X X X / X * X / X X X
+LandingStraight_0_1_Socket: X X X / X * X / X X X
+LandingStraight_1_1_Open: X X X / X * X / X X X
+LandingStraight_2_1_Socket: X X X / X * X / X X X
+LandingStraight_0_2_Socket: X X X / X * X / X X X
+LandingStraight_1_2_Open: X X X / X * X / X X X
+LandingStraight_2_2_Socket: X X X / X * X / X X X
+LandingTurnEast_0_0_Socket: X X X / X * X / X X X
+LandingTurnEast_1_0_Open: X X X / X * X / X X X
+LandingTurnEast_2_0_Socket: X X X / X * X / X X X
+LandingTurnEast_0_1_Socket: X X X / X * X / X X X
+LandingTurnEast_1_1_Open: X X X / X * X / X X X
+LandingTurnEast_2_1_Open: X X X / X * X / X X X
+LandingTurnEast_0_2_Socket: X X X / X * X / X X X
+LandingTurnEast_1_2_Socket: X X X / X * X / X X X
+LandingTurnEast_2_2_Socket: X X X / X * X / X X X
+GateArch_0_0_Socket: X X X / X * X / X X X
+GateArch_1_0_Open: X . X / X * X / X X X
+GateArch_2_0_Socket: X X X / X * X / X X X
+GateArch_0_1_Open: X X X / X * X / X X X
+GateArch_1_1_Open: X X X / X * X / X X X
+GateArch_2_1_Open: X X X / X * X / X X X
+Structure_PillarA_Socket: X X X / X * X / X X X
+Structure_PillarB_Socket: X X X / X * X / X X X
+Structure_DiamondPillar_Socket: X X X / X * X / X X X
+Structure_WallShort_Socket: X X X / X * X / X X X
+Structure_WallArches_Socket: X X X / X * X / X X X
+Structure_WallLong_Socket: X X X / X * X / X X X
+Structure_WallPanel_Socket: X X X / X * X / X X X
+Structure_WallBroken_Socket: X . X / X * X / . X .
+Structure_BrokenArchLeft_Socket: X X X / . * . / X X .
+Structure_BrokenArchRight_Socket: X X X / . * X / X X X
+Structure_ColumnBroken_Socket: X X X / X * X / X X X
+Structure_RubbleA_Decor: X X X / X * X / . . .
+Structure_RubbleB_Decor: X X X / X * X / X X X
+Structure_RubbleC_Decor: X X X / X * X / X X X
+Structure_GhostFlame_Decor: X X X / X * X / X X X
+Structure_PurpleCrystals_Decor: X X X / X * X / X X X
