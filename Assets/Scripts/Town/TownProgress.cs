@@ -16,7 +16,11 @@ public class TownProgress : MonoBehaviour, ISaveable
 
     public int townTier => Mathf.Min(1 + restoredIds.Count, maxTier);
 
+    public bool isFullyRestored => restoredIds.Count >= buildings.Length;
+
     public event Action OnProgressChanged;
+    // Fired once, by the restore that completes the town (not by loading a finished save).
+    public event Action OnTownRestored;
 
     public bool IsRestored(BuildingData building) => building != null && restoredIds.Contains(building.id);
 
@@ -41,6 +45,7 @@ public class TownProgress : MonoBehaviour, ISaveable
 
         restoredIds.Add(building.id);
         OnProgressChanged?.Invoke();
+        if (isFullyRestored) OnTownRestored?.Invoke();
         return true;
     }
 

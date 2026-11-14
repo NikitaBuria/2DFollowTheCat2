@@ -18,6 +18,7 @@ public class EnemyAnimator : MonoBehaviour
     private static readonly int MoveYHash = Animator.StringToHash("MoveY");
 
     private Animator animator;
+    private readonly System.Collections.Generic.HashSet<EnemyAnimationState> reportedMissing = new();
 
     // A placeholder enemy (a plain square) has no controller yet; skip animation instead of spamming warnings.
     private bool hasController => animator.runtimeAnimatorController != null;
@@ -25,16 +26,15 @@ public class EnemyAnimator : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        WarnAboutMissingStates();
     }
 
     public void SetAnimationState(EnemyAnimationState state)
     {
         if (!hasController) return;
 
-        // A missing state was already reported once in Awake; skip it instead of warning every frame.
         int hash = ToHash(state);
         if (animator.HasState(0, hash)) animator.Play(hash);
+        else WarnMissingStateOnce(state);
     }
 
     public void SetMoveDirection(Vector2 direction)
@@ -45,18 +45,12 @@ public class EnemyAnimator : MonoBehaviour
         animator.SetFloat(MoveYHash, direction.y);
     }
 
-    // Every EnemyAnimationState needs an Animator state with the same name on layer 0.
-    // Lists all missing ones in one warning, so a new enemy's controller is easy to fix.
-    private void WarnAboutMissingStates()
+    // States the code played but the controller lacks; each is warned about once.
+    // Only states this enemy actually uses are checked (Spawn is boss-only).
+    private void WarnMissingStateOnce(EnemyAnimationState state)
     {
-        if (!hasController) return;
-
-        var missing = new System.Collections.Generic.List<string>();
-        foreach (EnemyAnimationState state in System.Enum.GetValues(typeof(EnemyAnimationState)))
-            if (!animator.HasState(0, ToHash(state))) missing.Add(state.ToString());
-
-        if (missing.Count > 0)
-            Debug.LogWarning($"{name}: Animator '{animator.runtimeAnimatorController.name}' is missing states: {string.Join(", ", missing)}", this);
+        if (!reportedMissing.Add(state)) return;
+        Debug.LogWarning($"{name}: Animator '{animator.runtimeAnimatorController.name}' has no '{state}' state.", this);
     }
 
     private static int ToHash(EnemyAnimationState state) => state switch

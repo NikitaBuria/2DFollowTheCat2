@@ -6672,7 +6672,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 647818889}
   - {fileID: 2054682768}
-  spawnChance: 1
+  spawnChance: 0.5
 --- !u!1001 &2942709338005979264
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private GameObject pauseMenuPanel;
     [SerializeField] private GameObject merchantPanel;
+    [SerializeField] private GameObject winPanel;
 
     private void OnEnable()
     {
@@ -32,5 +33,6 @@ public class UIManager : MonoBehaviour
         merchantPanel.SetActive(gameState == GameState.Shop);
 
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(gameState == GameState.Paused);
+        if (winPanel != null) winPanel.SetActive(gameState == GameState.Won);
     }
 }

@@ -4,5 +4,7 @@ public enum GameState
     Gameplay,
     Inventory,
     Paused,
-    Shop
+    Shop,
+    // Every town building is restored; the win panel is open.
+    Won
 }
