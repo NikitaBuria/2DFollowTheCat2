@@ -24,4 +24,9 @@ public class CharacterData : ScriptableObject
 
     // Seconds after a hit during which damage is ignored. Keep it longer than the knockback.
     [field: SerializeField, Min(0f)] public float invincibleTimer { get; private set; } = 1f;
+
+    [Header("Sounds (optional)")]
+    [field: SerializeField] public SoundData hitSound { get; private set; }
+    [field: SerializeField] public SoundData deathSound { get; private set; }
+    [field: SerializeField] public SoundData dashSound { get; private set; }
 }

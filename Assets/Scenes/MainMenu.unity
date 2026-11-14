@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonClickSound
   audioSource: {fileID: 1648915783}
-  clickClip: {fileID: 8300000, guid: f86820a7727650341b1ce273182eb826, type: 3}
+  clickSound: {fileID: 11400000, guid: 4ab9075ac99027f4eaf6a510ba3eabb6, type: 2}
 --- !u!1 &201992972
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonClickSound
   audioSource: {fileID: 1648915783}
-  clickClip: {fileID: 8300000, guid: f86820a7727650341b1ce273182eb826, type: 3}
+  clickSound: {fileID: 11400000, guid: 4ab9075ac99027f4eaf6a510ba3eabb6, type: 2}
 --- !u!114 &453196933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonClickSound
   audioSource: {fileID: 1648915783}
-  clickClip: {fileID: 8300000, guid: f86820a7727650341b1ce273182eb826, type: 3}
+  clickSound: {fileID: 11400000, guid: 4ab9075ac99027f4eaf6a510ba3eabb6, type: 2}
 --- !u!114 &453196934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonClickSound
   audioSource: {fileID: 1648915783}
-  clickClip: {fileID: 8300000, guid: f86820a7727650341b1ce273182eb826, type: 3}
+  clickSound: {fileID: 11400000, guid: 4ab9075ac99027f4eaf6a510ba3eabb6, type: 2}
 --- !u!1 &1648915782
 GameObject:
   m_ObjectHideFlags: 0

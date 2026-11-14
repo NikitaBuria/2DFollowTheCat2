@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -34,6 +35,9 @@ public class EnemySummoner : MonoBehaviour
         pool.Clear();
     }
 
+    // Fired when at least one minion appeared (SummonSound listens).
+    public event Action OnSummoned;
+
     // Spawns up to minionCount minions on a circle around the boss and starts the cooldown.
     public void Summon()
     {
@@ -50,6 +54,8 @@ public class EnemySummoner : MonoBehaviour
             minion.gameObject.SetActive(true);
             minion.ResetForSpawn();
         }
+
+        if (count > 0) OnSummoned?.Invoke();
     }
 
     // Built asleep; Summon positions and wakes it.

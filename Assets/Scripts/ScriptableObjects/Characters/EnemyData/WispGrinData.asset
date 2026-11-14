@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbeae4816a6993f40b3c917c34b924f0, type: 3}
   m_Name: WispGrinData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  <characterType>k__BackingField: 0
   <maxHealth>k__BackingField: 6
   <walkSpeed>k__BackingField: 4
   <runSpeed>k__BackingField: 6
   <dashSpeed>k__BackingField: 10
+  <dashDuration>k__BackingField: 0.25
+  <dashCooldown>k__BackingField: 0.6
+  <hurtDuration>k__BackingField: 0.3
   <invincibleTimer>k__BackingField: 0
+  <hitSound>k__BackingField: {fileID: 11400000, guid: c1d52086aba57b84aad482da14252fcc, type: 2}
+  <deathSound>k__BackingField: {fileID: 11400000, guid: 06ad39c60fd6f4042b5305f6f06f99df, type: 2}
+  <dashSound>k__BackingField: {fileID: 0}
   <targetLayers>k__BackingField:
     serializedVersion: 2
     m_Bits: 64
@@ -35,6 +40,8 @@ MonoBehaviour:
   <knockbackDuration>k__BackingField: 0.15
   <windupTime>k__BackingField: 0.4
   <recoverTime>k__BackingField: 0.6
-  <hurtDuration>k__BackingField: 0.3
+  <staggerHits>k__BackingField: 1
   <destroyDelay>k__BackingField: 1.2
   <lootTable>k__BackingField: {fileID: 11400000, guid: a076f6967467ec04799132d399c83156, type: 2}
+  <attackSound>k__BackingField: {fileID: 11400000, guid: 0bcae6fc5e5e8fc44a9122a787157753, type: 2}
+  <hoverSound>k__BackingField: {fileID: 11400000, guid: e2d31ce26c9e56746899c974c00cc384, type: 2}

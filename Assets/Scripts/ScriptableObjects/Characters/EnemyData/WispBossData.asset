@@ -16,8 +16,13 @@ MonoBehaviour:
   <walkSpeed>k__BackingField: 3
   <runSpeed>k__BackingField: 4.5
   <dashSpeed>k__BackingField: 10
+  <dashDuration>k__BackingField: 0.25
+  <dashCooldown>k__BackingField: 0.6
   <hurtDuration>k__BackingField: 0.5
   <invincibleTimer>k__BackingField: 3
+  <hitSound>k__BackingField: {fileID: 11400000, guid: c1d52086aba57b84aad482da14252fcc, type: 2}
+  <deathSound>k__BackingField: {fileID: 11400000, guid: 288af73149360f941a6a9d33169d8b3e, type: 2}
+  <dashSound>k__BackingField: {fileID: 0}
   <targetLayers>k__BackingField:
     serializedVersion: 2
     m_Bits: 64
@@ -38,6 +43,8 @@ MonoBehaviour:
   <staggerHits>k__BackingField: 5
   <destroyDelay>k__BackingField: 2
   <lootTable>k__BackingField: {fileID: 11400000, guid: 66ff5371cd2a4b968192422916d7a0dc, type: 2}
+  <attackSound>k__BackingField: {fileID: 11400000, guid: 36b0c0d856e7b5e43a5176efc2a4c513, type: 2}
+  <hoverSound>k__BackingField: {fileID: 11400000, guid: e2d31ce26c9e56746899c974c00cc384, type: 2}
   <minionPrefab>k__BackingField: {fileID: 1506268292281006034, guid: 42b62f5064e30bd4a86c6487aac9d3e6, type: 3}
   <minionCount>k__BackingField: 3
   <maxMinions>k__BackingField: 6
@@ -45,3 +52,4 @@ MonoBehaviour:
   <summonRadius>k__BackingField: 1.5
   <summonDelay>k__BackingField: 0.2
   <summonDuration>k__BackingField: 0.4
+  <summonSound>k__BackingField: {fileID: 11400000, guid: a0ac8ede0e44fd44f97697d6aa99b5bb, type: 2}

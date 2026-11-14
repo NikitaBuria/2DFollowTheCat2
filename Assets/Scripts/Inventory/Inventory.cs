@@ -11,6 +11,8 @@ public class Inventory : MonoBehaviour, ISaveable
 
     public event Action OnChanged;
     public event Action<int> OnSelectedSlotChanged;
+    // After a hotbar use succeeded (ItemUseSound listens).
+    public event Action<ItemData> OnItemUsed;
 
     public int count => slots.Length;
 
@@ -123,8 +125,10 @@ public class Inventory : MonoBehaviour, ISaveable
         if (slot == null || slot.item is not IUsable usable) return false;
         if (!usable.Use(user)) return false;
 
+        ItemData used = slot.item; // read before the last one is removed
         slot.Set(slot.item, slot.amount - 1);
         OnChanged?.Invoke();
+        OnItemUsed?.Invoke(used);
         return true;
     }
 

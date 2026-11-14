@@ -20,6 +20,8 @@ public class Equipment : MonoBehaviour, ISaveable, IDamageModifier
     private Inventory inventory;
 
     public event Action<EquipmentSlotType, EquipmentData> OnEquipmentChanged;
+    // Only when the player puts an item on (TryEquip), never on Load (EquipSound listens).
+    public event Action<EquipmentData> OnItemEquipped;
 
     private void Awake()
     {
@@ -56,6 +58,7 @@ public class Equipment : MonoBehaviour, ISaveable, IDamageModifier
         EquipmentData previous = GetEquipped(item.slotType);
         inventory.SetSlot(inventoryIndex, previous, previous != null ? 1 : 0);
         SetEquipped(item.slotType, item);
+        OnItemEquipped?.Invoke(item);
         return true;
     }
 

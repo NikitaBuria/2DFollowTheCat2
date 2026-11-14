@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ButtonClickSound : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip clickClip;
+    [SerializeField] private SoundData clickSound;
 
     private Button button;
 
@@ -29,6 +29,6 @@ public class ButtonClickSound : MonoBehaviour
 
     private void PlayClick()
     {
-        audioSource.PlayOneShot(clickClip);
+        if (clickSound != null) clickSound.PlayOn(audioSource);
     }
 }

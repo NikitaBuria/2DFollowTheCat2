@@ -16,8 +16,13 @@ MonoBehaviour:
   <walkSpeed>k__BackingField: 4
   <runSpeed>k__BackingField: 6
   <dashSpeed>k__BackingField: 10
+  <dashDuration>k__BackingField: 0.25
+  <dashCooldown>k__BackingField: 0.6
   <hurtDuration>k__BackingField: 0.3
   <invincibleTimer>k__BackingField: 0
+  <hitSound>k__BackingField: {fileID: 11400000, guid: c1d52086aba57b84aad482da14252fcc, type: 2}
+  <deathSound>k__BackingField: {fileID: 11400000, guid: 06ad39c60fd6f4042b5305f6f06f99df, type: 2}
+  <dashSound>k__BackingField: {fileID: 0}
   <targetLayers>k__BackingField:
     serializedVersion: 2
     m_Bits: 64
@@ -38,3 +43,5 @@ MonoBehaviour:
   <staggerHits>k__BackingField: 1
   <destroyDelay>k__BackingField: 1.2
   <lootTable>k__BackingField: {fileID: 0}
+  <attackSound>k__BackingField: {fileID: 11400000, guid: 0bcae6fc5e5e8fc44a9122a787157753, type: 2}
+  <hoverSound>k__BackingField: {fileID: 11400000, guid: e2d31ce26c9e56746899c974c00cc384, type: 2}

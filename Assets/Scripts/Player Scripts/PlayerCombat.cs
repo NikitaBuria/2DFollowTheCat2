@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,6 +36,9 @@ public class PlayerCombat : MonoBehaviour
             Debug.LogError($"{name}: PlayerCombat's enemyLayerMask is Nothing. Pick the Enemy layer in the Inspector.", this);
     }
 
+    // Every swing, hit or miss (SwingSound listens).
+    public event Action<WeaponData> OnSwing;
+
     // null = nothing in hand: punch with the unarmed weapon.
     public void SetWeapon(WeaponData weapon) => currentWeapon = weapon != null ? weapon : unarmedWeapon;
 
@@ -42,6 +46,8 @@ public class PlayerCombat : MonoBehaviour
     public void HandleAttack(Vector2 direction)
     {
         if (currentWeapon == null || attackPoint == null) return;
+
+        OnSwing?.Invoke(currentWeapon);
 
         direction = direction.normalized;
         Vector2 origin = attackPoint.position;

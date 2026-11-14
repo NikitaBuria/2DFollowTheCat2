@@ -17,5 +17,9 @@ MonoBehaviour:
   <maxStack>k__BackingField: 1
   <sellPrice>k__BackingField: 20
   <buyPrice>k__BackingField: 80
+  <useSound>k__BackingField: {fileID: 0}
+  <layerFrames>k__BackingField: []
+  <layerFramesBack>k__BackingField: []
+  <equipSound>k__BackingField: {fileID: 11400000, guid: df0cd7517808e9f4dad2c0e1a4977220, type: 2}
   armorSlot: 1
   <defense>k__BackingField: 3

@@ -21,6 +21,10 @@ public class WeaponData : EquipmentData
     // Total cone width in degrees, centered on the facing direction.
     [field: SerializeField, Range(0f, 360f)] public float attackArc { get; private set; } = 90f;
 
+    [Header("Sound")]
+    // Every swing, hit or miss. Optional.
+    [field: SerializeField] public SoundData swingSound { get; private set; }
+
     [Header("Timing")]
     // How long the player stays in the attack state.
     [field: SerializeField, Min(0.05f)] public float attackDuration { get; private set; } = 0.4f;

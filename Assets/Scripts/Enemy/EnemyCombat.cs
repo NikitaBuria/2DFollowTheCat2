@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 // How the enemy hits (with its body, no weapon). The stats come from EnemyData;
@@ -26,9 +27,14 @@ public class EnemyCombat : MonoBehaviour
         return (closestPoint - origin).sqrMagnitude <= range * range;
     }
 
+    // The moment of every attack, hit or miss (EnemyAttackSound listens).
+    public event Action OnAttack;
+
     // Checks the range again at the moment of the hit: the target may have dodged during the windup.
     public void PerformAttack(Transform target)
     {
+        OnAttack?.Invoke();
+
         if (!IsInRange(target)) return;
         if (!target.TryGetComponent(out IDamageable damageable) || !damageable.isAlive) return;
 

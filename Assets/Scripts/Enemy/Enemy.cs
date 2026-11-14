@@ -5,10 +5,11 @@ using UnityEngine;
 // to the current one and turns health events into state changes. States decide what happens.
 [RequireComponent(typeof(EnemyMotor), typeof(EnemyDetection), typeof(EnemyCombat))]
 [RequireComponent(typeof(EnemyAnimator), typeof(Health))]
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, ICharacter
 {
     [Header("Data")]
     [field: SerializeField] public EnemyData enemyData { get; private set; }
+    CharacterData ICharacter.characterData => enemyData;
 
     [Header("Patrol")]
     // Optional. Positions are captured in Awake, so the points can be children of the enemy.

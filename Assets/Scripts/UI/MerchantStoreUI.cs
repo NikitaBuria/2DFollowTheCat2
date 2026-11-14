@@ -31,7 +31,7 @@ public class MerchantStoreUI : MonoBehaviour
 
     public void Buy(ItemData item)
     {
-        // Later: feedback when it fails (not enough coins, inventory full).
+        // ShopFeedbackUI shows the result (Merchant.OnTrade).
         merchant.TryBuy(item);
     }
 }

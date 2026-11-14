@@ -16,5 +16,10 @@ MonoBehaviour:
   <walkSpeed>k__BackingField: 4
   <runSpeed>k__BackingField: 6
   <dashSpeed>k__BackingField: 10
+  <dashDuration>k__BackingField: 0.25
+  <dashCooldown>k__BackingField: 0.6
   <hurtDuration>k__BackingField: 0.5
   <invincibleTimer>k__BackingField: 1
+  <hitSound>k__BackingField: {fileID: 0}
+  <deathSound>k__BackingField: {fileID: 11400000, guid: d8acb728ae327ad43ae683b4ca4b0962, type: 2}
+  <dashSound>k__BackingField: {fileID: 11400000, guid: 46f4cc7517569bd4fa65de93a04975c9, type: 2}

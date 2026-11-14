@@ -17,4 +17,5 @@ MonoBehaviour:
   <maxStack>k__BackingField: 10
   <sellPrice>k__BackingField: 5
   <buyPrice>k__BackingField: 15
+  <useSound>k__BackingField: {fileID: 11400000, guid: 5f807f71fda22c64ba653f5d52dadfd1, type: 2}
   <healAmount>k__BackingField: 10

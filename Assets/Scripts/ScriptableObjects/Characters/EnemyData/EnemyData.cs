@@ -46,6 +46,11 @@ public class EnemyData : CharacterData
     // Dropped once on death. Empty = drops nothing.
     [field: SerializeField] public LootTable lootTable { get; private set; }
 
+    [Header("Enemy Sounds (optional)")]
+    [field: SerializeField] public SoundData attackSound { get; private set; }
+    // Looped while the enemy is around (HoverSound on its HoverAudio child).
+    [field: SerializeField] public SoundData hoverSound { get; private set; }
+
     // Runs in the Editor when a value changes: keeps the lose range at least as big as the detection range.
     protected virtual void OnValidate()
     {

@@ -17,6 +17,7 @@ MonoBehaviour:
   <maxStack>k__BackingField: 1
   <sellPrice>k__BackingField: 15
   <buyPrice>k__BackingField: 60
+  <useSound>k__BackingField: {fileID: 0}
   <layerFrames>k__BackingField:
   - {fileID: 0}
   - {fileID: 0}
@@ -271,10 +272,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  <equipSound>k__BackingField: {fileID: 11400000, guid: df0cd7517808e9f4dad2c0e1a4977220, type: 2}
   <weaponType>k__BackingField: 1
   <damage>k__BackingField: 2
   <knockback>k__BackingField: 5
   <knockbackDuration>k__BackingField: 0.2
   <attackRange>k__BackingField: 1.5
   <attackArc>k__BackingField: 90
+  <swingSound>k__BackingField: {fileID: 11400000, guid: 5ca4b64935e0c7547b61a231a5e2b659, type: 2}
   <attackDuration>k__BackingField: 0.5

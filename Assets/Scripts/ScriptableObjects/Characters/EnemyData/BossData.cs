@@ -19,6 +19,7 @@ public class BossData : EnemyData
     [field: SerializeField, Min(0f)] public float summonDelay { get; private set; } = 0.2f;
     // Length of the whole summon = the Spawn clip (0.4 s).
     [field: SerializeField, Min(0f)] public float summonDuration { get; private set; } = 0.4f;
+    [field: SerializeField] public SoundData summonSound { get; private set; }
 
     protected override void OnValidate()
     {
