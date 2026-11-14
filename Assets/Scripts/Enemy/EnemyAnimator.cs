@@ -10,6 +10,7 @@ public class EnemyAnimator : MonoBehaviour
     private static readonly int WindupHash = Animator.StringToHash("Windup");
     private static readonly int AttackHash = Animator.StringToHash("Attack");
     private static readonly int HurtHash = Animator.StringToHash("Hurt");
+    private static readonly int SpawnHash = Animator.StringToHash("Spawn");
     private static readonly int DeadHash = Animator.StringToHash("Dead");
 
     // Blend tree parameters
@@ -66,6 +67,7 @@ public class EnemyAnimator : MonoBehaviour
         EnemyAnimationState.Windup => WindupHash,
         EnemyAnimationState.Attack => AttackHash,
         EnemyAnimationState.Hurt => HurtHash,
+        EnemyAnimationState.Spawn => SpawnHash,
         EnemyAnimationState.Dead => DeadHash,
         _ => throw new System.ArgumentOutOfRangeException(nameof(state), state, null)
     };

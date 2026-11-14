@@ -7,5 +7,6 @@ public enum EnemyAnimationState
     Windup,
     Attack,
     Hurt,
+    Spawn,
     Dead
 }

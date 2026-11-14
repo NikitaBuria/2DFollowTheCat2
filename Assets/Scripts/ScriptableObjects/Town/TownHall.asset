@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
   <buildingName>k__BackingField: Town Hall
   <cost>k__BackingField: 500
-  <requiredItem>k__BackingField: {fileID: 0}
+  <requiredItem>k__BackingField: {fileID: 11400000, guid: c4c29f48e2344faba6b7ab44e6670940, type: 2}

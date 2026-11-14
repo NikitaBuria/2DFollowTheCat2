@@ -1,13 +1,16 @@
-# King Wisp
+# King Wisp visuals
 
-Large crowned relative of WispGrin: smoky purple body, green eyes and grin, aged gold crown with green gem, floating claws and a ragged spectral royal mantle.
+KingWispVisual uses a 3.2-unit sprite canvas, a bottom-biased pivot and a transition-free Animator. The MoveX/MoveY trees share frontal artwork in all four slots. Idle loops. Attack, Spawn, Hurt and Dead are one-shots selected by the boss state code.
 
-KingWispVisual.prefab is the visual layer only: SpriteRenderer plus Animator with a four-frame looping Idle at 4 fps. Its sprite canvas spans 3.2 world units, with transparent padding; the visible boss is intended to be roughly three ordinary wisps tall. Keep its transform scale at one and tune the size after viewing it beside the player. The bottom-biased pivot supports ground placement and sorting.
+| State | Duration | Visual cue |
+| --- | --- | --- |
+| Attack | 0.222 s | The widest claw slash lands at 0.111 s. |
+| Spawn | 0.400 s | Three green wisps appear around the crown at 0.200 s. |
+| Hurt | 0.75 s | Impact flash, held recoil, then recovery. |
+| Dead | 1.90 s | Explosion at 0.30 s, shards at 0.90 s, sparks clear at 1.80 s. |
 
-One shared sprite sheet, capped at 512 x 512 at runtime, point filtering, high-quality compression, no mipmaps, no CPU-readable copy. No real-time lights, particle systems, or per-frame gameplay scripts were added.
+WispBossData references KingWispLoot, configured to drop one MarbleStonePickup. The Apothecary requires Marble Stone in addition to its gold cost. The boss encounter owns damage, minion creation and calling the loot table. The visual prefab contains the renderer and Animator.
 
-This is not a complete playable boss: no AI, health, attacks, hurt/death clips, collision, loot or encounter triggers are wired. Add this visual under your future boss root; keep decisions in states, movement/combat work in components and tunable stats in ScriptableObject data.
+King Wisp Run uses four directional four-frame spectral flight loops at 14 fps in the MoveX/MoveY tree. Asset bindings checked offline; in-game playback awaits verification.
 
-Generated with the built-in image tool. Prompt brief: use WispGrin as the species reference and Lost Wanderer as the rendering-style reference; a giant purple king wisp with green eyes, sharp grin, aged gold five-point crown, green gem, floating spectral claws and torn plum mantle; crisp muted fantasy pixel art, top-down three-quarter view; transparent 2x2 sheet of four subtle down-facing idle poses, consistent scale and padding, no text/background.
-
-Tools > Enemies > Build King Wisp Visual creates missing assets and preserves existing prefabs. Validation.txt is written after all four animation sprite keys are sampled successfully. Frame pacing and appearance still require review in the game camera.
+King Wisp Walk and Windup have distinct four-direction sprite clips. Walk loops at 8 fps (0.5 s); Windup plays once at 20 fps (0.2 s, matching WispBossData). Clip references checked offline; Play Mode playback unverified.

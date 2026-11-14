@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716458387fe139d47b2e7a899fa152ac, type: 3}
+  m_Name: WispBossData
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <maxHealth>k__BackingField: 60
+  <walkSpeed>k__BackingField: 3
+  <runSpeed>k__BackingField: 4.5
+  <dashSpeed>k__BackingField: 10
+  <hurtDuration>k__BackingField: 0.5
+  <invincibleTimer>k__BackingField: 3
+  <targetLayers>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 64
+  <obstacleLayers>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1
+  <detectionRange>k__BackingField: 5
+  <loseTargetRange>k__BackingField: 8
+  <targetRefreshInterval>k__BackingField: 0.2
+  <patrolWaitTime>k__BackingField: 1
+  <arriveDistance>k__BackingField: 0.2
+  <attackDamage>k__BackingField: 20
+  <attackRange>k__BackingField: 2
+  <knockback>k__BackingField: 5
+  <knockbackDuration>k__BackingField: 0.15
+  <windupTime>k__BackingField: 0.2
+  <recoverTime>k__BackingField: 0.15
+  <staggerHits>k__BackingField: 5
+  <destroyDelay>k__BackingField: 2
+  <lootTable>k__BackingField: {fileID: 11400000, guid: 66ff5371cd2a4b968192422916d7a0dc, type: 2}
+  <minionPrefab>k__BackingField: {fileID: 1506268292281006034, guid: 42b62f5064e30bd4a86c6487aac9d3e6, type: 3}
+  <minionCount>k__BackingField: 3
+  <maxMinions>k__BackingField: 6
+  <summonCooldown>k__BackingField: 8
+  <summonRadius>k__BackingField: 1.5
+  <summonDelay>k__BackingField: 0.2
+  <summonDuration>k__BackingField: 0.4

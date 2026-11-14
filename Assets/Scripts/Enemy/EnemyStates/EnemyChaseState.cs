@@ -16,6 +16,14 @@ public class EnemyChaseState : EnemyState
             return;
         }
 
+        // A boss may have something better to do (summon).
+        EnemyState special = enemy.GetSpecialState();
+        if (special != null)
+        {
+            enemy.enemyStateMachine.ChangeState(special);
+            return;
+        }
+
         if (enemy.enemyCombat.IsInRange(enemy.target))
         {
             enemy.enemyStateMachine.ChangeState(enemy.windupState);

@@ -33,6 +33,11 @@ public class EnemyData : CharacterData
     // How long the enemy stays in the attack after the hit before acting again.
     [field: SerializeField, Min(0f)] public float recoverTime { get; private set; } = 0.6f;
 
+    [Header("Hurt")]
+    // Super armor: the enemy flinches (Hurt) only on every Nth hit; the other hits still do damage.
+    // 1 = flinches on every hit.
+    [field: SerializeField, Min(1)] public int staggerHits { get; private set; } = 1;
+
     [Header("Dead")]
     // Seconds before the dead enemy is removed (time for the death animation).
     [field: SerializeField, Min(0f)] public float destroyDelay { get; private set; } = 1f;
@@ -42,7 +47,7 @@ public class EnemyData : CharacterData
     [field: SerializeField] public LootTable lootTable { get; private set; }
 
     // Runs in the Editor when a value changes: keeps the lose range at least as big as the detection range.
-    private void OnValidate()
+    protected virtual void OnValidate()
     {
         if (loseTargetRange < detectionRange)
             loseTargetRange = detectionRange;

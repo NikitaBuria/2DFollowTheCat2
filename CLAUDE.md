@@ -34,6 +34,9 @@ Same pattern as the player (`Scripts/Enemy/`):
 - **Components**: `EnemyMotor` (`MoveTowards` without overshooting, `Move`, `Stop`), `EnemyDetection` (throttled `OverlapCircle` search, immediate loss beyond `loseTargetRange`, `Linecast` line of sight only for spotting; WispGrin's `obstacleLayers` = Default, where the cave walls are), `EnemyCombat` (body attack: range check to the target collider's `ClosestPoint`, re-checked at the moment of the hit), `EnemyAnimator` (same as `PlayerAnimator`, warns once about missing Animator states).
 - Enemies attack with their body, never with `WeaponData`; their attack stats live in `EnemyData`.
 - **Editor/EnemyInspector**: shows the live state, target and health in Play mode.
+- **Super armor** (`EnemyData.staggerHits`, 1 = every hit): every hit does damage, only every Nth makes the enemy flinch (Hurt). WispGrin 1, King Wisp 5.
+- **Special states**: Chase asks `enemy.GetSpecialState()` (virtual, null by default) before attacking; a boss overrides it.
+- **KingWisp** (`Scripts/Enemy/WispBoss/`, `Prefabs/Enemies/KingWisp`, variant of Astra's `KingWispVisual`): `KingWisp : Enemy`, data `WispBossData` (a `BossData : EnemyData`: minion prefab, count, max alive, cooldown, radius, summon delay/duration). Overrides `CreateStates` (adds `KingWispSummonState`) and `GetSpecialState` (cooldown over and fewer than `maxMinions` alive). Summon: stands still, plays Spawn, `Summon()` at 0.2 s spawns `Prefabs/Enemies/WispMinion` (`WispMinionData`: WispGrin without loot, detection 8) in a circle, Chase after 0.4 s. 60 health, drops the Marble Stone (Apothecary and Town Hall both need one). Farmable; random spawn points later. Play mode unverified.
 
 ## Shared
 
@@ -166,8 +169,16 @@ Rules:
 
 ## Build order
 
-1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅, review items fixed ✅) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (Wisp) ✅ (fight play-tested) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅, autosave on every door ✅; later: checkpoints) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅, scenes MainMenu/Town/Outdoor/Dungeon + doors ✅, town restoration ✅ (Astra's building art and rebuild clips)) → 8. Boss + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
+1. Movement (Idle/Walk/Run) ✅ → 2. Combat (player attack ✅, review items fixed ✅) → 3. Health/Hurt/Dead ✅ → 4. Enemy with its own state machine (Wisp) ✅ (fight play-tested) → 5. Loot, Inventory, Wallet (core ported; coin counter ✅, game state + inventory panel toggle ✅, inventory grid ✅, equipment slot layout ✅, hotbar + health potion ✅) → 6. Save system (save/load + death respawn ✅, autosave on every door ✅; later: checkpoints) → 7. Interactor (base + NPC dialogue ✅, merchant shop: buy + sell ✅, scenes MainMenu/Town/Outdoor/Dungeon + doors ✅, town restoration ✅ (Astra's building art and rebuild clips)) → 8. Boss (King Wisp: super armor + summon, not play-tested yet) + win screen → 9. Dash, Equipment, Abilities → 10. Audio, UI polish
 
 ## Team
 
 Astra makes the art (sprites, animations, prefab visuals). The developer and Claude design and write all code.
+
+- King Wisp visual assets: Idle plus frontal Attack, Spawn, Hurt and explosive Dead one-shots in transition-free MoveX/MoveY trees. WispBossData references KingWispLoot (one guaranteed Marble Stone). Marble Stone is registered in ItemDatabase and assigned as the Apothecary restoration item. Encounter playback, summoning and the pickup-to-restoration flow await Play Mode verification.
+
+King Wisp Run uses four directional four-frame spectral flight loops at 14 fps in the MoveX/MoveY tree. Asset bindings checked offline; in-game playback awaits verification.
+
+King Wisp Walk and Windup have distinct four-direction sprite clips. Walk loops at 8 fps (0.5 s); Windup plays once at 20 fps (0.2 s, matching WispBossData). Clip references checked offline; Play Mode playback unverified.
+
+King Wisp Hurt lasts 0.75 s with matching boss stun. Dead lasts 1.90 s with a 2 s boss destroy delay. Serialized timings checked; in-game playback unverified.

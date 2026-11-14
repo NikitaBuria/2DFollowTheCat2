@@ -41,6 +41,8 @@ public class Enemy : MonoBehaviour
 
     private Vector2[] patrolRoute;
     private int patrolIndex;
+    // Hits taken since the last flinch (see staggerHits).
+    private int hitsSinceStagger;
 
     public bool hasPatrolRoute => patrolRoute.Length > 0;
     public Vector2 patrolDestination => patrolRoute[patrolIndex];
@@ -84,6 +86,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         if (health.isAlive) enemyDetection.Refresh();
+
         enemyStateMachine.currentState?.Update();
     }
 
@@ -115,11 +118,22 @@ public class Enemy : MonoBehaviour
         patrolIndex = (patrolIndex + 1) % patrolRoute.Length;
     }
 
+    // Something this enemy can do instead of its normal attack (a boss's summon). Chase asks for it;
+    // null = nothing right now. Ordinary enemies have none.
+    public virtual EnemyState GetSpecialState() => null;
+
+    // Every hit does damage, but only every staggerHits-th hit makes the enemy flinch.
     private void HandleDamaged(DamageData damage)
     {
         lastDamage = damage;
         // A killing hit goes to Dead through OnDied instead.
-        if (health.isAlive) enemyStateMachine.ChangeState(hurtState);
+        if (!health.isAlive) return;
+
+        hitsSinceStagger++;
+        if (hitsSinceStagger < enemyData.staggerHits) return;
+
+        hitsSinceStagger = 0;
+        enemyStateMachine.ChangeState(hurtState);
     }
 
     private void HandleDied()
@@ -147,7 +161,7 @@ public class Enemy : MonoBehaviour
         patrolRoute = points.ToArray();
     }
 
-    private void CreateStates()
+    protected virtual void CreateStates()
     {
         idleState = new EnemyIdleState(this);
         patrolState = new EnemyPatrolState(this);
