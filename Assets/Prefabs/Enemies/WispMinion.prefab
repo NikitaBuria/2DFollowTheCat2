@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 4493630909481075344}
   - component: {fileID: 8548628613941794938}
   - component: {fileID: 3473174609958403387}
+  - component: {fileID: 441880708735006742}
   m_Layer: 3
   m_Name: WispMinion
   m_TagString: Untagged
@@ -539,3 +540,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c0f167bd4f2f04dbfcb04e0f869582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathSound
+--- !u!210 &441880708735006742
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205967183450548754}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0

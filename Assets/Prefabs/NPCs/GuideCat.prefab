@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7445850986142246565}
   - component: {fileID: 2409493270535678280}
   - component: {fileID: 5673829920655989820}
+  - component: {fileID: 3618356888565214154}
   m_Layer: 8
   m_Name: GuideCat
   m_TagString: Untagged
@@ -108,7 +109,23 @@ MonoBehaviour:
   walkSpeed: 2.5
   leadDistance: 4
   arriveDistance: 0.05
+  followDistance: 1.5
+  runDistance: 4
+  runSpeed: 6
   talkDistance: 3
+--- !u!210 &3618356888565214154
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784937685987931278}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
 --- !u!1001 &4174542092041562267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,7 +178,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6527889519336396076, guid: adc84fee0d0483846ac09e41f6c703f5, type: 3}
+    - {fileID: 3661587913090212327, guid: adc84fee0d0483846ac09e41f6c703f5, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1913998906720848996, guid: adc84fee0d0483846ac09e41f6c703f5, type: 3}
     m_AddedGameObjects: []

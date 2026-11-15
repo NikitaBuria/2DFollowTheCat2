@@ -243,6 +243,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2229601820488639183, guid: 885f7e51a736d8b4fad2740f86ebe4d9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8527017255693992846}
+    - targetCorrespondingSourceObject: {fileID: 2229601820488639183, guid: 885f7e51a736d8b4fad2740f86ebe4d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1071390379148833276}
   m_SourcePrefab: {fileID: 100100000, guid: 885f7e51a736d8b4fad2740f86ebe4d9, type: 3}
 --- !u!4 &3976128565242401754 stripped
 Transform:
@@ -411,3 +414,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b6d8289fb8b764bbc3466bf5ba866c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SummonSound
+--- !u!210 &1071390379148833276
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415629606541940055}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0

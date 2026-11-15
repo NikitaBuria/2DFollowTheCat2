@@ -3,6 +3,7 @@ Shader "FollowTheCat/Dungeon Root Ripple"
     Properties
     {
         _MainTex("Diffuse", 2D) = "white" {}
+        [Toggle] _PortalOnly("Layered shrine portal only", Float) = 0
         _MaskTex("Mask", 2D) = "white" {}
         _NormalMap("Normal Map", 2D) = "bump" {}
         [MaterialToggle] _ZWrite("ZWrite", Float) = 0
@@ -57,6 +58,7 @@ Shader "FollowTheCat/Dungeon Root Ripple"
             // NOTE: Do not ifdef the properties here as SRP batcher can not handle different layouts.
             CBUFFER_START(UnityPerMaterial)
                 half4 _Color;
+                float _PortalOnly;
             CBUFFER_END
 
             Varyings LitVertex(Attributes input)
@@ -83,6 +85,16 @@ Shader "FollowTheCat/Dungeon Root Ripple"
                 float phase = 18.0 * radius + 2.5 * uv.x - 2.15 * _Time.y;
                 float2 tangent = float2(-fromMouth.y, fromMouth.x) / max(radius, 0.08);
                 float weight = bark * surface.a * smoothstep(0.045, 0.16, radius);
+                if (_PortalOnly > 0.5)
+                {
+                    // Ellipse inside the painted violet opening, in full-map UVs.
+                    float2 mouth = (uv - float2(96.0/1606.0, 1.0-866.0/1075.0))
+                                  / float2(31.0/1606.0, 43.0/1075.0);
+                    float fade = 1.0 - smoothstep(0.55, 1.0, length(mouth));
+                    float wave = sin(9.0 * length(mouth) - 1.6 * _Time.y);
+                    input.uv += fade * wave * float2(-mouth.y/1606.0, mouth.x/1075.0);
+                    return CommonLitFragment(input, input.color);
+                }
                 input.uv += weight * (0.0065 * tangent * sin(phase)
                                      + float2(0.0015, 0.002) * sin(phase * 1.5));
                 half4 lit = CommonLitFragment(input, input.color);

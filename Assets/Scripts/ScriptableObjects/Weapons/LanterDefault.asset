@@ -147,6 +147,9 @@ MonoBehaviour:
   - {fileID: 1129524659446111373, guid: 1cd4aca2dbb75f849963befb431493f6, type: 3}
   <layerFramesBack>k__BackingField: []
   <equipSound>k__BackingField: {fileID: 11400000, guid: df0cd7517808e9f4dad2c0e1a4977220, type: 2}
+  <lightRadius>k__BackingField: 4.5
+  <lightColor>k__BackingField: {r: 1, g: 0.78, b: 0.45, a: 1}
+  <lightIntensity>k__BackingField: 2.2
   <weaponType>k__BackingField: 0
   <damage>k__BackingField: 2
   <knockback>k__BackingField: 1

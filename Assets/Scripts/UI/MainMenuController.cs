@@ -15,6 +15,9 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private Button continueButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button exitButton;
+    [SerializeField] private Button helpButton;
+    [SerializeField] private GameObject controlsPanel;
+    [SerializeField] private Button controlsBackButton;
     [SerializeField] private SettingsPanelUI settingsPanel;
     [SerializeField] private TextMeshProUGUI newGameLabel;
     [SerializeField] private string confirmNewGameText = "Start over?";
@@ -40,6 +43,8 @@ public class MainMenuController : MonoBehaviour
         continueButton.onClick.AddListener(Continue);
         settingsButton.onClick.AddListener(OpenSettings);
         exitButton.onClick.AddListener(Exit);
+        helpButton.onClick.AddListener(OpenControls);
+        controlsBackButton.onClick.AddListener(CloseControls);
         settingsPanel.OnBackPressed += CloseSettings;
 
         continueButton.interactable = ReadSave() != null;
@@ -52,6 +57,8 @@ public class MainMenuController : MonoBehaviour
         continueButton.onClick.RemoveListener(Continue);
         settingsButton.onClick.RemoveListener(OpenSettings);
         exitButton.onClick.RemoveListener(Exit);
+        helpButton.onClick.RemoveListener(OpenControls);
+        controlsBackButton.onClick.RemoveListener(CloseControls);
         settingsPanel.OnBackPressed -= CloseSettings;
     }
 
@@ -110,11 +117,32 @@ public class MainMenuController : MonoBehaviour
 
     private void ShowSettings(bool show)
     {
-        newGameButton.gameObject.SetActive(!show);
-        continueButton.gameObject.SetActive(!show);
-        settingsButton.gameObject.SetActive(!show);
-        exitButton.gameObject.SetActive(!show);
         settingsPanel.gameObject.SetActive(show);
+        controlsPanel.SetActive(false);
+        ShowMenuButtons(!show);
+    }
+
+    private void OpenControls()
+    {
+        ShowMenuButtons(false);
+        controlsPanel.SetActive(true);
+        controlsBackButton.Select();
+    }
+
+    private void CloseControls()
+    {
+        controlsPanel.SetActive(false);
+        ShowMenuButtons(true);
+        helpButton.Select();
+    }
+
+    private void ShowMenuButtons(bool visible)
+    {
+        helpButton.gameObject.SetActive(visible);
+        newGameButton.gameObject.SetActive(visible);
+        continueButton.gameObject.SetActive(visible);
+        settingsButton.gameObject.SetActive(visible);
+        exitButton.gameObject.SetActive(visible);
 
         // Leaving and coming back resets the "Start over?" question.
         confirmingNewGame = false;

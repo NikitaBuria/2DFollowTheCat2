@@ -16,4 +16,12 @@ public abstract class EquipmentData : ItemData
 
     // Played when the player puts it on. Optional.
     [field: SerializeField] public SoundData equipSound { get; private set; }
+
+    [Header("Light (optional)")]
+    // Radius of the light around the player while it is held/worn (0 = gives no light). The Lantern.
+    [field: SerializeField, Min(0f)] public float lightRadius { get; private set; }
+    [field: SerializeField] public Color lightColor { get; private set; } = new Color(1f, 0.78f, 0.45f);
+    [field: SerializeField, Min(0f)] public float lightIntensity { get; private set; } = 1f;
+
+    public bool givesLight => lightRadius > 0f;
 }
