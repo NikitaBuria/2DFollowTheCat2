@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716458387fe139d47b2e7a899fa152ac, type: 3}
   m_Name: WispBossData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  <maxHealth>k__BackingField: 60
+  <maxHealth>k__BackingField: 50
   <walkSpeed>k__BackingField: 3
   <runSpeed>k__BackingField: 4.5
-  <dashSpeed>k__BackingField: 10
-  <dashDuration>k__BackingField: 0.25
-  <dashCooldown>k__BackingField: 0.6
-  <hurtDuration>k__BackingField: 0.5
-  <invincibleTimer>k__BackingField: 3
+  <dashSpeed>k__BackingField: 0
+  <dashDuration>k__BackingField: 0.01
+  <dashCooldown>k__BackingField: 0
+  <hurtDuration>k__BackingField: 0.8
+  <invincibleTimer>k__BackingField: 1
   <hitSound>k__BackingField: {fileID: 11400000, guid: c1d52086aba57b84aad482da14252fcc, type: 2}
   <deathSound>k__BackingField: {fileID: 11400000, guid: 288af73149360f941a6a9d33169d8b3e, type: 2}
   <dashSound>k__BackingField: {fileID: 0}
@@ -33,22 +33,22 @@ MonoBehaviour:
   <loseTargetRange>k__BackingField: 8
   <targetRefreshInterval>k__BackingField: 0.2
   <patrolWaitTime>k__BackingField: 1
-  <arriveDistance>k__BackingField: 0.2
-  <attackDamage>k__BackingField: 20
-  <attackRange>k__BackingField: 2
-  <knockback>k__BackingField: 5
-  <knockbackDuration>k__BackingField: 0.15
-  <windupTime>k__BackingField: 0.2
-  <recoverTime>k__BackingField: 0.15
-  <staggerHits>k__BackingField: 5
+  <arriveDistance>k__BackingField: 1
+  <attackDamage>k__BackingField: 10
+  <attackRange>k__BackingField: 1.6
+  <knockback>k__BackingField: 1
+  <knockbackDuration>k__BackingField: 0.1
+  <windupTime>k__BackingField: 0.4
+  <recoverTime>k__BackingField: 0.2
+  <staggerHits>k__BackingField: 2
   <destroyDelay>k__BackingField: 2
   <lootTable>k__BackingField: {fileID: 11400000, guid: 66ff5371cd2a4b968192422916d7a0dc, type: 2}
   <attackSound>k__BackingField: {fileID: 11400000, guid: 36b0c0d856e7b5e43a5176efc2a4c513, type: 2}
   <hoverSound>k__BackingField: {fileID: 11400000, guid: e2d31ce26c9e56746899c974c00cc384, type: 2}
   <minionPrefab>k__BackingField: {fileID: 1506268292281006034, guid: 42b62f5064e30bd4a86c6487aac9d3e6, type: 3}
-  <minionCount>k__BackingField: 3
-  <maxMinions>k__BackingField: 6
-  <summonCooldown>k__BackingField: 8
+  <minionCount>k__BackingField: 2
+  <maxMinions>k__BackingField: 4
+  <summonCooldown>k__BackingField: 10
   <summonRadius>k__BackingField: 1.5
   <summonDelay>k__BackingField: 0.2
   <summonDuration>k__BackingField: 0.4

@@ -273,6 +273,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   <equipSound>k__BackingField: {fileID: 0}
+  <lightRadius>k__BackingField: 0
+  <lightColor>k__BackingField: {r: 1, g: 0.78, b: 0.45, a: 1}
+  <lightIntensity>k__BackingField: 1
   <weaponType>k__BackingField: 2
   <damage>k__BackingField: 1
   <knockback>k__BackingField: 0.5
@@ -280,4 +283,4 @@ MonoBehaviour:
   <attackRange>k__BackingField: 0.8
   <attackArc>k__BackingField: 90
   <swingSound>k__BackingField: {fileID: 11400000, guid: a19ae620be6d79e4ca0370d54812f185, type: 2}
-  <attackDuration>k__BackingField: 0.5
+  <attackDuration>k__BackingField: 0.6

@@ -676,15 +676,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918460100}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
   m_AssetsPPU: 128
-  m_RefResolutionX: 1920
-  m_RefResolutionY: 1080
+  m_RefResolutionX: 500
+  m_RefResolutionY: 500
   m_CropFrame: 0
   m_GridSnapping: 1
   m_FilterMode: 0
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918460102}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
@@ -95319,6 +95319,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1363247624587422639, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: Lens.OrthographicSize
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1412906504165852363, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.84
@@ -95329,7 +95333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493471054225196043, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1612398043404248950, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -95381,7 +95385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: orthographic size
-      value: 5.9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2699983104911604697, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -95403,16 +95407,20 @@ PrefabInstance:
       propertyPath: merchant
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 8489160536688720957, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: merchant
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7676585724533539360, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: UpdateMethod
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7676585724533539360, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: BlendUpdateMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489160536688720957, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: merchant
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201602300485981824, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

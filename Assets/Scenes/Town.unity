@@ -80934,6 +80934,10 @@ PrefabInstance:
       propertyPath: searchRadius
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1363247624587422639, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: Lens.FieldOfView
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1412906504165852363, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.84
@@ -80991,6 +80995,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: field of view
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: near clip plane
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: orthographic size
       value: 4.21875
       objectReference: {fileID: 0}
@@ -81009,6 +81025,30 @@ PrefabInstance:
     - target: {fileID: 4197856292464656970, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_Name
       value: Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383660048443651516, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4528313405404302211, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: spawnPoint

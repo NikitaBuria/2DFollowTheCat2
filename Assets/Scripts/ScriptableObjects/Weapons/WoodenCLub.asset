@@ -277,10 +277,10 @@ MonoBehaviour:
   <lightColor>k__BackingField: {r: 1, g: 0.78, b: 0.45, a: 1}
   <lightIntensity>k__BackingField: 1
   <weaponType>k__BackingField: 1
-  <damage>k__BackingField: 2
+  <damage>k__BackingField: 8
   <knockback>k__BackingField: 5
-  <knockbackDuration>k__BackingField: 0.2
-  <attackRange>k__BackingField: 1
+  <knockbackDuration>k__BackingField: 1
+  <attackRange>k__BackingField: 1.5
   <attackArc>k__BackingField: 90
   <swingSound>k__BackingField: {fileID: 11400000, guid: 5ca4b64935e0c7547b61a231a5e2b659, type: 2}
-  <attackDuration>k__BackingField: 0.5
+  <attackDuration>k__BackingField: 0.8

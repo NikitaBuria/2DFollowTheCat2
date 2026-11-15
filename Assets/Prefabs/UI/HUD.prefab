@@ -1288,3 +1288,15 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3549244013348691422, guid: 52277b3b41c74b368df2f25842479635, type: 3}
   m_PrefabInstance: {fileID: 8335000000000000002}
   m_PrefabAsset: {fileID: 0}
+
+--- !u!114 &8335000000000000005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8335000000000000001, guid: 52277b3b41c74b368df2f25842479635, type: 3}
+  m_PrefabInstance: {fileID: 8335000000000000002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939129043639043150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707a71ed7da030b4da1b28dca24291ff, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::WinPanelUI

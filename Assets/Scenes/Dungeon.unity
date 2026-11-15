@@ -91791,7 +91791,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 647818889}
   - {fileID: 2054682768}
-  spawnChance: 0.5
+  spawnChance: 1
 --- !u!1 &2123722171
 GameObject:
   m_ObjectHideFlags: 0
@@ -96763,13 +96763,21 @@ PrefabInstance:
       propertyPath: m_TextStyleHashCode
       value: -1183493901
       objectReference: {fileID: 0}
+    - target: {fileID: 1363247624587422639, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: Lens.FieldOfView
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363247624587422639, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: Lens.OrthographicSize
+      value: 5.88
+      objectReference: {fileID: 0}
     - target: {fileID: 1412906504165852363, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.6
+      value: 15.459284
       objectReference: {fileID: 0}
     - target: {fileID: 1412906504165852363, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.51
+      value: 13.477967
       objectReference: {fileID: 0}
     - target: {fileID: 1493471054225196043, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_IsActive
@@ -96829,23 +96837,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1940189316888061275, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.6
+      value: 15.459284
       objectReference: {fileID: 0}
     - target: {fileID: 1940189316888061275, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.51
+      value: 13.477967
       objectReference: {fileID: 0}
     - target: {fileID: 1952890178756746338, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
       objectReference: {fileID: 0}
+    - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: field of view
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: orthographic size
+      value: 5.88
+      objectReference: {fileID: 0}
     - target: {fileID: 2699983104911604697, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.6
+      value: 15.459284
       objectReference: {fileID: 0}
     - target: {fileID: 2699983104911604697, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.51
+      value: 13.477967
       objectReference: {fileID: 0}
     - target: {fileID: 2782460569185278690, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_TextStyleHashCode
