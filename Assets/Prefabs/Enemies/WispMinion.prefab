@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6491315720557655837}
   - component: {fileID: 4018028778757615055}
-  - component: {fileID: 5965624701484023191}
   m_Layer: 0
   m_Name: HoverAudio
   m_TagString: Untagged
@@ -130,18 +129,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5965624701484023191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520042247855301327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3598213b31498ca409d9b86d5a56560a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HoverSound
 --- !u!1 &5205967183450548754
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,10 +149,8 @@ GameObject:
   - component: {fileID: 23487299287177650}
   - component: {fileID: 1506268292281006034}
   - component: {fileID: 3176212252757159177}
-  - component: {fileID: 4493630909481075344}
-  - component: {fileID: 8548628613941794938}
-  - component: {fileID: 3473174609958403387}
   - component: {fileID: 441880708735006742}
+  - component: {fileID: 555835506862238292}
   m_Layer: 3
   m_Name: WispMinion
   m_TagString: Untagged
@@ -504,42 +489,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4493630909481075344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205967183450548754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8a3d77486c45b64a9121f6f09ed68a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HitSound
---- !u!114 &8548628613941794938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205967183450548754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d77c505e8f26ce64eadc6cc800cd0310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackSound
---- !u!114 &3473174609958403387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205967183450548754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18c0f167bd4f2f04dbfcb04e0f869582, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DeathSound
 --- !u!210 &441880708735006742
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -553,3 +502,16 @@ SortingGroup:
   m_SortingOrder: 0
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
+--- !u!114 &555835506862238292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205967183450548754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127905fc45453444cb3173526c2a47ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySoundController
+  hoverSource: {fileID: 4018028778757615055}

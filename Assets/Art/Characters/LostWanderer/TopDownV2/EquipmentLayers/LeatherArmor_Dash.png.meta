@@ -1,0 +1,587 @@
+fileFormatVersion: 2
+guid: bdcdc8f379f14303b099a80e6b50c219
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1071104842723345848
+    second: LeatherArmor_Dash_0
+  - first:
+      213: -5370372359490355980
+    second: LeatherArmor_Dash_1
+  - first:
+      213: -3380554827611818767
+    second: LeatherArmor_Dash_2
+  - first:
+      213: 1406316653616444705
+    second: LeatherArmor_Dash_3
+  - first:
+      213: 5266419920169741255
+    second: LeatherArmor_Dash_4
+  - first:
+      213: -959541529582289960
+    second: LeatherArmor_Dash_5
+  - first:
+      213: 4742526912592839822
+    second: LeatherArmor_Dash_6
+  - first:
+      213: -741394211400145908
+    second: LeatherArmor_Dash_7
+  - first:
+      213: 579219211504359429
+    second: LeatherArmor_Dash_8
+  - first:
+      213: -7640599449838092555
+    second: LeatherArmor_Dash_9
+  - first:
+      213: -6405126403551410655
+    second: LeatherArmor_Dash_10
+  - first:
+      213: -1183736346034308488
+    second: LeatherArmor_Dash_11
+  - first:
+      213: -8191416284315947236
+    second: LeatherArmor_Dash_12
+  - first:
+      213: -5442906207539893427
+    second: LeatherArmor_Dash_13
+  - first:
+      213: -5192597861901856719
+    second: LeatherArmor_Dash_14
+  - first:
+      213: 9004658316689795330
+    second: LeatherArmor_Dash_15
+  - first:
+      213: -9195060310649388292
+    second: LeatherArmor_Dash_16
+  - first:
+      213: -1840222025409262800
+    second: LeatherArmor_Dash_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 549
+        width: 144
+        height: 152
+      alignment: 9
+      pivot: {x: 0.625, y: -0.032894738}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a940767d31e9aa147a2160a17cf58964
+      internalID: 1392186405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_1
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 548
+        width: 147
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6258503, y: -0.02739726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49fd5a9ab888a4408fdb535737d79af
+      internalID: -1350630769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_2
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 548
+        width: 147
+        height: 157
+      alignment: 9
+      pivot: {x: 0.61904764, y: -0.025477707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e6a870d97c88545a3669202f0e8b67
+      internalID: -2001434438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_3
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 542
+        width: 156
+        height: 164
+      alignment: 9
+      pivot: {x: 0.64102566, y: 0.0121951215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ef19920ed498748948f5d1d28cb680
+      internalID: -1125349653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_4
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 547
+        width: 147
+        height: 140
+      alignment: 9
+      pivot: {x: 0.61904764, y: -0.021428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec5979e3c453fd41ab4c4b7e1f689df
+      internalID: 1781970965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_5
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 548
+        width: 130
+        height: 158
+      alignment: 9
+      pivot: {x: 0.5692308, y: -0.025316456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15626009cfcc41a4698872bfabc32487
+      internalID: -1526368635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_6
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 295
+        width: 151
+        height: 148
+      alignment: 9
+      pivot: {x: 0.6092715, y: -0.0472973}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a66e3482546e964e921aded813d5325
+      internalID: 359226226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_7
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 291
+        width: 150
+        height: 152
+      alignment: 9
+      pivot: {x: 0.6066667, y: -0.019736841}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fbf89945e3638408fe0293bfa5167e
+      internalID: 1735209704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_8
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 287
+        width: 152
+        height: 156
+      alignment: 9
+      pivot: {x: 0.6052632, y: 0.0064102565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd0881485a2bb04bb973ac669d7df4a
+      internalID: -1225179544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_9
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 287
+        width: 153
+        height: 156
+      alignment: 9
+      pivot: {x: 0.6013072, y: 0.0064102565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a4cbdf9147a664cbf765f1f7a249f8
+      internalID: -1446789421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_10
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 293
+        width: 152
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5986842, y: -0.033333335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af20f5bdbbcef14d9cf96640f386096
+      internalID: 546175329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_11
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 295
+        width: 147
+        height: 148
+      alignment: 9
+      pivot: {x: 0.60544217, y: -0.0472973}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a27aee17f4957449ae0ff06743f6a0b
+      internalID: -1720246388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_12
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 34
+        width: 149
+        height: 146
+      alignment: 9
+      pivot: {x: 0.68456376, y: -0.01369863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b6a2360f4b7314c81d526bf8d842b7
+      internalID: 1097332038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_13
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 35
+        width: 156
+        height: 143
+      alignment: 9
+      pivot: {x: 0.6858974, y: -0.02097902}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93543d3835e6e244c8927c820a148fad
+      internalID: -2002626262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_14
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 36
+        width: 165
+        height: 144
+      alignment: 9
+      pivot: {x: 0.6969697, y: -0.027777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd7413ff82b5cf4b9e1f346a0405a98
+      internalID: -2053287351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_15
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 36
+        width: 163
+        height: 144
+      alignment: 9
+      pivot: {x: 0.69325155, y: -0.027777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4a4955086a54d439b39231bd6c2569
+      internalID: 2090263097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_16
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 34
+        width: 160
+        height: 137
+      alignment: 9
+      pivot: {x: 0.6875, y: -0.01459854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5713d73e872ea64f9b9ed62d9741e48
+      internalID: 1056303559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Dash_17
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 30
+        width: 129
+        height: 152
+      alignment: 9
+      pivot: {x: 0.627907, y: 0.013157895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975b8bf1ca68ff94ea97d7cb24720825
+      internalID: -568193955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d966874e7e9b4b143be63515ed5ecd53
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      LeatherArmor_Dash_0: 1392186405
+      LeatherArmor_Dash_1: -1350630769
+      LeatherArmor_Dash_10: 546175329
+      LeatherArmor_Dash_11: -1720246388
+      LeatherArmor_Dash_12: 1097332038
+      LeatherArmor_Dash_13: -2002626262
+      LeatherArmor_Dash_14: -2053287351
+      LeatherArmor_Dash_15: 2090263097
+      LeatherArmor_Dash_16: 1056303559
+      LeatherArmor_Dash_17: -568193955
+      LeatherArmor_Dash_2: -2001434438
+      LeatherArmor_Dash_3: -1125349653
+      LeatherArmor_Dash_4: 1781970965
+      LeatherArmor_Dash_5: -1526368635
+      LeatherArmor_Dash_6: 359226226
+      LeatherArmor_Dash_7: 1735209704
+      LeatherArmor_Dash_8: -1225179544
+      LeatherArmor_Dash_9: -1446789421
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,4 +1,0 @@
-128px / 128 PPU / unit grid, matching Dungeon Limestone128.
-16 exact NESW wall rules checked in Unity; 128 connected edge pairings checked pixel-for-pixel.
-Actual multi-layer brush painting, wall-to-stair sockets, north/east stairs, landings, erase and neighbour refresh checked in a preview scene.
-Structures use shared wall sockets; stairs and gates are multi-cell stamps. Collision/gameplay untested. No gameplay scripts changed.

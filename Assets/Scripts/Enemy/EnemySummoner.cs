@@ -35,7 +35,7 @@ public class EnemySummoner : MonoBehaviour
         pool.Clear();
     }
 
-    // Fired when at least one minion appeared (SummonSound listens).
+    // Fired when at least one minion appeared (EnemySoundController listens).
     public event Action OnSummoned;
 
     // Spawns up to minionCount minions on a circle around the boss and starts the cooldown.

@@ -1,0 +1,587 @@
+fileFormatVersion: 2
+guid: 3ff37b71e2ca459fb23a73bb2d40ee8f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2552743130451646014
+    second: LeatherArmor_Hurt_0
+  - first:
+      213: -6251394323850499642
+    second: LeatherArmor_Hurt_1
+  - first:
+      213: 5551019392557786417
+    second: LeatherArmor_Hurt_2
+  - first:
+      213: 1008783877440805163
+    second: LeatherArmor_Hurt_3
+  - first:
+      213: -775554635765832687
+    second: LeatherArmor_Hurt_4
+  - first:
+      213: 3172596176913598512
+    second: LeatherArmor_Hurt_5
+  - first:
+      213: -615220087647879041
+    second: LeatherArmor_Hurt_6
+  - first:
+      213: -1872504528307505575
+    second: LeatherArmor_Hurt_7
+  - first:
+      213: -4718581667017658459
+    second: LeatherArmor_Hurt_8
+  - first:
+      213: -7364155924842263089
+    second: LeatherArmor_Hurt_9
+  - first:
+      213: 8366093078978810941
+    second: LeatherArmor_Hurt_10
+  - first:
+      213: 7404831493636167829
+    second: LeatherArmor_Hurt_11
+  - first:
+      213: 6116953812625288987
+    second: LeatherArmor_Hurt_12
+  - first:
+      213: 8922715867988902088
+    second: LeatherArmor_Hurt_13
+  - first:
+      213: 6834822331529040574
+    second: LeatherArmor_Hurt_14
+  - first:
+      213: 8475286298586562798
+    second: LeatherArmor_Hurt_15
+  - first:
+      213: -1947607244476774197
+    second: LeatherArmor_Hurt_16
+  - first:
+      213: 4404404982545111667
+    second: LeatherArmor_Hurt_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 543
+        width: 129
+        height: 164
+      alignment: 9
+      pivot: {x: 0.58914727, y: 0.0060975607}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cee27e1096f77439a2869300b09f13
+      internalID: 1817480509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_1
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 543
+        width: 139
+        height: 158
+      alignment: 9
+      pivot: {x: 0.48920864, y: 0.006329114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3918e586ab170e41acb5c4c8dcf26ab
+      internalID: 1182965810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_2
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 543
+        width: 145
+        height: 147
+      alignment: 9
+      pivot: {x: 0.4275862, y: 0.006802721}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1353e3ef09bf7594c903204b2a821b75
+      internalID: -1548901453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_3
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 543
+        width: 136
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5955882, y: 0.007246377}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889abd261bf575a498788a8629b46911
+      internalID: 607531406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_4
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 542
+        width: 127
+        height: 157
+      alignment: 9
+      pivot: {x: 0.5826772, y: 0.012738854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9367631bad33b4ba3a3ccdf2b598db
+      internalID: -1456788822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_5
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 542
+        width: 130
+        height: 165
+      alignment: 9
+      pivot: {x: 0.5846154, y: 0.012121212}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46d68842f7775a45bb6e54cd889da28
+      internalID: -1277989019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 286
+        width: 134
+        height: 163
+      alignment: 9
+      pivot: {x: 0.5597015, y: 0.012269938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cbeffee4f2912f439f2d10a4fbabcfc
+      internalID: -1516370497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_7
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 286
+        width: 141
+        height: 163
+      alignment: 9
+      pivot: {x: 0.5319149, y: 0.012269938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982309ba7c339d742bb5e28d6126609c
+      internalID: -488978098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_8
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 286
+        width: 141
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5460993, y: 0.013157895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690c48f5b6b8acd4499b88c7044b5bb6
+      internalID: 837021665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_9
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 286
+        width: 136
+        height: 142
+      alignment: 9
+      pivot: {x: 0.5588235, y: 0.014084507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a4ac8d673a1cf468b52a8fc989c35e
+      internalID: -1959999062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_10
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 286
+        width: 130
+        height: 163
+      alignment: 9
+      pivot: {x: 0.5692308, y: 0.012269938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b2d3b2fb6d15b49bec38030ca85b40
+      internalID: -1318136476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_11
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 286
+        width: 135
+        height: 163
+      alignment: 9
+      pivot: {x: 0.56296295, y: 0.012269938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a8342ea8ae1584296ff54038fbb5c2
+      internalID: 402648463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_12
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 31
+        width: 127
+        height: 161
+      alignment: 9
+      pivot: {x: 0.62992126, y: 0.0062111802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b25bdc9956c3b046bdb74c708d0d73e
+      internalID: 1415890345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_13
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 31
+        width: 135
+        height: 158
+      alignment: 9
+      pivot: {x: 0.4814815, y: 0.006329114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5750b164e493f114b86d52c695898bfb
+      internalID: -215975807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_14
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 31
+        width: 134
+        height: 162
+      alignment: 9
+      pivot: {x: 0.5298507, y: 0.0061728396}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b2908b27ad04e4d88707f17f4c930a
+      internalID: -1639550675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_15
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 31
+        width: 141
+        height: 150
+      alignment: 9
+      pivot: {x: 0.6312057, y: 0.006666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e481c1017a976a4e9c4981b684ed494
+      internalID: -365668944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_16
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 30
+        width: 123
+        height: 162
+      alignment: 9
+      pivot: {x: 0.62601626, y: 0.012345679}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5383d9a253d8094d8981b4ee4cdeb9d
+      internalID: -861618982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Hurt_17
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 30
+        width: 123
+        height: 163
+      alignment: 9
+      pivot: {x: 0.62601626, y: 0.012269938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0b8f7a1a9b86f4caf22d3dd0a8b50f
+      internalID: -608830912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 854f371982e97a041ba8da9523306036
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      LeatherArmor_Hurt_0: 1817480509
+      LeatherArmor_Hurt_1: 1182965810
+      LeatherArmor_Hurt_10: -1318136476
+      LeatherArmor_Hurt_11: 402648463
+      LeatherArmor_Hurt_12: 1415890345
+      LeatherArmor_Hurt_13: -215975807
+      LeatherArmor_Hurt_14: -1639550675
+      LeatherArmor_Hurt_15: -365668944
+      LeatherArmor_Hurt_16: -861618982
+      LeatherArmor_Hurt_17: -608830912
+      LeatherArmor_Hurt_2: -1548901453
+      LeatherArmor_Hurt_3: 607531406
+      LeatherArmor_Hurt_4: -1456788822
+      LeatherArmor_Hurt_5: -1277989019
+      LeatherArmor_Hurt_6: -1516370497
+      LeatherArmor_Hurt_7: -488978098
+      LeatherArmor_Hurt_8: 837021665
+      LeatherArmor_Hurt_9: -1959999062
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

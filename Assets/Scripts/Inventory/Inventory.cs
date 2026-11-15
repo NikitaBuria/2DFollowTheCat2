@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour, ISaveable
 
     public event Action OnChanged;
     public event Action<int> OnSelectedSlotChanged;
-    // After a hotbar use succeeded (ItemUseSound listens).
+    // After a hotbar use succeeded (PlayerSoundController listens).
     public event Action<ItemData> OnItemUsed;
     // Something new went into the bag (pickups, purchases, dev tools).
     public event Action<ItemData, int> OnItemAdded;

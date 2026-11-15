@@ -15,16 +15,13 @@ public class LanternLight : MonoBehaviour
     [SerializeField, Range(0f, 0.5f)] private float flickerAmount = 0.08f;
     [SerializeField, Min(0f)] private float flickerSpeed = 3f;
 
-    // The light grows to its full radius from this much of it, so it doesn't pop on.
     private const float InnerRadiusShare = 0.35f;
 
-    // Below this the lantern would be invisible anyway (daylight), so it stays off.
     private const float MinVisibleIntensity = 0.05f;
 
     private Light2D light2D;
     private float baseIntensity;
     private float noiseSeed;
-    // 1 - the scene's Global Light 2D intensity: full in darkness, nothing in daylight.
     private float darkness = 1f;
 
     private void Awake()
@@ -33,8 +30,6 @@ public class LanternLight : MonoBehaviour
         noiseSeed = Random.value * 100f;
         darkness = Mathf.Clamp01(1f - FindGlobalLightIntensity());
     }
-
-    // The scene's Global Light 2D sets how dark it is; no global light = treat as dark.
     private float FindGlobalLightIntensity()
     {
         foreach (Light2D light in FindObjectsByType<Light2D>(FindObjectsSortMode.None))
@@ -69,7 +64,6 @@ public class LanternLight : MonoBehaviour
 
     private void Show(EquipmentData item)
     {
-        // Scaled by the scene's darkness, so a lantern doesn't blow out a daylight scene.
         baseIntensity = item != null && item.givesLight ? item.lightIntensity * darkness : 0f;
         bool lit = baseIntensity >= MinVisibleIntensity;
         light2D.enabled = lit;
@@ -85,7 +79,6 @@ public class LanternLight : MonoBehaviour
     {
         if (!light2D.enabled || flickerAmount <= 0f) return;
 
-        // Perlin noise: smooth random wobble around the base brightness.
         float noise = Mathf.PerlinNoise(noiseSeed, Time.time * flickerSpeed) * 2f - 1f;
         light2D.intensity = baseIntensity * (1f + noise * flickerAmount);
     }

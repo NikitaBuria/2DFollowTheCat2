@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adc60d1cdda21dc41b6b99b849963921, type: 3}
+  m_Script: {fileID: 11500000, guid: 93ad825c59026bc4aaca36d9f74e3306, type: 3}
   m_Name: StrengthElixir
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  <itemName>k__BackingField: Strength Elixir (dummy)
-  <icon>k__BackingField: {fileID: 21300000, guid: a8d3fd6a345e2f9469d941cfd971ed5a, type: 3}
+  <itemName>k__BackingField: Strength Elixir
+  <icon>k__BackingField: {fileID: 21300000, guid: 114abd0335e048bbb88a2c6ee256857f, type: 3}
   <maxStack>k__BackingField: 5
   <sellPrice>k__BackingField: 8
   <buyPrice>k__BackingField: 30
+  <useSound>k__BackingField: {fileID: 11400000, guid: 5f807f71fda22c64ba653f5d52dadfd1, type: 2}
+  <bonusDamage>k__BackingField: 1
+  <duration>k__BackingField: 30

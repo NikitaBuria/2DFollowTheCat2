@@ -1,0 +1,587 @@
+fileFormatVersion: 2
+guid: 5914c13859c4402f95f0d408fbffa2a5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1795732292442394524
+    second: LeatherArmor_Death_0
+  - first:
+      213: -3293332663787099828
+    second: LeatherArmor_Death_1
+  - first:
+      213: 8540110694465205891
+    second: LeatherArmor_Death_2
+  - first:
+      213: 5669589391783419035
+    second: LeatherArmor_Death_3
+  - first:
+      213: -1576388857081252358
+    second: LeatherArmor_Death_4
+  - first:
+      213: -4899451204092012630
+    second: LeatherArmor_Death_5
+  - first:
+      213: -448875503376365419
+    second: LeatherArmor_Death_6
+  - first:
+      213: 7158745894411676907
+    second: LeatherArmor_Death_7
+  - first:
+      213: -1071721942596643953
+    second: LeatherArmor_Death_8
+  - first:
+      213: -7396583064820199448
+    second: LeatherArmor_Death_9
+  - first:
+      213: -7387779114042846227
+    second: LeatherArmor_Death_10
+  - first:
+      213: -877247812094087465
+    second: LeatherArmor_Death_11
+  - first:
+      213: 4945664918611869058
+    second: LeatherArmor_Death_12
+  - first:
+      213: -3533509348118577880
+    second: LeatherArmor_Death_13
+  - first:
+      213: -7762115694210548677
+    second: LeatherArmor_Death_14
+  - first:
+      213: 2651043323194740854
+    second: LeatherArmor_Death_15
+  - first:
+      213: 7966654675329078849
+    second: LeatherArmor_Death_16
+  - first:
+      213: 825531691595852253
+    second: LeatherArmor_Death_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LeatherArmor_Death_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 542
+        width: 128
+        height: 166
+      alignment: 9
+      pivot: {x: 0.59375, y: 0.012048192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c658946251f06cc4bb002820c9fc98c9
+      internalID: -2056147958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_1
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 542
+        width: 126
+        height: 144
+      alignment: 9
+      pivot: {x: 0.6269841, y: 0.013888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca356d8fa7bf0b34f9cb59486da5b0a7
+      internalID: -2116649205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_2
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 537
+        width: 129
+        height: 132
+      alignment: 9
+      pivot: {x: 0.6124031, y: 0.053030305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6a58c98e87d884d9de99007dfa9b92
+      internalID: 533066634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_3
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 536
+        width: 149
+        height: 105
+      alignment: 9
+      pivot: {x: 0.59731543, y: 0.07619048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5af9db40d7ad484f97211a841e42676
+      internalID: 172440867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_4
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 535
+        width: 166
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5180723, y: 0.10227273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884f4b53089531043945390634e43d8e
+      internalID: -1959989796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_5
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 535
+        width: 168
+        height: 76
+      alignment: 9
+      pivot: {x: 0.50595236, y: 0.118421055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a126f4ba057d148a3e64f3cb6ec83b
+      internalID: 1487207542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_6
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 286
+        width: 128
+        height: 159
+      alignment: 9
+      pivot: {x: 0.578125, y: 0.012578616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f7b39e929b9374fbead4176b57c502
+      internalID: 1966563261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_7
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 286
+        width: 127
+        height: 151
+      alignment: 9
+      pivot: {x: 0.5905512, y: 0.013245033}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917bc187b43c25f4988e8abec5fd7614
+      internalID: 558858607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_8
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 280
+        width: 133
+        height: 135
+      alignment: 9
+      pivot: {x: 0.60150373, y: 0.05925926}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d480841de5ce11d499d9d7c9aedbdf8b
+      internalID: 756924224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_9
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 278
+        width: 148
+        height: 113
+      alignment: 9
+      pivot: {x: 0.6554054, y: 0.088495575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6e532f83c88df459b3186eb4134ee5
+      internalID: -1783614207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_10
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 278
+        width: 172
+        height: 89
+      alignment: 9
+      pivot: {x: 0.53488374, y: 0.11235955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb706a1c9331944ca007182060df4e0
+      internalID: -2091118936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_11
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 278
+        width: 167
+        height: 81
+      alignment: 9
+      pivot: {x: 0.502994, y: 0.12345679}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2db71b5bbf4d94c8981038b5192545
+      internalID: -1663874504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_12
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 30
+        width: 130
+        height: 160
+      alignment: 9
+      pivot: {x: 0.64615387, y: 0.0125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a231989cfef005d458bbc7372146527d
+      internalID: -713008530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_13
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 29
+        width: 133
+        height: 156
+      alignment: 9
+      pivot: {x: 0.6466165, y: 0.01923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a711e7c32055f047a152ecf5dfba885
+      internalID: -768703992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_14
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 34
+        width: 137
+        height: 140
+      alignment: 9
+      pivot: {x: 0.649635, y: -0.014285714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c5310ad3760e544a71ba6116e6070f
+      internalID: -1477139789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_15
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 34
+        width: 154
+        height: 112
+      alignment: 9
+      pivot: {x: 0.6298701, y: -0.017857144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274bad51d442b6d43a7688af32f0149b
+      internalID: -2047106629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_16
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 33
+        width: 168
+        height: 94
+      alignment: 9
+      pivot: {x: 0.54761904, y: -0.010638298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d06507d14074f4297f9177a46397af
+      internalID: -96456843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Death_17
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 34
+        width: 169
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5029586, y: -0.023529412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2ececc94c2d9f448bbaeb668e16b61
+      internalID: 1601143326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 04f06e3046ab36c49badf3702d331db3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      LeatherArmor_Death_0: -2056147958
+      LeatherArmor_Death_1: -2116649205
+      LeatherArmor_Death_10: -2091118936
+      LeatherArmor_Death_11: -1663874504
+      LeatherArmor_Death_12: -713008530
+      LeatherArmor_Death_13: -768703992
+      LeatherArmor_Death_14: -1477139789
+      LeatherArmor_Death_15: -2047106629
+      LeatherArmor_Death_16: -96456843
+      LeatherArmor_Death_17: 1601143326
+      LeatherArmor_Death_2: 533066634
+      LeatherArmor_Death_3: 172440867
+      LeatherArmor_Death_4: -1959989796
+      LeatherArmor_Death_5: 1487207542
+      LeatherArmor_Death_6: 1966563261
+      LeatherArmor_Death_7: 558858607
+      LeatherArmor_Death_8: 756924224
+      LeatherArmor_Death_9: -1783614207
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

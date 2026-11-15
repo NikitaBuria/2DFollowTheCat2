@@ -17,7 +17,7 @@ MonoBehaviour:
   <maxStack>k__BackingField: 1
   <sellPrice>k__BackingField: 15
   <buyPrice>k__BackingField: 60
-  <useSound>k__BackingField: {fileID: 0}
+  <useSound>k__BackingField: {fileID: 11400000, guid: 5ca4b64935e0c7547b61a231a5e2b659, type: 2}
   <layerFrames>k__BackingField:
   - {fileID: -11679499, guid: af2b99f4520c42399a13067d38647fde, type: 3}
   - {fileID: 14133803, guid: af2b99f4520c42399a13067d38647fde, type: 3}
@@ -67,12 +67,12 @@ MonoBehaviour:
   - {fileID: 6768196659308402464, guid: 2fa46c0270643e9408ff2b72af3c404e, type: 3}
   - {fileID: 4779425432501978686, guid: 2fa46c0270643e9408ff2b72af3c404e, type: 3}
   - {fileID: -1498853744884762854, guid: 2fa46c0270643e9408ff2b72af3c404e, type: 3}
-  - {fileID: -1409367991547663801, guid: 2fa46c0270643e9408ff2b72af3c404e, type: 3}
-  - {fileID: 8124656229051658677, guid: 2fa46c0270643e9408ff2b72af3c404e, type: 3}
-  - {fileID: -3270026768845320935, guid: 2fa46c0270643e9408ff2b72af3c404e, type: 3}
-  - {fileID: 5048577861856878942, guid: 2fa46c0270643e9408ff2b72af3c404e, type: 3}
-  - {fileID: -7295212847073574826, guid: 2fa46c0270643e9408ff2b72af3c404e, type: 3}
-  - {fileID: -1709240475845670550, guid: 2fa46c0270643e9408ff2b72af3c404e, type: 3}
+  - {fileID: 5611522854366812383, guid: 79f30f0eb06600845873a8faa4dd4f82, type: 3}
+  - {fileID: -436289910745173302, guid: 79f30f0eb06600845873a8faa4dd4f82, type: 3}
+  - {fileID: -1026049431032301895, guid: 79f30f0eb06600845873a8faa4dd4f82, type: 3}
+  - {fileID: 8697414029499121512, guid: 79f30f0eb06600845873a8faa4dd4f82, type: 3}
+  - {fileID: -2263043904965117808, guid: 79f30f0eb06600845873a8faa4dd4f82, type: 3}
+  - {fileID: -1061659282294085590, guid: 79f30f0eb06600845873a8faa4dd4f82, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -194,12 +194,12 @@ MonoBehaviour:
   - {fileID: 5902741351956823734, guid: f6021a51b4744d747b54340d58d44ddc, type: 3}
   - {fileID: 2647602236092776751, guid: f6021a51b4744d747b54340d58d44ddc, type: 3}
   - {fileID: -4323575825343749188, guid: f6021a51b4744d747b54340d58d44ddc, type: 3}
-  - {fileID: -7966194097491265274, guid: f6021a51b4744d747b54340d58d44ddc, type: 3}
-  - {fileID: 3922257382842161467, guid: f6021a51b4744d747b54340d58d44ddc, type: 3}
-  - {fileID: 9176551573054536680, guid: f6021a51b4744d747b54340d58d44ddc, type: 3}
-  - {fileID: 6384227531272703182, guid: f6021a51b4744d747b54340d58d44ddc, type: 3}
-  - {fileID: -3877204105148668068, guid: f6021a51b4744d747b54340d58d44ddc, type: 3}
-  - {fileID: 5916810315360034570, guid: f6021a51b4744d747b54340d58d44ddc, type: 3}
+  - {fileID: -1761981406524119690, guid: a76c7a25dabc21d449692bc70d7d6238, type: 3}
+  - {fileID: 3943240730088890724, guid: a76c7a25dabc21d449692bc70d7d6238, type: 3}
+  - {fileID: 1565212847058377233, guid: a76c7a25dabc21d449692bc70d7d6238, type: 3}
+  - {fileID: 5660544809796198875, guid: a76c7a25dabc21d449692bc70d7d6238, type: 3}
+  - {fileID: -310236092314912516, guid: a76c7a25dabc21d449692bc70d7d6238, type: 3}
+  - {fileID: 7989227462986328896, guid: a76c7a25dabc21d449692bc70d7d6238, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -273,11 +273,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   <equipSound>k__BackingField: {fileID: 11400000, guid: df0cd7517808e9f4dad2c0e1a4977220, type: 2}
+  <lightRadius>k__BackingField: 0
+  <lightColor>k__BackingField: {r: 1, g: 0.78, b: 0.45, a: 1}
+  <lightIntensity>k__BackingField: 1
   <weaponType>k__BackingField: 1
   <damage>k__BackingField: 2
   <knockback>k__BackingField: 5
   <knockbackDuration>k__BackingField: 0.2
-  <attackRange>k__BackingField: 1.5
+  <attackRange>k__BackingField: 1
   <attackArc>k__BackingField: 90
   <swingSound>k__BackingField: {fileID: 11400000, guid: 5ca4b64935e0c7547b61a231a5e2b659, type: 2}
   <attackDuration>k__BackingField: 0.5

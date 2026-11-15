@@ -1,7 +1,7 @@
 using UnityEngine;
 
-// Base for the small sound players (MetrooDvania style): gameplay fires an event, a sound player on
-// the same object listens and plays a SoundData. The sound itself (clips, volume, pitch, mixer group)
+// Base for the sound controllers (PlayerSoundController, EnemySoundController): gameplay fires events,
+// the controller on the same object listens and plays a SoundData. The sound itself (clips, volume, pitch, mixer group)
 // lives in the SoundData asset; gameplay code never knows about audio.
 // Shares the object's AudioSource (2D).
 [RequireComponent(typeof(AudioSource))]
@@ -44,14 +44,5 @@ public abstract class SoundPlayer : MonoBehaviour
         source.PlayOneShot(clip, sound.volumeScale);
 
         Destroy(temp, clip.length / source.pitch + 0.1f);
-    }
-
-    // HitSound and DeathSound need the owner's CharacterData; Player and Enemy both implement ICharacter.
-    protected CharacterData GetCharacterData()
-    {
-        if (TryGetComponent(out ICharacter character)) return character.characterData;
-
-        Debug.LogError($"{name}: {GetType().Name} needs a Player or Enemy (ICharacter) on the same object.", this);
-        return null;
     }
 }

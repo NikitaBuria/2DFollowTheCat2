@@ -29,8 +29,8 @@ MonoBehaviour:
   <obstacleLayers>k__BackingField:
     serializedVersion: 2
     m_Bits: 1
-  <detectionRange>k__BackingField: 5
-  <loseTargetRange>k__BackingField: 7
+  <detectionRange>k__BackingField: 3
+  <loseTargetRange>k__BackingField: 5
   <targetRefreshInterval>k__BackingField: 0.2
   <patrolWaitTime>k__BackingField: 1
   <arriveDistance>k__BackingField: 0.1

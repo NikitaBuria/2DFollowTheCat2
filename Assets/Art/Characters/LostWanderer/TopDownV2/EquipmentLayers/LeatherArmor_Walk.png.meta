@@ -1,0 +1,587 @@
+fileFormatVersion: 2
+guid: 7d727e0a7c5a41be893ec4e16d3cafce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -935074181134013915
+    second: LeatherArmor_Walk_0
+  - first:
+      213: -5728219001914995002
+    second: LeatherArmor_Walk_1
+  - first:
+      213: 4007495577755024373
+    second: LeatherArmor_Walk_2
+  - first:
+      213: -6160495017340752945
+    second: LeatherArmor_Walk_3
+  - first:
+      213: 8828432940977520884
+    second: LeatherArmor_Walk_4
+  - first:
+      213: 1372508018998948457
+    second: LeatherArmor_Walk_5
+  - first:
+      213: -5880591957962339165
+    second: LeatherArmor_Walk_6
+  - first:
+      213: -836411453933225099
+    second: LeatherArmor_Walk_7
+  - first:
+      213: -1178794401696168946
+    second: LeatherArmor_Walk_8
+  - first:
+      213: 446409660788920818
+    second: LeatherArmor_Walk_9
+  - first:
+      213: -1452303537155583860
+    second: LeatherArmor_Walk_10
+  - first:
+      213: -8351219348348576526
+    second: LeatherArmor_Walk_11
+  - first:
+      213: 5650135678380253570
+    second: LeatherArmor_Walk_12
+  - first:
+      213: 3596662636619683372
+    second: LeatherArmor_Walk_13
+  - first:
+      213: 2206186171705278373
+    second: LeatherArmor_Walk_14
+  - first:
+      213: 6280101116388502570
+    second: LeatherArmor_Walk_15
+  - first:
+      213: 6965536370203636404
+    second: LeatherArmor_Walk_16
+  - first:
+      213: -5428531691546520167
+    second: LeatherArmor_Walk_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 543
+        width: 131
+        height: 167
+      alignment: 9
+      pivot: {x: 0.58778626, y: 0.005988024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a813e919b44ed4c9c3c8d3cfc6d49b
+      internalID: -1361678369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 545
+        width: 130
+        height: 166
+      alignment: 9
+      pivot: {x: 0.5846154, y: -0.006024096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7fea079c6ebebe46a4e73060e8700b1
+      internalID: -1574855215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 544
+        width: 130
+        height: 167
+      alignment: 9
+      pivot: {x: 0.5846154, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535a744c79fd094498bbbaf632492194
+      internalID: -656842728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 542
+        width: 130
+        height: 169
+      alignment: 9
+      pivot: {x: 0.5846154, y: 0.01183432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f4abe4938ee9d44850a58718ab8025
+      internalID: -1193118014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 542
+        width: 132
+        height: 169
+      alignment: 9
+      pivot: {x: 0.59090906, y: 0.01183432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae8f4d2ca07e6a24a93ab1ecf01f651f
+      internalID: 1061216037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 542
+        width: 131
+        height: 169
+      alignment: 9
+      pivot: {x: 0.58778626, y: 0.01183432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd9fccb27373b643b5627a5974e0d56
+      internalID: -1202851463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 288
+        width: 133
+        height: 166
+      alignment: 9
+      pivot: {x: 0.5714286, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55ec8506f4b8044484e6b1778c61879
+      internalID: 537015449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 286
+        width: 135
+        height: 167
+      alignment: 9
+      pivot: {x: 0.58518517, y: 0.011976048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b74e2c98dc062647a35c471a8b82fcf
+      internalID: -1147636416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 287
+        width: 134
+        height: 166
+      alignment: 9
+      pivot: {x: 0.58208954, y: 0.006024096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f25663417730546ae689fc798bcb6f
+      internalID: 1483826272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_9
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 287
+        width: 133
+        height: 166
+      alignment: 9
+      pivot: {x: 0.5864662, y: 0.006024096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e38e3584e41dc428e999269711b604
+      internalID: -147840571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_10
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 286
+        width: 136
+        height: 167
+      alignment: 9
+      pivot: {x: 0.5955882, y: 0.011976048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89d4384a3029ab46bd6bb7db1119e28
+      internalID: -1299352874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_11
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 287
+        width: 134
+        height: 167
+      alignment: 9
+      pivot: {x: 0.58208954, y: 0.005988024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cac4ee9af519eb44950e7b0c355879a
+      internalID: -1066537191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_12
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 31
+        width: 127
+        height: 161
+      alignment: 9
+      pivot: {x: 0.62204725, y: 0.0062111802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55ea4740c7f78948b455f32bf07f5fd
+      internalID: -1452536305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_13
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 31
+        width: 130
+        height: 161
+      alignment: 9
+      pivot: {x: 0.6230769, y: 0.0062111802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e943e5a292917d84aa181bb51d192029
+      internalID: 213792740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_14
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 30
+        width: 126
+        height: 161
+      alignment: 9
+      pivot: {x: 0.6111111, y: 0.012422361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be4c5a7e22c4a744b54279976071f23
+      internalID: -1437310811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_15
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 30
+        width: 129
+        height: 161
+      alignment: 9
+      pivot: {x: 0.627907, y: 0.012422361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b90f35d42ff99444a8a3055f93ee8aa
+      internalID: 1445971592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_16
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 31
+        width: 127
+        height: 161
+      alignment: 9
+      pivot: {x: 0.61417323, y: 0.0062111802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6971f02846789140bc045e87baa68ad
+      internalID: -40002706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeatherArmor_Walk_17
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 30
+        width: 126
+        height: 161
+      alignment: 9
+      pivot: {x: 0.6111111, y: 0.012422361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00083204b5b65d747a2ed612528e15b2
+      internalID: -797619331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 07839f24dd9abe2418e276c4f77eb1e4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      LeatherArmor_Walk_0: -1361678369
+      LeatherArmor_Walk_1: -1574855215
+      LeatherArmor_Walk_10: -1299352874
+      LeatherArmor_Walk_11: -1066537191
+      LeatherArmor_Walk_12: -1452536305
+      LeatherArmor_Walk_13: 213792740
+      LeatherArmor_Walk_14: -1437310811
+      LeatherArmor_Walk_15: 1445971592
+      LeatherArmor_Walk_16: -40002706
+      LeatherArmor_Walk_17: -797619331
+      LeatherArmor_Walk_2: -656842728
+      LeatherArmor_Walk_3: -1193118014
+      LeatherArmor_Walk_4: 1061216037
+      LeatherArmor_Walk_5: -1202851463
+      LeatherArmor_Walk_6: 537015449
+      LeatherArmor_Walk_7: -1147636416
+      LeatherArmor_Walk_8: 1483826272
+      LeatherArmor_Walk_9: -147840571
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

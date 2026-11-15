@@ -6,11 +6,10 @@ using UnityEngine;
 // to the current one and turns health events into state changes. States decide what happens.
 [RequireComponent(typeof(EnemyMotor), typeof(EnemyDetection), typeof(EnemyCombat))]
 [RequireComponent(typeof(EnemyAnimator), typeof(Health))]
-public class Enemy : MonoBehaviour, ICharacter
+public class Enemy : MonoBehaviour
 {
     [Header("Data")]
     [field: SerializeField] public EnemyData enemyData { get; private set; }
-    CharacterData ICharacter.characterData => enemyData;
 
     // Any enemy's death, without knowing each enemy (TutorialTriggers: "kill your first Wisp").
     // Static, so listeners must unsubscribe in OnDisable.

@@ -20,7 +20,7 @@ public class Equipment : MonoBehaviour, ISaveable, IDamageModifier
     private Inventory inventory;
 
     public event Action<EquipmentSlotType, EquipmentData> OnEquipmentChanged;
-    // Only when the player puts an item on (TryEquip), never on Load (EquipSound listens).
+    // Only when the player puts an item on (TryEquip), never on Load (PlayerSoundController listens).
     public event Action<EquipmentData> OnItemEquipped;
 
     private void Awake()

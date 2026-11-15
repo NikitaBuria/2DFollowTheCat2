@@ -154,7 +154,7 @@ MonoBehaviour:
   <damage>k__BackingField: 2
   <knockback>k__BackingField: 1
   <knockbackDuration>k__BackingField: 1
-  <attackRange>k__BackingField: 1
+  <attackRange>k__BackingField: 0.6
   <attackArc>k__BackingField: 91
   <swingSound>k__BackingField: {fileID: 11400000, guid: a19ae620be6d79e4ca0370d54812f185, type: 2}
   <attackDuration>k__BackingField: 0.5

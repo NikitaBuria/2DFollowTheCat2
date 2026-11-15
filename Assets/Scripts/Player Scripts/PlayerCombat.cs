@@ -4,6 +4,8 @@ using UnityEngine;
 
 // How the player hits things. The stats come from the equipped WeaponData (Player passes it in
 // from Equipment); PlayerAttackState decides when to call HandleAttack.
+// StrengthBuff adds its bonus (the Strength Elixir) to every hit.
+[RequireComponent(typeof(StrengthBuff))]
 public class PlayerCombat : MonoBehaviour
 {
     public WeaponData currentWeapon { get; private set; }
@@ -17,9 +19,12 @@ public class PlayerCombat : MonoBehaviour
     private readonly List<Collider2D> hits = new();
     private readonly HashSet<IDamageable> hitThisSwing = new();
     private ContactFilter2D enemyFilter;
+    private StrengthBuff strengthBuff;
 
     private void Awake()
     {
+        strengthBuff = GetComponent<StrengthBuff>();
+
         if (unarmedWeapon == null)
             Debug.LogError($"{name}: PlayerCombat has no unarmedWeapon assigned.", this);
 
@@ -36,7 +41,7 @@ public class PlayerCombat : MonoBehaviour
             Debug.LogError($"{name}: PlayerCombat's enemyLayerMask is Nothing. Pick the Enemy layer in the Inspector.", this);
     }
 
-    // Every swing, hit or miss (SwingSound listens).
+    // Every swing, hit or miss (PlayerSoundController listens).
     public event Action<WeaponData> OnSwing;
 
     // null = nothing in hand: punch with the unarmed weapon.
@@ -57,6 +62,7 @@ public class PlayerCombat : MonoBehaviour
         Physics2D.OverlapCircle(origin, currentWeapon.attackRange, enemyFilter, hits);
 
         hitThisSwing.Clear();
+        int damage = currentWeapon.damage + strengthBuff.bonusDamage;
 
         foreach (Collider2D hit in hits)
         {
@@ -74,7 +80,7 @@ public class PlayerCombat : MonoBehaviour
             if (!hitThisSwing.Add(target)) continue;
 
             target.TakeDamage(new DamageData(
-                currentWeapon.damage,
+                damage,
                 toTarget,
                 currentWeapon.knockback,
                 currentWeapon.knockbackDuration));

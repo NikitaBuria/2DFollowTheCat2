@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 // Collider2D: PlayerDeadState switches it off while dead.
 [RequireComponent(typeof(Wallet), typeof(PlayerInteractor), typeof(Collider2D))]
 [RequireComponent(typeof(Equipment))]
-public class Player : MonoBehaviour, ICharacter
+public class Player : MonoBehaviour
 {
     // Components on this GameObject. Found with GetComponent in Awake, so nothing to assign in the Inspector.
     public Health playerHealth { get; private set; }
@@ -27,12 +27,11 @@ public class Player : MonoBehaviour, ICharacter
     // Base stats (speeds, max health). States read them through player.playerData.
     [field: SerializeField, FormerlySerializedAs("<characterData>k__BackingField")]
     public CharacterData playerData { get; private set; }
-    CharacterData ICharacter.characterData => playerData;
 
     // The last hit that landed; the Hurt state reads its direction and knockback.
     public DamageData lastDamage { get; private set; }
 
-    // Fired by PlayerDashState.Enter (DashSound listens).
+    // Fired by PlayerDashState.Enter (PlayerSoundController listens).
     public event Action OnDashStarted;
 
     // Which way the player faces; used for animations and attacks.

@@ -1,1 +1,0 @@
-Custom brush editor binding verified. Live Limestone Walls Tilemap is a valid painting target; selected in Tile Palette.

@@ -27,7 +27,7 @@ public class EnemyCombat : MonoBehaviour
         return (closestPoint - origin).sqrMagnitude <= range * range;
     }
 
-    // The moment of every attack, hit or miss (EnemyAttackSound listens).
+    // The moment of every attack, hit or miss (EnemySoundController listens).
     public event Action OnAttack;
 
     // Checks the range again at the moment of the hit: the target may have dodged during the windup.
