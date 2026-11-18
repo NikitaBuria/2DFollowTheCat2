@@ -20,7 +20,6 @@ public class PlayerDashState : PlayerState
 
         player.playerHealth.StartInvincibility(player.playerData.dashDuration);
         player.playerAnimator.SetAnimationState(PlayerAnimationState.Dash);
-        player.NotifyDashStarted();
     }
 
     public override void Update()

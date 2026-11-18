@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -21,7 +20,8 @@ public class Player : MonoBehaviour
     public Wallet playerWallet { get; private set; }
     public PlayerInteractor playerInteractor { get; private set; }
     public Equipment playerEquipment { get; private set; }
-    public PlayerStateMachine playerStateMachine { get; private set; }
+    // Created with the component (not in Awake), so other components can subscribe to it in their OnEnable.
+    public PlayerStateMachine playerStateMachine { get; } = new PlayerStateMachine();
 
     [Header("Data")]
     // Base stats (speeds, max health). States read them through player.playerData.
@@ -30,9 +30,6 @@ public class Player : MonoBehaviour
 
     // The last hit that landed; the Hurt state reads its direction and knockback.
     public DamageData lastDamage { get; private set; }
-
-    // Fired by PlayerDashState.Enter (PlayerSoundController listens).
-    public event Action OnDashStarted;
 
     // Which way the player faces; used for animations and attacks.
     public Vector2 facingDirection { get; private set; } = Vector2.down;
@@ -97,8 +94,6 @@ public class Player : MonoBehaviour
         playerAnimator.SetMoveDirection(direction);
     }
 
-    public void NotifyDashStarted() => OnDashStarted?.Invoke();
-
     // Called by RespawnManager: back at the spawn point with full health and spawn protection.
     public void Respawn(Vector2 position)
     {
@@ -130,8 +125,6 @@ public class Player : MonoBehaviour
 
     private void GetReferences()
     {
-        playerStateMachine = new PlayerStateMachine();
-
         // RequireComponent guarantees these exist.
         playerHealth = GetComponent<Health>();
         playerInputReader = GetComponent<PlayerInputReader>();

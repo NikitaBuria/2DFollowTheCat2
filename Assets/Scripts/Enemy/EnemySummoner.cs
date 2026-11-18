@@ -8,7 +8,8 @@ using UnityEngine.Pool;
 [RequireComponent(typeof(Enemy))]
 public class EnemySummoner : MonoBehaviour
 {
-    private BossData bossData;
+    // Read by EnemySoundController for the summon sound.
+    public BossData bossData { get; private set; }
     private ObjectPool<Enemy> pool;
     private float nextSummonTime;
 

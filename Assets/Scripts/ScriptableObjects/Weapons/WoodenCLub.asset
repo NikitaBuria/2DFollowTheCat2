@@ -283,4 +283,4 @@ MonoBehaviour:
   <attackRange>k__BackingField: 1.5
   <attackArc>k__BackingField: 90
   <swingSound>k__BackingField: {fileID: 11400000, guid: 5ca4b64935e0c7547b61a231a5e2b659, type: 2}
-  <attackDuration>k__BackingField: 0.8
+  <attackDuration>k__BackingField: 0.6

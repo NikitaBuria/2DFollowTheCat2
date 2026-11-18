@@ -26,6 +26,8 @@ public class PlayerSoundController : SoundPlayer
     private Inventory inventory;
     private Rigidbody2D body;
     private float distanceSinceStep;
+    // Only Walk and Run make footsteps (not a dash or a knockback slide).
+    private bool isWalking;
 
     protected override void Awake()
     {
@@ -43,7 +45,7 @@ public class PlayerSoundController : SoundPlayer
         health.OnDamaged += PlayHit;
         health.OnDied += PlayDeath;
         playerCombat.OnSwing += PlaySwing;
-        player.OnDashStarted += PlayDash;
+        player.playerStateMachine.OnStateChanged += HandleStateChanged;
         equipment.OnItemEquipped += PlayEquip;
         inventory.OnItemUsed += PlayItemUse;
         CoinPickup.OnAnyCoinCollected += PlayCoin;
@@ -54,17 +56,18 @@ public class PlayerSoundController : SoundPlayer
         health.OnDamaged -= PlayHit;
         health.OnDied -= PlayDeath;
         playerCombat.OnSwing -= PlaySwing;
-        player.OnDashStarted -= PlayDash;
+        player.playerStateMachine.OnStateChanged -= HandleStateChanged;
         equipment.OnItemEquipped -= PlayEquip;
         inventory.OnItemUsed -= PlayItemUse;
         CoinPickup.OnAnyCoinCollected -= PlayCoin;
     }
 
-    // Footsteps: one every stepDistance units the Rigidbody actually moves. Reads movement, never input.
+    // Footsteps: one every stepDistance units the Rigidbody actually moves while walking or running.
+    // The state says whether the player is walking; the Rigidbody says how far. Never reads input.
     private void Update()
     {
         float speed = body.linearVelocity.magnitude;
-        if (stepSound == null || speed < minStepSpeed)
+        if (stepSound == null || !isWalking || speed < minStepSpeed)
         {
             // The first step sounds as soon as the player starts moving.
             distanceSinceStep = stepDistance;
@@ -80,7 +83,12 @@ public class PlayerSoundController : SoundPlayer
 
     private void PlayHit(DamageData damage) => Play(player.playerData.hitSound);
     private void PlayDeath() => Play(player.playerData.deathSound);
-    private void PlayDash() => Play(player.playerData.dashSound);
+
+    private void HandleStateChanged(PlayerState state)
+    {
+        isWalking = state == player.walkState || state == player.runState;
+        if (state == player.dashState) Play(player.playerData.dashSound);
+    }
     private void PlaySwing(WeaponData weapon) => Play(weapon != null ? weapon.swingSound : null);
     private void PlayEquip(EquipmentData item) => Play(item.equipSound);
     private void PlayItemUse(ItemData item) => Play(item.useSound);

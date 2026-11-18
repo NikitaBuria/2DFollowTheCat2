@@ -120,7 +120,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -512,18 +512,18 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      DashFlourish_Right_1: 21300002
-      DashFlourish_Right_2: 21300004
-      DashFlourish_Right_3: 21300006
-      DashFlourish_Right_4: 21300008
-      DashFlourish_Left_1: 21300010
-      DashFlourish_Left_2: 21300012
-      DashFlourish_Left_3: 21300014
-      DashFlourish_Left_4: 21300016
       DashFlourish_Down_1: 21300018
       DashFlourish_Down_2: 21300020
       DashFlourish_Down_3: 21300022
       DashFlourish_Down_4: 21300024
+      DashFlourish_Left_1: 21300010
+      DashFlourish_Left_2: 21300012
+      DashFlourish_Left_3: 21300014
+      DashFlourish_Left_4: 21300016
+      DashFlourish_Right_1: 21300002
+      DashFlourish_Right_2: 21300004
+      DashFlourish_Right_3: 21300006
+      DashFlourish_Right_4: 21300008
       DashFlourish_Up_1: 21300026
       DashFlourish_Up_2: 21300028
       DashFlourish_Up_3: 21300030

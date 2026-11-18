@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 
 // A short message on the shop panel after every buy or sell ("Bought Wooden Club for 60 coins",
-// "Not enough coins"), plus a click sound. Only listens to Merchant.OnTrade.
+// "Not enough coins"). Only listens to Merchant.OnTrade; ShopSound plays the trade sounds.
 // The shop pauses the game (timeScale 0), so the timer uses unscaled time.
 public class ShopFeedbackUI : MonoBehaviour
 {
@@ -11,12 +11,6 @@ public class ShopFeedbackUI : MonoBehaviour
     [SerializeField, Min(0.1f)] private float showSeconds = 2f;
     [SerializeField] private Color successColor = new Color(0.95f, 0.8f, 0.45f);
     [SerializeField] private Color failColor = new Color(0.95f, 0.4f, 0.35f);
-
-    [Header("Sound (optional)")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private SoundData boughtSound;
-    [SerializeField] private SoundData soldSound;
-    [SerializeField] private SoundData failSound;
 
     [Header("Messages ({0} = item, {1} = coins)")]
     [SerializeField] private string boughtMessage = "Bought {0} for {1} coins";
@@ -54,14 +48,6 @@ public class ShopFeedbackUI : MonoBehaviour
         messageText.color = success ? successColor : failColor;
         messageText.gameObject.SetActive(true);
         hideAt = Time.unscaledTime + showSeconds;
-
-        SoundData sound = result switch
-        {
-            TradeResult.Bought => boughtSound,
-            TradeResult.Sold => soldSound,
-            _ => failSound,
-        };
-        if (sound != null) sound.PlayOn(audioSource);
     }
 
     private string GetMessage(TradeResult result) => result switch

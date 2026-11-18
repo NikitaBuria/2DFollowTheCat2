@@ -7550,52 +7550,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuideMarker
   markerId: TownMerchant
---- !u!1 &918460100 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8562587425375421707, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-  m_PrefabInstance: {fileID: 2942709338005979264}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &918460101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918460100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_AssetsPPU: 128
-  m_RefResolutionX: 1920
-  m_RefResolutionY: 1080
-  m_CropFrame: 0
-  m_GridSnapping: 1
-  m_FilterMode: 0
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
---- !u!1 &918460102 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3625812783027688444, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-  m_PrefabInstance: {fileID: 2942709338005979264}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &918460103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918460102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &920921424
 GameObject:
   m_ObjectHideFlags: 0
@@ -80940,11 +80894,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1412906504165852363, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.84
+      value: 57.134884
       objectReference: {fileID: 0}
     - target: {fileID: 1412906504165852363, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.78
+      value: -1.2930388
       objectReference: {fileID: 0}
     - target: {fileID: 1612398043404248950, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -80987,36 +80941,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1940189316888061275, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.78
+      propertyPath: m_LocalPosition.x
+      value: 57.134884
       objectReference: {fileID: 0}
-    - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: orthographic
-      value: 0
+    - target: {fileID: 1940189316888061275, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2930388
       objectReference: {fileID: 0}
     - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: field of view
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: far clip plane
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: near clip plane
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2088497432041789712, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: orthographic size
-      value: 4.21875
-      objectReference: {fileID: 0}
     - target: {fileID: 2699983104911604697, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.84
+      value: 57.134884
       objectReference: {fileID: 0}
     - target: {fileID: 2699983104911604697, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.78
+      value: -1.2930388
       objectReference: {fileID: 0}
     - target: {fileID: 3390939156580369672, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: merchant
@@ -81058,6 +81000,10 @@ PrefabInstance:
       propertyPath: merchant
       value: 
       objectReference: {fileID: 543088562}
+    - target: {fileID: 6346937793697892982, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
+      propertyPath: merchant
+      value: 
+      objectReference: {fileID: 543088562}
     - target: {fileID: 7676585724533539360, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: UpdateMethod
       value: 0
@@ -81085,12 +81031,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2713763063960760645, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 8562587425375421707, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 918460101}
-    - targetCorrespondingSourceObject: {fileID: 3625812783027688444, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 918460103}
   m_SourcePrefab: {fileID: 100100000, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
 --- !u!114 &2942709338005979265 stripped
 MonoBehaviour:

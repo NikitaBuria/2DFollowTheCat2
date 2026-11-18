@@ -12,19 +12,10 @@ public class AmbientLoop : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.playOnAwake = false;
-        audioSource.loop = true;
     }
 
     private void OnEnable()
     {
-        AudioClip clip = loopSound != null ? loopSound.PickClip() : null;
-        if (clip == null) return;
-
-        audioSource.clip = clip;
-        audioSource.volume = loopSound.volumeScale;
-        audioSource.pitch = loopSound.PickPitch();
-        if (loopSound.output != null) audioSource.outputAudioMixerGroup = loopSound.output;
-        audioSource.Play();
+        if (loopSound != null) loopSound.PlayLoop(audioSource);
     }
 }

@@ -5,6 +5,9 @@ public sealed class PlayerStateMachine
 {
     public PlayerState currentState { get; private set; }
 
+    // Fired after the new state's Enter (PlayerSoundController listens: dash sound, footsteps).
+    public event Action<PlayerState> OnStateChanged;
+
     public void Initialize(PlayerState initialState)
     {
         if (currentState != null) throw new InvalidOperationException("Already initialized");
@@ -19,5 +22,6 @@ public sealed class PlayerStateMachine
         currentState?.Exit();
         currentState = nextState;
         currentState.Enter();
+        OnStateChanged?.Invoke(currentState);
     }
 }

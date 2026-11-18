@@ -1,19 +1,28 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-// Base for the sound controllers (PlayerSoundController, EnemySoundController): gameplay fires events,
-// the controller on the same object listens and plays a SoundData. The sound itself (clips, volume, pitch, mixer group)
-// lives in the SoundData asset; gameplay code never knows about audio.
-// Shares the object's AudioSource (2D).
+// Base for the sound controllers (PlayerSoundController, EnemySoundController, TalkSound, ShopSound):
+// gameplay fires events, the controller listens and plays a SoundData. The sound itself (clips, volume,
+// pitch, mixer group) lives in the SoundData asset; gameplay code never knows about audio.
+// Every sound gets its own voice (an AudioSource that is not playing), because changing the pitch or
+// mixer group of a source also changes the sounds still playing on it.
 [RequireComponent(typeof(AudioSource))]
 public abstract class SoundPlayer : MonoBehaviour
 {
-    private AudioSource audioSource;
+    // Enough for a hit, a swing and footsteps at once; past this the oldest sound is cut.
+    private const int MaxVoices = 6;
+
+    private readonly List<AudioSource> voices = new List<AudioSource>();
+    private int nextVoiceToSteal;
 
     protected virtual void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.playOnAwake = false;
-        audioSource.spatialBlend = 0f;
+        // The required AudioSource is the first voice; its mixer group is the fallback for all of them.
+        AudioSource first = GetComponent<AudioSource>();
+        first.playOnAwake = false;
+        first.loop = false;
+        first.spatialBlend = 0f;
+        voices.Add(first);
     }
 
     // Null sound or no clips = silent, so every sound field is optional.
@@ -22,9 +31,12 @@ public abstract class SoundPlayer : MonoBehaviour
         AudioClip clip = sound != null ? sound.PickClip() : null;
         if (clip == null) return;
 
-        if (sound.output != null) audioSource.outputAudioMixerGroup = sound.output;
-        audioSource.pitch = sound.PickPitch();
-        audioSource.PlayOneShot(clip, sound.volumeScale);
+        AudioSource voice = GetFreeVoice();
+        voice.clip = clip;
+        voice.volume = sound.volume;
+        voice.pitch = sound.PickPitch();
+        voice.outputAudioMixerGroup = sound.mixerGroup != null ? sound.mixerGroup : voices[0].outputAudioMixerGroup;
+        voice.Play();
     }
 
     // For sounds that must outlive this object (an enemy is despawned before its death sound ends):
@@ -38,11 +50,34 @@ public abstract class SoundPlayer : MonoBehaviour
         temp.transform.position = transform.position;
 
         AudioSource source = temp.AddComponent<AudioSource>();
-        source.outputAudioMixerGroup = sound.output != null ? sound.output : audioSource.outputAudioMixerGroup;
+        source.outputAudioMixerGroup = sound.mixerGroup != null ? sound.mixerGroup : voices[0].outputAudioMixerGroup;
         source.spatialBlend = 0f;
         source.pitch = sound.PickPitch();
-        source.PlayOneShot(clip, sound.volumeScale);
+        source.PlayOneShot(clip, sound.volume);
 
         Destroy(temp, clip.length / source.pitch + 0.1f);
+    }
+
+    private AudioSource GetFreeVoice()
+    {
+        foreach (AudioSource voice in voices)
+        {
+            if (!voice.isPlaying) return voice;
+        }
+
+        if (voices.Count < MaxVoices)
+        {
+            AudioSource voice = gameObject.AddComponent<AudioSource>();
+            voice.playOnAwake = false;
+            voice.loop = false;
+            voice.spatialBlend = 0f;
+            voices.Add(voice);
+            return voice;
+        }
+
+        // All busy: reuse them in turn.
+        AudioSource stolen = voices[nextVoiceToSteal];
+        nextVoiceToSteal = (nextVoiceToSteal + 1) % voices.Count;
+        return stolen;
     }
 }

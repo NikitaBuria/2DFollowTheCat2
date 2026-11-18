@@ -45,22 +45,19 @@ public class EnemySoundController : SoundPlayer
 
     private void PlayHit(DamageData damage) => Play(enemy.enemyData.hitSound);
     // Detached: the enemy is despawned before a long death sound would end.
-    private void PlayDeath() => PlayDetached(enemy.enemyData.deathSound);
+    private void PlayDeath()
+    {
+        PlayDetached(enemy.enemyData.deathSound);
+        // A dead enemy stops humming; OnEnable starts it again when a pooled enemy respawns.
+        if (hoverSource != null) hoverSource.Stop();
+    }
+
     private void PlayAttack() => Play(enemy.enemyData.attackSound);
-    private void PlaySummon() => Play(enemy is KingWisp boss ? boss.bossData.summonSound : null);
+    private void PlaySummon() => Play(enemySummoner.bossData.summonSound);
 
     private void StartHover()
     {
-        SoundData sound = enemy.enemyData.hoverSound;
-        AudioClip clip = sound != null ? sound.PickClip() : null;
-        if (hoverSource == null || clip == null) return;
-
-        hoverSource.playOnAwake = false;
-        hoverSource.loop = true;
-        hoverSource.clip = clip;
-        hoverSource.volume = sound.volumeScale;
-        hoverSource.pitch = sound.PickPitch();
-        if (sound.output != null) hoverSource.outputAudioMixerGroup = sound.output;
-        hoverSource.Play();
+        SoundData hoverSound = enemy.enemyData.hoverSound;
+        if (hoverSound != null) hoverSound.PlayLoop(hoverSource);
     }
 }
