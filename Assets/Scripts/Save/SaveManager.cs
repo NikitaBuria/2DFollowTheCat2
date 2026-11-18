@@ -35,7 +35,20 @@ public class SaveManager : MonoBehaviour
     private void Update()
     {
         if (player.playerInputReader.savePressedThisFrame) Save();
-        if (player.playerInputReader.loadPressedThisFrame) Load();
+        if (player.playerInputReader.loadPressedThisFrame) ReloadSavedGame();
+    }
+
+    // F9: back to the saved scene and position; that scene's SaveManager then loads the rest in Start.
+    // Saves older than v5 have no location, so they only load in place.
+    public void ReloadSavedGame()
+    {
+        if (!player.playerHealth.isAlive) return;
+
+        SaveData data = ReadValidSave(out _);
+        if (data == null) return;
+
+        if (string.IsNullOrEmpty(data.sceneName)) Apply(data, false);
+        else SceneLoader.Load(data.sceneName, data.position);
     }
 
     public bool Save()
@@ -62,14 +75,34 @@ public class SaveManager : MonoBehaviour
         // Dying is handled by RespawnManager; loading over the Dead state would leave the player stuck.
         if (!player.playerHealth.isAlive) return false;
 
+        SaveData data = ReadValidSave(out bool fromBackup);
+        if (data == null) return false;
+
+        Apply(data, fromBackup);
+        return true;
+    }
+
+    private void Apply(SaveData data, bool fromBackup)
+    {
+        foreach (ISaveable saveable in saveables)
+            saveable.Load(data);
+
+        Debug.Log(fromBackup ? "Game loaded from the backup save." : "Game loaded.", this);
+    }
+
+    // The main save, or the .bak when the main one is missing, unreadable or rejected; null when neither works.
+    private SaveData ReadValidSave(out bool fromBackup)
+    {
         foreach (string path in new[] { savePath, savePath + ".bak" })
         {
+            fromBackup = path != savePath;
+
             SaveData data;
             try
             {
                 data = SaveFile.Read(path);
             }
-            catch (Exception e) when (e is IOException || e is UnauthorizedAccessException || e is ArgumentException)
+            catch (Exception e) when (e is IOException || e is InvalidDataException || e is UnauthorizedAccessException || e is ArgumentException)
             {
                 Debug.LogWarning($"Can't read {path}: {e.Message}", this);
                 continue;
@@ -84,21 +117,19 @@ public class SaveManager : MonoBehaviour
                 continue;
             }
 
-            foreach (ISaveable saveable in saveables)
-                saveable.Load(data);
-
-            Debug.Log(path == savePath ? "Game loaded." : "Game loaded from the backup save.", this);
-            return true;
+            return data;
         }
 
-        return false;
+        fromBackup = false;
+        return null;
     }
 
     // Everything is checked before anything is loaded.
     private string Validate(SaveData data)
     {
         // Older versions only lack newer parts: v1 restoredBuildings (TownProgress reads "nothing restored"),
-        // v2 equipment (Equipment keeps its starting gear), v3 the tutorial (TutorialProgress treats it as done).
+        // v2 equipment (Equipment keeps its starting gear), v3 the tutorial (TutorialProgress treats it as done),
+        // v4 the scene and position (SceneArrival; Continue falls back to the tutorial's scene).
         if (data.version < 1 || data.version > SaveData.CurrentVersion) return $"save version {data.version} is not supported";
 
         foreach (ISaveable saveable in saveables)

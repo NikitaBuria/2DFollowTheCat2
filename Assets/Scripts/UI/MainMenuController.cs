@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 // The main menu scene (Astra's MainMenu prefab).
 // New Game deletes the save (asks once first) and starts the intro in the opening cave.
-// Continue loads the scene of the current tutorial step, or Town once the tutorial is done; that
-// scene's SaveManager then loads everything else. Greyed out without a save.
+// Continue loads the saved scene at the saved position (saves before v5: the current tutorial step's
+// scene, or Town once the tutorial is done); that scene's SaveManager then loads everything else.
+// Greyed out without a save.
 // Settings swaps the buttons for the settings panel; its Back swaps them back.
 public class MainMenuController : MonoBehaviour
 {
@@ -80,6 +81,15 @@ public class MainMenuController : MonoBehaviour
     {
         SaveData data = ReadSave();
         if (data == null) return;
+
+        // v5+: back to the exact scene and position of the save.
+        if (data.version >= SceneArrival.FirstVersionWithLocation
+            && !string.IsNullOrEmpty(data.sceneName)
+            && Application.CanStreamedLevelBeLoaded(data.sceneName))
+        {
+            SceneLoader.Load(data.sceneName, data.position);
+            return;
+        }
 
         GuideStep step = data.version >= TutorialProgress.FirstVersionWithTutorial ? tutorial.GetStep(data.tutorialStep) : null;
         SceneLoader.Load(step != null ? step.sceneName : afterTutorialScene, null);
