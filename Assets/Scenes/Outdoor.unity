@@ -301,6 +301,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 920921425}
     m_Modifications:
+    - target: {fileID: 4185636146989628660, guid: 3e9677cddeb317a4ea3ae6a4450ce45f, type: 3}
+      propertyPath: m_overflowMode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4784937685987931278, guid: 3e9677cddeb317a4ea3ae6a4450ce45f, type: 3}
       propertyPath: m_Name
       value: GuideCat
