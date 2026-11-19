@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
             playerStateMachine.ChangeState(hurtState);
     }
 
-    // Wiring only: a new weapon goes to PlayerCombat (armor is used in a later step).
+    // Wiring only: a new weapon goes to PlayerCombat (armor needs nothing here: Equipment reduces hits itself).
     private void HandleEquipmentChanged(EquipmentSlotType slotType, EquipmentData item)
     {
         if (slotType == EquipmentSlotType.Weapon)

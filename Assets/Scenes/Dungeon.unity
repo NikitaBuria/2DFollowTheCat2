@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 195399263}
   - component: {fileID: 195399264}
   m_Layer: 0
-  m_Name: ColliderForPillers (2)
+  m_Name: ColliderForPillars (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -975,7 +975,7 @@ GameObject:
   - component: {fileID: 287005125}
   - component: {fileID: 287005126}
   m_Layer: 0
-  m_Name: ColliderForPillers (5)
+  m_Name: ColliderForPillars (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: 363343575}
   - component: {fileID: 363343576}
   m_Layer: 0
-  m_Name: ColliderForPillers (8)
+  m_Name: ColliderForPillars (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2082,7 +2082,7 @@ GameObject:
   - component: {fileID: 536910846}
   - component: {fileID: 536910847}
   m_Layer: 0
-  m_Name: ColliderForPillers (6)
+  m_Name: ColliderForPillars (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31805,7 +31805,7 @@ GameObject:
   - component: {fileID: 803088172}
   - component: {fileID: 803088173}
   m_Layer: 0
-  m_Name: ColliderForPillers (3)
+  m_Name: ColliderForPillars (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37800,7 +37800,7 @@ GameObject:
   - component: {fileID: 1077621656}
   - component: {fileID: 1077621657}
   m_Layer: 0
-  m_Name: ColliderForPillers (1)
+  m_Name: ColliderForPillars (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48222,7 +48222,7 @@ GameObject:
   - component: {fileID: 1181343956}
   - component: {fileID: 1181343957}
   m_Layer: 0
-  m_Name: ColliderForPillers (4)
+  m_Name: ColliderForPillars (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48438,7 +48438,7 @@ GameObject:
   - component: {fileID: 1239235644}
   - component: {fileID: 1239235645}
   m_Layer: 0
-  m_Name: ColliderForPillers
+  m_Name: ColliderForPillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65046,7 +65046,7 @@ GameObject:
   - component: {fileID: 1884496309}
   - component: {fileID: 1884496310}
   m_Layer: 0
-  m_Name: ColliderForPillers (7)
+  m_Name: ColliderForPillars (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -20,9 +20,6 @@ public class EnemyAnimator : MonoBehaviour
     private Animator animator;
     private readonly System.Collections.Generic.HashSet<EnemyAnimationState> reportedMissing = new();
 
-    // A placeholder enemy (a plain square) has no controller yet; skip animation instead of spamming warnings.
-    private bool hasController => animator.runtimeAnimatorController != null;
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -30,8 +27,6 @@ public class EnemyAnimator : MonoBehaviour
 
     public void SetAnimationState(EnemyAnimationState state)
     {
-        if (!hasController) return;
-
         int hash = ToHash(state);
         if (animator.HasState(0, hash)) animator.Play(hash);
         else WarnMissingStateOnce(state);
@@ -39,8 +34,6 @@ public class EnemyAnimator : MonoBehaviour
 
     public void SetMoveDirection(Vector2 direction)
     {
-        if (!hasController) return;
-
         animator.SetFloat(MoveXHash, direction.x);
         animator.SetFloat(MoveYHash, direction.y);
     }

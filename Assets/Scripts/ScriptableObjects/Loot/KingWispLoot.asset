@@ -19,7 +19,7 @@ MonoBehaviour:
     minAmount: 1
     maxAmount: 1
   - <prefab>k__BackingField: {fileID: 4816603843381514370, guid: 3f6a9f37304517841b29ff6283ebef63, type: 3}
-    <item>k__BackingField: {fileID: 11400000, guid: 69ea7f4d7fb3f654680b1b51f99a1cb9, type: 2}
+    <item>k__BackingField: {fileID: 0}
     dropChance: 1
     minAmount: 50
     maxAmount: 150

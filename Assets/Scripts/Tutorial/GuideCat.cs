@@ -20,7 +20,7 @@ public class GuideCat : MonoBehaviour
 
     [Header("Following (steps with followsPlayer)")]
     [Tooltip("He stays about this far from the player.")]
-    [SerializeField, Min(0.5f)] private float followDistance = 1.5f;
+    [SerializeField, Min(0.5f)] private float followDistance = 3.5f;
     [Tooltip("Farther than this, he runs to catch up.")]
     [SerializeField, Min(1f)] private float runDistance = 4f;
     [SerializeField, Min(0.1f)] private float runSpeed = 6f;

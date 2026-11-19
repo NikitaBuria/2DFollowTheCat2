@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Everything one save file holds. Plain data only, written to JSON by SaveFile.
-// Each ISaveable fills and reads its own part. Bump Version when the layout changes;
-// SaveManager accepts older versions only when every ISaveable can read them (v1 had no town).
+// Each ISaveable fills and reads its own part. Bump Version when the layout or the IDs change;
+// SaveManager accepts older versions only when every ISaveable can read them (v1 had no town),
+// after SaveMigration has upgraded renamed IDs (v6: WoodenCLub/LanterDefault renamed, Coins no longer an item).
 [Serializable]
 public class SaveData
 {
-    public const int CurrentVersion = 5;
+    public const int CurrentVersion = 6;
 
     public int version = CurrentVersion;
     public int health;

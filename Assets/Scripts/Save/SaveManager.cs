@@ -37,7 +37,8 @@ public class SaveManager : MonoBehaviour
         if (loadOnStart) Load();
     }
 
-    // Debug keys (F5/F9) through PlayerInputReader. Later the game saves on its own (town, checkpoints).
+    // Debug keys (F5/F9) through PlayerInputReader. The game also saves on its own: doors, pause-menu Exit,
+    // restoring a building, after a respawn and when the window closes.
     private void Update()
     {
         if (player.playerInputReader.savePressedThisFrame) Save();
@@ -140,6 +141,9 @@ public class SaveManager : MonoBehaviour
                 newerSaveFound = true;
                 break;
             }
+
+            // Older saves: renamed IDs and moved data are upgraded before anything checks them.
+            SaveMigration.Upgrade(data);
 
             string error = Validate(data);
             if (error != null)
