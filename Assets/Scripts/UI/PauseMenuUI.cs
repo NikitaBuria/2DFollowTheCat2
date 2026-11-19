@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -19,6 +20,11 @@ public class PauseMenuUI : MonoBehaviour
     [SerializeField] private Button helpButton;
     [SerializeField] private GameObject controlsPanel;
     [SerializeField] private Button controlsBackButton;
+    [Tooltip("Optional: shown when Exit could not save. Leave empty to only log the warning.")]
+    [SerializeField] private TMP_Text saveFailedText;
+
+    // Set after a failed save: the next Exit press leaves without saving.
+    private bool leaveWithoutSaving;
 
     private void OnEnable()
     {
@@ -31,6 +37,7 @@ public class PauseMenuUI : MonoBehaviour
 
         // Every pause starts on the buttons, even if it was closed (Escape) while in Settings or Controls.
         ShowSettings(false);
+        ShowSaveFailed(false);
         Select(resumeButton);
     }
 
@@ -74,13 +81,27 @@ public class PauseMenuUI : MonoBehaviour
     }
 
     // Saves like a door does, so quitting to the menu keeps coins, items and town progress.
-    // SaveManager refuses while the player is dead; the death respawn saves anyway, so leave regardless.
+    // When saving is refused on purpose (dead player: the respawn saves anyway) it just leaves.
+    // When the save fails, it stays: the first press warns, a second press leaves without saving.
     // Time runs again before the menu loads.
     private void Exit()
     {
-        saveManager.Save();
+        if (saveManager.canSave && !leaveWithoutSaving && !saveManager.Save())
+        {
+            leaveWithoutSaving = true;
+            ShowSaveFailed(true);
+            Select(exitButton);
+            return;
+        }
+
         gameStateManager.ChangeState(GameState.Gameplay);
         SceneLoader.Load(MainMenuScene, null);
+    }
+
+    private void ShowSaveFailed(bool show)
+    {
+        if (!show) leaveWithoutSaving = false;
+        if (saveFailedText != null) saveFailedText.gameObject.SetActive(show);
     }
 
     private void ShowSettings(bool show)

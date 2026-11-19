@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Threading;
 using UnityEngine;
 
 // The only code that touches the save file. Knows nothing about the player or the scene.
@@ -13,22 +14,50 @@ public static class SaveFile
 
     public static string GetPath(string fileName) => Path.Combine(Application.persistentDataPath, fileName);
 
-    // Writes to a .tmp file first, then swaps it in and keeps the old save as .bak,
-    // so a crash in the middle of saving never destroys the last good save.
+    // A locked file (antivirus, cloud sync, search indexer) usually frees up within milliseconds.
+    private const int ReplaceAttempts = 3;
+    private const int RetryDelayMs = 50;
+
+    // Writes to a .tmp file first, reads it back to verify it, then swaps it in and keeps the old save as .bak,
+    // so a crash or a bad write never destroys the last good save.
     public static bool Write(SaveData data, string path, out string error)
     {
+        string tmpPath = path + ".tmp";
+
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(path));
-            File.WriteAllText(path + ".tmp", JsonUtility.ToJson(data, true));
 
-            if (File.Exists(path)) File.Replace(path + ".tmp", path, path + ".bak");
-            else File.Move(path + ".tmp", path);
+            string json = JsonUtility.ToJson(data, true);
+            File.WriteAllText(tmpPath, json);
+
+            // Verify: the file on disk must be exactly what was written and must parse back.
+            string written = File.ReadAllText(tmpPath);
+            SaveData check = JsonUtility.FromJson<SaveData>(written);
+            if (written != json || check == null || check.version != data.version)
+            {
+                error = "the written save did not verify";
+                return false;
+            }
+
+            for (int attempt = 1; ; attempt++)
+            {
+                try
+                {
+                    if (File.Exists(path)) File.Replace(tmpPath, path, path + ".bak");
+                    else File.Move(tmpPath, path);
+                    break;
+                }
+                catch (IOException) when (attempt < ReplaceAttempts)
+                {
+                    Thread.Sleep(RetryDelayMs);
+                }
+            }
 
             error = null;
             return true;
         }
-        catch (Exception e) when (e is IOException || e is UnauthorizedAccessException)
+        catch (Exception e) when (e is IOException || e is UnauthorizedAccessException || e is ArgumentException)
         {
             error = e.Message;
             return false;

@@ -95,7 +95,8 @@ public class MainMenuController : MonoBehaviour
         SceneLoader.Load(step != null ? step.sceneName : afterTutorialScene, null);
     }
 
-    // The main save, or its backup if the main file is broken; null when there is none.
+    // The main save, or its backup if the main file is broken; null when there is none,
+    // or when the save is from a newer version of the game (Continue stays greyed out, no .bak fallback).
     private SaveData ReadSave()
     {
         foreach (string path in new[] { savePath, savePath + ".bak" })
@@ -103,7 +104,15 @@ public class MainMenuController : MonoBehaviour
             try
             {
                 SaveData data = SaveFile.Read(path);
-                if (data != null) return data;
+                if (data == null) continue;
+
+                if (data.version > SaveData.CurrentVersion)
+                {
+                    Debug.LogWarning($"{path} is from a newer version of the game (save version {data.version}).", this);
+                    return null;
+                }
+
+                return data;
             }
             catch (System.Exception e) when (e is System.IO.IOException || e is System.ArgumentException || e is System.IO.InvalidDataException)
             {

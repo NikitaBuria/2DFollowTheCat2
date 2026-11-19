@@ -16,6 +16,12 @@ public class SaveManager : MonoBehaviour
     private ISaveable[] saveables;
     private string savePath => SaveFile.GetPath(saveFileName);
 
+    // Set when the save file comes from a newer version of the game: saving would overwrite it with older data.
+    private bool newerSaveFound;
+
+    // False while saving is refused on purpose (dead player, newer save on disk); Exit leaves without saving then.
+    public bool canSave => player.playerHealth.isAlive && !newerSaveFound;
+
     private void Awake()
     {
         ISaveable[] playerSaveables = player.GetComponents<ISaveable>();
@@ -51,14 +57,30 @@ public class SaveManager : MonoBehaviour
         else SceneLoader.Load(data.sceneName, data.position);
     }
 
+    // Closing the window (Alt+F4, the X) skips the pause menu's Exit, so save here too.
+    private void OnApplicationQuit()
+    {
+        Save();
+    }
+
     public bool Save()
     {
-        // Never save a dead player: the save would be useless and Validate would reject it.
-        if (!player.playerHealth.isAlive) return false;
+        // Never save a dead player (the save would be useless and Validate would reject it),
+        // and never overwrite a save from a newer version of the game.
+        if (!canSave) return false;
 
         SaveData data = new();
-        foreach (ISaveable saveable in saveables)
-            saveable.Save(data);
+        try
+        {
+            foreach (ISaveable saveable in saveables)
+                saveable.Save(data);
+        }
+        catch (Exception e)
+        {
+            // One broken component must not stop the caller (Exit, a door) halfway; the old save stays.
+            Debug.LogException(e, this);
+            return false;
+        }
 
         if (!SaveFile.Write(data, savePath, out string error))
         {
@@ -109,6 +131,15 @@ public class SaveManager : MonoBehaviour
             }
 
             if (data == null) continue;
+
+            // A newer game's save is not broken: don't fall back to the older .bak (the next save
+            // would then overwrite the newer progress). Stop, and refuse to save until restart.
+            if (data.version > SaveData.CurrentVersion)
+            {
+                Debug.LogWarning($"{path} is from a newer version of the game (save version {data.version}); not loading or saving.", this);
+                newerSaveFound = true;
+                break;
+            }
 
             string error = Validate(data);
             if (error != null)
