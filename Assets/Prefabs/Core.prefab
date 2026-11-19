@@ -1286,7 +1286,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 2100000, guid: afa13b806b8335f40a294153851f3d9f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_text: '[E] Talk'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: afa13b806b8335f40a294153851f3d9f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2349,6 +2349,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarUI
   health: {fileID: 1748827537601895235}
   fillImage: {fileID: 8967312428820613288}
+  liquidSettleTime: 0.85
+  walkBelow: 0.8
+  sitBelow: 0.5
+  proneBelow: 0.2
 --- !u!1 &7234914376859398126
 GameObject:
   m_ObjectHideFlags: 0
@@ -4918,3 +4922,4 @@ MonoBehaviour:
   helpButton: {fileID: 1566530149972433973}
   controlsPanel: {fileID: 661330008419656381}
   controlsBackButton: {fileID: 638522066665341048}
+  saveFailedText: {fileID: 0}

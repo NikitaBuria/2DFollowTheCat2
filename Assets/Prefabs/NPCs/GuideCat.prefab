@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c953a2c218e5cf34d9a99dfdc09fdc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcDialogue
-  speakerName: Cat
+  speakerName: Kitty
   lines: []
   lineDuration: 5
   talkPrompt: Talk
