@@ -2,7 +2,7 @@
 
 A top-down 2D action dungeon crawler made in **Unity 6** (URP 2D renderer, new Input System).
 
-You play the Lost Wanderer, who wakes up in a dark cave. A guide cat leads you to a town abandoned after a monster attack. Walk from the town to the dungeon, fight monsters, collect loot, sell it to the merchant and spend the coins to restore the town. The King Wisp boss drops the Marble Stone the town needs, and restoring every building wins the game.
+You play the Lost Wanderer, who wakes up in a dark cave. Kitty, a guide cat, leads you to a town abandoned after a monster attack. Walk from the town to the dungeon, fight monsters, collect loot, sell it to the merchant and spend the coins to restore the town. The King Wisp boss drops the Marble Stone the town needs, and restoring every building wins the game.
 
 > **Status:** playable prototype. I'm building it to learn Unity and C#, and it's part of my portfolio. The focus is on clean, readable architecture rather than content.
 
@@ -31,7 +31,7 @@ Cave intro → Town → Outdoor → Dungeon → fight → loot → back to town 
 | Interaction: NPC dialogue with speech bubbles, scene doors | ✅ |
 | Merchant shop: stock grows as the town is restored, sell by drag and drop, trade feedback | ✅ |
 | Town restoration: 3 buildings, town tiers, rebuild animations, win screen | ✅ |
-| Guide-cat tutorial: a step-by-step intro from the cave to the first loot | ✅ |
+| Guide-cat tutorial: Kitty walks you through a step-by-step intro from the cave to the first loot | ✅ |
 | Scenes: main menu, opening cave, town, outdoor, dungeon | ✅ |
 | 2D lighting: per-scene darkness, a lantern that gives light, flickering torches | ✅ |
 | Audio: mixer with Music / SFX / Ambience, volume settings, sound per character and item | ✅ |
@@ -109,7 +109,7 @@ The code follows a few rules: each script has one job, states decide *what* happ
 ### Tutorial
 - The intro is a list of `GuideStep` assets (scene, the cat's path, lines, how the step completes).
 - `TutorialTriggers` only listens to game events (item picked up, item equipped, shop opened, enemy killed) and reports them; `TutorialProgress` decides whether the current step is done and saves it.
-- The `GuideCat` walks ahead, follows or talks depending on the step.
+- The `GuideCat` (Kitty) walks ahead, follows or talks depending on the step.
 
 ### Town restoration
 - Each building is a `BuildingData` ScriptableObject (name, cost, optional required item).
@@ -119,6 +119,7 @@ The code follows a few rules: each script has one job, states decide *what* happ
 
 ### Interaction and the merchant
 - `PlayerInteractor` finds the nearest `IInteractable` in front of the player; a world-space prompt shows `[E] Talk`, `[E] Trade` or `[E] Enter`.
+- World-space text (the prompt, speaker names) uses a separate TextMesh Pro material with a dark outline and soft shadow, so it stays readable on bright maps and on Kitty's see-through speech bubble. The shared default font material is never tinted; each text sets its own colour.
 - The `Merchant` only asks for the Shop game state and does the trading; he sells from one `ShopStock` per town tier, and the shop UI builds its entries from it and reports clicks and drops back.
 - Buying checks coins and inventory space before anything changes, so a failed purchase never loses coins.
 
@@ -126,6 +127,7 @@ The code follows a few rules: each script has one job, states decide *what* happ
 - Town and Outdoor are painted with Unity's Tilemap and Tile Palette (128 px per cell, the same scale as the characters), with a `Ground` layer, a `Walls` layer with a merged collider and walk-through `Decor`.
 - The Dungeon is one painted picture with an edge-collider outline; an overlay and Y-sorted props let the player walk behind walls. Replacing about 1,500 individually sorted tiles with one sprite, plus atlas and texture cleanup, cut batches and draw calls by about 90%.
 - All gameplay scenes share one orthographic camera framing from the `Core` prefab.
+- No texture imports below its real size. Images far larger than they are ever drawn (AI-generated icons and UI art) were shrunk in place, with pixels-per-unit scaled by the same factor, so every sprite keeps its on-screen size and its references.
 
 ### Animation
 - Animator Controllers have no transitions. Every state is a 4-direction blend tree.
