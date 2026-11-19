@@ -75501,7 +75501,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 647818889}
   - {fileID: 2054682768}
-  spawnChance: 0.5
+  spawnChance: 1
 --- !u!1 &2123722171
 GameObject:
   m_ObjectHideFlags: 0
