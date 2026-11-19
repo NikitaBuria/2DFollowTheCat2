@@ -42,11 +42,14 @@ public class Wallet : MonoBehaviour, ISaveable
 
     public void Save(SaveData data) => data.coins = coins;
 
-    public string Validate(SaveData data) => data.coins < 0 ? "negative coins" : null;
+    // Any value can be repaired in Load.
+    public string Validate(SaveData data) => null;
 
     public void Load(SaveData data)
     {
-        coins = data.coins;
+        coins = Mathf.Max(0, data.coins);
+        if (coins != data.coins) Debug.LogWarning($"Save repaired: {data.coins} coins set to 0.", this);
+
         OnMoneyChanged?.Invoke(coins);
     }
 }

@@ -51,23 +51,21 @@ public class TownProgress : MonoBehaviour, ISaveable
 
     public void Save(SaveData data) => data.restoredBuildings = new List<string>(restoredIds);
 
-    public string Validate(SaveData data)
-    {
-        if (data.restoredBuildings == null) return null; // saves from before restoration existed
+    // Any list can be repaired in Load (saves from before restoration existed have none).
+    public string Validate(SaveData data) => null;
 
-        foreach (string id in data.restoredBuildings)
-        {
-            if (Array.Find(buildings, b => b != null && b.id == id) == null)
-                return $"unknown building '{id}' (missing from TownProgress.buildings?)";
-        }
-
-        return null;
-    }
-
+    // Unknown building IDs (renamed or removed in a newer build) are skipped with a warning.
     public void Load(SaveData data)
     {
         restoredIds.Clear();
-        if (data.restoredBuildings != null) restoredIds.UnionWith(data.restoredBuildings);
+        if (data.restoredBuildings != null)
+        {
+            foreach (string id in data.restoredBuildings)
+            {
+                if (Array.Find(buildings, b => b != null && b.id == id) != null) restoredIds.Add(id);
+                else Debug.LogWarning($"Save repaired: unknown building '{id}' skipped.", this);
+            }
+        }
 
         OnProgressChanged?.Invoke();
     }

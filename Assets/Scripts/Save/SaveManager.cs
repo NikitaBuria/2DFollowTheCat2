@@ -45,7 +45,7 @@ public class SaveManager : MonoBehaviour
     }
 
     // F9: back to the saved scene and position; that scene's SaveManager then loads the rest in Start.
-    // Saves older than v5 have no location, so they only load in place.
+    // Saves without a usable location (older than v5, or a scene no longer in the build) load in place.
     public void ReloadSavedGame()
     {
         if (!player.playerHealth.isAlive) return;
@@ -53,8 +53,8 @@ public class SaveManager : MonoBehaviour
         SaveData data = ReadValidSave(out _);
         if (data == null) return;
 
-        if (string.IsNullOrEmpty(data.sceneName)) Apply(data, false);
-        else SceneLoader.Load(data.sceneName, data.position);
+        if (SceneArrival.HasValidLocation(data)) SceneLoader.Load(data.sceneName, data.position);
+        else Apply(data, false);
     }
 
     // Closing the window (Alt+F4, the X) skips the pause menu's Exit, so save here too.
@@ -155,7 +155,8 @@ public class SaveManager : MonoBehaviour
         return null;
     }
 
-    // Everything is checked before anything is loaded.
+    // Everything is checked before anything is loaded. Saveables refuse only what they can't repair;
+    // single bad entries (unknown items, out-of-range values) are fixed in their Load with a warning.
     private string Validate(SaveData data)
     {
         // Older versions only lack newer parts: v1 restoredBuildings (TownProgress reads "nothing restored"),

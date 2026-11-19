@@ -87,30 +87,33 @@ public class Equipment : MonoBehaviour, ISaveable, IDamageModifier
             data.equipment[i] = ItemDatabase.GetId(equipped[i]);
     }
 
+    // Only a missing database is refused; bad entries are repaired in Load.
     public string Validate(SaveData data)
     {
         if (data.equipment == null) return null; // saves before version 3: keep the starting gear
         if (itemDatabase == null) return "Equipment has no ItemDatabase assigned";
-        if (data.equipment.Length != SlotCount) return $"expected {SlotCount} equipment slots";
-
-        for (int i = 0; i < SlotCount; i++)
-        {
-            string id = data.equipment[i];
-            if (string.IsNullOrEmpty(id)) continue;
-
-            if (itemDatabase.Find(id) is not EquipmentData item) return $"'{id}' is not equipment (missing from the ItemDatabase?)";
-            if ((int)item.slotType != i) return $"'{id}' can't be worn in the {(EquipmentSlotType)i} slot";
-        }
-
         return null;
     }
 
+    // Repairs while loading: an unknown item (renamed or removed in a newer build) or one that
+    // doesn't fit its slot leaves that slot empty; missing slots are empty, extra ones ignored.
     public void Load(SaveData data)
     {
         if (data.equipment == null) return;
 
         for (int i = 0; i < SlotCount; i++)
-            SetEquipped((EquipmentSlotType)i, itemDatabase.Find(data.equipment[i]) as EquipmentData);
+        {
+            string id = i < data.equipment.Length ? data.equipment[i] : null;
+            EquipmentData item = itemDatabase.Find(id) as EquipmentData;
+
+            if (!string.IsNullOrEmpty(id) && (item == null || (int)item.slotType != i))
+            {
+                Debug.LogWarning($"Save repaired: '{id}' can't be worn in the {(EquipmentSlotType)i} slot, removed.", this);
+                item = null;
+            }
+
+            SetEquipped((EquipmentSlotType)i, item);
+        }
     }
 
     private void SetEquipped(EquipmentSlotType slotType, EquipmentData item)

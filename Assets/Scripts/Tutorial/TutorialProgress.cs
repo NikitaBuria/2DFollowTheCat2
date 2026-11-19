@@ -48,15 +48,20 @@ public class TutorialProgress : MonoBehaviour, ISaveable
 
     public void Save(SaveData data) => data.tutorialStep = stepIndex;
 
-    public string Validate(SaveData data)
-    {
-        if (data.version < FirstVersionWithTutorial) return null;
-        return data.tutorialStep < 0 || data.tutorialStep > sequence.count ? $"tutorial step {data.tutorialStep} is outside 0-{sequence.count}" : null;
-    }
+    // Any step can be repaired in Load.
+    public string Validate(SaveData data) => null;
 
+    // Saves before the tutorial existed count as finished; a step outside 0-count
+    // (e.g. steps removed in a newer build) is clamped.
     public void Load(SaveData data)
     {
-        stepIndex = data.version < FirstVersionWithTutorial ? sequence.count : data.tutorialStep;
+        if (data.version < FirstVersionWithTutorial) stepIndex = sequence.count;
+        else
+        {
+            stepIndex = Mathf.Clamp(data.tutorialStep, 0, sequence.count);
+            if (stepIndex != data.tutorialStep) Debug.LogWarning($"Save repaired: tutorial step {data.tutorialStep} clamped to {stepIndex}.", this);
+        }
+
         OnStepChanged?.Invoke(currentStep);
         CompleteSceneEntered();
     }

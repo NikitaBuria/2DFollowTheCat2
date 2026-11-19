@@ -83,9 +83,7 @@ public class MainMenuController : MonoBehaviour
         if (data == null) return;
 
         // v5+: back to the exact scene and position of the save.
-        if (data.version >= SceneArrival.FirstVersionWithLocation
-            && !string.IsNullOrEmpty(data.sceneName)
-            && Application.CanStreamedLevelBeLoaded(data.sceneName))
+        if (SceneArrival.HasValidLocation(data))
         {
             SceneLoader.Load(data.sceneName, data.position);
             return;

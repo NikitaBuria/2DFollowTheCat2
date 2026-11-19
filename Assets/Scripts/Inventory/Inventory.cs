@@ -201,31 +201,46 @@ public class Inventory : MonoBehaviour, ISaveable
         }
     }
 
+    // Only a missing database or a missing inventory are refused; bad slots are repaired in Load.
     public string Validate(SaveData data)
     {
         if (itemDatabase == null) return "Inventory has no ItemDatabase assigned";
-        if (data.inventory == null || data.inventory.Length != slots.Length)
-            return $"expected {slots.Length} inventory slots";
-
-        foreach (SlotSaveData saved in data.inventory)
-        {
-            if (saved == null || saved.amount < 0) return "invalid inventory slot";
-            if (saved.amount == 0) continue;
-
-            ItemData item = itemDatabase.Find(saved.itemId);
-            if (item == null) return $"unknown item '{saved.itemId}' (missing from the ItemDatabase?)";
-            if (saved.amount > item.maxStack) return $"{saved.amount}x {saved.itemId} is more than a stack";
-        }
-
+        if (data.inventory == null) return "no inventory saved";
         return null;
     }
 
+    // Repairs while loading: unknown items (renamed or removed in a newer build) and broken slots
+    // become empty, stacks are cut to maxStack, and a save with a different slot count keeps the
+    // slots that still exist.
     public void Load(SaveData data)
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            SlotSaveData saved = data.inventory[i];
-            slots[i].Set(itemDatabase.Find(saved.itemId), saved.amount);
+            SlotSaveData saved = i < data.inventory.Length ? data.inventory[i] : null;
+            if (saved == null || saved.amount <= 0)
+            {
+                slots[i].Set(null, 0);
+                continue;
+            }
+
+            ItemData item = itemDatabase.Find(saved.itemId);
+            if (item == null)
+            {
+                Debug.LogWarning($"Save repaired: unknown item '{saved.itemId}' in slot {i} removed.", this);
+                slots[i].Set(null, 0);
+                continue;
+            }
+
+            int amount = Mathf.Min(saved.amount, item.maxStack);
+            if (amount != saved.amount) Debug.LogWarning($"Save repaired: {saved.amount}x {saved.itemId} cut to a stack of {amount}.", this);
+            slots[i].Set(item, amount);
+        }
+
+        for (int i = slots.Length; i < data.inventory.Length; i++)
+        {
+            SlotSaveData extra = data.inventory[i];
+            if (extra != null && extra.amount > 0)
+                Debug.LogWarning($"Save repaired: {extra.amount}x {extra.itemId} in slot {i} dropped (only {slots.Length} slots).", this);
         }
 
         OnChanged?.Invoke();

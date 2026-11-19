@@ -42,14 +42,16 @@ public class SceneArrival : MonoBehaviour, ISaveable
         data.position = player.transform.position;
     }
 
-    public string Validate(SaveData data)
-    {
-        if (data.version < FirstVersionWithLocation) return null; // older saves: no location, Continue picks the scene
-        if (string.IsNullOrEmpty(data.sceneName)) return "no scene saved";
-        if (!Application.CanStreamedLevelBeLoaded(data.sceneName)) return $"scene '{data.sceneName}' is not in the build";
-        if (!float.IsFinite(data.position.x) || !float.IsFinite(data.position.y)) return "invalid position";
-        return null;
-    }
+    // The location is optional: a bad one only means Continue / F9 can't use it (see HasValidLocation).
+    public string Validate(SaveData data) => null;
+
+    // True when the save has a scene that is in the build and a real position. Older saves (no location),
+    // or a scene removed in a newer build, return false: Continue picks the scene, F9 loads in place.
+    public static bool HasValidLocation(SaveData data) =>
+        data.version >= FirstVersionWithLocation
+        && !string.IsNullOrEmpty(data.sceneName)
+        && Application.CanStreamedLevelBeLoaded(data.sceneName)
+        && float.IsFinite(data.position.x) && float.IsFinite(data.position.y);
 
     public void Load(SaveData data) { }
 }

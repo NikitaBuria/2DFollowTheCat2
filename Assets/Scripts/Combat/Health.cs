@@ -55,13 +55,17 @@ public class Health : MonoBehaviour, IDamageable, ISaveable
 
     public void Save(SaveData data) => data.health = currentHealth;
 
-    // Saves are only made while alive, so 0 is invalid too.
-    public string Validate(SaveData data) =>
-        data.health < 1 || data.health > maxHealth ? $"health {data.health} is outside 1-{maxHealth}" : null;
+    // Any value can be repaired in Load.
+    public string Validate(SaveData data) => null;
 
+    // Saves are only made while alive, so 0 is invalid too; out-of-range values (e.g. a lower
+    // maxHealth in a newer build) are clamped to 1-maxHealth.
     public void Load(SaveData data)
     {
-        currentHealth = data.health;
+        int health = Mathf.Clamp(data.health, 1, maxHealth);
+        if (health != data.health) Debug.LogWarning($"Save repaired: health {data.health} clamped to {health}.", this);
+
+        currentHealth = health;
         OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 
