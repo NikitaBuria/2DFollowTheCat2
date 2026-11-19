@@ -26,6 +26,16 @@ public class Merchant : MonoBehaviour, IInteractable
     // The player who opened the shop; the shop UI trades with them.
     public Player customer { get; private set; }
 
+    private void OnEnable()
+    {
+        gameStateManager.OnGameStateChanged += HandleGameStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        gameStateManager.OnGameStateChanged -= HandleGameStateChanged;
+    }
+
     public bool CanInteract(Player player) => true;
 
     public string GetPrompt(Player player) => tradePrompt;
@@ -73,6 +83,14 @@ public class Merchant : MonoBehaviour, IInteractable
         // Can't fail now: the coins were checked above.
         customer.playerWallet.TrySpend(item.buyPrice);
         return Report(TradeResult.Bought, item, item.buyPrice);
+    }
+
+    // The greeting belongs to this shop visit. Its timer runs on game time, which the shop pauses,
+    // so without this it would still be "talking" after the shop closes and pop up as the player leaves.
+    private void HandleGameStateChanged(GameState gameState)
+    {
+        if (gameState != GameState.Shop && greeting != null && greeting.isTalking)
+            greeting.EndDialogue();
     }
 
     private TradeResult Report(TradeResult result, ItemData item, int coins)

@@ -6797,10 +6797,6 @@ PrefabInstance:
       value: Merchant
       objectReference: {fileID: 0}
     - target: {fileID: 7208302217136296560, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
-      propertyPath: shopStock
-      value: 
-      objectReference: {fileID: 11400000, guid: d7484df3f79bb9942877b316acef8949, type: 2}
-    - target: {fileID: 7208302217136296560, guid: f983f608e14d3ac4898dcad21a7c7a28, type: 3}
       propertyPath: townProgress
       value: 
       objectReference: {fileID: 2942709338005979266}
@@ -80967,26 +80963,6 @@ PrefabInstance:
     - target: {fileID: 4197856292464656970, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_Name
       value: Core
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 348
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338050309787164167, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4383660048443651516, guid: 4c5af0413099fe74fba45bdb9d570bcd, type: 3}
       propertyPath: m_IsActive

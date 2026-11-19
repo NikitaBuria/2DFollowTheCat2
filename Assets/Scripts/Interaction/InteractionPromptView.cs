@@ -17,6 +17,7 @@ public class InteractionPromptView : MonoBehaviour
 
     private void LateUpdate()
     {
+        // Menus hide this whole object through UIManager, so only the target matters here.
         if (interactor.currentTarget == null)
         {
             label.enabled = false;

@@ -60,7 +60,8 @@ public class NpcDialogue : MonoBehaviour, IInteractable
         OnLineShown?.Invoke(speakerName, lines[currentLine]);
     }
 
-    private void EndDialogue()
+    // Ends the conversation now (the bubble hides). Also used by the Merchant when the shop closes.
+    public void EndDialogue()
     {
         currentLine = -1;
         OnDialogueEnded?.Invoke();
