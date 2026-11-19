@@ -9,7 +9,7 @@ You play the Lost Wanderer, who wakes up in a dark cave. A guide cat leads you t
 ## Core loop
 
 ```
-Cave intro → Town → Outdoor → Dungeon → fight → loot → back to town → sell to the merchant → restore the town → win
+Cave intro → Town → Outdoor → Dungeon → fight → loot → back to town → sell to the merchant → restore the town (better wares) → win
 ```
 
 ## Features
@@ -18,7 +18,7 @@ Cave intro → Town → Outdoor → Dungeon → fight → loot → back to town 
 | --- | --- |
 | 4-direction movement (Idle, Walk, Run) and Dash with i-frames and cooldown | ✅ |
 | Melee combat with weapon data (damage, range, arc, knockback, timing) | ✅ |
-| Health, Hurt (knockback + i-frames), Dead, health bar | ✅ |
+| Health, Hurt (knockback + i-frames), Dead, animated health bar with a cat badge | ✅ |
 | Enemy AI: Idle ⇄ Patrol → Chase → Windup → Attack, Hurt, Dead | ✅ |
 | Enemy respawn from an object pool | ✅ |
 | Boss: King Wisp with super armor, minion summoning (pooled) and a random spawn | ✅ |
@@ -27,9 +27,9 @@ Cave intro → Town → Outdoor → Dungeon → fight → loot → back to town 
 | Equipment: helmet, armor, weapon, boots; armor defense; worn gear drawn on the player | ✅ |
 | Usable items: health potion, strength elixir (timed damage buff) | ✅ |
 | Game states (Gameplay, Inventory, Paused, Shop, Won) | ✅ |
-| Save system (JSON, backup file, validation, versioning) and death respawn | ✅ |
+| Save system (JSON, verified writes, backup file, validation with repair, versioning with migrations) and death respawn | ✅ |
 | Interaction: NPC dialogue with speech bubbles, scene doors | ✅ |
-| Merchant shop: buy from stock, sell by drag and drop, trade feedback | ✅ |
+| Merchant shop: stock grows as the town is restored, sell by drag and drop, trade feedback | ✅ |
 | Town restoration: 3 buildings, town tiers, rebuild animations, win screen | ✅ |
 | Guide-cat tutorial: a step-by-step intro from the cave to the first loot | ✅ |
 | Scenes: main menu, opening cave, town, outdoor, dungeon | ✅ |
@@ -65,7 +65,7 @@ The code follows a few rules: each script has one job, states decide *what* happ
 - `IDamageModifier`: reduces incoming damage (worn armor).
 - `IPickable`: coin and item pickups.
 - `IUsable`: items that do something when used (health potion, strength elixir).
-- `ISaveable`: `Health`, `Wallet`, `Inventory`, `Equipment`, `TownProgress` and `TutorialProgress` save, validate and load their own data.
+- `ISaveable`: `Health`, `Wallet`, `Inventory`, `Equipment`, `TownProgress`, `TutorialProgress` and `SceneArrival` save, validate and load their own data.
 - `IInteractable`: everything the player can press E on (NPC dialogue, the merchant, scene doors, buildings).
 
 ### ScriptableObjects for data
@@ -94,8 +94,11 @@ The code follows a few rules: each script has one job, states decide *what* happ
 - Content scripts (`InventoryUI`, `HotbarUI`, `CoinCounterUI`, `HealthBarUI`) only draw data and never need to know the game state.
 
 ### Save system
-- `SaveFile` is the only code that touches the disk: JSON, written to a temp file first, with a `.bak` copy kept.
-- `SaveManager` asks every `ISaveable` to validate the data before anything loads, and falls back to the backup if the main file is broken. Saves are versioned, so older saves still load.
+- `SaveFile` is the only code that touches the disk: JSON written to a temp file, read back to verify it, then swapped in with a `.bak` copy kept. A file locked for a moment (antivirus, cloud sync) is retried.
+- `SaveManager` asks every `ISaveable` to validate the data before anything loads, and falls back to the backup if the main file is broken, so a bad save never half-loads.
+- Repair, don't reject: validation refuses only what can't be fixed. Single bad entries (an unknown item, an out-of-range value) are repaired while loading, so one renamed item costs that item, not the whole save.
+- Saves are versioned. Older saves load: each system fills in the parts an old save lacks, and `SaveMigration` upgrades renamed item IDs step by step. A save from a newer version of the game is never loaded or overwritten.
+- The game saves at every door, on Exit from the pause menu (it stays in the menu if the save fails), after restoring a building, after a respawn and when the window closes. The save also stores the scene and position, so Continue returns you there.
 - Items are saved by ID and turned back into assets through an `ItemDatabase`.
 - `RespawnManager`: on death the player loses 25% of their coins and respawns at the scene's spawn point; the game then saves so the penalty sticks.
 
@@ -110,13 +113,13 @@ The code follows a few rules: each script has one job, states decide *what* happ
 
 ### Town restoration
 - Each building is a `BuildingData` ScriptableObject (name, cost, optional required item).
-- `TownProgress` keeps which buildings are restored, saves them through `ISaveable` and announces changes with an event. The town tier (1 + restored buildings) changes the merchant's look.
+- `TownProgress` keeps which buildings are restored, saves them through `ISaveable` and announces changes with an event. The town tier (1 + restored buildings) changes the merchant's look and what he sells: each restored building unlocks better wares.
 - `RestorableBuilding` only asks `TownProgress` and swaps between its ruined and restored art. `BuildingRebuildView` listens and plays the rebuild animation, so the gameplay script never touches its visuals.
 - Restoring the last building fires `OnTownRestored`, and `WinCondition` opens the win screen.
 
 ### Interaction and the merchant
 - `PlayerInteractor` finds the nearest `IInteractable` in front of the player; a world-space prompt shows `[E] Talk`, `[E] Trade` or `[E] Enter`.
-- The `Merchant` only asks for the Shop game state and does the trading; the shop UI builds its entries from `ShopStock` and reports clicks and drops back.
+- The `Merchant` only asks for the Shop game state and does the trading; he sells from one `ShopStock` per town tier, and the shop UI builds its entries from it and reports clicks and drops back.
 - Buying checks coins and inventory space before anything changes, so a failed purchase never loses coins.
 
 ### Maps and performance
@@ -143,7 +146,7 @@ Assets/
 │   ├── Items/               Pickups, IPickable, IUsable
 │   ├── Inventory/           Inventory, InventorySlot, Wallet, Equipment
 │   ├── Core/                GameStateManager, RespawnManager, scene loading and spawn points
-│   ├── Save/                SaveFile, SaveManager, SaveData, ISaveable
+│   ├── Save/                SaveFile, SaveManager, SaveData, SaveMigration, ISaveable
 │   ├── Interaction/         PlayerInteractor, NpcDialogue, SceneDoor, IInteractable
 │   ├── Merchant/            Merchant, ShopStock, MerchantAppearance
 │   ├── Town/                BuildingData, TownProgress, RestorableBuilding, BuildingRebuildView
@@ -186,4 +189,4 @@ Assets/
 ## Credits
 
 - Code: me, as a learning and portfolio project.
-- Art and animations: Astra.
+- Art and animations: made with Astra, an AI art tool.
