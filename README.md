@@ -190,5 +190,5 @@ Assets/
 
 ## Credits
 
-- Code: I designed the architecture of Follow The Cat and wrote its core systems myself: the state machines, the event-driven structure, the data stored in ScriptableObjects, combat, health and the save system. Once that foundation was in place, I used Claude (an AI coding agent) to build more systems on top of it, following the rules and architecture I had already set. I read and reviewed every change before merging it to keep the codebase clean, consistent and as bug-free as possible.
+- Code: I designed the architecture of Follow The Cat and wrote its core systems myself: the state machines, the event-driven structure, the data-driven design built on ScriptableObjects and reusable prefabs, combat, health, the inventory and the save system. Once that foundation was in place, I used Claude AI agents (Claude Opus 5.5 and Claude Fable 5.2) to build more systems on top of it, following the rules, logic and architecture I had already set. I worked on the basic monthly plan and kept token usage efficient, using less than 40% of the month’s limit. I read and reviewed every change before merging it to keep the codebase clean, consistent and as bug-free as possible.
 - Art and animations: made with Astra, an AI art tool.
